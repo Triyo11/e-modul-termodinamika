@@ -1,0 +1,427 @@
+{
+  "id": "kegiatan-03",
+  "versi": "1.2",
+  "revisiTerakhir": "2026-09-18",
+  "statusValidasi": "draf-sebelum-validasi-ahli",
+  "judul": "Teori Kinetik Gas",
+  "subJudul": "Menjelaskan sifat gas dari gerak molekulnya",
+  "bab": "Termodinamika",
+  "fase": "F",
+  "kelas": "XI",
+  "alokasiWaktu": 90,
+  "prasyarat": [
+    "Hukum Newton tentang gerak",
+    "Impuls dan momentum",
+    "Suhu dan kalor"
+  ],
+  "tujuanPembelajaran": [
+    "Menjelaskan asumsi-asumsi model gas ideal beserta batas keberlakuannya",
+    "Menurunkan hubungan tekanan gas dengan energi kinetik rata-rata molekul",
+    "Menghitung kelajuan efektif molekul gas pada suhu tertentu",
+    "Menganalisis pengaruh perubahan suhu terhadap energi dalam gas"
+  ],
+  "layar": [
+    {
+      "id": "l1",
+      "judul": "Mengapa balon udara bisa naik?",
+      "peran": "apersepsi",
+      "blok": [
+        {
+          "tipe": "gambar",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Festival_Balon_Udara_Wonosobo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+          "alt": "Balon udara tradisional berwarna-warni melayang di atas persawahan saat Syawalan",
+          "rasio": "3/4",
+          "caption": "Tradisi balon udara pada perayaan Syawalan di Wonosobo, Jawa Tengah.",
+          "sumber": "Dokumentasi penulis, 2025"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Setiap Syawalan, warga Wonosobo menerbangkan balon udara raksasa. Udara di dalam balon dipanaskan lebih dahulu sebelum balon dilepas. Balon yang isinya dingin tidak akan bergerak ke mana-mana."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Pemanasan tidak menambah satu pun molekul udara ke dalam balon. Yang berubah hanyalah gerak molekul di dalamnya. Pada kegiatan ini kita akan menelusuri hubungan antara gerak molekul yang tidak terlihat itu dengan besaran yang bisa diukur: suhu, tekanan, dan volume."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-1",
+          "format": "teks-panjang",
+          "pertanyaan": "Menurut dugaan Anda, apa yang terjadi pada molekul udara di dalam balon ketika dipanaskan? Tuliskan dugaan awal Anda sebelum membaca penjelasan berikutnya.",
+          "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaan Anda akan ditinjau kembali di akhir kegiatan.",
+          "baris": 4,
+          "indikatorVariabel": ["V1-1"]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "judul": "Asumsi model gas ideal",
+      "peran": "konsep",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Satu sentimeter kubik udara berisi sekitar $2{,}7 \\times 10^{19}$ molekul. Melacak gerak setiap molekul jelas mustahil. Fisikawan menempuh jalan lain, yaitu menyusun model sederhana yang tetap mampu meramalkan perilaku gas secara keseluruhan."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Asumsi gas ideal dan konsekuensinya",
+          "mobile": "kartu",
+          "kolom": ["Asumsi", "Konsekuensi"],
+          "baris": [
+            [
+              "Jumlah molekul sangat banyak dan bergerak acak",
+              "Tidak ada arah gerak yang diistimewakan, sehingga tekanan sama ke segala arah"
+            ],
+            [
+              "Volume molekul diabaikan terhadap volume wadah",
+              "Molekul diperlakukan sebagai titik bermassa"
+            ],
+            [
+              "Tidak ada gaya antarmolekul kecuali saat bertumbukan",
+              "Seluruh energi gas berupa energi kinetik translasi"
+            ],
+            [
+              "Tumbukan bersifat lenting sempurna",
+              "Energi kinetik total gas tetap selama suhu tetap"
+            ],
+            [
+              "Gerak molekul mengikuti hukum Newton",
+              "Analisis mekanika klasik dapat diterapkan"
+            ]
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "hati-hati",
+          "judul": "Batas keberlakuan",
+          "isi": "Model ini akurat untuk gas bertekanan rendah dan bersuhu jauh di atas titik didihnya. Pada tekanan tinggi, volume molekul dan gaya tarik antarmolekul tidak lagi dapat diabaikan."
+        },
+        {
+          "tipe": "simulasi",
+          "penyedia": "phet",
+          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
+          "judul": "Gas Properties",
+          "rasio": "3/4",
+          "instruksi": "Atur jumlah partikel menjadi 100, lalu naikkan suhu secara bertahap. Amati perubahan kerapatan tumbukan pada dinding wadah."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-2",
+          "format": "teks-panjang",
+          "pertanyaan": "Pada simulasi, apa yang terjadi pada jumlah tumbukan molekul dengan dinding ketika suhu dinaikkan sementara volume wadah dijaga tetap?",
+          "baris": 4,
+          "indikatorVariabel": ["V1-2", "V2-1"]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "judul": "Dari tumbukan molekul menjadi tekanan",
+      "peran": "konsep",
+      "blok": [
+        {
+          "tipe": "animasi",
+          "webm": "/anim/tumbukan-dinding.webm",
+          "mp4": "/anim/tumbukan-dinding.mp4",
+          "poster": "/anim/tumbukan-dinding-poster.webp",
+          "alt": "Molekul bergerak ke kanan, menumbuk dinding, lalu memantul ke kiri dengan laju sama",
+          "rasio": "4/3",
+          "caption": "Tumbukan lenting molekul gas dengan dinding wadah.",
+          "sumber": "Animasi penulis menggunakan Manim Community Edition"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Sebuah molekul bermassa $m$ menumbuk dinding wadah dengan komponen kecepatan $v_x$. Tumbukan lenting membuat molekul terpantul dengan laju sama tetapi arah berlawanan. Perubahan momentumnya bernilai $2mv_x$."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Setiap tumbukan memberikan impuls pada dinding. Ketika jutaan molekul menumbuk dinding setiap detik, impuls-impuls kecil itu terakumulasi menjadi gaya yang tetap. Gaya per satuan luas inilah yang kita ukur sebagai tekanan gas."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.1",
+          "tex": "P = \\frac{1}{3}\\,\\frac{N m \\overline{v^2}}{V}",
+          "keterangan": [
+            { "simbol": "P", "arti": "tekanan gas", "satuan": "Pa" },
+            { "simbol": "N", "arti": "jumlah molekul", "satuan": "-" },
+            { "simbol": "m", "arti": "massa satu molekul", "satuan": "kg" },
+            {
+              "simbol": "\\overline{v^2}",
+              "arti": "rata-rata kuadrat kelajuan molekul",
+              "satuan": "m²/s²"
+            },
+            { "simbol": "V", "arti": "volume wadah", "satuan": "m³" }
+          ]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Faktor sepertiga muncul karena gerak molekul terbagi merata pada tiga arah sumbu. Persamaan 3.1 dapat ditulis ulang menggunakan energi kinetik rata-rata molekul $\\overline{E_k} = \\tfrac{1}{2} m \\overline{v^2}$."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.2",
+          "tex": "P = \\frac{2}{3}\\,\\frac{N}{V}\\,\\overline{E_k}"
+        },
+        {
+          "tipe": "callout",
+          "gaya": "ingat",
+          "judul": "Makna persamaan 3.2",
+          "isi": "Tekanan gas ditentukan oleh dua hal: seberapa rapat molekulnya ($N/V$) dan seberapa besar energi kinetik rata-ratanya."
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "judul": "Suhu sebagai ukuran energi kinetik",
+      "peran": "konsep",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Persamaan gas ideal hasil percobaan menyatakan $PV = NkT$. Menyandingkannya dengan persamaan 3.2 menghasilkan hubungan yang menjadi inti teori kinetik gas."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.3",
+          "tex": "\\overline{E_k} = \\frac{3}{2} k T",
+          "keterangan": [
+            {
+              "simbol": "k",
+              "arti": "tetapan Boltzmann, $1{,}38 \\times 10^{-23}$",
+              "satuan": "J/K"
+            },
+            { "simbol": "T", "arti": "suhu mutlak", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Energi kinetik rata-rata molekul hanya bergantung pada suhu mutlak. Jenis gasnya tidak berpengaruh. Oksigen dan hidrogen pada suhu yang sama memiliki energi kinetik rata-rata yang persis sama, meskipun massa molekulnya berbeda jauh."
+        },
+        {
+          "tipe": "callout",
+          "gaya": "tahukah",
+          "judul": "Suhu itu apa, sebenarnya?",
+          "isi": "Persamaan 3.3 memberi makna mikroskopis pada suhu. Termometer yang menunjuk 300 K sedang melaporkan energi gerak rata-rata molekul di sekitarnya, yaitu sekitar $6{,}2 \\times 10^{-21}$ joule per molekul."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-3",
+          "format": "teks-panjang",
+          "pertanyaan": "Gas helium dan gas argon berada dalam dua wadah terpisah pada suhu yang sama. Massa molekul argon sekitar sepuluh kali massa molekul helium. Bandingkan energi kinetik rata-rata molekul kedua gas tersebut, dan jelaskan alasannya.",
+          "baris": 5,
+          "indikatorVariabel": ["V1-3"]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "judul": "Kelajuan efektif molekul",
+      "peran": "penerapan",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Molekul gas bergerak dengan laju yang beragam. Untuk mewakili keseluruhan molekul, digunakan akar dari rata-rata kuadrat kelajuan atau kelajuan efektif. Menggabungkan persamaan 3.3 dengan definisi energi kinetik menghasilkan persamaan berikut."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.4",
+          "tex": "v_{rms} = \\sqrt{\\frac{3kT}{m}} = \\sqrt{\\frac{3RT}{M}}",
+          "keterangan": [
+            {
+              "simbol": "v_{rms}",
+              "arti": "kelajuan efektif molekul",
+              "satuan": "m/s"
+            },
+            {
+              "simbol": "R",
+              "arti": "tetapan gas umum, $8{,}31$",
+              "satuan": "J/(mol·K)"
+            },
+            { "simbol": "M", "arti": "massa molar gas", "satuan": "kg/mol" }
+          ]
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal",
+          "soal": "Hitunglah kelajuan efektif molekul nitrogen pada suhu 27 °C. Massa molar nitrogen adalah 28 g/mol.",
+          "langkah": [
+            "Ubah satuan: $T = 27 + 273 = 300$ K dan $M = 0{,}028$ kg/mol.",
+            "Substitusi ke persamaan 3.4: $v_{rms} = \\sqrt{\\dfrac{3 (8{,}31)(300)}{0{,}028}}$",
+            "Hitung pembilang: $3 (8{,}31)(300) = 7479$ J/mol.",
+            "Bagi dengan massa molar: $7479 / 0{,}028 = 2{,}67 \\times 10^{5}$ m²/s².",
+            "Tarik akarnya: $v_{rms} \\approx 517$ m/s."
+          ],
+          "catatan": "Nilai ini melampaui kecepatan suara di udara. Molekul udara di sekitar Anda memang bergerak secepat itu, tetapi arahnya terus berubah akibat tumbukan."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-4",
+          "format": "angka",
+          "inputmode": "decimal",
+          "pertanyaan": "Hitunglah kelajuan efektif molekul oksigen pada suhu 27 °C. Massa molar oksigen adalah 32 g/mol.",
+          "satuan": "m/s",
+          "toleransi": 5,
+          "jawabanRujukan": 483,
+          "petunjuk": "Gunakan persamaan 3.4 dengan $M = 0{,}032$ kg/mol.",
+          "indikatorVariabel": ["V1-4", "V2-2"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-5",
+          "format": "teks-panjang",
+          "pertanyaan": "Oksigen dan nitrogen berada pada suhu yang sama, tetapi kelajuan efektifnya berbeda. Padahal energi kinetik rata-ratanya sama. Jelaskan mengapa hal ini tidak bertentangan.",
+          "baris": 5,
+          "indikatorVariabel": ["V1-3"]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "judul": "Energi dalam gas",
+      "peran": "konsep",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Molekul monoatomik hanya dapat bergerak translasi pada tiga arah sumbu, sehingga memiliki tiga derajat kebebasan. Molekul diatomik dapat pula berotasi terhadap dua sumbu, dan pada suhu tinggi mulai bervibrasi."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Derajat kebebasan dan energi dalam gas",
+          "mobile": "kartu",
+          "kolom": [
+            "Jenis gas",
+            "Rentang suhu",
+            "Derajat kebebasan",
+            "Energi dalam"
+          ],
+          "baris": [
+            [
+              "Monoatomik (He, Ne, Ar)",
+              "Semua suhu",
+              "3 (translasi)",
+              "$U = \\tfrac{3}{2} N k T$"
+            ],
+            [
+              "Diatomik (H₂, O₂, N₂)",
+              "Suhu rendah",
+              "3 (translasi)",
+              "$U = \\tfrac{3}{2} N k T$"
+            ],
+            [
+              "Diatomik (H₂, O₂, N₂)",
+              "Suhu sedang",
+              "5 (translasi + rotasi)",
+              "$U = \\tfrac{5}{2} N k T$"
+            ],
+            [
+              "Diatomik (H₂, O₂, N₂)",
+              "Suhu tinggi",
+              "7 (+ vibrasi)",
+              "$U = \\tfrac{7}{2} N k T$"
+            ]
+          ]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Setiap derajat kebebasan menyumbang energi sebesar $\\tfrac{1}{2} kT$ per molekul. Prinsip ini dikenal sebagai teorema ekipartisi energi."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.5",
+          "tex": "U = \\frac{f}{2} N k T = \\frac{f}{2} n R T",
+          "keterangan": [
+            { "simbol": "U", "arti": "energi dalam gas", "satuan": "J" },
+            { "simbol": "f", "arti": "derajat kebebasan", "satuan": "-" },
+            { "simbol": "n", "arti": "jumlah mol", "satuan": "mol" }
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "ingat",
+          "judul": "Kembali ke balon udara",
+          "isi": "Memanaskan udara di dalam balon menaikkan energi kinetik rata-rata molekulnya. Sebagian udara terdorong keluar melalui mulut balon, sehingga massa udara di dalam berkurang sementara volumenya tetap. Massa jenis udara di dalam balon menjadi lebih kecil daripada di luar, dan balon pun terangkat."
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "judul": "Latihan",
+      "peran": "latihan",
+      "blok": [
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-1",
+          "pertanyaan": "Suhu suatu gas ideal dinaikkan dari 300 K menjadi 1200 K. Kelajuan efektif molekulnya menjadi berapa kali semula?",
+          "opsi": [
+            { "id": "a", "teks": "2 kali" },
+            { "id": "b", "teks": "4 kali" },
+            { "id": "c", "teks": "8 kali" },
+            { "id": "d", "teks": "16 kali" }
+          ],
+          "kunci": "a",
+          "pembahasan": "Persamaan 3.4 menunjukkan $v_{rms}$ sebanding dengan $\\sqrt{T}$. Suhu menjadi empat kali, sehingga kelajuan efektif menjadi $\\sqrt{4} = 2$ kali semula.",
+          "indikatorVariabel": ["V1-4"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-2",
+          "pertanyaan": "Gas ideal dalam wadah tertutup dimampatkan hingga volumenya menjadi setengah, sementara suhunya dijaga tetap. Besaran manakah yang tidak berubah?",
+          "opsi": [
+            { "id": "a", "teks": "Tekanan gas" },
+            { "id": "b", "teks": "Kerapatan molekul" },
+            { "id": "c", "teks": "Energi kinetik rata-rata molekul" },
+            { "id": "d", "teks": "Jumlah tumbukan per satuan luas dinding" }
+          ],
+          "kunci": "c",
+          "pembahasan": "Persamaan 3.3 menyatakan energi kinetik rata-rata hanya bergantung pada suhu. Suhu dijaga tetap, sehingga $\\overline{E_k}$ tidak berubah. Tekanan justru menjadi dua kali lipat karena kerapatan molekul bertambah.",
+          "indikatorVariabel": ["V1-3", "V2-3"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-3",
+          "pertanyaan": "Dua wadah bervolume sama berisi helium dan argon pada suhu dan tekanan yang sama. Pernyataan yang benar adalah ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "Jumlah molekul helium lebih banyak daripada argon"
+            },
+            {
+              "id": "b",
+              "teks": "Kelajuan efektif molekul helium lebih besar daripada argon"
+            },
+            {
+              "id": "c",
+              "teks": "Energi kinetik rata-rata molekul argon lebih besar"
+            },
+            { "id": "d", "teks": "Energi dalam kedua gas berbeda" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Suhu sama berarti energi kinetik rata-rata sama, sehingga pilihan c salah. Massa molekul helium jauh lebih kecil, maka dari persamaan 3.4 kelajuan efektifnya lebih besar. Tekanan, volume, dan suhu yang sama menuntut jumlah molekul yang sama pula.",
+          "indikatorVariabel": ["V1-3"]
+        }
+      ]
+    }
+  ],
+  "glosarium": [
+    {
+      "istilah": "Gas ideal",
+      "arti": "Model gas yang molekulnya dianggap tidak bervolume dan tidak saling berinteraksi kecuali saat bertumbukan"
+    },
+    {
+      "istilah": "Kelajuan efektif",
+      "arti": "Akar dari rata-rata kuadrat kelajuan molekul gas"
+    },
+    {
+      "istilah": "Derajat kebebasan",
+      "arti": "Banyaknya cara bebas suatu molekul menyimpan energi"
+    },
+    {
+      "istilah": "Tetapan Boltzmann",
+      "arti": "Tetapan penghubung antara suhu dan energi kinetik molekul, bernilai $1{,}38 \\times 10^{-23}$ J/K"
+    }
+  ],
+  "referensi": [
+    "Halliday, D., Resnick, R., & Walker, J. (2018). Fundamentals of physics (11th ed.). Wiley.",
+    "Serway, R. A., & Jewett, J. W. (2019). Physics for scientists and engineers with modern physics (10th ed.). Cengage Learning.",
+    "Young, H. D., & Freedman, R. A. (2020). University physics with modern physics (15th ed.). Pearson."
+  ]
+}
