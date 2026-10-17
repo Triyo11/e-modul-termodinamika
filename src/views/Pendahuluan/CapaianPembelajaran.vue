@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-40">
@@ -19,11 +17,21 @@
     >
       <section>
         <h2 class="font-bold text-xl text-center pb-4">Capaian Pembelajaran</h2>
-        <p class="text-justify">
-            Peserta didik mampu menganalisis konsep suhu dan kalor, menerapkan hukum-hukum termodinamika untuk menyelesaikan
-            masalah terkait perubahan energi, kerja, dan kalor pada berbagai sistem, serta menjelaskan prinsip kerja mesin kalor
-            dan mesin pendingin dalam konteks aplikasi kehidupan sehari-hari dan implikasinya terhadap lingkungan.
-        </p>
+        <div class="flex flex-col gap-2">
+          <p class="text-justify mx-4">
+            Capaian pembelajaran diadaptasi dari
+            <a
+              href="https://guru.kemendikdasmen.go.id/dokumen/74r6Yln0zK"
+              class="text-brand-dark underline"
+              >BSKAP Nomor 046/H/KR/2025.</a
+            >
+            Setelah mempelajari modul ini, peserta didik diharapkan mampu:
+          </p>
+          <p class="mx-8">
+            "Murid mampu memahami konsep kalor dan termodinamika serta penerapannya untuk mengidentifikasi 
+            fenomena dan menganalisis dampak dari perubahan iklim."
+          </p>
+        </div>
       </section>
     </main>
   </div>
@@ -31,6 +39,6 @@
 
 <style scoped>
 .content-shadow {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-display);
 }
 </style>

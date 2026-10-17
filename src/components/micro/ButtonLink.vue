@@ -19,6 +19,6 @@ const props = defineProps<{
 
 <style scoped>
 .menu-shadow {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-button);
 }
 </style>

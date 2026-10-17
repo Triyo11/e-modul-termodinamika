@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GambarBlok from "./GambarBlok.vue";
+import VideoBlok from "./VideoBlok.vue";
 import TeksBlok from "./TeksBlok.vue";
 import IsianBlok from "./IsianBlok.vue";
 import TabelBlok from "./TabelBlok.vue";
@@ -9,6 +10,15 @@ import RumusBlok from "./RumusBlok.vue";
 import ContohBlok from "./ContohBlok.vue";
 import KuisBlok from "./KuisBlok.vue";
 import Animasi from "./Animasi.vue";
+import KebutuhanInformasiBlok from "./KebutuhanInformasiBlok.vue";
+import TabelIsianBlok from "./TabelIsianBlok.vue";
+import TautanSumberBlok from "./TautanSumberBlok.vue";
+import KlaimUjiBlok from "./KlaimUjiBlok.vue";
+import TugasRancanganBlok from "./TugasRancanganBlok.vue";
+import TugasRancanganLanjutanBlok from "./TugasRancanganLanjutanBlok.vue";
+import GrafikDataBlok from "./GrafikDataBlok.vue";
+import RefleksiBlok from "./RefleksiBlok.vue";
+import RubrikBlok from "./RubrikBlok.vue";
 import type { Blok } from "@/types/kegiatan";
 
 defineProps<{ blok: Blok; kegiatanId: string }>();
@@ -16,6 +26,7 @@ defineProps<{ blok: Blok; kegiatanId: string }>();
 
 <template>
   <GambarBlok v-if="blok.tipe === 'gambar'" :blok="blok" />
+  <VideoBlok v-else-if="blok.tipe === 'video'" :blok="blok" />
   <TeksBlok v-else-if="blok.tipe === 'teks'" :blok="blok" />
   <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
   <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" />
@@ -25,4 +36,17 @@ defineProps<{ blok: Blok; kegiatanId: string }>();
   <ContohBlok v-else-if="blok.tipe === 'contoh'" :blok="blok" />
   <KuisBlok v-else-if="blok.tipe === 'kuis'" :blok="blok" :kegiatan-id="kegiatanId" />
   <Animasi v-else-if="blok.tipe === 'animasi'" :blok="blok" />
+  <KebutuhanInformasiBlok v-else-if="blok.tipe === 'kebutuhan-informasi'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <TabelIsianBlok v-else-if="blok.tipe === 'tabel-isian'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <TautanSumberBlok v-else-if="blok.tipe === 'tautan-sumber'" :blok="blok" />
+  <KlaimUjiBlok v-else-if="blok.tipe === 'klaim-uji'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <TugasRancanganBlok v-else-if="blok.tipe === 'tugas-rancangan'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <TugasRancanganLanjutanBlok
+    v-else-if="blok.tipe === 'tugas-rancangan-lanjutan'"
+    :blok="blok"
+    :kegiatan-id="kegiatanId"
+  />
+  <GrafikDataBlok v-else-if="blok.tipe === 'grafik-data'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <RefleksiBlok v-else-if="blok.tipe === 'refleksi'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <RubrikBlok v-else-if="blok.tipe === 'rubrik'" :blok="blok" />
 </template>

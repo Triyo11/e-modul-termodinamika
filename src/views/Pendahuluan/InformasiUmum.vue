@@ -42,6 +42,6 @@ const informasiUmum = {
 
 <style scoped>
 .content-shadow {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-display);
 }
 </style>

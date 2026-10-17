@@ -1,0 +1,865 @@
+{
+  "id": "kegiatan-01",
+  "versi": "2.0",
+  "skema": "stem-ctl-2.0",
+  "revisiTerakhir": "2026-10-17",
+  "statusValidasi": "draf-sebelum-validasi-ahli",
+  "kb": 1,
+  "judul": "Gas Ideal",
+  "subJudul": "Mengapa tekanan ban naik padahal udaranya tidak ditambah?",
+  "bab": "Termodinamika",
+  "model": "STEM-CTL",
+  "fase": "F",
+  "kelas": "XI",
+  "alokasiWaktu": null,
+  "prasyarat": [
+    "Hukum Newton tentang gerak",
+    "Impuls dan momentum",
+    "Suhu dan kalor"
+  ],
+  "tujuanPembelajaran": [
+    {
+      "kode": "1.1",
+      "teks": "Membedakan sifat makroskopis dan mikroskopis gas ideal berdasarkan postulat teori kinetik",
+      "kajianTeori": ["1.a"]
+    },
+    {
+      "kode": "1.2",
+      "teks": "Menyelidiki hubungan p, V, T, dan n melalui simulasi untuk merumuskan Hukum Boyle, Charles, Gay-Lussac, dan Avogadro",
+      "kajianTeori": ["1.b"]
+    },
+    {
+      "kode": "1.3",
+      "teks": "Menerapkan persamaan pV = nRT untuk menganalisis perubahan keadaan gas pada ban kendaraan dan panci presto",
+      "kajianTeori": ["1.a", "1.b"]
+    },
+    {
+      "kode": "1.4",
+      "teks": "Mengevaluasi batas berlakunya model gas ideal dengan membandingkannya dengan gas nyata",
+      "kajianTeori": ["1.c", "Tabel 2.1"]
+    }
+  ],
+  "fenomena": ["Tekanan ban naik setelah perjalanan jauh", "Panci presto"],
+  "simulasiUtama": ["PhET Gas Properties"],
+  "catatanPengembang": [
+    "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
+    "Blok gambar dan video fenomena di layar l1 belum punya berkas (src null). Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
+    "Instruksi simulasi menyebut nama kontrol PhET dalam bahasa Inggris (Hold Constant, Width, Heat/Cool). Cocokkan dengan tampilan simulasi sebelum validasi, termasuk bila versi bahasa Indonesia dipakai.",
+    "Persamaan e-modul diberi nomor 1.1 sampai 1.9. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals."
+  ],
+  "layar": [
+    {
+      "id": "l1",
+      "judul": "Ban yang \"menggembung\" sendiri",
+      "tahap": "konstruktivisme",
+      "stem": ["S"],
+      "indikatorTahap": { "bk": ["BK1"], "li": ["LI1"] },
+      "peranGuru": "Menampilkan fenomena dan menggali pengetahuan awal murid tentang partikel gas.",
+      "blok": [
+        {
+          "tipe": "video",
+          "src": null,
+          "poster": null,
+          "alt": "Pengukur tekanan ban sebelum dan sesudah kendaraan menempuh perjalanan jauh",
+          "rasio": "16/9",
+          "caption": "Tekanan ban diukur sebelum berangkat dan setelah perjalanan jauh.",
+          "sumber": null,
+          "status": "perlu-media"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Andi mengukur tekanan ban mobil ayahnya sebelum mudik. Setelah tiga jam di jalan tol, ia mengukurnya lagi. Angka di pengukur ternyata naik, padahal tidak ada udara yang ditambahkan."
+        },
+        {
+          "tipe": "gambar",
+          "src": null,
+          "alt": "Panci presto di atas kompor dengan katup pengaman di tutupnya",
+          "rasio": "4/3",
+          "caption": "Panci presto memiliki tutup yang terkunci rapat dan katup pengaman.",
+          "sumber": null,
+          "status": "perlu-media"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Hal serupa terjadi di dapur. Tutup panci presto terkunci rapat, lalu panci dipanaskan. Tekanan di dalamnya naik sampai katup pengaman mendesis."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-1",
+          "format": "teks-panjang",
+          "pertanyaan": "Apa dugaan awal Anda tentang penyebab naiknya tekanan pada ban dan panci presto? Tuliskan dengan kata-kata sendiri.",
+          "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaan Anda akan ditinjau kembali di tahap refleksi.",
+          "baris": 4,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-2",
+          "format": "teks-panjang",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah yang dapat diselidiki dari kedua fenomena tersebut. Sebutkan besaran yang berubah dan besaran yang tetap.",
+          "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ... jika ... dijaga tetap?\"",
+          "baris": 3,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kebutuhan-informasi",
+          "id": "lkpd-1-3",
+          "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
+          "petunjuk": "Tuliskan minimal tiga informasi. Untuk setiap informasi, perkirakan dari mana Anda bisa mendapatkannya.",
+          "kolom": ["Informasi yang saya butuhkan", "Perkiraan sumbernya"],
+          "jumlahBaris": 3,
+          "indikatorVariabel": ["LI1"]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "judul": "Model partikel gas ideal",
+      "tahap": "inkuiri",
+      "stem": ["S", "T"],
+      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
+      "peranGuru": "Membimbing murid menurunkan dugaan dari postulat teori kinetik.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Satu sentimeter kubik udara pada 0 °C dan 1 atm berisi sekitar $2{,}7 \\times 10^{19}$ molekul. Melacak gerak setiap molekul jelas mustahil. Fisikawan menyusun model sederhana yang tetap mampu meramalkan perilaku gas secara keseluruhan."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Postulat teori kinetik gas ideal dan konsekuensinya",
+          "mobile": "kartu",
+          "kolom": ["Postulat", "Konsekuensi"],
+          "baris": [
+            [
+              "Gas tersusun atas sangat banyak molekul yang bergerak acak",
+              "Tidak ada arah gerak yang diistimewakan, sehingga tekanan sama ke segala arah"
+            ],
+            [
+              "Molekul saling berjauhan; volumenya diabaikan terhadap volume wadah",
+              "Molekul diperlakukan sebagai titik bermassa"
+            ],
+            [
+              "Molekul hanya berinteraksi saat bertumbukan",
+              "Energi gas seluruhnya berupa energi kinetik molekul"
+            ],
+            [
+              "Tumbukan bersifat lenting sempurna",
+              "Energi kinetik total tidak hilang karena tumbukan"
+            ]
+          ],
+          "sumber": "Diadaptasi dari Giancoli (2014, hlm. 373) dan Sang et al. (2014, hlm. 353)"
+        },
+        {
+          "tipe": "animasi",
+          "webm": "/anim/tumbukan-dinding.webm",
+          "mp4": "/anim/tumbukan-dinding.mp4",
+          "poster": "/anim/tumbukan-dinding-poster.webp",
+          "alt": "Molekul bergerak ke kanan, menumbuk dinding, lalu memantul ke kiri dengan laju sama",
+          "rasio": "4/3",
+          "caption": "Tumbukan lenting molekul gas dengan dinding wadah.",
+          "sumber": "Animasi penulis menggunakan Manim Community Edition"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Setiap tumbukan memberikan dorongan kecil pada dinding. Jutaan tumbukan setiap detik terakumulasi menjadi gaya yang tetap. Gaya per satuan luas inilah yang terukur sebagai tekanan gas."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.1",
+          "tex": "\\overline{E_k} = \\frac{3}{2} k T",
+          "keterangan": [
+            { "simbol": "\\overline{E_k}", "arti": "energi kinetik translasi rata-rata per molekul", "satuan": "J" },
+            { "simbol": "k", "arti": "tetapan Boltzmann, $1{,}38 \\times 10^{-23}$", "satuan": "J/K" },
+            { "simbol": "T", "arti": "suhu mutlak", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "tahukah",
+          "judul": "Suhu itu apa, sebenarnya?",
+          "isi": "Persamaan 1.1 memberi makna mikroskopis pada suhu. Termometer yang menunjuk 300 K sedang melaporkan energi gerak rata-rata molekul di sekitarnya, yaitu sekitar $6{,}2 \\times 10^{-21}$ joule per molekul."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-4",
+          "format": "pilih-kelompok",
+          "pertanyaan": "Kelompokkan besaran berikut ke dalam sifat makroskopis (dapat diukur langsung) atau sifat mikroskopis (perilaku partikel).",
+          "butir": [
+            "Tekanan gas",
+            "Kelajuan sebuah molekul",
+            "Suhu gas",
+            "Energi kinetik rata-rata molekul",
+            "Volume wadah",
+            "Jumlah tumbukan molekul pada dinding per detik"
+          ],
+          "kelompok": ["Makroskopis", "Mikroskopis"],
+          "kunci": {
+            "Tekanan gas": "Makroskopis",
+            "Kelajuan sebuah molekul": "Mikroskopis",
+            "Suhu gas": "Makroskopis",
+            "Energi kinetik rata-rata molekul": "Mikroskopis",
+            "Volume wadah": "Makroskopis",
+            "Jumlah tumbukan molekul pada dinding per detik": "Mikroskopis"
+          },
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-5",
+          "format": "teks-panjang",
+          "pertanyaan": "Gunakan postulat dan Persamaan 1.1. Jika suhu udara di dalam ban naik sementara volume ban hampir tetap, apa yang terjadi pada gerak molekul, tumbukan pada dinding, dan tekanan ban? Tuliskan penalaran Anda langkah demi langkah.",
+          "petunjuk": "Mulailah dari pernyataan umum (postulat), lalu terapkan pada kasus ban.",
+          "baris": 5,
+          "indikatorVariabel": ["BK3"]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "judul": "Menyelidiki hubungan p, V, T, dan n",
+      "tahap": "inkuiri",
+      "stem": ["S", "T"],
+      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
+      "peranGuru": "Membimbing pengendalian variabel dan pencatatan data.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Dugaan di layar sebelumnya perlu diuji dengan data. Anda akan mengubah satu besaran, menahan besaran lain tetap, lalu mencatat hasilnya."
+        },
+        {
+          "tipe": "simulasi",
+          "penyedia": "phet",
+          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
+          "judul": "Gas Properties (layar Ideal)",
+          "rasio": "3/4",
+          "instruksi": "Buka layar Ideal. Pompakan partikel ke dalam wadah. Aktifkan tampilan lebar wadah (Width). Gunakan panel Hold Constant untuk menahan satu besaran tetap pada setiap percobaan."
+        },
+        {
+          "tipe": "callout",
+          "gaya": "ingat",
+          "judul": "Membaca volume di simulasi",
+          "isi": "Tinggi dan kedalaman wadah di simulasi tidak berubah. Volume wadah sebanding dengan lebarnya, jadi lebar (nm) dapat dipakai untuk mewakili volume."
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-1-boyle",
+          "judul": "Percobaan A: suhu dan jumlah partikel tetap",
+          "instruksi": "Tahan suhu tetap. Ubah lebar wadah lima kali, lalu catat tekanannya.",
+          "kolom": [
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
+            { "kunci": "p", "label": "Tekanan", "satuan": "kPa", "tipe": "angka" },
+            { "kunci": "invV", "label": "1/V", "satuan": "1/nm", "tipe": "hitung", "hitung": "1/V" },
+            { "kunci": "pV", "label": "p × V", "satuan": "kPa·nm", "tipe": "hitung", "hitung": "p*V" }
+          ],
+          "jumlahBaris": 5,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-1-charles",
+          "judul": "Percobaan B: tekanan dan jumlah partikel tetap",
+          "instruksi": "Tahan tekanan tetap dengan pilihan yang mengubah volume. Panaskan atau dinginkan gas lima kali, lalu catat suhu dan lebar wadah.",
+          "kolom": [
+            { "kunci": "T", "label": "Suhu", "satuan": "K", "tipe": "angka" },
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
+            { "kunci": "VperT", "label": "V/T", "satuan": "nm/K", "tipe": "hitung", "hitung": "V/T" }
+          ],
+          "jumlahBaris": 5,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-1-gaylussac",
+          "judul": "Percobaan C: volume dan jumlah partikel tetap",
+          "instruksi": "Tahan volume tetap. Panaskan gas lima kali, lalu catat suhu dan tekanannya.",
+          "kolom": [
+            { "kunci": "T", "label": "Suhu", "satuan": "K", "tipe": "angka" },
+            { "kunci": "p", "label": "Tekanan", "satuan": "kPa", "tipe": "angka" },
+            { "kunci": "pperT", "label": "p/T", "satuan": "kPa/K", "tipe": "hitung", "hitung": "p/T" }
+          ],
+          "jumlahBaris": 5,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-1-avogadro",
+          "judul": "Percobaan D: tekanan dan suhu tetap",
+          "instruksi": "Tahan tekanan tetap dengan pilihan yang mengubah volume. Tambahkan partikel secara bertahap, lalu catat jumlah partikel dan lebar wadah. Catat juga suhunya; jika suhu ikut berubah, tuliskan di kolom catatan.",
+          "kolom": [
+            { "kunci": "N", "label": "Jumlah partikel", "satuan": "-", "tipe": "angka" },
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
+            { "kunci": "VperN", "label": "V/N", "satuan": "nm", "tipe": "hitung", "hitung": "V/N" },
+            { "kunci": "catatan", "label": "Catatan suhu", "satuan": "", "tipe": "teks" }
+          ],
+          "jumlahBaris": 4,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-6",
+          "format": "teks-panjang",
+          "pertanyaan": "Bandingkan hasil Percobaan C dengan dugaan Anda di layar sebelumnya. Apakah data mendukung dugaan tersebut? Tunjukkan baris data yang menjadi buktinya.",
+          "baris": 4,
+          "indikatorVariabel": ["BK3", "LI2"]
+        },
+        {
+          "tipe": "tautan-sumber",
+          "judul": "Sumber terpercaya untuk penyelidikan ini",
+          "daftar": [
+            {
+              "judul": "Gas Properties",
+              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
+              "url": "https://phet.colorado.edu/en/simulations/gas-properties",
+              "kegunaan": "Halaman resmi simulasi beserta deskripsi topiknya",
+              "bahasa": "Inggris"
+            },
+            {
+              "judul": "Gas Properties: Teacher Tips",
+              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
+              "url": "https://phet.colorado.edu/files/teachers-guide/gas-properties-html-guide_en.pdf",
+              "kegunaan": "Penjelasan kontrol simulasi dan penyederhanaan modelnya",
+              "bahasa": "Inggris"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "judul": "Benarkah ban nitrogen lebih stabil?",
+      "tahap": "bertanya",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Memberi pertanyaan penuntun: \"Apakah persamaan gas ideal membedakan jenis gas?\"",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Hubungan yang Anda temukan dari data dirangkum para fisikawan dalam satu persamaan keadaan. Persamaan ini disebut hukum gas ideal."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.2",
+          "tex": "pV = nRT",
+          "keterangan": [
+            { "simbol": "p", "arti": "tekanan mutlak", "satuan": "Pa" },
+            { "simbol": "V", "arti": "volume gas", "satuan": "m³" },
+            { "simbol": "n", "arti": "jumlah mol gas", "satuan": "mol" },
+            { "simbol": "R", "arti": "tetapan gas umum, $8{,}314$", "satuan": "J/(mol·K)" },
+            { "simbol": "T", "arti": "suhu mutlak", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.3",
+          "tex": "pV = NkT",
+          "keterangan": [
+            { "simbol": "N", "arti": "jumlah molekul gas", "satuan": "-" },
+            { "simbol": "k", "arti": "tetapan Boltzmann, $k = R/N_A$", "satuan": "J/K" }
+          ]
+        },
+        {
+          "tipe": "klaim-uji",
+          "id": "klaim-1",
+          "klaim": "Ban berisi nitrogen tekanannya lebih stabil daripada ban berisi udara biasa.",
+          "konteks": "Klaim ini sering dijumpai di bengkel dan artikel otomotif. Ujilah klaim tersebut dengan dua sumber berikut.",
+          "sumber": [
+            {
+              "id": "s1",
+              "judul": "Ketahui Kelebihan Isi Ban dengan Nitrogen",
+              "penerbit": "Auto2000",
+              "penulis": null,
+              "tanggal": "2020-03-24",
+              "url": "https://auto2000.co.id/berita-dan-tips/ketahui-kelebihan-isi-ban-dengan-nitrogen",
+              "jenis": "Artikel situs diler kendaraan",
+              "bahasa": "Indonesia"
+            },
+            {
+              "id": "s2",
+              "judul": "Should You Fill Your Car's Tires With Nitrogen?",
+              "penerbit": "Edmunds",
+              "penulis": "Ronald Montoya",
+              "tanggal": "2012-09-04",
+              "tanggalPembaruan": "2018-12-19",
+              "url": "https://www.edmunds.com/car-buying/should-you-fill-your-cars-tires-with-nitrogen.html",
+              "jenis": "Artikel saran konsumen yang mengutip uji Consumer Reports",
+              "bahasa": "Inggris"
+            }
+          ],
+          "daftarPeriksa": [
+            { "id": "penulis", "aspek": "Penulis", "pertanyaan": "Siapa penulis atau penerbitnya? Apakah keahliannya jelas?" },
+            { "id": "tujuan", "aspek": "Tujuan", "pertanyaan": "Apa tujuan sumber ini: memberi informasi, menjual, atau keduanya?" },
+            { "id": "bukti", "aspek": "Bukti", "pertanyaan": "Apakah klaimnya didukung data, hasil uji, atau rujukan yang dapat diperiksa?" },
+            { "id": "kebaruan", "aspek": "Kebaruan", "pertanyaan": "Kapan sumber ini terbit atau diperbarui?" }
+          ],
+          "pilihanPenilaian": ["Ya", "Tidak", "Tidak jelas"],
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-7",
+          "format": "teks-panjang",
+          "pertanyaan": "Persamaan 1.2 tidak memuat besaran yang menunjukkan jenis gas. Apa artinya bagi kenaikan tekanan ban nitrogen dan ban udara biasa ketika keduanya memanas pada volume tetap?",
+          "baris": 4,
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-8",
+          "format": "teks-panjang",
+          "pertanyaan": "Sumber s2 melaporkan uji selama satu tahun pada 31 pasang ban bertekanan awal 30 psi. Ban berisi udara rata-rata kehilangan 3,5 psi, sedangkan ban berisi nitrogen kehilangan 2,2 psi. Ubah ketiga angka itu ke kPa (1 psi = 6,895 kPa). Bagian mana dari klaim yang didukung data, dan bagian mana yang tidak?",
+          "petunjuk": "Bedakan dua hal: tekanan yang hilang karena bocor perlahan, dan tekanan yang naik karena ban memanas.",
+          "baris": 6,
+          "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-9",
+          "format": "teks-panjang",
+          "pertanyaan": "Sumber mana yang lebih dapat dipercaya untuk menilai klaim ini? Berikan alasan berdasarkan daftar periksa sumber dan Persamaan 1.2.",
+          "baris": 5,
+          "indikatorVariabel": ["BK2", "LI3"]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "judul": "Merancang panduan pengisian tekanan ban",
+      "tahap": "masyarakat-belajar",
+      "stem": ["R", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Membagi peran kelompok dan memeriksa pemahaman konsep.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Volume ban hampir tidak berubah ketika ban memanas. Persamaan 1.2 dengan V dan n tetap menghasilkan hubungan berikut, yang dikenal sebagai Hukum Gay-Lussac."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.4",
+          "tex": "\\frac{p_1}{T_1} = \\frac{p_2}{T_2}",
+          "keterangan": [
+            { "simbol": "p_1, p_2", "arti": "tekanan mutlak awal dan akhir", "satuan": "Pa" },
+            { "simbol": "T_1, T_2", "arti": "suhu mutlak awal dan akhir", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "hati-hati",
+          "judul": "Pengukur ban menunjukkan tekanan terukur",
+          "isi": "Pengukur ban menunjukkan selisih tekanan ban terhadap tekanan udara luar. Persamaan 1.2 dan 1.4 memerlukan tekanan mutlak: tekanan terukur ditambah tekanan udara luar."
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal (data ilustratif)",
+          "soal": "Pengukur ban menunjukkan 220 kPa saat ban dingin bersuhu 27 °C. Setelah perjalanan jauh, suhu udara di dalam ban menjadi 57 °C. Tekanan udara luar 101 kPa dan volume ban dianggap tetap. Berapa angka yang ditunjukkan pengukur ban sekarang?",
+          "langkah": [
+            "Ubah ke tekanan mutlak: $p_1 = 220 + 101 = 321$ kPa.",
+            "Ubah suhu ke kelvin: $T_1 = 300$ K dan $T_2 = 330$ K.",
+            "Gunakan Persamaan 1.4: $p_2 = p_1 \\dfrac{T_2}{T_1} = 321 \\times \\dfrac{330}{300} = 353{,}1$ kPa.",
+            "Kembalikan ke tekanan terukur: $353{,}1 - 101 \\approx 252$ kPa."
+          ],
+          "catatan": "Menghitung langsung dengan angka pengukur menghasilkan 242 kPa. Hasil itu keliru karena tekanan terukur tidak sebanding dengan suhu mutlak."
+        },
+        {
+          "tipe": "tugas-rancangan",
+          "id": "rancangan-1",
+          "judul": "Panduan pengisian tekanan ban sebelum perjalanan jauh",
+          "masalah": "Banyak pengendara mengisi angin ban di SPBU setelah berkendara lama, lalu mengikuti angka anjuran pabrik. Susunlah panduan singkat agar tekanan ban sesuai anjuran ketika diisi dalam kondisi ban dingin maupun panas.",
+          "kriteria": [
+            "Memuat langkah pengisian yang dapat diikuti pengendara awam",
+            "Memuat tabel tekanan terukur yang setara untuk beberapa suhu ban",
+            "Perhitungan memakai tekanan mutlak dan suhu kelvin",
+            "Mencantumkan sumber angka anjuran tekanan dan pengertian ban dingin"
+          ],
+          "batasan": [
+            "Volume ban dianggap tetap",
+            "Angka anjuran tekanan diambil dari sumber resmi, bukan perkiraan"
+          ],
+          "peranKelompok": [
+            { "peran": "Penelusur sumber", "tugas": "Mencari dan menilai sumber angka anjuran tekanan serta pengertian ban dingin" },
+            { "peran": "Penghitung", "tugas": "Menghitung tabel tekanan setara dengan Persamaan 1.4" },
+            { "peran": "Pemeriksa", "tugas": "Memeriksa satuan, konversi kelvin, dan tekanan mutlak" },
+            { "peran": "Penyaji", "tugas": "Menyusun panduan dan daftar sumbernya" }
+          ],
+          "langkah": [
+            {
+              "id": "r1-1",
+              "tahap": "menetapkan-masalah",
+              "instruksi": "Tuliskan masalah yang akan diselesaikan panduan Anda dan siapa penggunanya.",
+              "format": "teks-panjang"
+            },
+            {
+              "id": "r1-2",
+              "tahap": "merancang",
+              "instruksi": "Susun tabel tekanan terukur yang setara dengan angka anjuran untuk suhu ban 30 °C, 40 °C, 50 °C, dan 60 °C. Tetapkan suhu ban dingin acuan kelompok Anda dan tuliskan alasannya.",
+              "format": "tabel",
+              "kolom": ["Suhu ban (°C)", "Suhu ban (K)", "Tekanan mutlak (kPa)", "Tekanan terukur (kPa)"],
+              "jumlahBaris": 4
+            },
+            {
+              "id": "r1-3",
+              "tahap": "analisis-kelayakan",
+              "instruksi": "Periksa kelayakan panduan Anda. Apakah pengendara dapat mengetahui suhu ban? Apa yang sebaiknya dilakukan jika suhu ban tidak dapat diukur?",
+              "format": "teks-panjang"
+            }
+          ],
+          "produk": "Panduan satu halaman berisi langkah, tabel, dan daftar sumber",
+          "rubrik": "rubrik-1",
+          "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "tautan-sumber",
+          "judul": "Sumber untuk penelusur sumber",
+          "daftar": [
+            {
+              "judul": "Tire Safety: Everything Rides On It",
+              "penerbit": "National Highway Traffic Safety Administration (NHTSA), Amerika Serikat",
+              "url": "https://www.nhtsa.gov/document/tire-safety-everything-rides-it",
+              "kegunaan": "Pengertian ban dingin dan letak angka anjuran tekanan dari pabrikan kendaraan",
+              "bahasa": "Inggris"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "judul": "Dari data menjadi hukum gas",
+      "tahap": "pemodelan",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
+      "peranGuru": "Mencontohkan langkah analisis grafik dan konversi suhu ke kelvin.",
+      "blok": [
+        {
+          "tipe": "grafik-data",
+          "id": "grafik-1-boyle",
+          "sumberData": "data-1-boyle",
+          "sumbuX": "invV",
+          "sumbuY": "p",
+          "labelX": "1/V (1/nm)",
+          "labelY": "p (kPa)",
+          "garisTren": "linear-melalui-nol",
+          "instruksi": "Amati grafik p terhadap 1/V dari data Percobaan A. Apakah titik-titiknya membentuk garis lurus yang melalui titik nol?"
+        },
+        {
+          "tipe": "grafik-data",
+          "id": "grafik-1-charles",
+          "sumberData": "data-1-charles",
+          "sumbuX": "T",
+          "sumbuY": "V",
+          "labelX": "T (K)",
+          "labelY": "V (nm)",
+          "garisTren": "linear-melalui-nol",
+          "instruksi": "Amati grafik V terhadap T dari data Percobaan B. Ke mana garisnya mengarah jika diperpanjang ke suhu yang sangat rendah?"
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-10",
+          "format": "teks-panjang",
+          "pertanyaan": "Tuliskan pola umum yang Anda temukan dari keempat percobaan. Untuk setiap pola, sebutkan besaran yang dijaga tetap dan bukti dari tabel atau grafik Anda.",
+          "baris": 6,
+          "indikatorVariabel": ["BK4", "LI4"]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Pola yang Anda temukan sesuai dengan hukum-hukum gas berikut. Setiap hukum menahan dua besaran tetap dan menghubungkan dua besaran lainnya."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.5",
+          "tex": "p_1 V_1 = p_2 V_2",
+          "keterangan": [
+            { "simbol": "", "arti": "Hukum Boyle, berlaku pada T dan n tetap", "satuan": "" }
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.6",
+          "tex": "\\frac{V_1}{T_1} = \\frac{V_2}{T_2}",
+          "keterangan": [
+            { "simbol": "", "arti": "Hukum Charles, berlaku pada p dan n tetap", "satuan": "" }
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.7",
+          "tex": "\\frac{V_1}{n_1} = \\frac{V_2}{n_2}",
+          "keterangan": [
+            { "simbol": "", "arti": "Hukum Avogadro, berlaku pada p dan T tetap", "satuan": "" }
+          ]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Hukum Gay-Lussac (Persamaan 1.4) melengkapi ketiganya. Untuk gas bermassa tetap, keempat hubungan dapat dipadukan menjadi satu persamaan."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.8",
+          "tex": "\\frac{p_1 V_1}{T_1} = \\frac{p_2 V_2}{T_2}"
+        },
+        {
+          "tipe": "callout",
+          "gaya": "ingat",
+          "judul": "Mengapa harus kelvin?",
+          "isi": "Grafik V terhadap suhu Celsius memotong sumbu suhu di sekitar −273 °C. Suhu ini disebut nol mutlak. Hukum-hukum gas hanya berlaku sebagai perbandingan jika suhu dinyatakan dalam kelvin."
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-1",
+          "langkah": [
+            {
+              "id": "r1-4",
+              "tahap": "menyajikan",
+              "instruksi": "Sajikan tabel panduan kelompok Anda. Tunjukkan satu baris perhitungan lengkap sebagai contoh, mulai dari tekanan terukur sampai tekanan mutlak.",
+              "format": "unggah-atau-teks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "judul": "Kapan model gas ideal tidak berlaku?",
+      "tahap": "refleksi",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Memberi umpan balik dan memfasilitasi presentasi.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Gas nyata tidak selalu berperilaku sesuai model gas ideal. Pada tekanan tinggi, volume gas nyata lebih kecil daripada prediksi hukum gas ideal. Penyimpangan makin besar ketika gas mendekati titik pencairannya."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Perbedaan gas ideal dan gas nyata",
+          "mobile": "kartu",
+          "kolom": ["Aspek", "Gas ideal", "Gas nyata"],
+          "baris": [
+            ["Volume molekul", "Diabaikan terhadap volume wadah", "Diperhitungkan (koreksi $nb$)"],
+            ["Gaya antarmolekul", "Tidak ada, kecuali saat tumbukan", "Ada gaya tarik (koreksi $an^2/V^2$)"],
+            ["Energi potensial molekul", "Nol", "Tidak dapat diabaikan pada tekanan tinggi"],
+            ["Persamaan keadaan", "$pV = nRT$", "Persamaan van der Waals"],
+            ["Kondisi berlaku", "Tekanan rendah, suhu tinggi", "Berlaku juga di dekat titik cair"]
+          ],
+          "sumber": "Diadaptasi dari Young dan Freedman (2012, hlm. 595–597) dan Sang et al. (2014, hlm. 353)"
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "1.9",
+          "tex": "\\left(p + \\frac{a n^2}{V^2}\\right)(V - nb) = nRT",
+          "keterangan": [
+            { "simbol": "a", "arti": "tetapan empiris gaya tarik antarmolekul", "satuan": "J·m³/mol²" },
+            { "simbol": "b", "arti": "tetapan empiris volume satu mol molekul", "satuan": "m³/mol" }
+          ]
+        },
+        {
+          "tipe": "refleksi",
+          "id": "refleksi-1",
+          "tinjauUlang": "lkpd-1-1",
+          "pengantar": "Ini dugaan awal Anda di awal kegiatan.",
+          "pertanyaan": [
+            "Bagian mana dari dugaan awal Anda yang kini terbukti, dan bagian mana yang perlu diperbaiki?",
+            "Udara di dalam ban berada jauh dari titik pencairannya. Uap air di dalam panci presto berada dekat titik pengembunannya. Untuk kasus mana model gas ideal lebih tepat dipakai? Jelaskan dengan tabel di atas."
+          ],
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-1",
+          "langkah": [
+            {
+              "id": "r1-5",
+              "tahap": "memperbaiki",
+              "instruksi": "Perbaiki panduan kelompok Anda berdasarkan umpan balik guru dan kelompok lain. Tuliskan apa yang diubah dan alasannya.",
+              "format": "teks-panjang"
+            }
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-1-11",
+          "format": "teks-panjang",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan ban dan panci presto, beserta batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
+          "baris": 6,
+          "wajibSumber": true,
+          "minSumber": 2,
+          "indikatorVariabel": ["BK5", "LI5"]
+        }
+      ]
+    },
+    {
+      "id": "l8",
+      "judul": "Penilaian KB 1",
+      "tahap": "penilaian-autentik",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Menilai LKPD dan panduan dengan rubrik.",
+      "blok": [
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-1",
+          "pertanyaan": "Andi melihat tekanan ban naik setelah perjalanan jauh. Rumusan masalah yang paling dapat diselidiki adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Mengapa ban mobil bisa panas?" },
+            { "id": "b", "teks": "Bagaimana pengaruh suhu udara di dalam ban terhadap tekanannya jika volume ban dijaga tetap?" },
+            { "id": "c", "teks": "Berapa lama perjalanan yang aman bagi ban mobil?" },
+            { "id": "d", "teks": "Apakah ban mahal lebih awet daripada ban murah?" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (suhu), variabel yang diamati (tekanan), dan variabel yang dijaga tetap (volume). Rumusan lain tidak menyebut hubungan antarvariabel yang dapat diukur.",
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-2",
+          "pertanyaan": "Seorang teman berkata, \"Ban nitrogen tidak bertambah tekanannya ketika panas.\" Argumen yang paling tepat untuk menanggapinya adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Nitrogen lebih mahal daripada udara biasa, jadi pasti lebih baik" },
+            { "id": "b", "teks": "Persamaan $pV = nRT$ tidak memuat jenis gas, sehingga pada V dan n tetap tekanan nitrogen juga sebanding dengan suhu mutlak" },
+            { "id": "c", "teks": "Nitrogen tidak mengandung oksigen, sehingga tidak memuai ketika panas" },
+            { "id": "d", "teks": "Udara biasa mengandung air, sehingga hanya udara biasa yang tekanannya naik" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Persamaan 1.2 berlaku untuk semua gas yang berperilaku ideal. Pada volume dan jumlah mol tetap, tekanan mutlak sebanding dengan suhu mutlak, apa pun jenis gasnya.",
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-3",
+          "pertanyaan": "Gas dalam wadah kaku tertutup bertekanan mutlak 120 kPa pada 300 K. Gas dipanaskan hingga 450 K. Tekanan mutlaknya menjadi ...",
+          "opsi": [
+            { "id": "a", "teks": "80 kPa" },
+            { "id": "b", "teks": "120 kPa" },
+            { "id": "c", "teks": "180 kPa" },
+            { "id": "d", "teks": "270 kPa" }
+          ],
+          "kunci": "c",
+          "pembahasan": "Volume dan jumlah mol tetap, sehingga berlaku Persamaan 1.4: $p_2 = 120 \\times \\dfrac{450}{300} = 180$ kPa.",
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-4",
+          "pertanyaan": "Data gas pada suhu tetap: 100 kPa dan 6,0 L; 150 kPa dan 4,0 L; 200 kPa dan 3,0 L; 300 kPa dan 2,0 L. Kesimpulan umum yang didukung data adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Tekanan sebanding dengan volume" },
+            { "id": "b", "teks": "Hasil kali tekanan dan volume tetap, sehingga tekanan berbanding terbalik dengan volume" },
+            { "id": "c", "teks": "Selisih tekanan dan volume tetap" },
+            { "id": "d", "teks": "Tekanan tidak bergantung pada volume" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Hasil kali p × V pada keempat data sama, yaitu 600 kPa·L. Pola ini adalah Hukum Boyle (Persamaan 1.5).",
+          "indikatorVariabel": ["BK4"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-5",
+          "pertanyaan": "Pada kondisi manakah model gas ideal paling tepat dipakai?",
+          "opsi": [
+            { "id": "a", "teks": "Tekanan tinggi dan suhu dekat titik cair" },
+            { "id": "b", "teks": "Tekanan rendah dan suhu jauh di atas titik cair" },
+            { "id": "c", "teks": "Tekanan tinggi dan suhu sangat rendah" },
+            { "id": "d", "teks": "Semua kondisi, karena pV = nRT berlaku umum" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Pada tekanan rendah molekul saling berjauhan, sehingga volume molekul dan gaya tariknya dapat diabaikan. Di dekat titik cair, kedua hal itu tidak lagi dapat diabaikan.",
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-1-6",
+          "pertanyaan": "Rina ingin mengetahui tekanan ban yang dianjurkan untuk mobilnya. Sumber yang paling tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Angka tekanan maksimum yang tercetak di dinding ban" },
+            { "id": "b", "teks": "Label informasi ban pada kendaraan atau buku manual pemilik dari pabrikan kendaraan" },
+            { "id": "c", "teks": "Komentar terbanyak di forum otomotif" },
+            { "id": "d", "teks": "Perkiraan petugas SPBU" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Menurut NHTSA, tekanan anjuran ditentukan pabrikan kendaraan dan tercantum pada label informasi ban atau buku manual. Angka di dinding ban adalah tekanan maksimum, bukan tekanan anjuran.",
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "rubrik",
+          "id": "rubrik-1",
+          "judul": "Rubrik panduan pengisian tekanan ban",
+          "untuk": "rancangan-1",
+          "skala": [4, 3, 2, 1],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": ["BK3"],
+              "deskriptor": {
+                "4": "Semua perhitungan memakai tekanan mutlak dan suhu kelvin dengan benar",
+                "3": "Perhitungan benar, tetapi ada satu kesalahan konversi",
+                "2": "Konsep benar, tetapi perhitungan memakai tekanan terukur atau suhu Celsius",
+                "1": "Konsep dan perhitungan keliru"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": ["BK2"],
+              "deskriptor": {
+                "4": "Panduan dapat diikuti pengendara awam dan menjawab kendala suhu ban yang tidak terukur",
+                "3": "Panduan dapat diikuti, tetapi belum menjawab kendala suhu ban",
+                "2": "Langkah panduan tidak lengkap",
+                "1": "Panduan tidak dapat diikuti"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": ["LI3", "LI5"],
+              "deskriptor": {
+                "4": "Angka anjuran dan pengertian ban dingin berasal dari sumber resmi yang dicantumkan lengkap",
+                "3": "Sumber resmi dipakai, tetapi pencantumannya belum lengkap",
+                "2": "Sumber dicantumkan, tetapi bukan sumber resmi",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glosarium": [
+    {
+      "istilah": "Gas ideal",
+      "arti": "Model gas yang molekulnya dianggap tidak bervolume dan tidak saling berinteraksi kecuali saat bertumbukan"
+    },
+    {
+      "istilah": "Sifat makroskopis",
+      "arti": "Sifat gas yang dapat diukur langsung, misalnya tekanan, volume, suhu, dan jumlah zat"
+    },
+    {
+      "istilah": "Sifat mikroskopis",
+      "arti": "Sifat gas yang berkaitan dengan gerak dan tumbukan partikel penyusunnya"
+    },
+    {
+      "istilah": "Tekanan mutlak",
+      "arti": "Tekanan total gas, yaitu tekanan terukur ditambah tekanan udara luar"
+    },
+    {
+      "istilah": "Tekanan terukur",
+      "arti": "Selisih tekanan gas terhadap tekanan udara luar, seperti yang ditunjukkan pengukur ban"
+    },
+    {
+      "istilah": "Nol mutlak",
+      "arti": "Suhu sekitar −273 °C atau 0 K, titik awal skala Kelvin"
+    },
+    {
+      "istilah": "Tetapan Boltzmann",
+      "arti": "Tetapan penghubung antara suhu dan energi kinetik molekul, bernilai $1{,}38 \\times 10^{-23}$ J/K"
+    }
+  ],
+  "referensi": [
+    "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
+    "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Sang, D., Jones, G., Chadha, G., & Woodside, R. (2014). Cambridge International AS and A Level physics coursebook (2nd ed.). Cambridge University Press.",
+    "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
+    "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
+    "Auto2000. (2020, 24 Maret). Ketahui kelebihan isi ban dengan nitrogen. https://auto2000.co.id/berita-dan-tips/ketahui-kelebihan-isi-ban-dengan-nitrogen",
+    "Montoya, R. (2018, 19 Desember). Should you fill your car's tires with nitrogen? Edmunds. https://www.edmunds.com/car-buying/should-you-fill-your-cars-tires-with-nitrogen.html",
+    "National Highway Traffic Safety Administration. (t.t.). Tire safety: Everything rides on it. https://www.nhtsa.gov/document/tire-safety-everything-rides-it",
+    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties"
+  ]
+}

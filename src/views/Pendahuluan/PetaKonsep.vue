@@ -32,6 +32,6 @@ import GambarZoom from "@/components/micro/GambarZoom.vue";
 
 <style scoped>
 .content-shadow {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-display);
 }
 </style>

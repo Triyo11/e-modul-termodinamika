@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, type Ref } from "vue";
 import { renderTeksCampuran } from "@/lib/mathText";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
 import type { BlokIsian } from "@/types/kegiatan";
@@ -8,7 +8,12 @@ const props = defineProps<{ blok: BlokIsian; kegiatanId: string }>();
 
 const pertanyaanHtml = computed(() => renderTeksCampuran(props.blok.pertanyaan));
 const petunjukHtml = computed(() => renderTeksCampuran(props.blok.petunjuk ?? ""));
-const jawaban = useJawabanTersimpan(`${props.kegiatanId}:${props.blok.id}`, "");
+const kunciSimpan = `${props.kegiatanId}:${props.blok.id}`;
+// Satu kunci penyimpanan per blok; bentuk nilainya bergantung pada format.
+const modeKelompok = props.blok.format === "pilih-kelompok";
+const tersimpan = useJawabanTersimpan<string | Record<string, string>>(kunciSimpan, modeKelompok ? {} : "");
+const jawaban = tersimpan as Ref<string>;
+const pilihanKelompok = tersimpan as Ref<Record<string, string>>;
 const sudahDiperiksa = ref(false);
 
 const cocok = computed(() => {
@@ -19,6 +24,24 @@ const cocok = computed(() => {
   return Math.abs(nilai - props.blok.jawabanRujukan) <= toleransi;
 });
 
+const jumlahBenar = computed(
+  () => (props.blok.butir ?? []).filter((b) => pilihanKelompok.value[b] === props.blok.kunci?.[b]).length,
+);
+
+function pilihKelompok(butir: string, kelompok: string) {
+  pilihanKelompok.value = { ...pilihanKelompok.value, [butir]: kelompok };
+  sudahDiperiksa.value = false;
+}
+
+function kelasKelompok(butir: string, kelompok: string) {
+  const dipilih = pilihanKelompok.value[butir] === kelompok;
+  if (!dipilih) return "border-ink-200 text-ink-600 hover:border-accent/60";
+  if (!sudahDiperiksa.value) return "border-accent-1 bg-accent-1/10 text-accent-1";
+  return props.blok.kunci?.[butir] === kelompok
+    ? "border-benar bg-benar/10 text-benar"
+    : "border-salah bg-salah/10 text-salah";
+}
+
 function periksa() {
   sudahDiperiksa.value = true;
 }
@@ -28,8 +51,42 @@ function periksa() {
   <div class="rounded-xl border border-ink-200 p-4">
     <p class="text-justify font-medium text-ink-800" v-html="pertanyaanHtml"></p>
 
+    <div v-if="blok.format === 'pilih-kelompok'" class="mt-3 flex flex-col gap-2">
+      <div
+        v-for="b in blok.butir"
+        :key="b"
+        class="flex flex-col gap-2 rounded-lg border border-ink-100 p-2.5 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <span class="text-sm text-ink-800">{{ b }}</span>
+        <div class="flex gap-2">
+          <button
+            v-for="k in blok.kelompok"
+            :key="k"
+            type="button"
+            class="rounded-lg border px-3 py-1.5 text-sm transition-colors"
+            :class="kelasKelompok(b, k)"
+            @click="pilihKelompok(b, k)"
+          >
+            {{ k }}
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          class="rounded-lg bg-accent px-3 py-2 text-sm font-medium text-accent-1"
+          @click="periksa"
+        >
+          Periksa jawaban
+        </button>
+        <p v-if="sudahDiperiksa" class="text-sm font-medium text-ink-700">
+          {{ jumlahBenar }} dari {{ blok.butir?.length ?? 0 }} butir sudah tepat.
+        </p>
+      </div>
+    </div>
+
     <textarea
-      v-if="blok.format === 'teks-panjang'"
+      v-else-if="blok.format === 'teks-panjang'"
       v-model="jawaban"
       :rows="blok.baris ?? 3"
       placeholder="Tulis jawaban Anda di sini..."
@@ -57,6 +114,10 @@ function periksa() {
         {{ cocok ? "Jawaban Anda sesuai rentang yang diharapkan." : "Coba periksa kembali perhitungan Anda." }}
       </p>
     </div>
+
+    <p v-if="blok.wajibSumber" class="mt-2 text-sm text-periksa">
+      Cantumkan minimal {{ blok.minSumber ?? 1 }} sumber yang Anda pakai.
+    </p>
 
     <details v-if="blok.petunjuk" class="mt-2 text-sm text-ink-500">
       <summary class="cursor-pointer select-none">Petunjuk</summary>

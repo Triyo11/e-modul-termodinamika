@@ -50,7 +50,8 @@
   --text-body:  1.0625rem;
   --text-body--line-height: 1.7;
 
-  --shadow: 6px 6px 0 0 var(--color-brand-dark);
+  --shadow-button: 6px 6px 0 0 var(--color-brand-dark);
+  --shadow-display: 0 6px 0 0 var(--color-brand-dark);
 };
 
 /* :root {

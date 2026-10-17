@@ -6,11 +6,23 @@ export interface KeteranganSimbol {
 
 export interface BlokGambar {
   tipe: "gambar";
-  src: string;
+  src: string | null;
   alt: string;
   rasio?: string;
   caption?: string;
-  sumber?: string;
+  sumber?: string | null;
+  status?: string;
+}
+
+export interface BlokVideo {
+  tipe: "video";
+  src: string | null;
+  poster?: string | null;
+  alt: string;
+  rasio?: string;
+  caption?: string;
+  sumber?: string | null;
+  status?: string;
 }
 
 export interface BlokTeks {
@@ -21,7 +33,7 @@ export interface BlokTeks {
 export interface BlokIsian {
   tipe: "isian";
   id: string;
-  format: "teks-panjang" | "angka";
+  format: "teks-panjang" | "angka" | "pilih-kelompok";
   inputmode?: string;
   pertanyaan: string;
   petunjuk?: string;
@@ -30,6 +42,12 @@ export interface BlokIsian {
   toleransi?: number;
   jawabanRujukan?: number;
   indikatorVariabel?: string[];
+  /** Khusus format "pilih-kelompok". */
+  butir?: string[];
+  kelompok?: string[];
+  kunci?: Record<string, string>;
+  wajibSumber?: boolean;
+  minSumber?: number;
 }
 
 export interface BlokTabel {
@@ -38,6 +56,7 @@ export interface BlokTabel {
   mobile?: "kartu" | string;
   kolom: string[];
   baris: string[][];
+  sumber?: string;
 }
 
 export interface BlokCallout {
@@ -97,8 +116,145 @@ export interface BlokAnimasi {
   sumber?: string;
 }
 
+export interface BlokKebutuhanInformasi {
+  tipe: "kebutuhan-informasi";
+  id: string;
+  pertanyaan: string;
+  petunjuk?: string;
+  kolom: string[];
+  jumlahBaris: number;
+  indikatorVariabel?: string[];
+}
+
+export interface KolomTabelIsian {
+  kunci: string;
+  label: string;
+  satuan: string;
+  tipe: "angka" | "hitung" | "teks";
+  /** Ekspresi aritmetika sederhana memakai kunci kolom lain, mis. "p*V" atau "1/V". */
+  hitung?: string;
+}
+
+export interface BlokTabelIsian {
+  tipe: "tabel-isian";
+  id: string;
+  judul?: string;
+  instruksi?: string;
+  kolom: KolomTabelIsian[];
+  jumlahBaris: number;
+  indikatorVariabel?: string[];
+}
+
+export interface TautanSumber {
+  judul: string;
+  penerbit: string;
+  url: string;
+  kegunaan?: string;
+  bahasa?: string;
+}
+
+export interface BlokTautanSumber {
+  tipe: "tautan-sumber";
+  judul?: string;
+  daftar: TautanSumber[];
+}
+
+export interface SumberKlaim {
+  id: string;
+  judul: string;
+  penerbit: string;
+  penulis?: string | null;
+  tanggal?: string;
+  tanggalPembaruan?: string;
+  url: string;
+  jenis?: string;
+  bahasa?: string;
+}
+
+export interface BlokKlaimUji {
+  tipe: "klaim-uji";
+  id: string;
+  klaim: string;
+  konteks?: string;
+  sumber: SumberKlaim[];
+  daftarPeriksa: { id: string; aspek: string; pertanyaan: string }[];
+  pilihanPenilaian: string[];
+  indikatorVariabel?: string[];
+}
+
+export interface LangkahRancangan {
+  id: string;
+  tahap: string;
+  instruksi: string;
+  format: "teks-panjang" | "tabel" | "unggah-atau-teks";
+  kolom?: string[];
+  jumlahBaris?: number;
+}
+
+export interface BlokTugasRancangan {
+  tipe: "tugas-rancangan";
+  id: string;
+  judul: string;
+  masalah: string;
+  kriteria: string[];
+  batasan: string[];
+  peranKelompok: { peran: string; tugas: string }[];
+  langkah: LangkahRancangan[];
+  produk?: string;
+  rubrik?: string;
+  indikatorVariabel?: string[];
+}
+
+export interface BlokTugasRancanganLanjutan {
+  tipe: "tugas-rancangan-lanjutan";
+  tugas: string;
+  langkah: LangkahRancangan[];
+}
+
+export interface BlokGrafikData {
+  tipe: "grafik-data";
+  id: string;
+  /** id blok tabel-isian yang datanya dipakai. */
+  sumberData: string;
+  sumbuX: string;
+  sumbuY: string;
+  labelX: string;
+  labelY: string;
+  garisTren?: "linear-melalui-nol" | string;
+  instruksi?: string;
+}
+
+export interface BlokRefleksi {
+  tipe: "refleksi";
+  id: string;
+  /** id blok isian yang jawabannya ditampilkan ulang. */
+  tinjauUlang?: string;
+  pengantar?: string;
+  pertanyaan: string[];
+  indikatorVariabel?: string[];
+}
+
+export interface BlokRubrik {
+  tipe: "rubrik";
+  id: string;
+  judul: string;
+  untuk?: string;
+  skala: number[];
+  kriteria: { aspek: string; indikatorVariabel?: string[]; deskriptor: Record<string, string> }[];
+}
+
 export type Blok =
   | BlokGambar
+  | BlokVideo
+  | BlokKebutuhanInformasi
+  | BlokTabelIsian
+  | BlokTautanSumber
+  | BlokKlaimUji
+  | BlokTugasRancangan
+  | BlokTugasRancanganLanjutan
+  | BlokGrafikData
+  | BlokRefleksi
+  | BlokRubrik
   | BlokTeks
   | BlokIsian
   | BlokTabel
@@ -112,8 +268,20 @@ export type Blok =
 export interface Layar {
   id: string;
   judul: string;
-  peran: string;
+  /** Skema 1.x */
+  peran?: string;
+  /** Skema stem-ctl-2.0 */
+  tahap?: string;
+  stem?: string[];
+  indikatorTahap?: { bk?: string[]; li?: string[] };
+  peranGuru?: string;
   blok: Blok[];
+}
+
+export interface TujuanPembelajaranBerkode {
+  kode: string;
+  teks: string;
+  kajianTeori?: string[];
 }
 
 export interface Glosarium {
@@ -124,6 +292,12 @@ export interface Glosarium {
 export interface Kegiatan {
   id: string;
   versi: string;
+  skema?: string;
+  kb?: number;
+  model?: string;
+  fenomena?: string[];
+  simulasiUtama?: string[];
+  catatanPengembang?: string[];
   revisiTerakhir: string;
   statusValidasi: string;
   judul: string;
@@ -131,9 +305,9 @@ export interface Kegiatan {
   bab: string;
   fase: string;
   kelas: string;
-  alokasiWaktu: number;
+  alokasiWaktu: number | null;
   prasyarat: string[];
-  tujuanPembelajaran: string[];
+  tujuanPembelajaran: (string | TujuanPembelajaranBerkode)[];
   layar: Layar[];
   glosarium: Glosarium[];
   referensi: string[];

@@ -40,5 +40,6 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
         </tbody>
       </table>
     </div>
+    <p v-if="blok.sumber" class="text-xs text-ink-400">Sumber: {{ blok.sumber }}</p>
   </div>
 </template>
