@@ -44,7 +44,7 @@
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
     "Blok gambar dan video fenomena di layar l1 belum punya berkas (src null). Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
-    "Instruksi simulasi menyebut nama kontrol PhET dalam bahasa Inggris (Hold Constant, Width, Heat/Cool). Cocokkan dengan tampilan simulasi sebelum validasi, termasuk bila versi bahasa Indonesia dipakai.",
+    "Simulasi Gas Properties diganti widget buatan sendiri (SimulasiPartikelGas.vue). Instruksi memakai nama kontrol widget (Jumlah partikel, Lebar wadah, Jaga tetap).",
     "Persamaan e-modul diberi nomor 1.1 sampai 1.9. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals."
   ],
   "layar": [
@@ -232,7 +232,12 @@
           "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
           "judul": "Gas Properties (layar Ideal)",
           "rasio": "3/4",
-          "instruksi": "Buka layar Ideal. Pompakan partikel ke dalam wadah. Aktifkan tampilan lebar wadah (Width). Gunakan panel Hold Constant untuk menahan satu besaran tetap pada setiap percobaan."
+          "instruksi": [
+            "Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.",
+            "Baca lebar wadah (mewakili volume) pada panel di samping wadah.",
+            "Pada setiap percobaan, pilih satu besaran di panel Jaga tetap (Volume, Suhu, atau Tekanan).",
+            "Ubah satu besaran lain, lalu catat bagaimana besaran ketiga berubah."
+          ]
         },
         {
           "tipe": "callout",

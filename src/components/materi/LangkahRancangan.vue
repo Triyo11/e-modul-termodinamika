@@ -59,6 +59,13 @@ function ubah(i: number, j: number, nilai: string) {
       </table>
     </div>
 
+    <p
+      v-else-if="langkah.format === 'diagram-pv'"
+      class="rounded-lg border border-dashed border-ink-300 p-2.5 text-sm text-ink-600"
+    >
+      Kerjakan langkah ini pada diagram p-V di bawah. Rancangan tersimpan otomatis.
+    </p>
+
     <textarea
       v-else
       v-model="teks"

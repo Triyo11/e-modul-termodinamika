@@ -1,9 +1,24 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { PhLockSimple } from "@phosphor-icons/vue";
 import { renderTeksCampuran } from "@/lib/mathText";
-import type { BlokTabel } from "@/types/kegiatan";
+import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
+import { tabelLengkap, useCariBlok, type BarisTabel } from "@/lib/tabelIsian";
+import type { BlokTabel, BlokTabelIsian } from "@/types/kegiatan";
 
-const props = defineProps<{ blok: BlokTabel }>();
+const props = defineProps<{ blok: BlokTabel; kegiatanId?: string }>();
+
+// Tabel dengan `tampilSetelah` (mis. tabel rujukan) baru dapat dibuka setelah tabel isian sumbernya lengkap.
+const sumber = props.blok.tampilSetelah
+  ? (useCariBlok()(props.blok.tampilSetelah) as BlokTabelIsian | undefined)
+  : undefined;
+const isianSumber = useJawabanTersimpan<BarisTabel[]>(`${props.kegiatanId}:${props.blok.tampilSetelah ?? ""}`, []);
+const dibuka = useJawabanTersimpan<boolean>(
+  `${props.kegiatanId}:${props.blok.tampilSetelah ?? ""}:rujukan-dibuka`,
+  false,
+);
+const terkunci = computed(() => !!sumber && !dibuka.value);
+const sumberLengkap = computed(() => !!sumber && tabelLengkap(sumber, isianSumber.value));
 
 const baris = computed(() =>
   props.blok.baris.map((sel) => sel.map((cell) => renderTeksCampuran(cell))),
@@ -15,6 +30,26 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
   <div class="flex flex-col gap-2">
     <p v-if="blok.judul" class="font-semibold text-ink-800">{{ blok.judul }}</p>
 
+    <div v-if="terkunci" class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-white p-4">
+      <p class="flex items-center gap-1.5 text-sm text-ink-600">
+        <PhLockSimple :size="16" weight="bold" />
+        {{
+          sumberLengkap
+            ? "Tabel Anda sudah lengkap. Bandingkan dengan tabel rujukan."
+            : `Lengkapi dulu tabel "${sumber?.judul ?? blok.tampilSetelah}" untuk membuka tabel ini.`
+        }}
+      </p>
+      <button
+        type="button"
+        :disabled="!sumberLengkap"
+        class="rounded-lg bg-accent-1 px-3 py-2 text-sm font-medium text-white disabled:opacity-40"
+        @click="dibuka = true"
+      >
+        Tampilkan tabel rujukan
+      </button>
+    </div>
+
+    <template v-else>
     <div v-if="blok.mobile === 'kartu'" class="flex flex-col gap-3 sm:hidden">
       <div v-for="(baris1, i) in baris" :key="i" class="rounded-xl border border-ink-200 p-3">
         <dl class="flex flex-col gap-1.5">
@@ -41,5 +76,6 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
       </table>
     </div>
     <p v-if="blok.sumber" class="text-xs text-ink-400">Sumber: {{ blok.sumber }}</p>
+    </template>
   </div>
 </template>

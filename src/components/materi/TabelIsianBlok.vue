@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
-import { formatAngka, nilaiBaris, type BarisTabel } from "@/lib/tabelIsian";
+import { formatAngka, isiAwal, nilaiBaris, type BarisTabel } from "@/lib/tabelIsian";
 import type { BlokTabelIsian, KolomTabelIsian } from "@/types/kegiatan";
 
 const props = defineProps<{ blok: BlokTabelIsian; kegiatanId: string }>();
@@ -43,8 +43,11 @@ function label(k: KolomTabelIsian) {
         <tbody>
           <tr v-for="(_, i) in blok.jumlahBaris" :key="i" class="border-b border-ink-100">
             <td class="py-1.5 pr-2 text-ink-500">{{ i + 1 }}</td>
-            <td v-for="k in blok.kolom" :key="k.kunci" class="py-1.5 pr-2">
-              <span v-if="k.tipe === 'hitung'" class="block rounded-md bg-ink-100 p-1.5 text-ink-600">
+            <td v-for="(k, j) in blok.kolom" :key="k.kunci" class="py-1.5 pr-2">
+              <span v-if="isiAwal(blok, i, j) !== undefined" class="block p-1.5 font-medium text-ink-800">
+                {{ isiAwal(blok, i, j) }}
+              </span>
+              <span v-else-if="k.tipe === 'hitung'" class="block rounded-md bg-ink-100 p-1.5 text-ink-600">
                 {{ formatAngka(hasil[i]?.[k.kunci] ?? null) }}
               </span>
               <input
@@ -61,6 +64,8 @@ function label(k: KolomTabelIsian) {
         </tbody>
       </table>
     </div>
-    <p class="text-xs text-ink-400">Kolom abu-abu dihitung otomatis dari isian Anda.</p>
+    <p v-if="blok.kolom.some((k) => k.tipe === 'hitung')" class="text-xs text-ink-400">
+      Kolom abu-abu dihitung otomatis dari isian Anda.
+    </p>
   </div>
 </template>

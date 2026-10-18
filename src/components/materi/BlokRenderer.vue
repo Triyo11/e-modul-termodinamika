@@ -19,6 +19,8 @@ import TugasRancanganLanjutanBlok from "./TugasRancanganLanjutanBlok.vue";
 import GrafikDataBlok from "./GrafikDataBlok.vue";
 import RefleksiBlok from "./RefleksiBlok.vue";
 import RubrikBlok from "./RubrikBlok.vue";
+import DiagramPVBlok from "./DiagramPVBlok.vue";
+import WidgetCarnotBlok from "./WidgetCarnotBlok.vue";
 import type { Blok } from "@/types/kegiatan";
 
 defineProps<{ blok: Blok; kegiatanId: string }>();
@@ -29,7 +31,7 @@ defineProps<{ blok: Blok; kegiatanId: string }>();
   <VideoBlok v-else-if="blok.tipe === 'video'" :blok="blok" />
   <TeksBlok v-else-if="blok.tipe === 'teks'" :blok="blok" />
   <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" />
+  <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" :kegiatan-id="kegiatanId" />
   <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" />
   <SimulasiBlok v-else-if="blok.tipe === 'simulasi'" :blok="blok" />
   <RumusBlok v-else-if="blok.tipe === 'rumus'" :blok="blok" />
@@ -49,4 +51,6 @@ defineProps<{ blok: Blok; kegiatanId: string }>();
   <GrafikDataBlok v-else-if="blok.tipe === 'grafik-data'" :blok="blok" :kegiatan-id="kegiatanId" />
   <RefleksiBlok v-else-if="blok.tipe === 'refleksi'" :blok="blok" :kegiatan-id="kegiatanId" />
   <RubrikBlok v-else-if="blok.tipe === 'rubrik'" :blok="blok" />
+  <DiagramPVBlok v-else-if="blok.tipe === 'diagram-pv'" :blok="blok" :kegiatan-id="kegiatanId" />
+  <WidgetCarnotBlok v-else-if="blok.tipe === 'widget-carnot'" :blok="blok" />
 </template>

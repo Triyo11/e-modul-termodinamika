@@ -1,0 +1,626 @@
+{
+  "id": "kegiatan-02",
+  "versi": "2.0",
+  "skema": "stem-ctl-2.0",
+  "revisiTerakhir": "2026-10-18",
+  "statusValidasi": "draf-sebelum-validasi-ahli",
+  "kb": 2,
+  "judul": "Konsep Dasar Termodinamika",
+  "subJudul": "Apa yang dipertukarkan sebuah benda dengan sekitarnya?",
+  "bab": "Termodinamika",
+  "model": "STEM-CTL",
+  "fase": "F",
+  "kelas": "XI",
+  "alokasiWaktu": null,
+  "prasyarat": [
+    "Gas ideal (KB 1)",
+    "Suhu dan kalor"
+  ],
+  "tujuanPembelajaran": [
+    {
+      "kode": "2.1",
+      "teks": "Mengklasifikasikan sistem terbuka, tertutup, dan terisolasi berdasarkan pertukaran massa dan energi pada benda nyata",
+      "kajianTeori": ["2.a", "Tabel 2.2"]
+    },
+    {
+      "kode": "2.2",
+      "teks": "Membedakan sifat intensif dan ekstensif dari variabel keadaan sistem",
+      "kajianTeori": ["2.b"]
+    },
+    {
+      "kode": "2.3",
+      "teks": "Menjelaskan energi dalam sebagai fungsi keadaan, serta kalor dan usaha sebagai besaran proses beserta konvensi tandanya",
+      "kajianTeori": ["2.a", "2.b"]
+    }
+  ],
+  "fenomena": [
+    "Air mendidih di panci terbuka",
+    "Gas dalam silinder berpiston",
+    "Termos",
+    "Bumi sebagai sistem yang bertukar energi dengan Matahari dan antariksa"
+  ],
+  "simulasiUtama": ["PhET Energy Forms and Changes", "PhET Greenhouse Effect"],
+  "catatanPengembang": [
+    "alokasiWaktu dibiarkan null sampai jumlah JP KB 2 dari ATP guru mitra tersedia.",
+    "Blok gambar fenomena di layar l1 belum punya berkas (src null).",
+    "Kedua simulasi PhET diganti widget buatan sendiri yang meniru layar Intro Energy Forms and Changes (SimulasiEnergiTermal.vue) dan Greenhouse Effect (SimulasiEfekRumahKaca.vue) agar nyaman di ponsel. Instruksi memakai nama kontrol widget. Tautan PhET asli tetap ditampilkan di bawah widget.",
+    "Klaim TP 2.3 tentang kalor dan usaha mengikuti Rencana Kegiatan Belajar. Catatan rencana masih menandai 'TP 2.3 memuat kalor/usaha atau tidak' sebagai hal terbuka; hapus layar l6 bagian konvensi tanda bila diputuskan tidak."
+  ],
+  "layar": [
+    {
+      "id": "l1",
+      "judul": "Tiga benda di dapur",
+      "tahap": "konstruktivisme",
+      "stem": ["S"],
+      "indikatorTahap": { "bk": ["BK1"], "li": ["LI1"] },
+      "peranGuru": "Menyajikan ketiga contoh dan meminta murid menandai batas sistem.",
+      "blok": [
+        {
+          "tipe": "gambar",
+          "src": null,
+          "alt": "Tiga benda berjajar: panci berisi air mendidih tanpa tutup, silinder kaca berpiston, dan termos tertutup",
+          "rasio": "16/9",
+          "caption": "Panci terbuka, silinder berpiston, dan termos.",
+          "sumber": null,
+          "status": "perlu-media"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Uap mengepul dari panci yang airnya mendidih. Gas di dalam silinder berpiston bisa dipanaskan, tetapi tidak bisa keluar. Teh panas di dalam termos tetap hangat selama berjam-jam."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Ketiga benda itu sama-sama berinteraksi dengan sekitarnya, tetapi caranya berbeda. Fisikawan menyebut bagian yang sedang dikaji sebagai sistem, dan segala sesuatu di luarnya sebagai lingkungan."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-1",
+          "format": "teks-panjang",
+          "pertanyaan": "Untuk setiap benda, apa saja yang menurut Anda keluar atau masuk melewati batasnya? Tuliskan dugaan awal Anda.",
+          "petunjuk": "Pikirkan dua hal: zat (massa) dan energi.",
+          "baris": 4,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-2",
+          "format": "teks-panjang",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah yang dapat membedakan ketiga benda tersebut.",
+          "petunjuk": "Contoh pola: \"Apa perbedaan ... antara ... dan ...?\"",
+          "baris": 3,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kebutuhan-informasi",
+          "id": "lkpd-2-3",
+          "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
+          "petunjuk": "Tuliskan minimal tiga informasi beserta perkiraan sumbernya.",
+          "kolom": ["Informasi yang saya butuhkan", "Perkiraan sumbernya"],
+          "jumlahBaris": 3,
+          "indikatorVariabel": ["LI1"]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "judul": "Mengamati pertukaran energi",
+      "tahap": "inkuiri",
+      "stem": ["S", "T"],
+      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
+      "peranGuru": "Mengarahkan murid membedakan pertukaran massa dan pertukaran energi.",
+      "blok": [
+        {
+          "tipe": "simulasi",
+          "penyedia": "phet",
+          "src": "https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html",
+          "judul": "Energy Forms and Changes (layar Intro)",
+          "rasio": "3/4",
+          "instruksi": [
+            "Pindahkan balok besi ke atas Pemanas 1 dan gelas berisi air ke atas Pemanas 2. Seret bendanya, atau ketuk benda lalu ketuk tempat tujuannya.",
+            "Centang Simbol energi.",
+            "Geser slider Pemanas 1 ke arah Panaskan sampai besi panas.",
+            "Pindahkan besi panas ke dalam gelas.",
+            "Amati suhu besi dan air serta arah gerak simbol energi."
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "hati-hati",
+          "judul": "Penyederhanaan simulasi",
+          "isi": "Simbol energi di simulasi ini hanya untuk gambaran kualitatif. Jumlahnya terlalu kasar untuk dihitung. Udara juga tidak ditampilkan sebagai penyimpan energi."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-4",
+          "format": "teks-panjang",
+          "pertanyaan": "Ke mana simbol energi bergerak ketika besi panas dimasukkan ke air? Kapan perpindahannya berhenti? Apakah ada zat yang berpindah dari besi ke air?",
+          "baris": 4,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Jenis-jenis sistem termodinamika",
+          "mobile": "kartu",
+          "kolom": ["Jenis sistem", "Pertukaran massa", "Pertukaran energi", "Contoh"],
+          "baris": [
+            ["Terbuka", "Ya", "Ya", "Air mendidih dalam panci terbuka"],
+            ["Tertutup", "Tidak", "Ya", "Gas dalam silinder berpiston"],
+            ["Terisolasi", "Tidak", "Tidak", "Kalorimeter ideal, termos ideal"]
+          ],
+          "sumber": "Diadaptasi dari Giancoli (2014, hlm. 394)"
+        },
+        {
+          "tipe": "simulasi",
+          "penyedia": "phet",
+          "src": "https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html",
+          "judul": "Greenhouse Effect",
+          "rasio": "3/4",
+          "instruksi": [
+            "Ketuk Nyalakan sinar Matahari.",
+            "Amati sinar Matahari (kuning) yang masuk ke atmosfer.",
+            "Amati radiasi inframerah (merah) yang dipancarkan permukaan Bumi.",
+            "Perhatikan apa saja yang melewati batas atmosfer."
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-5",
+          "format": "teks-panjang",
+          "pertanyaan": "Terapkan definisi pada tabel di atas. Bumi menerima dan memancarkan energi dalam bentuk radiasi. Jika pertukaran massa Bumi dengan antariksa dianggap dapat diabaikan, termasuk jenis sistem apakah Bumi? Tuliskan langkah penalaran Anda.",
+          "baris": 4,
+          "indikatorVariabel": ["BK3"]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "judul": "Benarkah botol vakum dingin selama 24 jam?",
+      "tahap": "bertanya",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Menanyakan \"Mungkinkah ada sistem yang benar-benar terisolasi?\"",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Sistem terisolasi sempurna merupakan keadaan ideal yang hanya dapat didekati dalam praktik. Botol berdinding vakum dirancang agar mendekati keadaan itu. Seberapa dekat?"
+        },
+        {
+          "tipe": "klaim-uji",
+          "id": "klaim-2",
+          "klaim": "Botol vakum menjaga minuman tetap dingin hingga 24 jam.",
+          "konteks": "Klaim serupa tercantum pada banyak iklan botol minum. Bandingkan klaim produsen dengan dua laporan uji berikut.",
+          "sumber": [
+            {
+              "id": "s1",
+              "judul": "Chilly's Bottles (halaman utama)",
+              "penerbit": "Chilly's",
+              "penulis": null,
+              "tanggal": null,
+              "url": "https://www.chillys.com/",
+              "jenis": "Situs produsen",
+              "bahasa": "Inggris"
+            },
+            {
+              "id": "s2",
+              "judul": "PBO Tested: Chilly's Bottle",
+              "penerbit": "Practical Boat Owner",
+              "penulis": "Marco Rossi",
+              "tanggal": "2016-11-08",
+              "url": "https://www.pbo.co.uk/gear/pbo-tested-chillys-bottle-45192",
+              "jenis": "Ulasan produk oleh majalah",
+              "bahasa": "Inggris"
+            },
+            {
+              "id": "s3",
+              "judul": "Best Insulated Water Bottles",
+              "penerbit": "Outdoor Life",
+              "penulis": "Ashley Thess",
+              "tanggal": "2023-10-30",
+              "tanggalPembaruan": "2024-06-05",
+              "url": "https://www.outdoorlife.com/gear/best-insulated-water-bottles/",
+              "jenis": "Uji perbandingan beberapa botol oleh majalah",
+              "bahasa": "Inggris"
+            }
+          ],
+          "daftarPeriksa": [
+            { "id": "penulis", "aspek": "Penulis", "pertanyaan": "Siapa penulis atau penerbitnya? Apakah ia punya kepentingan menjual?" },
+            { "id": "tujuan", "aspek": "Tujuan", "pertanyaan": "Apa tujuan sumber ini: memberi informasi, menjual, atau keduanya?" },
+            { "id": "bukti", "aspek": "Bukti", "pertanyaan": "Apakah ada data suhu, cara uji, dan kondisi uji yang dijelaskan?" },
+            { "id": "kebaruan", "aspek": "Kebaruan", "pertanyaan": "Kapan sumber ini terbit atau diperbarui?" }
+          ],
+          "pilihanPenilaian": ["Ya", "Tidak", "Tidak jelas"],
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-6",
+          "format": "teks-panjang",
+          "pertanyaan": "Sumber s2 menguji satu botol: diisi air dingin dan es, lalu dibuka sekitar 23 jam 45 menit kemudian. Esnya sudah mencair, tetapi airnya masih terasa dingin. Suhu tidak diukur. Apakah laporan ini cukup untuk membuktikan klaim \"dingin hingga 24 jam\"? Jelaskan.",
+          "baris": 5,
+          "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-7",
+          "format": "teks-panjang",
+          "pertanyaan": "Gunakan konsep sistem terisolasi. Mengapa es di dalam botol vakum tetap mencair walaupun botol tertutup rapat? Apa artinya bagi klaim produsen?",
+          "baris": 5,
+          "indikatorVariabel": ["BK2"]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "judul": "Merancang kotak pendingin sederhana",
+      "tahap": "masyarakat-belajar",
+      "stem": ["R"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Membagi peran dan memeriksa alasan pemilihan bahan.",
+      "blok": [
+        {
+          "tipe": "tugas-rancangan",
+          "id": "rancangan-2",
+          "judul": "Kotak pendingin yang mendekati sistem terisolasi",
+          "masalah": "Kelompok Anda perlu membawa es batu untuk kegiatan sekolah tanpa kotak pendingin pabrikan. Rancanglah kotak pendingin dari bahan yang tersedia agar es bertahan selama mungkin.",
+          "kriteria": [
+            "Menghambat pertukaran energi antara es dan lingkungan",
+            "Memakai bahan yang mudah didapat di rumah atau sekolah",
+            "Setiap pilihan bahan disertai alasan ilmiah",
+            "Memuat prediksi lamanya es bertahan beserta dasarnya"
+          ],
+          "batasan": [
+            "Ukuran kotak muat untuk satu kantong es batu",
+            "Tidak memakai listrik"
+          ],
+          "peranKelompok": [
+            { "peran": "Penelusur sumber", "tugas": "Mencari informasi tentang bahan penghambat perpindahan kalor dan menilai sumbernya" },
+            { "peran": "Perancang", "tugas": "Menggambar rancangan dan menandai batas sistem" },
+            { "peran": "Penguji", "tugas": "Menyusun cara uji dan mencatat waktu mencairnya es" },
+            { "peran": "Penyaji", "tugas": "Menyusun laporan dan daftar sumber" }
+          ],
+          "langkah": [
+            {
+              "id": "r2-1",
+              "tahap": "menetapkan-masalah",
+              "instruksi": "Tuliskan masalah yang akan diselesaikan dan tandai batas sistem pada rancangan Anda: apa yang termasuk sistem dan apa yang termasuk lingkungan?",
+              "format": "teks-panjang"
+            },
+            {
+              "id": "r2-2",
+              "tahap": "merancang",
+              "instruksi": "Pilih bahan dan susunannya. Untuk setiap bahan, jelaskan pertukaran apa yang dihambatnya.",
+              "format": "tabel",
+              "kolom": ["Bahan", "Letak pada kotak", "Pertukaran yang dihambat", "Sumber informasi"],
+              "jumlahBaris": 4
+            },
+            {
+              "id": "r2-3",
+              "tahap": "analisis-kelayakan",
+              "instruksi": "Prediksi berapa lama es akan bertahan dan jelaskan dasarnya. Mengapa kotak Anda tetap tidak bisa menjadi sistem terisolasi sempurna?",
+              "format": "teks-panjang"
+            }
+          ],
+          "produk": "Laporan rancangan berisi gambar, tabel bahan, prediksi, hasil uji, dan daftar sumber",
+          "rubrik": "rubrik-2",
+          "indikatorVariabel": ["BK2", "LI3"]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "judul": "Sifat intensif dan ekstensif",
+      "tahap": "pemodelan",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
+      "peranGuru": "Mencontohkan uji pembagian sistem dan konvensi tanda Q dan W dengan diagram panah.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Tekanan, volume, suhu, dan jumlah zat disebut variabel keadaan. Variabel ini menggambarkan keadaan sistem pada saat setimbang."
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Uji \"membagi sistem menjadi dua\"",
+          "soal": "Sebuah wadah berisi 2,0 L gas ideal bertekanan 100 kPa dan bersuhu 300 K. Wadah disekat tepat di tengah menjadi dua bagian yang sama. Besaran apa saja yang berubah pada setiap bagian?",
+          "langkah": [
+            "Hitung jumlah mol mula-mula: $n = \\dfrac{pV}{RT} = \\dfrac{(1{,}0 \\times 10^{5})(2{,}0 \\times 10^{-3})}{(8{,}314)(300)} \\approx 0{,}080$ mol.",
+            "Setiap bagian kini bervolume 1,0 L dan berisi sekitar 0,040 mol.",
+            "Molekul di setiap bagian tetap sama rapat dan sama cepat geraknya, sehingga tekanan tetap 100 kPa dan suhu tetap 300 K.",
+            "Kesimpulan: V dan n menjadi setengah, sedangkan p dan T tidak berubah."
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-8",
+          "format": "pilih-kelompok",
+          "pertanyaan": "Gunakan uji pembagian sistem. Kelompokkan besaran berikut.",
+          "butir": ["Tekanan", "Suhu", "Massa jenis", "Volume", "Jumlah mol", "Massa", "Energi dalam"],
+          "kelompok": ["Tidak berubah saat sistem dibagi", "Menjadi setengah saat sistem dibagi"],
+          "kunci": {
+            "Tekanan": "Tidak berubah saat sistem dibagi",
+            "Suhu": "Tidak berubah saat sistem dibagi",
+            "Massa jenis": "Tidak berubah saat sistem dibagi",
+            "Volume": "Menjadi setengah saat sistem dibagi",
+            "Jumlah mol": "Menjadi setengah saat sistem dibagi",
+            "Massa": "Menjadi setengah saat sistem dibagi",
+            "Energi dalam": "Menjadi setengah saat sistem dibagi"
+          },
+          "indikatorVariabel": ["LI4"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-9",
+          "format": "teks-panjang",
+          "pertanyaan": "Dari hasil pengelompokan, rumuskan aturan umum untuk membedakan dua kelompok besaran tersebut.",
+          "baris": 4,
+          "indikatorVariabel": ["BK4"]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Besaran yang tidak bergantung pada banyaknya zat disebut sifat intensif. Besaran yang sebanding dengan banyaknya zat disebut sifat ekstensif."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Energi dalam adalah jumlah energi kinetik dan energi potensial acak seluruh molekul sistem. Energi dalam gas ideal monoatomik hanya berupa energi kinetik translasi atom-atomnya."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "2.1",
+          "tex": "U = \\frac{3}{2} n R T",
+          "keterangan": [
+            { "simbol": "U", "arti": "energi dalam gas ideal monoatomik", "satuan": "J" },
+            { "simbol": "n", "arti": "jumlah mol", "satuan": "mol" },
+            { "simbol": "T", "arti": "suhu mutlak", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "ingat",
+          "judul": "Kesepakatan tanda kalor dan usaha",
+          "isi": "$Q$ positif ketika kalor masuk ke sistem dan negatif ketika kalor keluar. $W$ positif ketika sistem melakukan usaha pada lingkungan, misalnya saat gas memuai, dan negatif ketika lingkungan melakukan usaha pada sistem. Sebagian buku memakai tanda $W$ yang berlawanan. Periksa selalu kesepakatan yang dipakai sumber Anda."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-10",
+          "format": "pilih-kelompok",
+          "pertanyaan": "Tentukan tanda Q dan W untuk setiap peristiwa. Sistemnya adalah gas di dalam silinder berpiston.",
+          "butir": [
+            "Gas dipanaskan dengan api (tanda Q)",
+            "Silinder didinginkan dengan es (tanda Q)",
+            "Gas memuai dan mendorong piston keluar (tanda W)",
+            "Piston ditekan sehingga gas termampatkan (tanda W)"
+          ],
+          "kelompok": ["Positif", "Negatif"],
+          "kunci": {
+            "Gas dipanaskan dengan api (tanda Q)": "Positif",
+            "Silinder didinginkan dengan es (tanda Q)": "Negatif",
+            "Gas memuai dan mendorong piston keluar (tanda W)": "Positif",
+            "Piston ditekan sehingga gas termampatkan (tanda W)": "Negatif"
+          },
+          "indikatorVariabel": ["LI4"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-2",
+          "langkah": [
+            {
+              "id": "r2-4",
+              "tahap": "menyajikan",
+              "instruksi": "Sajikan rancangan dan hasil uji kelompok Anda. Gambarkan panah aliran energi antara sistem dan lingkungan pada rancangan.",
+              "format": "unggah-atau-teks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "judul": "Mengapa energi dalam disebut fungsi keadaan?",
+      "tahap": "refleksi",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Memberi pertanyaan refleksi dan umpan balik rancangan.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Sebuah sistem dapat berpindah dari keadaan awal ke keadaan akhir yang sama melalui banyak proses berbeda. Kalor dan usaha bergantung pada lintasan proses yang ditempuh. Perubahan energi dalam hanya bergantung pada keadaan awal dan keadaan akhir."
+        },
+        {
+          "tipe": "callout",
+          "gaya": "tahukah",
+          "judul": "Tidak ada \"kalor dalam benda\"",
+          "isi": "Karena kalor bergantung pada proses, tidak ada cara yang konsisten untuk menyatakan berapa banyak kalor yang dikandung sebuah benda. Yang dimiliki benda adalah energi dalam. Kalor dan usaha adalah cara energi berpindah."
+        },
+        {
+          "tipe": "refleksi",
+          "id": "refleksi-2",
+          "tinjauUlang": "lkpd-2-1",
+          "pengantar": "Ini dugaan awal Anda tentang apa yang keluar dan masuk pada ketiga benda.",
+          "pertanyaan": [
+            "Golongkan kembali panci terbuka, silinder berpiston, dan termos. Bagian mana dari dugaan awal Anda yang perlu diperbaiki?",
+            "Dua orang memanaskan gas yang sama dari 300 K sampai 400 K dengan cara berbeda. Apakah perubahan energi dalamnya sama? Apakah kalor yang diberikan pasti sama? Jelaskan."
+          ],
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-2",
+          "langkah": [
+            {
+              "id": "r2-5",
+              "tahap": "memperbaiki",
+              "instruksi": "Bandingkan prediksi dengan hasil uji. Perbaiki rancangan berdasarkan umpan balik, lalu tuliskan apa yang diubah dan alasannya.",
+              "format": "teks-panjang"
+            }
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-11",
+          "format": "teks-panjang",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang jenis-jenis sistem, sifat intensif dan ekstensif, serta perbedaan energi dalam dengan kalor dan usaha. Cantumkan sumber yang Anda pakai.",
+          "baris": 6,
+          "wajibSumber": true,
+          "minSumber": 2,
+          "indikatorVariabel": ["BK5", "LI5"]
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "judul": "Penilaian KB 2",
+      "tahap": "penilaian-autentik",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Menilai laporan rancangan dengan rubrik.",
+      "blok": [
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-1",
+          "pertanyaan": "Rumusan masalah yang paling tepat untuk membedakan panci terbuka dan termos adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Mengapa termos lebih mahal daripada panci?" },
+            { "id": "b", "teks": "Apa perbedaan pertukaran massa dan energi antara panci terbuka dan termos dengan lingkungannya?" },
+            { "id": "c", "teks": "Berapa lama air di panci mendidih?" },
+            { "id": "d", "teks": "Apakah termos bisa dipakai untuk air dingin?" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Rumusan b menyebut besaran yang dibandingkan (pertukaran massa dan energi) dan objek yang dibandingkan, sehingga dapat diselidiki.",
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-2",
+          "pertanyaan": "Sebuah iklan menyebut termos produknya sebagai \"sistem terisolasi sempurna\". Tanggapan yang paling tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Benar, karena termos tertutup rapat" },
+            { "id": "b", "teks": "Kurang tepat, karena sistem terisolasi sempurna hanya keadaan ideal; termos nyata tetap mempertukarkan energi walaupun lambat" },
+            { "id": "c", "teks": "Benar, karena termos mempunyai dinding vakum" },
+            { "id": "d", "teks": "Kurang tepat, karena termos adalah sistem terbuka" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Termos menghambat pertukaran energi, tetapi tidak menghentikannya sama sekali. Buktinya, minuman di dalamnya lama-kelamaan mendekati suhu lingkungan.",
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-3",
+          "pertanyaan": "Gas di dalam tabung baja tertutup rapat dipanaskan. Termasuk jenis sistem apakah gas tersebut?",
+          "opsi": [
+            { "id": "a", "teks": "Terbuka, karena menerima kalor" },
+            { "id": "b", "teks": "Tertutup, karena tidak bertukar massa tetapi bertukar energi" },
+            { "id": "c", "teks": "Terisolasi, karena tabungnya tertutup" },
+            { "id": "d", "teks": "Tidak dapat ditentukan" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Tidak ada zat yang keluar atau masuk, tetapi kalor masuk ke gas. Sistem yang hanya mempertukarkan energi disebut sistem tertutup.",
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-4",
+          "pertanyaan": "Sebuah sistem dibagi dua sama besar. Tekanan, suhu, dan massa jenis tidak berubah, sedangkan volume, massa, dan jumlah mol menjadi setengah. Kesimpulan umum yang tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Besaran intensif tidak bergantung pada banyaknya zat, sedangkan besaran ekstensif sebanding dengan banyaknya zat" },
+            { "id": "b", "teks": "Semua besaran keadaan bergantung pada ukuran sistem" },
+            { "id": "c", "teks": "Besaran yang bersatuan kilogram selalu intensif" },
+            { "id": "d", "teks": "Tekanan adalah besaran ekstensif" }
+          ],
+          "kunci": "a",
+          "pembahasan": "Pola dari pembagian sistem menunjukkan dua kelompok: yang tetap (intensif) dan yang ikut terbagi (ekstensif).",
+          "indikatorVariabel": ["BK4"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-5",
+          "pertanyaan": "Gas berpindah dari keadaan A ke keadaan B melalui dua lintasan berbeda. Pernyataan yang benar adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Kalor, usaha, dan perubahan energi dalam pada kedua lintasan pasti sama" },
+            { "id": "b", "teks": "Perubahan energi dalam sama, tetapi kalor dan usaha dapat berbeda" },
+            { "id": "c", "teks": "Kalor sama, tetapi perubahan energi dalam berbeda" },
+            { "id": "d", "teks": "Semua besaran pasti berbeda" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Energi dalam adalah fungsi keadaan, jadi perubahannya hanya ditentukan keadaan A dan B. Kalor dan usaha adalah besaran proses yang bergantung pada lintasan.",
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-2-6",
+          "pertanyaan": "Dua sumber menuliskan hukum energi dengan tanda usaha berbeda: satu menulis $\\Delta U = Q - W$, yang lain $\\Delta U = Q + W$. Penilaian yang paling tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Salah satu sumber pasti keliru" },
+            { "id": "b", "teks": "Keduanya dapat benar jika arti W berbeda; periksa apakah W adalah usaha oleh sistem atau usaha pada sistem" },
+            { "id": "c", "teks": "Pilih sumber yang lebih banyak dibaca orang" },
+            { "id": "d", "teks": "Pilih sumber yang lebih baru" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Kedua bentuk setara karena usaha pada sistem sama dengan negatif usaha oleh sistem. Penilaian sumber perlu memeriksa definisi besaran yang dipakai.",
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "rubrik",
+          "id": "rubrik-2",
+          "judul": "Rubrik laporan rancangan kotak pendingin",
+          "untuk": "rancangan-2",
+          "skala": [4, 3, 2, 1],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": ["BK3"],
+              "deskriptor": {
+                "4": "Batas sistem jelas dan setiap bahan dikaitkan dengan pertukaran energi yang dihambatnya",
+                "3": "Batas sistem jelas, tetapi sebagian alasan bahan kurang tepat",
+                "2": "Batas sistem tidak jelas atau alasan bahan sebagian besar keliru",
+                "1": "Konsep sistem dan lingkungan tidak dipakai"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": ["BK2"],
+              "deskriptor": {
+                "4": "Prediksi beralasan, diuji, dan perbedaan hasil dengan prediksi dijelaskan",
+                "3": "Prediksi dan hasil uji ada, tetapi perbedaannya tidak dijelaskan",
+                "2": "Hanya ada prediksi atau hanya ada hasil uji",
+                "1": "Tidak ada prediksi maupun hasil uji"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": ["LI3", "LI5"],
+              "deskriptor": {
+                "4": "Informasi bahan berasal dari sumber yang telah dinilai dan dicantumkan lengkap",
+                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
+                "2": "Sumber dicantumkan tidak lengkap",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glosarium": [
+    { "istilah": "Sistem", "arti": "Bagian alam yang sedang dikaji dan dipandang sebagai satu kesatuan" },
+    { "istilah": "Lingkungan", "arti": "Segala sesuatu di luar sistem yang dapat bertukar massa atau energi dengan sistem" },
+    { "istilah": "Sistem terbuka", "arti": "Sistem yang dapat mempertukarkan massa dan energi dengan lingkungan" },
+    { "istilah": "Sistem tertutup", "arti": "Sistem yang dapat mempertukarkan energi, tetapi tidak mempertukarkan massa" },
+    { "istilah": "Sistem terisolasi", "arti": "Sistem yang tidak mempertukarkan massa maupun energi; hanya dapat didekati dalam praktik" },
+    { "istilah": "Sifat intensif", "arti": "Sifat yang tidak bergantung pada banyaknya zat, misalnya tekanan, suhu, dan massa jenis" },
+    { "istilah": "Sifat ekstensif", "arti": "Sifat yang sebanding dengan banyaknya zat, misalnya massa, volume, dan jumlah mol" },
+    { "istilah": "Energi dalam", "arti": "Jumlah energi kinetik dan energi potensial acak seluruh molekul sistem" },
+    { "istilah": "Fungsi keadaan", "arti": "Besaran yang nilainya hanya bergantung pada keadaan sistem, bukan pada proses yang ditempuh" }
+  ],
+  "referensi": [
+    "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
+    "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Sang, D., Jones, G., Chadha, G., & Woodside, R. (2014). Cambridge International AS and A Level physics coursebook (2nd ed.). Cambridge University Press.",
+    "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
+    "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
+    "Chilly's. (t.t.). Chilly's bottles. https://www.chillys.com/",
+    "Rossi, M. (2016, 8 November). PBO tested: Chilly's bottle. Practical Boat Owner. https://www.pbo.co.uk/gear/pbo-tested-chillys-bottle-45192",
+    "Thess, A. (2024, 5 Juni). Best insulated water bottles. Outdoor Life. https://www.outdoorlife.com/gear/best-insulated-water-bottles/",
+    "PhET Interactive Simulations. (t.t.). Energy forms and changes [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/energy-forms-and-changes",
+    "PhET Interactive Simulations. (t.t.). Greenhouse effect [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/greenhouse-effect"
+  ]
+}

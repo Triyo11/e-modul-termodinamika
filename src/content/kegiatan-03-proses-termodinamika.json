@@ -1,0 +1,634 @@
+{
+  "id": "kegiatan-03",
+  "versi": "2.0",
+  "skema": "stem-ctl-2.0",
+  "revisiTerakhir": "2026-10-18",
+  "statusValidasi": "draf-sebelum-validasi-ahli",
+  "kb": 3,
+  "judul": "Proses Termodinamika",
+  "subJudul": "Bagaimana gas melakukan usaha?",
+  "bab": "Termodinamika",
+  "model": "STEM-CTL",
+  "fase": "F",
+  "kelas": "XI",
+  "alokasiWaktu": null,
+  "prasyarat": [
+    "Gas ideal (KB 1)",
+    "Sistem, kalor, dan usaha (KB 2)"
+  ],
+  "tujuanPembelajaran": [
+    {
+      "kode": "3.1",
+      "teks": "Menafsirkan diagram p-V untuk menentukan keadaan, arah proses, dan usaha sebagai luas di bawah kurva",
+      "kajianTeori": ["3.a"]
+    },
+    {
+      "kode": "3.2",
+      "teks": "Menghitung usaha oleh gas pada proses bertekanan tetap dan proses isotermal",
+      "kajianTeori": ["3.b"]
+    },
+    {
+      "kode": "3.3",
+      "teks": "Membandingkan proses isobarik, isokhorik, isotermal, dan adiabatik berdasarkan besaran tetap, lintasan, W, ΔU, dan Q",
+      "kajianTeori": ["3.c", "Tabel 2.3"]
+    }
+  ],
+  "fenomena": [
+    "Piston mesin kendaraan saat langkah usaha",
+    "Pompa sepeda",
+    "Kabut tipis saat tutup botol minuman bersoda dibuka"
+  ],
+  "simulasiUtama": ["PhET Gas Properties (layar Explore)", "Diagram p-V interaktif (widget e-modul)"],
+  "catatanPengembang": [
+    "alokasiWaktu dibiarkan null sampai jumlah JP KB 3 dari ATP guru mitra tersedia.",
+    "Blok video fenomena di layar l1 belum punya berkas (src null).",
+    "Blok diagram-pv adalah widget buatan sendiri; spesifikasinya ada di skema-json-stem-ctl.md.",
+    "File ini menggantikan kegiatan-03-teori-kinetik-gas.json yang lama. Isi teori kinetik sudah dilebur ke KB 1.",
+    "Layar Explore Gas Properties diganti widget buatan sendiri (SimulasiPartikelGas.vue). Instruksi lama menyebut menggeser dinding ke kiri sebagai memampatkan; ini keliru karena pegangan ada di dinding kiri, sudah dibetulkan."
+  ],
+  "layar": [
+    {
+      "id": "l1",
+      "judul": "Gas yang mendorong dan mendingin",
+      "tahap": "konstruktivisme",
+      "stem": ["S"],
+      "indikatorTahap": { "bk": ["BK1"], "li": ["LI1"] },
+      "peranGuru": "Menyajikan fenomena dan memancing dugaan awal.",
+      "blok": [
+        {
+          "tipe": "video",
+          "src": null,
+          "poster": null,
+          "alt": "Cuplikan piston bergerak di dalam silinder mesin, pompa sepeda ditekan, dan kabut tipis muncul di leher botol soda saat tutupnya dibuka",
+          "rasio": "16/9",
+          "caption": "Tiga peristiwa yang melibatkan gas yang memuai atau dimampatkan.",
+          "sumber": null,
+          "status": "perlu-media"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Di dalam mesin kendaraan, gas panas mendorong piston sehingga roda berputar. Saat memompa ban sepeda, kita mendorong udara masuk ke ruang yang makin sempit. Saat tutup botol soda dibuka, kabut tipis muncul sesaat di lehernya."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-1",
+          "format": "teks-panjang",
+          "pertanyaan": "Apa dugaan awal Anda: mengapa kabut muncul ketika tutup botol soda dibuka? Dari mana gas di dalam mesin mendapat energi untuk mendorong piston?",
+          "petunjuk": "Tidak ada jawaban salah di tahap ini.",
+          "baris": 4,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-2",
+          "format": "teks-panjang",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang bagaimana gas melakukan usaha, atau mengapa suhu gas dapat turun tanpa melepas kalor.",
+          "baris": 3,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kebutuhan-informasi",
+          "id": "lkpd-3-3",
+          "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
+          "petunjuk": "Tuliskan minimal tiga informasi beserta perkiraan sumbernya.",
+          "kolom": ["Informasi yang saya butuhkan", "Perkiraan sumbernya"],
+          "jumlahBaris": 3,
+          "indikatorVariabel": ["LI1"]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "judul": "Menggambar proses pada diagram p-V",
+      "tahap": "inkuiri",
+      "stem": ["S", "T"],
+      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
+      "peranGuru": "Membimbing pembacaan grafik dan arah lintasan.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Diagram p-V adalah grafik tekanan terhadap volume. Setiap titik pada diagram mewakili satu keadaan setimbang. Perubahan keadaan digambarkan sebagai lintasan, dan arah anak panah menunjukkan arah proses."
+        },
+        {
+          "tipe": "simulasi",
+          "penyedia": "phet",
+          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
+          "judul": "Gas Properties (layar Explore)",
+          "rasio": "3/4",
+          "instruksi": [
+            "Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.",
+            "Pilih Tidak ada pada panel Jaga tetap.",
+            "Seret pegangan di dinding kiri ke kanan untuk memampatkan gas. Catat perubahan suhu dan tekanan.",
+            "Seret pegangan ke kiri untuk memuaikan gas. Catat lagi perubahan suhu dan tekanan."
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-4",
+          "format": "teks-panjang",
+          "pertanyaan": "Apa yang terjadi pada suhu gas ketika wadah dimampatkan dengan cepat? Bagaimana ketika wadah dimuaikan dengan cepat? Apakah ada pemanas yang dinyalakan?",
+          "baris": 4,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "diagram-pv",
+          "id": "pv-3-jelajah",
+          "mode": "jelajah",
+          "sumbu": { "pMin": 0, "pMax": 400, "VMin": 0, "VMax": 5, "satuanP": "kPa", "satuanV": "L" },
+          "keadaanAwal": { "p": 200, "V": 1 },
+          "prosesTersedia": ["isobarik", "isokhorik", "isotermal"],
+          "tampilkanLuas": true,
+          "instruksi": "Mulai dari keadaan awal. Pilih satu proses, lalu seret titik akhirnya. Amati bentuk lintasan dan luas daerah di bawahnya untuk setiap proses."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-5",
+          "format": "teks-panjang",
+          "pertanyaan": "Usaha oleh gas sama dengan luas daerah di bawah lintasan pada diagram p-V. Gunakan pernyataan ini untuk menentukan usaha pada proses yang volumenya tetap. Tuliskan langkah penalaran Anda.",
+          "baris": 4,
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "tautan-sumber",
+          "judul": "Sumber terpercaya untuk penyelidikan ini",
+          "daftar": [
+            {
+              "judul": "Gas Properties: Teacher Tips",
+              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
+              "url": "https://phet.colorado.edu/files/teachers-guide/gas-properties-html-guide_en.pdf",
+              "kegunaan": "Penjelasan layar Explore, termasuk usaha tekanan-volume",
+              "bahasa": "Inggris"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "judul": "Dari mana kabut di leher botol soda?",
+      "tahap": "bertanya",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Menanyakan \"Sumber mana yang menyertakan bukti, dan apa buktinya?\"",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Proses yang berlangsung tanpa pertukaran kalor disebut proses adiabatik ($Q = 0$). Proses ini terjadi bila berlangsung sangat cepat atau di dalam sistem yang terisolasi dengan baik. Usaha yang dilakukan gas pada proses adiabatik sepenuhnya berasal dari penurunan energi dalamnya."
+        },
+        {
+          "tipe": "klaim-uji",
+          "id": "klaim-3",
+          "klaim": "Kabut di leher botol soda terbentuk karena uap air di udara mengembun saat menyentuh permukaan botol yang dingin.",
+          "konteks": "Penjelasan ini dipilih sebagai jawaban di sebuah situs tanya-jawab. Sumber lain memberikan penjelasan berbeda. Bandingkan ketiga sumber berikut.",
+          "sumber": [
+            {
+              "id": "s1",
+              "judul": "Saat seseorang membuka tutup botol minuman dingin, terlihat asap putih keluar dari dalam botol",
+              "penerbit": "Brainly.co.id",
+              "penulis": "Pengguna Brainly (tanpa identitas keahlian)",
+              "tanggal": null,
+              "url": "https://brainly.co.id/tugas/56228391",
+              "jenis": "Jawaban di situs tanya-jawab",
+              "bahasa": "Indonesia"
+            },
+            {
+              "id": "s2",
+              "judul": "Question of the Week, Answer #347",
+              "penerbit": "Lecture-Demonstration, dikelola Dr. Richard E. Berg",
+              "penulis": "Richard E. Berg",
+              "tanggal": null,
+              "url": "https://instructional-resources.physics.uiowa.edu/sites/instructional-resources.physics.uiowa.edu/files/2024-12/University%2520of%2520Maryland%2520QOTW%2520Answer%2520%23347_2.pdf",
+              "jenis": "Lembar jawaban demonstrasi fisika",
+              "bahasa": "Inggris"
+            },
+            {
+              "id": "s3",
+              "judul": "Culinary fluid mechanics and other currents in food science",
+              "penerbit": "Reviews of Modern Physics, 95(2), 025004",
+              "penulis": "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L.",
+              "tanggal": "2023-06-15",
+              "url": "https://doi.org/10.1103/RevModPhys.95.025004",
+              "jenis": "Artikel ulasan di jurnal fisika bereviu sejawat",
+              "bahasa": "Inggris"
+            }
+          ],
+          "daftarPeriksa": [
+            { "id": "penulis", "aspek": "Penulis", "pertanyaan": "Siapa penulisnya? Apakah keahliannya dapat diketahui?" },
+            { "id": "tujuan", "aspek": "Tujuan", "pertanyaan": "Apa tujuan sumber ini?" },
+            { "id": "bukti", "aspek": "Bukti", "pertanyaan": "Apakah penjelasannya konsisten dan didukung konsep atau data yang dapat diperiksa?" },
+            { "id": "kebaruan", "aspek": "Kebaruan", "pertanyaan": "Kapan sumber ini terbit?" }
+          ],
+          "pilihanPenilaian": ["Ya", "Tidak", "Tidak jelas"],
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "tahukah",
+          "judul": "Petunjuk membaca sumber",
+          "isi": "Periksa jawaban terpilih di s1 dengan teliti. Bandingkan pilihan jawabannya dengan penjelasan yang ditulis di bawahnya. s3 memperkirakan suhu gas di leher botol sampanye turun sekitar 90 °C ketika tekanan turun dari sekitar 5 atm ke 1 atm."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-6",
+          "format": "teks-panjang",
+          "pertanyaan": "Kabut juga muncul ketika botol soda bersuhu ruang dibuka. Apakah penjelasan \"menyentuh permukaan botol yang dingin\" dapat menjelaskan hal ini? Susun argumen Anda dengan konsep proses adiabatik.",
+          "baris": 5,
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-7",
+          "format": "teks-panjang",
+          "pertanyaan": "Sumber mana yang paling dapat dipercaya untuk menjelaskan kabut tersebut? Berikan alasan berdasarkan daftar periksa sumber.",
+          "baris": 5,
+          "indikatorVariabel": ["BK2", "LI3"]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "judul": "Merancang siklus dengan usaha bersih terbesar",
+      "tahap": "masyarakat-belajar",
+      "stem": ["R", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Memeriksa perhitungan luas dan kewajaran lintasan.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Siklus adalah lintasan tertutup pada diagram p-V. Usaha bersih dalam satu siklus sama dengan luas daerah yang dikelilingi lintasan tersebut."
+        },
+        {
+          "tipe": "tugas-rancangan",
+          "id": "rancangan-3",
+          "judul": "Siklus berusaha bersih terbesar",
+          "masalah": "Sebuah mesin hanya boleh bekerja pada tekanan 100–300 kPa dan volume 1–4 L. Rancanglah siklus yang menghasilkan usaha bersih terbesar dalam batas tersebut.",
+          "kriteria": [
+            "Lintasan tertutup dan seluruhnya berada di dalam batas tekanan dan volume",
+            "Setiap bagian lintasan diberi nama prosesnya",
+            "Usaha bersih dihitung dan arah siklus ditentukan",
+            "Minimal tiga alternatif siklus dibandingkan"
+          ],
+          "batasan": [
+            "Tekanan 100–300 kPa",
+            "Volume 1–4 L",
+            "Lintasan hanya tersusun atas proses isobarik, isokhorik, atau isotermal"
+          ],
+          "peranKelompok": [
+            { "peran": "Perancang", "tugas": "Menggambar alternatif siklus pada diagram p-V" },
+            { "peran": "Penghitung", "tugas": "Menghitung luas setiap siklus" },
+            { "peran": "Pemeriksa", "tugas": "Memeriksa batas, satuan, dan arah siklus" },
+            { "peran": "Penyaji", "tugas": "Menyusun perbandingan alternatif dan kesimpulan kelompok" }
+          ],
+          "langkah": [
+            {
+              "id": "r3-1",
+              "tahap": "menetapkan-masalah",
+              "instruksi": "Tuliskan dengan kata-kata sendiri apa yang harus dimaksimalkan dan batasan apa saja yang berlaku.",
+              "format": "teks-panjang"
+            },
+            {
+              "id": "r3-2",
+              "tahap": "merancang",
+              "instruksi": "Gambarkan minimal tiga alternatif siklus pada diagram p-V di bawah. Widget menghitung luas setiap siklus.",
+              "format": "diagram-pv"
+            },
+            {
+              "id": "r3-3",
+              "tahap": "analisis-kelayakan",
+              "instruksi": "Bandingkan usaha bersih ketiga alternatif dalam tabel. Ke arah mana siklus harus berjalan agar usaha bersihnya positif?",
+              "format": "tabel",
+              "kolom": ["Alternatif", "Proses penyusun", "Arah siklus", "Usaha bersih (J)"],
+              "jumlahBaris": 3
+            }
+          ],
+          "produk": "Diagram tiga alternatif siklus, tabel perbandingan, dan siklus terpilih beserta alasannya",
+          "rubrik": "rubrik-3",
+          "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "diagram-pv",
+          "id": "pv-3-rancang",
+          "mode": "rancang",
+          "untukLangkah": "r3-2",
+          "sumbu": { "pMin": 0, "pMax": 400, "VMin": 0, "VMax": 5, "satuanP": "kPa", "satuanV": "L" },
+          "batas": { "pMin": 100, "pMax": 300, "VMin": 1, "VMax": 4 },
+          "prosesTersedia": ["isobarik", "isokhorik", "isotermal"],
+          "maksAlternatif": 3,
+          "tampilkanLuas": true,
+          "instruksi": "Klik titik-titik sudut siklus di dalam kotak batas, pilih jenis proses untuk setiap sisi, lalu tutup lintasan kembali ke titik awal."
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "judul": "Menghitung usaha dan meringkas empat proses",
+      "tahap": "pemodelan",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
+      "peranGuru": "Mencontohkan perhitungan W = pΔV dan W = nRT ln(V2/V1).",
+      "blok": [
+        {
+          "tipe": "rumus",
+          "nomor": "3.1",
+          "tex": "W = \\int_{V_1}^{V_2} p \\, dV",
+          "keterangan": [
+            { "simbol": "W", "arti": "usaha yang dilakukan gas", "satuan": "J" },
+            { "simbol": "V_1, V_2", "arti": "volume awal dan volume akhir", "satuan": "m³" }
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.2",
+          "tex": "W = p \\, \\Delta V",
+          "keterangan": [
+            { "simbol": "", "arti": "berlaku jika tekanan tetap (isobarik)", "satuan": "" }
+          ]
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal: proses isobarik",
+          "soal": "Gas bertekanan tetap 200 kPa memuai dari 1,0 L menjadi 3,0 L. Berapa usaha yang dilakukan gas?",
+          "langkah": [
+            "Ubah satuan: $p = 2{,}0 \\times 10^{5}$ Pa dan $\\Delta V = 2{,}0 \\times 10^{-3}$ m³.",
+            "Gunakan Persamaan 3.2: $W = (2{,}0 \\times 10^{5})(2{,}0 \\times 10^{-3}) = 400$ J.",
+            "Tanda positif menunjukkan gas melakukan usaha pada lingkungan."
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.3",
+          "tex": "W = nRT \\ln\\frac{V_2}{V_1}",
+          "keterangan": [
+            { "simbol": "", "arti": "berlaku untuk gas ideal pada suhu tetap (isotermal)", "satuan": "" }
+          ]
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal: proses isotermal",
+          "soal": "Satu mol gas ideal memuai secara isotermal pada 300 K hingga volumenya menjadi dua kali semula. Berapa usaha yang dilakukan gas?",
+          "langkah": [
+            "Gunakan Persamaan 3.3 dengan $V_2/V_1 = 2$.",
+            "$W = (1)(8{,}314)(300)\\ln 2 = 2494{,}2 \\times 0{,}693$.",
+            "$W \\approx 1{,}73 \\times 10^{3}$ J."
+          ],
+          "catatan": "Jika gas dimampatkan, $V_2/V_1 < 1$ sehingga logaritmanya negatif dan usaha oleh gas bernilai negatif."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "3.4",
+          "tex": "pV^{\\gamma} = \\text{konstan}, \\qquad \\gamma = \\frac{C_p}{C_V}",
+          "keterangan": [
+            { "simbol": "\\gamma", "arti": "tetapan Laplace, selalu lebih besar dari 1", "satuan": "-" },
+            { "simbol": "C_p", "arti": "kapasitas kalor molar pada tekanan tetap", "satuan": "J/(mol·K)" },
+            { "simbol": "C_V", "arti": "kapasitas kalor molar pada volume tetap", "satuan": "J/(mol·K)" }
+          ]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-3-ringkasan",
+          "judul": "Ringkasan empat proses (isi sendiri)",
+          "instruksi": "Isilah tabel dari hasil penyelidikan dan contoh soal. Bandingkan dengan tabel rujukan setelah Anda selesai.",
+          "kolom": [
+            { "kunci": "proses", "label": "Proses", "satuan": "", "tipe": "teks" },
+            { "kunci": "tetap", "label": "Besaran tetap", "satuan": "", "tipe": "teks" },
+            { "kunci": "lintasan", "label": "Bentuk lintasan", "satuan": "", "tipe": "teks" },
+            { "kunci": "W", "label": "Usaha (W)", "satuan": "", "tipe": "teks" }
+          ],
+          "barisAwal": [["Isobarik"], ["Isokhorik"], ["Isotermal"], ["Adiabatik"]],
+          "jumlahBaris": 4,
+          "indikatorVariabel": ["LI4"]
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Tabel rujukan: ringkasan empat proses termodinamika pada gas ideal",
+          "mobile": "kartu",
+          "tampilSetelah": "data-3-ringkasan",
+          "kolom": ["Proses", "Besaran tetap", "Lintasan pada diagram p-V", "Usaha (W)", "Perubahan energi dalam (ΔU)", "Kalor (Q)"],
+          "baris": [
+            ["Isobarik", "Tekanan", "Garis mendatar", "$p\\Delta V$", "$nC_V\\Delta T$", "$nC_p\\Delta T$"],
+            ["Isokhorik", "Volume", "Garis vertikal", "0", "$nC_V\\Delta T$", "$\\Delta U$"],
+            ["Isotermal", "Suhu", "Hiperbola ($pV$ = konstan)", "$nRT\\ln(V_2/V_1)$", "0", "$W$"],
+            ["Adiabatik", "Tidak ada kalor masuk/keluar", "Kurva lebih curam ($pV^{\\gamma}$ = konstan)", "$-\\Delta U$", "$nC_V\\Delta T$", "0"]
+          ],
+          "sumber": "Diadaptasi dari Young dan Freedman (2012, hlm. 635–641) dan Giancoli (2014, hlm. 416)"
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-8",
+          "format": "teks-panjang",
+          "pertanyaan": "Dari contoh soal dan tabel, rumuskan pola umum: pada proses mana usaha bernilai nol, pada proses mana energi dalam tidak berubah, dan pada proses mana kalor bernilai nol? Mengapa usaha pada dua lintasan berbeda antara dua keadaan yang sama bisa berbeda?",
+          "baris": 6,
+          "indikatorVariabel": ["BK4", "LI4"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-3",
+          "langkah": [
+            {
+              "id": "r3-4",
+              "tahap": "menyajikan",
+              "instruksi": "Sajikan siklus terpilih kelompok Anda. Tunjukkan perhitungan usaha untuk setiap bagian lintasan dan usaha bersihnya.",
+              "format": "unggah-atau-teks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "judul": "Proses mana yang terjadi di mesin kendaraan?",
+      "tahap": "refleksi",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Memfasilitasi presentasi dan umpan balik antarkelompok.",
+      "blok": [
+        {
+          "tipe": "refleksi",
+          "id": "refleksi-3",
+          "tinjauUlang": "lkpd-3-1",
+          "pengantar": "Ini dugaan awal Anda tentang kabut di botol soda dan sumber energi gas di dalam mesin.",
+          "pertanyaan": [
+            "Bagian mana dari dugaan awal Anda yang kini terbukti, dan bagian mana yang perlu diperbaiki?",
+            "Langkah usaha di mesin kendaraan berlangsung dalam waktu sangat singkat. Proses mana dari keempat proses yang paling mirip dengannya, dan mengapa? Pertimbangkan kecepatan proses dan pertukaran kalornya."
+          ],
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-3",
+          "langkah": [
+            {
+              "id": "r3-5",
+              "tahap": "memperbaiki",
+              "instruksi": "Perbaiki rancangan siklus berdasarkan umpan balik kelompok lain. Tuliskan apa yang diubah dan alasannya.",
+              "format": "teks-panjang"
+            }
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-9",
+          "format": "teks-panjang",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang cara membaca usaha dari diagram p-V dan ciri keempat proses termodinamika. Sertakan penjelasan kabut botol soda. Cantumkan sumber yang Anda pakai.",
+          "baris": 6,
+          "wajibSumber": true,
+          "minSumber": 2,
+          "indikatorVariabel": ["BK5", "LI5"]
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "judul": "Penilaian KB 3",
+      "tahap": "penilaian-autentik",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Menilai rancangan dan LKPD dengan rubrik.",
+      "blok": [
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-1",
+          "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang kabut di leher botol soda adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Mengapa minuman soda disukai banyak orang?" },
+            { "id": "b", "teks": "Bagaimana pengaruh penurunan tekanan yang cepat saat tutup dibuka terhadap suhu gas di leher botol?" },
+            { "id": "c", "teks": "Apakah minuman soda berbahaya bagi kesehatan?" },
+            { "id": "d", "teks": "Berapa harga satu botol soda?" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Rumusan b menghubungkan dua besaran yang dapat diamati dan diukur, yaitu perubahan tekanan dan suhu gas.",
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-2",
+          "pertanyaan": "Kabut muncul saat botol soda bersuhu ruang dibuka. Argumen yang paling tepat untuk menjelaskannya adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Botol menyerap kalor dari tangan sehingga udara di sekitarnya memanas" },
+            { "id": "b", "teks": "Gas memuai sangat cepat tanpa sempat bertukar kalor; usaha yang dilakukannya menurunkan energi dalam dan suhunya sehingga uap air mengembun" },
+            { "id": "c", "teks": "Karbon dioksida berubah warna menjadi putih ketika keluar dari botol" },
+            { "id": "d", "teks": "Udara luar masuk ke botol dan mendinginkan minuman" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Pemuaian yang sangat cepat mendekati proses adiabatik ($Q \\approx 0$). Usaha gas berasal dari penurunan energi dalamnya, sehingga suhu turun di bawah titik embun dan uap air mengembun menjadi kabut.",
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-3",
+          "pertanyaan": "Gas di dalam tabung baja tertutup dipanaskan sehingga tekanannya naik dari 100 kPa menjadi 150 kPa. Usaha yang dilakukan gas adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "0 J" },
+            { "id": "b", "teks": "50 J" },
+            { "id": "c", "teks": "150 J" },
+            { "id": "d", "teks": "Tidak dapat ditentukan tanpa volume tabung" }
+          ],
+          "kunci": "a",
+          "pembahasan": "Volume tabung tetap, sehingga lintasannya berupa garis vertikal pada diagram p-V. Luas di bawah garis vertikal adalah nol, jadi usahanya nol.",
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-4",
+          "pertanyaan": "Tiga lintasan berbeda menghubungkan keadaan A dan B yang sama. Usaha yang dihitung: 300 J, 450 J, dan 600 J. Kesimpulan umum yang didukung data ini adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Ada kesalahan hitung, karena usaha antara dua keadaan yang sama pasti sama" },
+            { "id": "b", "teks": "Usaha bergantung pada lintasan, sehingga usaha adalah besaran proses" },
+            { "id": "c", "teks": "Usaha hanya bergantung pada keadaan akhir" },
+            { "id": "d", "teks": "Lintasan dengan usaha terkecil adalah yang paling benar" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Luas di bawah setiap lintasan berbeda, sehingga usahanya berbeda. Pola ini menunjukkan bahwa usaha adalah besaran proses, bukan fungsi keadaan.",
+          "indikatorVariabel": ["BK4"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-5",
+          "pertanyaan": "Udara di dalam silinder dimampatkan sangat cepat sehingga tidak sempat bertukar kalor. Kesimpulan yang tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Suhu udara tetap karena tidak ada kalor yang masuk" },
+            { "id": "b", "teks": "Suhu udara naik karena usaha yang dilakukan pada udara menambah energi dalamnya" },
+            { "id": "c", "teks": "Suhu udara turun karena volumenya berkurang" },
+            { "id": "d", "teks": "Tekanan udara turun karena molekulnya makin rapat" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Pemampatan cepat mendekati proses adiabatik. Lingkungan melakukan usaha pada gas, dan tanpa kalor yang keluar, energi itu menaikkan energi dalam dan suhu gas.",
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-3-6",
+          "pertanyaan": "Sebuah siklus berbentuk persegi panjang pada diagram p-V dengan tekanan 100 kPa dan 300 kPa serta volume 1 L dan 3 L, berjalan searah jarum jam. Usaha bersihnya adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "200 J" },
+            { "id": "b", "teks": "400 J" },
+            { "id": "c", "teks": "600 J" },
+            { "id": "d", "teks": "900 J" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Luas persegi panjang = $(300 - 100)$ kPa × $(3 - 1)$ L = $(2{,}0 \\times 10^{5}$ Pa$)(2{,}0 \\times 10^{-3}$ m³$) = 400$ J. Arah searah jarum jam memberi usaha bersih positif.",
+          "indikatorVariabel": ["LI4"]
+        },
+        {
+          "tipe": "rubrik",
+          "id": "rubrik-3",
+          "judul": "Rubrik rancangan siklus",
+          "untuk": "rancangan-3",
+          "skala": [4, 3, 2, 1],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": ["BK3"],
+              "deskriptor": {
+                "4": "Semua bagian lintasan diberi nama proses yang benar dan usaha dihitung dengan satuan SI yang benar",
+                "3": "Nama proses benar, tetapi ada satu kesalahan perhitungan atau satuan",
+                "2": "Sebagian nama proses atau perhitungan keliru",
+                "1": "Konsep usaha sebagai luas tidak dipakai"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": ["BK2"],
+              "deskriptor": {
+                "4": "Tiga alternatif dibandingkan, semuanya dalam batas, dan pilihan akhir beralasan",
+                "3": "Tiga alternatif dibandingkan, tetapi alasan pilihan kurang jelas",
+                "2": "Kurang dari tiga alternatif atau ada siklus yang keluar batas",
+                "1": "Tidak ada perbandingan alternatif"
+              }
+            },
+            {
+              "aspek": "Penyajian dan sumber",
+              "indikatorVariabel": ["LI4", "LI5"],
+              "deskriptor": {
+                "4": "Diagram dan tabel tersaji rapi, dan rumus yang dipakai disertai sumbernya",
+                "3": "Diagram dan tabel rapi, tetapi sumber tidak lengkap",
+                "2": "Diagram atau tabel tidak lengkap",
+                "1": "Penyajian tidak dapat dibaca"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glosarium": [
+    { "istilah": "Diagram p-V", "arti": "Grafik tekanan terhadap volume yang menggambarkan keadaan dan proses gas" },
+    { "istilah": "Isoterm", "arti": "Kurva pada diagram p-V untuk gas bersuhu tetap" },
+    { "istilah": "Siklus", "arti": "Rangkaian proses yang membawa sistem kembali ke keadaan awal; berupa lintasan tertutup pada diagram p-V" },
+    { "istilah": "Isobarik", "arti": "Proses pada tekanan tetap" },
+    { "istilah": "Isokhorik", "arti": "Proses pada volume tetap; disebut juga isovolumetrik" },
+    { "istilah": "Isotermal", "arti": "Proses pada suhu tetap" },
+    { "istilah": "Adiabatik", "arti": "Proses tanpa pertukaran kalor antara sistem dan lingkungan" },
+    { "istilah": "Tetapan Laplace", "arti": "Perbandingan kapasitas kalor molar pada tekanan tetap dan pada volume tetap, dilambangkan γ" }
+  ],
+  "referensi": [
+    "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
+    "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
+    "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
+    "Berg, R. E. (t.t.). Question of the week, answer #347. https://instructional-resources.physics.uiowa.edu/sites/instructional-resources.physics.uiowa.edu/files/2024-12/University%2520of%2520Maryland%2520QOTW%2520Answer%2520%23347_2.pdf",
+    "Brainly.co.id. (t.t.). Saat seseorang membuka tutup botol minuman dingin, terlihat asap putih keluar dari dalam botol. https://brainly.co.id/tugas/56228391",
+    "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L. (2023). Culinary fluid mechanics and other currents in food science. Reviews of Modern Physics, 95(2), 025004. https://doi.org/10.1103/RevModPhys.95.025004",
+    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties"
+  ]
+}

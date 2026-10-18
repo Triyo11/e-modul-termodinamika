@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { GAMMA_MONOATOMIK, VOLUME_MIN_SAH, skalaKecepatan, suhuAdiabatik } from "@/lib/termodinamika";
 
 interface Partikel {
   x: number;
@@ -118,7 +119,7 @@ function kecepatanDariSuhu(T: number): number {
   return FAKTOR_KECEPATAN * Math.sqrt(T);
 }
 
-/** Suhu dibaca dari energi kinetik rata-rata partikel, sehingga kerja oleh dinding ikut mengubahnya. */
+/** Suhu dibaca dari energi kinetik rata-rata partikel. */
 function suhuDariPartikel(): number {
   if (!partikel.length) return suhu.value;
   const rataV2 = partikel.reduce((s, p) => s + p.vx * p.vx + p.vy * p.vy, 0) / partikel.length;
@@ -126,9 +127,8 @@ function suhuDariPartikel(): number {
 }
 
 function skalakanSuhu(suhuBaru: number) {
-  const suhuLama = suhuDariPartikel();
-  if (suhuLama <= 0) return;
-  const rasio = Math.sqrt(suhuBaru / suhuLama);
+  const rasio = skalaKecepatan(suhuDariPartikel(), suhuBaru);
+  if (rasio === 1) return;
   for (const p of partikel) {
     p.vx *= rasio;
     p.vy *= rasio;
@@ -236,8 +236,31 @@ function gambar() {
   }
 }
 
-/** Menggerakkan dinding kiri menuju targetnya dengan kelajuan terbatas. Mengembalikan kecepatan dinding (px/frame). */
-function gerakkanDinding(): number {
+/**
+ * Kerja adiabatik saat volume diubah: suhu baru dihitung makroskopis, T₂ = T₁ (V₁/V₂)^(γ−1),
+ * lalu kecepatan semua partikel diskalakan √(T₂/T₁). Volume sebanding dengan lebar efektif
+ * (tinggi dan kedalaman tetap), jadi rasio lebar = rasio volume.
+ *
+ * Cara ini menggantikan pertukaran energi per tumbukan dengan dinding bergerak. Cara lama tidak simetris:
+ * saat dimampatkan semua partikel menumbuk dinding dan bertambah energinya, tetapi saat diregangkan dinding
+ * bergerak lebih cepat daripada banyak partikel sehingga energi yang hilang lebih sedikit (numerical heating).
+ */
+function prosesAdiabatik(xDindingLama: number, xDindingBaru: number) {
+  if (xDindingLama === xDindingBaru) return;
+  const volumeLama = meterDariX(xDindingLama);
+  const volumeBaru = meterDariX(xDindingBaru);
+  if (volumeLama < VOLUME_MIN_SAH || volumeBaru < VOLUME_MIN_SAH) return;
+  const suhuLama = suhuDariPartikel();
+  const suhuBaru = suhuAdiabatik(suhuLama, volumeLama, volumeBaru, GAMMA_MONOATOMIK);
+  const skala = skalaKecepatan(suhuLama, suhuBaru);
+  for (const p of partikel) {
+    p.vx *= skala;
+    p.vy *= skala;
+  }
+}
+
+/** Menggerakkan dinding kiri menuju targetnya dengan kelajuan terbatas. */
+function gerakkanDinding() {
   if (jagaTetap.value === "tekanan" && tekananTarget > 0) {
     // Seperti "Pressure ↕V" di PhET: lebar wadah dihitung dari hukum gas agar tekanan tetap.
     const rataV2 = FAKTOR_KECEPATAN * FAKTOR_KECEPATAN * suhuDariPartikel();
@@ -257,19 +280,18 @@ function gerakkanDinding(): number {
   const selisih = targetDinding.value - posisiDinding.value;
   const langkahDinding = Math.max(-KECEPATAN_DINDING_MAX, Math.min(KECEPATAN_DINDING_MAX, selisih));
   posisiDinding.value += langkahDinding;
-  return langkahDinding;
 }
 
 function langkah(waktu: number) {
   rafId = requestAnimationFrame(langkah);
 
   if (berjalan.value) {
-    const kecepatanDinding = gerakkanDinding();
+    const xdLama = posisiDinding.value;
+    gerakkanDinding();
+    const xd = posisiDinding.value;
     // Dinding yang digeser tangan melakukan kerja pada gas (memampatkan = memanaskan, meregangkan = mendinginkan).
     // Saat lebar diatur otomatis oleh mode "jaga tekanan tetap", dinding tidak melakukan kerja (seperti PhET).
-    const dindingBerkerja = jagaTetap.value !== "tekanan";
-    const xd = posisiDinding.value;
-    let energiDariDinding = false;
+    if (jagaTetap.value !== "tekanan") prosesAdiabatik(xdLama, xd);
 
     for (const p of partikel) {
       p.x += p.vx;
@@ -277,21 +299,10 @@ function langkah(waktu: number) {
 
       if (p.x - JARI < xd) {
         p.x = xd + JARI;
-        const u = dindingBerkerja ? kecepatanDinding : 0;
-        if (p.vx - u < 0) {
-          const vxBaru = -p.vx + 2 * u;
-          impulsAkumulasi += Math.abs(vxBaru - p.vx);
-          if (u !== 0) {
-            // Tanpa tumbukan antarpartikel, energi dari dinding hanya masuk ke vx. Arah dipencarkan ulang
-            // (laju tetap) sebagai pengganti tumbukan antarmolekul yang meratakan energi ke segala arah.
-            const laju = Math.hypot(vxBaru, p.vy);
-            const sudut = (Math.random() - 0.5) * Math.PI;
-            p.vx = Math.cos(sudut) * laju;
-            p.vy = Math.sin(sudut) * laju;
-            energiDariDinding = true;
-          } else {
-            p.vx = vxBaru;
-          }
+        // Pantulan lenting pada dinding diam: laju tidak berubah. Kerja dinding sudah ditangani prosesAdiabatik.
+        if (p.vx < 0) {
+          impulsAkumulasi += 2 * Math.abs(p.vx);
+          p.vx *= -1;
           tumbukanAkumulasi++;
         }
       } else if (p.x + JARI > LEBAR) {
@@ -311,17 +322,6 @@ function langkah(waktu: number) {
         impulsAkumulasi += 2 * Math.abs(p.vy);
         p.vy *= -1;
         tumbukanAkumulasi++;
-      }
-    }
-
-    // Energi kerja dinding dibagi rata ke semua partikel (energi total tetap), sehingga semua partikel
-    // berlaju sama dan warnanya konsisten.
-    if (energiDariDinding) {
-      const lajuRms = kecepatanDariSuhu(suhuDariPartikel());
-      for (const p of partikel) {
-        const laju = Math.hypot(p.vx, p.vy) || 1;
-        p.vx *= lajuRms / laju;
-        p.vy *= lajuRms / laju;
       }
     }
 

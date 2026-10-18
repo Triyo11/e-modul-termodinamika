@@ -1,0 +1,623 @@
+{
+  "id": "kegiatan-05",
+  "versi": "2.0",
+  "skema": "stem-ctl-2.0",
+  "revisiTerakhir": "2026-10-18",
+  "statusValidasi": "draf-sebelum-validasi-ahli",
+  "kb": 5,
+  "judul": "Mesin Kalor dan Pompa Kalor",
+  "subJudul": "Mengapa mesin tidak bisa 100% efisien, dan berapa listrik yang dibutuhkan AC?",
+  "bab": "Termodinamika",
+  "model": "STEM-CTL",
+  "fase": "F",
+  "kelas": "XI",
+  "alokasiWaktu": null,
+  "prasyarat": [
+    "Proses termodinamika dan siklus pada diagram p-V (KB 3)",
+    "Hukum Pertama dan Hukum Kedua Termodinamika (KB 4)"
+  ],
+  "tujuanPembelajaran": [
+    {
+      "kode": "5.1",
+      "teks": "Menganalisis aliran energi dan efisiensi mesin kalor, termasuk batas efisiensi siklus Carnot",
+      "kajianTeori": ["5.a"]
+    },
+    {
+      "kode": "5.2",
+      "teks": "Menganalisis prinsip kerja mesin pendingin dan pompa kalor menggunakan koefisien performansi",
+      "kajianTeori": ["5.b"]
+    },
+    {
+      "kode": "5.3",
+      "teks": "Merancang rekomendasi penghematan energi pada AC atau kendaraan dan menganalisis kaitannya dengan dampak perubahan iklim berdasarkan sumber yang telah dievaluasi",
+      "kajianTeori": ["5.a", "5.b"]
+    }
+  ],
+  "fenomena": [
+    "Mesin kendaraan yang panas dan membuang gas buang",
+    "Unit luar AC yang mengembuskan udara panas",
+    "Konsumsi listrik AC dan kaitannya dengan emisi gas rumah kaca"
+  ],
+  "simulasiUtama": ["Widget siklus Carnot (buatan sendiri)"],
+  "catatanPengembang": [
+    "alokasiWaktu dibiarkan null sampai jumlah JP KB 5 dari ATP guru mitra tersedia.",
+    "Blok video fenomena di layar l1 belum punya berkas (src null).",
+    "Blok widget-carnot adalah widget buatan sendiri; spesifikasinya ada di skema-json-stem-ctl.md.",
+    "Persamaan 5.1 = (2.18), 5.4 = (2.19), 5.2 = (2.20), 5.5 = (2.21) Bab II. Persamaan 5.3 (koefisien performansi pompa kalor) tidak bernomor di kajian teori; rujukannya Giancoli (2014, hlm. 427).",
+    "Faktor emisi listrik sengaja tidak diisi. Sesuai Rencana Kegiatan Belajar, murid menelusurinya sendiri. Dokumen resminya Kepmen ESDM No. 163.K/HK.02/MEM.S/2021 (diberitakan RuangEnergi, 5 September 2021); lampiran berisi nilai faktor emisi belum dapat dibuka karena situs JDIH ESDM sedang dalam perbaikan saat dicek (18 Oktober 2026). Guru perlu memeriksa nilainya sebelum pembelajaran.",
+    "Halaman ESDM tentang label hemat energi AC (2018) merujuk Permen ESDM No. 57 Tahun 2017. Apakah aturan itu sudah diganti belum dapat dicek karena situs JDIH ESDM sedang dalam perbaikan."
+  ],
+  "layar": [
+    {
+      "id": "l1",
+      "judul": "Panas yang terbuang",
+      "tahap": "konstruktivisme",
+      "stem": ["S"],
+      "indikatorTahap": { "bk": ["BK1"], "li": ["LI1"] },
+      "peranGuru": "Menyajikan fenomena dan mengaitkannya dengan Hukum Kedua di KB 4.",
+      "blok": [
+        {
+          "tipe": "video",
+          "src": null,
+          "poster": null,
+          "alt": "Kap mesin mobil yang panas setelah berjalan, asap knalpot, dan kipas unit luar AC yang mengembuskan udara panas",
+          "rasio": "16/9",
+          "caption": "Mesin kendaraan dan unit luar AC sama-sama membuang panas ke lingkungan.",
+          "sumber": null,
+          "status": "perlu-media"
+        },
+        {
+          "tipe": "teks",
+          "isi": "Mesin kendaraan membakar bahan bakar untuk menggerakkan roda, tetapi kap mesinnya ikut panas dan knalpotnya membuang gas panas. Unit luar AC mengembuskan udara panas, padahal tugas AC adalah mendinginkan ruangan. Listrik untuk AC sebagian besar dihasilkan pembangkit yang juga melepaskan gas rumah kaca."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-1",
+          "format": "teks-panjang",
+          "pertanyaan": "Apa dugaan awal Anda: mengapa mesin tidak dapat mengubah seluruh energi bahan bakar menjadi gerak? Dari mana udara panas yang keluar dari unit luar AC?",
+          "petunjuk": "Tidak ada jawaban salah di tahap ini.",
+          "baris": 4,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-2",
+          "format": "teks-panjang",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang efisiensi mesin atau kebutuhan listrik AC.",
+          "baris": 3,
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kebutuhan-informasi",
+          "id": "lkpd-5-3",
+          "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
+          "petunjuk": "Tuliskan minimal tiga informasi beserta perkiraan sumbernya. Pikirkan juga data apa yang diperlukan untuk menghitung emisi dari pemakaian AC.",
+          "kolom": ["Informasi yang saya butuhkan", "Perkiraan sumbernya"],
+          "jumlahBaris": 4,
+          "indikatorVariabel": ["LI1"]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "judul": "Siklus Carnot dan batas efisiensi",
+      "tahap": "inkuiri",
+      "stem": ["S", "T"],
+      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
+      "peranGuru": "Membimbing penelusuran data spesifikasi yang sahih.",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Mesin kalor menyerap kalor $Q_H$ dari sumber bersuhu tinggi, melakukan usaha $W$, lalu membuang sisa kalor $Q_C$ ke reservoir bersuhu rendah. Efisiensi termal adalah usaha dibagi kalor yang diserap dalam satu siklus."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "5.1",
+          "tex": "e = \\frac{W}{Q_H} = 1 - \\frac{Q_C}{Q_H}",
+          "keterangan": [
+            { "simbol": "e", "arti": "efisiensi mesin kalor", "satuan": "-" },
+            { "simbol": "Q_H", "arti": "kalor yang diserap dari reservoir suhu tinggi", "satuan": "J" },
+            { "simbol": "Q_C", "arti": "kalor yang dibuang ke reservoir suhu rendah", "satuan": "J" }
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-4",
+          "format": "teks-panjang",
+          "pertanyaan": "Rumusan Kelvin-Planck (KB 4) menyatakan tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha. Turunkan dari rumusan ini apa yang dapat disimpulkan tentang $Q_C$ dan nilai efisiensi $e$. Tuliskan langkah penalaran Anda.",
+          "baris": 4,
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Siklus Carnot adalah siklus ideal yang terdiri atas dua proses isotermal dan dua proses adiabatik yang reversibel. Siklus ini menghasilkan efisiensi tertinggi di antara dua reservoir bersuhu tertentu."
+        },
+        {
+          "tipe": "widget-carnot",
+          "id": "carnot-5",
+          "TH": { "min": 300, "max": 1000, "awal": 600, "langkah": 10, "satuan": "K" },
+          "TC": { "min": 250, "max": 400, "awal": 300, "langkah": 5, "satuan": "K" },
+          "tampilkan": ["siklus-pv", "efisiensi-carnot", "koefisien-performansi-carnot"],
+          "instruksi": "Ubah suhu reservoir panas (TH) dan reservoir dingin (TC). Amati bentuk siklus pada diagram p-V, efisiensi Carnot, dan koefisien performansi mesin pendingin Carnot."
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-5-carnot",
+          "judul": "Data dari widget siklus Carnot",
+          "instruksi": "Catat lima pasang nilai TH dan TC beserta efisiensi Carnot yang ditampilkan widget.",
+          "kolom": [
+            { "kunci": "TH", "label": "TH", "satuan": "K", "tipe": "angka" },
+            { "kunci": "TC", "label": "TC", "satuan": "K", "tipe": "angka" },
+            { "kunci": "eC", "label": "Efisiensi Carnot dari widget", "satuan": "-", "tipe": "angka" },
+            { "kunci": "rasio", "label": "TC/TH", "satuan": "-", "tipe": "hitung", "hitung": "TC/TH" }
+          ],
+          "jumlahBaris": 5,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-5",
+          "format": "teks-panjang",
+          "pertanyaan": "Cari label energi atau spesifikasi sebuah AC dari dua sumber: situs produsen dan sumber pemerintah atau lembaga independen. Catat daya listrik, kapasitas pendinginan, dan nilai efisiensinya (misalnya EER atau CSPF) beserta alamat sumbernya.",
+          "baris": 5,
+          "wajibSumber": true,
+          "minSumber": 2,
+          "indikatorVariabel": ["LI2"]
+        },
+        {
+          "tipe": "tautan-sumber",
+          "judul": "Sumber awal untuk penelusuran",
+          "daftar": [
+            {
+              "judul": "Efisiensi Energi",
+              "penerbit": "PT Panasonic Gobel Indonesia",
+              "url": "https://www.panasonic.com/id/consumer/air-conditioners-learn/features-explanation/energy-efficiency.html",
+              "kegunaan": "Penjelasan produsen tentang EER dan CSPF",
+              "bahasa": "Indonesia"
+            },
+            {
+              "judul": "Pemerintah Terapkan SKEM dan Pencantuman Label Hemat Energi Untuk Peranti Pengkondisi Udara",
+              "penerbit": "Kementerian ESDM",
+              "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pemerintah-terapkan-skem-dan-pencantuman-label-hemat-energi-untuk-peranti-pengkondisi-udara",
+              "kegunaan": "Penjelasan pemerintah tentang label bintang hemat energi dan standar kinerja energi minimum AC (2018)",
+              "bahasa": "Indonesia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "judul": "Seberapa hemat AC inverter?",
+      "tahap": "bertanya",
+      "stem": ["S", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Menanyakan \"Apa tujuan sumber ini, dan apakah datanya dapat diperiksa?\"",
+      "blok": [
+        {
+          "tipe": "teks",
+          "isi": "Mesin pendingin dan pompa kalor bekerja dengan prinsip kebalikan dari mesin kalor. Keduanya memindahkan kalor dari tempat bersuhu rendah ke tempat bersuhu tinggi dengan bantuan usaha. Kinerjanya dinyatakan dengan koefisien performansi."
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "5.2",
+          "tex": "K = \\frac{Q_C}{W}",
+          "keterangan": [
+            { "simbol": "K", "arti": "koefisien performansi mesin pendingin", "satuan": "-" },
+            { "simbol": "Q_C", "arti": "kalor yang diambil dari reservoir dingin", "satuan": "J" },
+            { "simbol": "W", "arti": "usaha (energi listrik) yang diberikan", "satuan": "J" }
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "5.3",
+          "tex": "K_P = \\frac{Q_H}{W}",
+          "keterangan": [
+            { "simbol": "K_P", "arti": "koefisien performansi pompa kalor; selalu lebih besar dari 1", "satuan": "-" },
+            { "simbol": "Q_H", "arti": "kalor yang dihantarkan ke reservoir panas", "satuan": "J" }
+          ]
+        },
+        {
+          "tipe": "klaim-uji",
+          "id": "klaim-5",
+          "klaim": "AC inverter jauh lebih hemat listrik, hingga 60 persen dibanding AC konvensional.",
+          "konteks": "Klaim penghematan seperti ini sering muncul di berita dan iklan AC. Bandingkan dua sumber berikut.",
+          "sumber": [
+            {
+              "id": "s1",
+              "judul": "AC Daikin Tipe Ini Klaim Hemat Listrik 60 Persen",
+              "penerbit": "VIVA",
+              "penulis": "Rivaldi Prayoga",
+              "tanggal": "2026-01-12",
+              "url": "https://techno.viva.co.id/elektronik/23790-ac-daikin-tipe-ini-klaim-hemat-listrik-60-persen",
+              "jenis": "Berita teknologi",
+              "bahasa": "Indonesia"
+            },
+            {
+              "id": "s2",
+              "judul": "Kaji Eksperimental Perbandingan Kinerja Pengkondisi Udara antara Menggunakan Inverter dan Non-Inverter",
+              "penerbit": "EDUSAINTEK, Vol. 3, Universitas Muhammadiyah Semarang",
+              "penulis": "Ismail Wellid, Yudi Prana Hikmat, Kasni Sumeru",
+              "tanggal": "2019",
+              "url": "https://prosiding.unimus.ac.id/index.php/edusaintek/article/view/314",
+              "jenis": "Artikel prosiding hasil eksperimen",
+              "bahasa": "Indonesia"
+            }
+          ],
+          "daftarPeriksa": [
+            { "id": "penulis", "aspek": "Penulis", "pertanyaan": "Siapa penulisnya? Dari mana angka penghematan berasal?" },
+            { "id": "tujuan", "aspek": "Tujuan", "pertanyaan": "Apakah sumber ini memberi informasi, mempromosikan produk, atau melaporkan penelitian?" },
+            { "id": "bukti", "aspek": "Bukti", "pertanyaan": "Apakah kondisi pengujian dijelaskan (kapasitas AC, suhu, lama uji, pembanding)?" },
+            { "id": "kebaruan", "aspek": "Kebaruan", "pertanyaan": "Kapan sumber ini terbit? Apakah teknologinya masih sebanding?" }
+          ],
+          "pilihanPenilaian": ["Ya", "Tidak", "Tidak jelas"],
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "callout",
+          "gaya": "tahukah",
+          "judul": "Data dari s2",
+          "isi": "Dua AC berkapasitas 1 PK diuji selama 3 jam pada suhu dalam ruang 24 °C dan suhu luar ruang 32 °C. AC inverter memakai 1,45 kWh, sedangkan AC non-inverter memakai 1,91 kWh."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-6",
+          "format": "angka",
+          "inputmode": "decimal",
+          "pertanyaan": "Hitung persentase penghematan AC inverter terhadap AC non-inverter dari data s2.",
+          "satuan": "%",
+          "toleransi": 0.5,
+          "jawabanRujukan": 24.1,
+          "petunjuk": "Penghematan = (energi non-inverter − energi inverter) / energi non-inverter × 100%.",
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-7",
+          "format": "teks-panjang",
+          "pertanyaan": "Hasil hitungan Anda berbeda dengan angka 60 persen di s1. Sumber mana yang lebih dapat dipercaya untuk memperkirakan penghematan di rumah Anda? Susun argumen dengan daftar periksa sumber dan konsep koefisien performansi.",
+          "baris": 6,
+          "indikatorVariabel": ["BK2", "LI3"]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "judul": "Merancang rekomendasi pemakaian AC hemat energi",
+      "tahap": "masyarakat-belajar",
+      "stem": ["R", "M"],
+      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "peranGuru": "Memeriksa kewajaran perhitungan dan asal data faktor emisi.",
+      "blok": [
+        {
+          "tipe": "tugas-rancangan",
+          "id": "rancangan-5",
+          "judul": "Rekomendasi pemakaian AC hemat energi dan perkiraan pengurangan emisi",
+          "masalah": "Sekolah atau keluarga Anda ingin mengurangi tagihan listrik dan emisi gas rumah kaca dari pemakaian AC. Susunlah rekomendasi setelan dan durasi pemakaian AC beserta perkiraan pengurangan energi dan emisinya.",
+          "kriteria": [
+            "Rekomendasi dapat diterapkan di ruang kelas atau rumah",
+            "Setiap rekomendasi dijelaskan dengan konsep koefisien performansi",
+            "Perhitungan energi memakai data dari sumber yang telah dinilai",
+            "Faktor emisi diambil dari sumber resmi yang ditelusuri sendiri dan dicantumkan"
+          ],
+          "batasan": [
+            "Semua angka harus berasal dari sumber yang dicantumkan atau dari pengukuran sendiri",
+            "Asumsi perhitungan (misalnya lama pemakaian per hari) ditulis dengan jelas"
+          ],
+          "peranKelompok": [
+            { "peran": "Penelusur sumber", "tugas": "Mencari dan menilai data konsumsi listrik AC serta faktor emisi resmi" },
+            { "peran": "Penghitung", "tugas": "Menghitung energi dan emisi untuk setiap skenario" },
+            { "peran": "Pemeriksa", "tugas": "Memeriksa satuan, asumsi, dan kewajaran hasil" },
+            { "peran": "Penyaji", "tugas": "Menyusun rekomendasi dan daftar sumber" }
+          ],
+          "langkah": [
+            {
+              "id": "r5-1",
+              "tahap": "menetapkan-masalah",
+              "instruksi": "Tetapkan ruangan sasaran, pengguna, dan tujuan rekomendasi Anda.",
+              "format": "teks-panjang"
+            },
+            {
+              "id": "r5-2",
+              "tahap": "merancang",
+              "instruksi": "Susun minimal tiga rekomendasi, misalnya setelan suhu, durasi pemakaian, atau pemilihan jenis AC. Jelaskan dasar fisikanya.",
+              "format": "tabel",
+              "kolom": ["Rekomendasi", "Dasar fisika", "Sumber data"],
+              "jumlahBaris": 3
+            },
+            {
+              "id": "r5-3",
+              "tahap": "analisis-kelayakan",
+              "instruksi": "Hitung perkiraan pengurangan energi dan emisi dengan tabel di bawah. Tuliskan semua asumsi Anda.",
+              "format": "teks-panjang"
+            }
+          ],
+          "produk": "Laporan rekomendasi satu halaman berisi rekomendasi, perhitungan, asumsi, dan daftar sumber",
+          "rubrik": "rubrik-5",
+          "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-5-emisi",
+          "judul": "Perkiraan energi dan emisi",
+          "instruksi": "Isi energi per hari untuk setiap skenario dan faktor emisi dari sumber resmi yang Anda temukan. Contoh baris pertama dapat memakai data s2 yang disetarakan ke 8 jam per hari (asumsi: konsumsi sebanding dengan lama pemakaian).",
+          "kolom": [
+            { "kunci": "skenario", "label": "Skenario", "satuan": "", "tipe": "teks" },
+            { "kunci": "Ehari", "label": "Energi per hari", "satuan": "kWh", "tipe": "angka" },
+            { "kunci": "hari", "label": "Jumlah hari", "satuan": "hari", "tipe": "angka" },
+            { "kunci": "FE", "label": "Faktor emisi", "satuan": "kg CO₂/kWh", "tipe": "angka" },
+            { "kunci": "Etotal", "label": "Energi total", "satuan": "kWh", "tipe": "hitung", "hitung": "Ehari*hari" },
+            { "kunci": "emisi", "label": "Emisi", "satuan": "kg CO₂", "tipe": "hitung", "hitung": "Ehari*hari*FE" }
+          ],
+          "jumlahBaris": 3,
+          "indikatorVariabel": ["LI4"]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "judul": "Menghitung efisiensi dan koefisien performansi",
+      "tahap": "pemodelan",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
+      "peranGuru": "Mencontohkan perhitungan e, eC, dan K dari data.",
+      "blok": [
+        {
+          "tipe": "rumus",
+          "nomor": "5.4",
+          "tex": "e_C = 1 - \\frac{T_C}{T_H}",
+          "keterangan": [
+            { "simbol": "e_C", "arti": "efisiensi mesin Carnot", "satuan": "-" },
+            { "simbol": "T_H, T_C", "arti": "suhu mutlak reservoir tinggi dan reservoir rendah", "satuan": "K" }
+          ]
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal: mesin kalor",
+          "soal": "Sebuah mesin menyerap kalor 2000 J dan melakukan usaha 500 J dalam satu siklus. Mesin bekerja di antara reservoir 600 K dan 300 K. Hitung efisiensi mesin, kalor yang dibuang, dan efisiensi Carnot.",
+          "langkah": [
+            "Efisiensi mesin (Persamaan 5.1): $e = \\dfrac{500}{2000} = 0{,}25$ atau 25%.",
+            "Kalor yang dibuang: $Q_C = Q_H - W = 2000 - 500 = 1500$ J.",
+            "Efisiensi Carnot (Persamaan 5.4): $e_C = 1 - \\dfrac{300}{600} = 0{,}50$ atau 50%.",
+            "Efisiensi mesin nyata lebih kecil daripada efisiensi Carnot pada suhu yang sama."
+          ]
+        },
+        {
+          "tipe": "rumus",
+          "nomor": "5.5",
+          "tex": "K_C = \\frac{T_C}{T_H - T_C}",
+          "keterangan": [
+            { "simbol": "K_C", "arti": "koefisien performansi mesin pendingin Carnot", "satuan": "-" }
+          ]
+        },
+        {
+          "tipe": "contoh",
+          "judul": "Contoh soal: batas teoretis AC",
+          "soal": "Sebuah AC menjaga ruangan pada 24 °C. Hitung koefisien performansi Carnot ketika suhu luar 32 °C dan ketika suhu luar 35 °C.",
+          "langkah": [
+            "Ubah ke kelvin: $T_C = 297$ K; $T_H = 305$ K atau $308$ K.",
+            "Suhu luar 32 °C: $K_C = \\dfrac{297}{305 - 297} = \\dfrac{297}{8} \\approx 37$.",
+            "Suhu luar 35 °C: $K_C = \\dfrac{297}{308 - 297} = \\dfrac{297}{11} = 27$."
+          ],
+          "catatan": "Nilai ini adalah batas teoretis. Koefisien performansi AC nyata jauh lebih kecil."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-8",
+          "format": "teks-panjang",
+          "pertanyaan": "Gunakan widget dan contoh soal. Hitung juga $K_C$ untuk suhu luar 40 °C. Rumuskan pola umum hubungan koefisien performansi dengan selisih suhu kedua reservoir. Apa artinya bagi setelan suhu AC di hari yang sangat panas?",
+          "baris": 6,
+          "indikatorVariabel": ["BK4", "LI4"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-5",
+          "langkah": [
+            {
+              "id": "r5-4",
+              "tahap": "menyajikan",
+              "instruksi": "Sajikan rekomendasi kelompok Anda beserta tabel perhitungan energi dan emisi. Tunjukkan asal setiap angka.",
+              "format": "unggah-atau-teks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "judul": "Rekomendasi dan perubahan iklim",
+      "tahap": "refleksi",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Memfasilitasi presentasi dan memberi umpan balik.",
+      "blok": [
+        {
+          "tipe": "refleksi",
+          "id": "refleksi-5",
+          "tinjauUlang": "lkpd-5-1",
+          "pengantar": "Ini dugaan awal Anda tentang mesin kendaraan dan unit luar AC.",
+          "pertanyaan": [
+            "Jelaskan kembali mengapa efisiensi mesin selalu kurang dari 100% dengan rumusan Kelvin-Planck.",
+            "Udara panas dari unit luar AC berasal dari mana? Jelaskan dengan aliran energi pada mesin pendingin.",
+            "Bagaimana rekomendasi kelompok Anda berkaitan dengan upaya mengurangi dampak perubahan iklim?"
+          ],
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "tugas-rancangan-lanjutan",
+          "tugas": "rancangan-5",
+          "langkah": [
+            {
+              "id": "r5-5",
+              "tahap": "memperbaiki",
+              "instruksi": "Perbaiki rekomendasi berdasarkan umpan balik. Pastikan semua sumber tercantum lengkap dan semua asumsi tertulis.",
+              "format": "teks-panjang"
+            }
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-5-9",
+          "format": "teks-panjang",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang batas efisiensi mesin kalor, koefisien performansi AC, dan kaitan pemakaian AC dengan emisi gas rumah kaca. Cantumkan sumber yang Anda pakai.",
+          "baris": 6,
+          "wajibSumber": true,
+          "minSumber": 2,
+          "indikatorVariabel": ["BK5", "LI5"]
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "judul": "Penilaian KB 5",
+      "tahap": "penilaian-autentik",
+      "stem": ["S", "T", "R", "M"],
+      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "peranGuru": "Menilai laporan dengan rubrik rancangan dan rubrik penggunaan sumber.",
+      "blok": [
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-1",
+          "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang AC adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "AC merek apa yang paling populer?" },
+            { "id": "b", "teks": "Bagaimana pengaruh setelan suhu AC terhadap energi listrik yang dipakai pada suhu luar yang sama?" },
+            { "id": "c", "teks": "Apakah AC membuat orang malas bergerak?" },
+            { "id": "d", "teks": "Kapan AC pertama kali ditemukan?" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (setelan suhu), variabel yang diukur (energi listrik), dan variabel yang dijaga tetap (suhu luar).",
+          "indikatorVariabel": ["BK1"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-2",
+          "pertanyaan": "Argumen yang paling tepat untuk menjelaskan mengapa efisiensi mesin kalor selalu kurang dari 100% adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Mesin selalu rusak setelah lama dipakai" },
+            { "id": "b", "teks": "Menurut Kelvin-Planck, mesin siklus tidak dapat mengubah seluruh kalor menjadi usaha, sehingga selalu ada kalor yang dibuang ke reservoir dingin" },
+            { "id": "c", "teks": "Bahan bakar tidak mengandung energi yang cukup" },
+            { "id": "d", "teks": "Energi hilang dan musnah di dalam mesin" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Selalu ada $Q_C > 0$, sehingga $W < Q_H$ dan $e < 1$. Energi tidak musnah; sebagian dibuang sebagai kalor.",
+          "indikatorVariabel": ["BK2"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-3",
+          "pertanyaan": "Mesin Carnot bekerja di antara reservoir 500 K dan 300 K. Efisiensinya adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "20%" },
+            { "id": "b", "teks": "40%" },
+            { "id": "c", "teks": "60%" },
+            { "id": "d", "teks": "167%" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Persamaan 5.4: $e_C = 1 - \\dfrac{300}{500} = 0{,}40$ atau 40%.",
+          "indikatorVariabel": ["BK3"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-4",
+          "pertanyaan": "Data koefisien performansi Carnot sebuah AC (ruangan 297 K): suhu luar 305 K → 37; 308 K → 27; 313 K → 18,6. Kesimpulan umum yang didukung data ini adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Koefisien performansi makin besar ketika selisih suhu makin besar" },
+            { "id": "b", "teks": "Koefisien performansi makin kecil ketika selisih suhu kedua reservoir makin besar" },
+            { "id": "c", "teks": "Koefisien performansi tidak bergantung pada suhu luar" },
+            { "id": "d", "teks": "Koefisien performansi hanya bergantung pada merek AC" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Ketika suhu luar naik, selisih suhu bertambah dan koefisien performansi turun. Itulah sebabnya AC bekerja lebih berat pada hari yang sangat panas.",
+          "indikatorVariabel": ["BK4"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-5",
+          "pertanyaan": "Sebuah iklan menyebut mesinnya mencapai efisiensi 70% ketika bekerja di antara 600 K dan 300 K. Kesimpulan yang tepat adalah ...",
+          "opsi": [
+            { "id": "a", "teks": "Klaim masuk akal karena kurang dari 100%" },
+            { "id": "b", "teks": "Klaim tidak mungkin, karena melebihi efisiensi Carnot sebesar 50% pada suhu yang sama" },
+            { "id": "c", "teks": "Klaim benar jika mesinnya baru" },
+            { "id": "d", "teks": "Tidak dapat dinilai tanpa mengetahui merek mesin" }
+          ],
+          "kunci": "b",
+          "pembahasan": "$e_C = 1 - 300/600 = 50\\%$. Tidak ada mesin yang dapat melampaui efisiensi Carnot pada pasangan suhu reservoir yang sama.",
+          "indikatorVariabel": ["BK5"]
+        },
+        {
+          "tipe": "kuis",
+          "id": "kuis-5-6",
+          "pertanyaan": "Untuk memperkirakan penghematan listrik AC inverter, data manakah yang paling layak dipakai?",
+          "opsi": [
+            { "id": "a", "teks": "Angka \"hingga 60%\" di judul berita tanpa keterangan cara uji" },
+            { "id": "b", "teks": "Hasil uji yang menyebut kapasitas AC, suhu dalam dan luar ruang, lama uji, dan energi yang terukur" },
+            { "id": "c", "teks": "Testimoni satu pembeli di media sosial" },
+            { "id": "d", "teks": "Perkiraan penjual di toko elektronik" }
+          ],
+          "kunci": "b",
+          "pembahasan": "Data dengan kondisi uji yang jelas dapat dibandingkan dan diperiksa ulang. Angka tanpa kondisi uji tidak dapat diterapkan ke situasi lain.",
+          "indikatorVariabel": ["LI3"]
+        },
+        {
+          "tipe": "rubrik",
+          "id": "rubrik-5",
+          "judul": "Rubrik laporan rekomendasi AC hemat energi",
+          "untuk": "rancangan-5",
+          "skala": [4, 3, 2, 1],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": ["BK3"],
+              "deskriptor": {
+                "4": "Setiap rekomendasi dijelaskan dengan koefisien performansi atau aliran energi secara benar",
+                "3": "Sebagian besar rekomendasi dijelaskan dengan benar",
+                "2": "Penjelasan fisika sebagian besar keliru",
+                "1": "Tidak ada penjelasan fisika"
+              }
+            },
+            {
+              "aspek": "Kelayakan dan perhitungan",
+              "indikatorVariabel": ["BK2", "LI4"],
+              "deskriptor": {
+                "4": "Perhitungan energi dan emisi benar, satuan konsisten, dan semua asumsi tertulis",
+                "3": "Perhitungan benar, tetapi ada asumsi yang tidak tertulis",
+                "2": "Ada kesalahan perhitungan atau satuan",
+                "1": "Tidak ada perhitungan"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": ["LI3", "LI5"],
+              "deskriptor": {
+                "4": "Data konsumsi listrik dan faktor emisi berasal dari sumber yang dinilai, dan faktor emisi dari sumber resmi; semua dicantumkan lengkap",
+                "3": "Sumber resmi dipakai, tetapi pencantumannya belum lengkap",
+                "2": "Sumber dicantumkan, tetapi faktor emisi bukan dari sumber resmi",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glosarium": [
+    { "istilah": "Mesin kalor", "arti": "Alat yang menyerap kalor dari sumber bersuhu tinggi untuk melakukan usaha dan membuang sisanya ke reservoir bersuhu rendah" },
+    { "istilah": "Efisiensi termal", "arti": "Perbandingan usaha yang dihasilkan dengan kalor yang diserap dalam satu siklus" },
+    { "istilah": "Siklus Carnot", "arti": "Siklus ideal dari dua proses isotermal dan dua proses adiabatik reversibel; efisiensinya tertinggi di antara dua reservoir" },
+    { "istilah": "Mesin pendingin", "arti": "Alat yang memindahkan kalor dari tempat dingin ke tempat panas dengan bantuan usaha, misalnya lemari es dan AC" },
+    { "istilah": "Pompa kalor", "arti": "Alat yang memindahkan kalor ke tempat yang lebih panas untuk menghangatkannya" },
+    { "istilah": "Koefisien performansi", "arti": "Ukuran kinerja mesin pendingin atau pompa kalor: kalor yang dipindahkan dibagi usaha yang diberikan" },
+    { "istilah": "Faktor emisi", "arti": "Banyaknya gas rumah kaca yang dilepaskan untuk setiap satuan energi listrik yang dihasilkan" }
+  ],
+  "referensi": [
+    "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
+    "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
+    "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
+    "Kementerian ESDM. (2018, 23 Agustus). Pemerintah terapkan SKEM dan pencantuman label hemat energi untuk peranti pengkondisi udara. https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pemerintah-terapkan-skem-dan-pencantuman-label-hemat-energi-untuk-peranti-pengkondisi-udara",
+    "PT Panasonic Gobel Indonesia. (t.t.). Efisiensi energi. https://www.panasonic.com/id/consumer/air-conditioners-learn/features-explanation/energy-efficiency.html",
+    "Prayoga, R. (2026, 12 Januari). AC Daikin tipe ini klaim hemat listrik 60 persen. VIVA. https://techno.viva.co.id/elektronik/23790-ac-daikin-tipe-ini-klaim-hemat-listrik-60-persen",
+    "Wellid, I., Hikmat, Y. P., & Sumeru, K. (2019). Kaji eksperimental perbandingan kinerja pengkondisi udara antara menggunakan inverter dan non-inverter. EDUSAINTEK, 3. https://prosiding.unimus.ac.id/index.php/edusaintek/article/view/314"
+  ]
+}

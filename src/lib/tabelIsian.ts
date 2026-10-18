@@ -1,5 +1,5 @@
 import { inject, type InjectionKey, type Ref } from "vue";
-import type { Blok, Kegiatan, KolomTabelIsian } from "@/types/kegiatan";
+import type { Blok, BlokTabelIsian, Kegiatan, KolomTabelIsian } from "@/types/kegiatan";
 
 /** Satu baris tabel-isian seperti yang disimpan: kunci kolom -> teks masukan. */
 export type BarisTabel = Record<string, string>;
@@ -85,6 +85,23 @@ export function nilaiBaris(kolom: KolomTabelIsian[], baris: BarisTabel): Record<
     if (k.tipe === "hitung" && k.hitung) nilai[k.kunci] = evalEkspresi(k.hitung, nilai);
   }
   return nilai;
+}
+
+/** Isi awal terkunci dari `barisAwal` untuk sel (baris i, kolom j), atau undefined jika sel bebas diisi. */
+export function isiAwal(blok: BlokTabelIsian, i: number, j: number): string | undefined {
+  const v = blok.barisAwal?.[i]?.[j];
+  return v === undefined || v === "" ? undefined : v;
+}
+
+/** True jika semua sel yang harus diisi murid (bukan kolom hitung, bukan isi awal) sudah terisi. */
+export function tabelLengkap(blok: BlokTabelIsian, baris: BarisTabel[]): boolean {
+  for (let i = 0; i < blok.jumlahBaris; i++) {
+    for (const [j, k] of blok.kolom.entries()) {
+      if (k.tipe === "hitung" || isiAwal(blok, i, j) !== undefined) continue;
+      if (!(baris[i]?.[k.kunci] ?? "").trim()) return false;
+    }
+  }
+  return true;
 }
 
 export function formatAngka(n: number | null): string {

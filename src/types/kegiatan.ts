@@ -57,6 +57,8 @@ export interface BlokTabel {
   kolom: string[];
   baris: string[][];
   sumber?: string;
+  /** id blok tabel-isian yang harus diisi murid dulu sebelum tabel ini (mis. tabel rujukan) dibuka. */
+  tampilSetelah?: string;
 }
 
 export interface BlokCallout {
@@ -72,7 +74,8 @@ export interface BlokSimulasi {
   src: string;
   judul?: string;
   rasio?: string;
-  instruksi?: string;
+  /** Langkah kerja, ditampilkan sebagai daftar bernomor. */
+  instruksi?: string[];
 }
 
 export interface BlokRumus {
@@ -142,6 +145,8 @@ export interface BlokTabelIsian {
   instruksi?: string;
   kolom: KolomTabelIsian[];
   jumlahBaris: number;
+  /** Isi awal yang terkunci, per baris lalu per kolom (mis. nama proses di kolom pertama). */
+  barisAwal?: string[][];
   indikatorVariabel?: string[];
 }
 
@@ -186,7 +191,7 @@ export interface LangkahRancangan {
   id: string;
   tahap: string;
   instruksi: string;
-  format: "teks-panjang" | "tabel" | "unggah-atau-teks";
+  format: "teks-panjang" | "tabel" | "unggah-atau-teks" | "diagram-pv";
   kolom?: string[];
   jumlahBaris?: number;
 }
@@ -243,7 +248,43 @@ export interface BlokRubrik {
   kriteria: { aspek: string; indikatorVariabel?: string[]; deskriptor: Record<string, string> }[];
 }
 
+export type ProsesPV = "isobarik" | "isokhorik" | "isotermal";
+
+export interface BlokDiagramPV {
+  tipe: "diagram-pv";
+  id: string;
+  /** jelajah: satu proses dari keadaan awal. rancang: murid menyusun siklus tertutup. */
+  mode: "jelajah" | "rancang";
+  untukLangkah?: string;
+  sumbu: { pMin: number; pMax: number; VMin: number; VMax: number; satuanP: string; satuanV: string };
+  keadaanAwal?: { p: number; V: number };
+  batas?: { pMin: number; pMax: number; VMin: number; VMax: number };
+  prosesTersedia: ProsesPV[];
+  maksAlternatif?: number;
+  tampilkanLuas?: boolean;
+  instruksi?: string;
+}
+
+export interface RentangSuhu {
+  min: number;
+  max: number;
+  awal: number;
+  langkah: number;
+  satuan: string;
+}
+
+export interface BlokWidgetCarnot {
+  tipe: "widget-carnot";
+  id: string;
+  TH: RentangSuhu;
+  TC: RentangSuhu;
+  tampilkan: ("siklus-pv" | "efisiensi-carnot" | "koefisien-performansi-carnot")[];
+  instruksi?: string;
+}
+
 export type Blok =
+  | BlokDiagramPV
+  | BlokWidgetCarnot
   | BlokGambar
   | BlokVideo
   | BlokKebutuhanInformasi
