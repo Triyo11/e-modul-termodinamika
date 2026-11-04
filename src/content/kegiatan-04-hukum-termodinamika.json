@@ -1,8 +1,8 @@
 {
   "id": "kegiatan-04",
-  "versi": "2.0",
+  "versi": "2.1",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-10-18",
+  "revisiTerakhir": "2026-11-04",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 4,
   "judul": "Hukum-hukum Termodinamika",
@@ -53,7 +53,9 @@
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 4 dari ATP guru mitra tersedia.",
     "Blok gambar fenomena di layar l1 belum punya berkas (src null).",
     "Persamaan 4.1 = Persamaan (2.14) Bab II. Nomor padanan persamaan lain belum dicocokkan.",
-    "Energy Forms and Changes dan Greenhouse Effect diganti widget buatan sendiri (SimulasiEnergiTermal.vue, SimulasiEfekRumahKaca.vue). Tombol konsentrasi Zaman es, 1750, 1950, dan Masa kini disetel agar suhu setimbang mendekati nilai nyata; nilainya ilustratif. Layar Diffusion Gas Properties juga diganti widget buatan sendiri (SimulasiDifusi.vue) dengan tumbukan antarpartikel, data jumlah partikel per sisi, dan grafik persentase partikel di sisi asalnya."
+    "Instruksi Greenhouse Effect hanya memakai fitur yang disebut di halaman resmi PhET (mengubah konsentrasi gas rumah kaca, membandingkan zaman es dan masa kini). Nama kontrolnya perlu dicocokkan dengan simulasi.",
+    "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju penurunan suhu (unsur M); tahap pemodelan diberi label R.",
+    "Uji singkat di layar l4 memerlukan termometer dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026). Karena botol minuman tidak boleh dibuka, suhu diukur pada botol sejenis berisi air sebagai model."
   ],
   "layar": [
     {
@@ -119,13 +121,7 @@
           "src": "https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html",
           "judul": "Energy Forms and Changes (layar Intro)",
           "rasio": "3/4",
-          "instruksi": [
-            "Pindahkan balok besi ke atas salah satu pemanas, lalu panaskan.",
-            "Ketuk Matikan pada pemanas itu.",
-            "Tumpukkan besi panas di atas balok bata yang masih dingin di meja.",
-            "Centang Grafik suhu.",
-            "Amati suhu kedua balok sampai tidak berubah lagi."
-          ]
+          "instruksi": ["Pindahkan balok besi ke atas salah satu pemanas, lalu panaskan.", "Ketuk Matikan pada pemanas itu.", "Tumpukkan besi panas di atas balok bata yang masih dingin di meja.", "Centang Grafik suhu.", "Amati suhu kedua balok sampai tidak berubah lagi."]
         },
         {
           "tipe": "tabel-isian",
@@ -159,12 +155,7 @@
           "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
           "judul": "Gas Properties (layar Diffusion)",
           "rasio": "3/4",
-          "instruksi": [
-            "Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.",
-            "Ketuk Angkat sekat.",
-            "Amati wadah dan grafiknya selama beberapa menit. Boleh memakai kecepatan Cepat.",
-            "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."
-          ]
+          "instruksi": ["Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.", "Ketuk Angkat sekat.", "Amati wadah dan grafiknya selama beberapa menit. Boleh memakai kecepatan Cepat.", "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."]
         },
         {
           "tipe": "isian",
@@ -279,9 +270,9 @@
       "id": "l4",
       "judul": "Mendinginkan minuman secepat mungkin",
       "tahap": "masyarakat-belajar",
-      "stem": ["R"],
+      "stem": ["R", "M"],
       "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
-      "peranGuru": "Memeriksa alasan ilmiah setiap rancangan.",
+      "peranGuru": "Memeriksa alasan ilmiah setiap rancangan, menyiapkan termometer dari lab, dan memeriksa kewajaran perhitungan laju penurunan suhu.",
       "blok": [
         {
           "tipe": "tugas-rancangan",
@@ -291,7 +282,7 @@
           "kriteria": [
             "Rancangan memakai bahan yang tersedia",
             "Setiap langkah dijelaskan dengan konsep aliran kalor dan kesetimbangan termal",
-            "Ada cara mengukur keberhasilan (suhu dan waktu)",
+            "Keberhasilan diukur dengan laju penurunan suhu yang dihitung dari data uji singkat",
             "Minimal dua rancangan dibandingkan"
           ],
           "batasan": [
@@ -301,7 +292,7 @@
           "peranKelompok": [
             { "peran": "Penelusur sumber", "tugas": "Mencari informasi faktor yang memengaruhi laju aliran kalor dan menilai sumbernya" },
             { "peran": "Perancang", "tugas": "Menyusun langkah dan gambar rancangan" },
-            { "peran": "Penguji", "tugas": "Mengukur suhu minuman dan mencatat waktu" },
+            { "peran": "Penguji", "tugas": "Mengukur suhu air di botol model dan mencatat waktu" },
             { "peran": "Penyaji", "tugas": "Menyusun perbandingan rancangan dan daftar sumber" }
           ],
           "langkah": [
@@ -322,13 +313,29 @@
             {
               "id": "r4-3",
               "tahap": "analisis-kelayakan",
-              "instruksi": "Uji atau perkirakan hasil kedua rancangan. Kapan aliran kalor akan berhenti? Dapatkah minuman menjadi lebih dingin daripada campuran pendinginnya? Jelaskan dengan Hukum Ke-Nol dan rumusan Clausius.",
+              "instruksi": "Uji kedua rancangan selama beberapa menit dan isi tabel di bawah. Rancangan mana yang lebih layak berdasarkan laju penurunan suhunya? Kapan aliran kalor akan berhenti? Dapatkah minuman menjadi lebih dingin daripada campuran pendinginnya? Jelaskan dengan Hukum Ke-Nol dan rumusan Clausius.",
               "format": "teks-panjang"
             }
           ],
-          "produk": "Laporan perbandingan dua rancangan beserta hasil uji dan daftar sumber",
+          "produk": "Laporan perbandingan dua rancangan beserta tabel uji singkat, hasil uji, dan daftar sumber",
           "rubrik": "rubrik-4",
           "indikatorVariabel": ["BK2", "LI3"]
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-4-dingin",
+          "judul": "Uji singkat: laju penurunan suhu",
+          "instruksi": "Agar botol minuman tidak dibuka, pakai botol sejenis berisi air sebagai model dan masukkan termometer ke dalamnya. Gunakan botol, volume air, dan lama uji yang sama untuk kedua rancangan.",
+          "kolom": [
+            { "kunci": "rancangan", "label": "Rancangan", "satuan": "", "tipe": "teks" },
+            { "kunci": "T0", "label": "Suhu awal", "satuan": "°C", "tipe": "angka" },
+            { "kunci": "T1", "label": "Suhu akhir", "satuan": "°C", "tipe": "angka" },
+            { "kunci": "t", "label": "Lama uji", "satuan": "menit", "tipe": "angka" },
+            { "kunci": "laju", "label": "Laju penurunan suhu", "satuan": "°C/menit", "tipe": "hitung", "hitung": "(T0-T1)/t" }
+          ],
+          "barisAwal": [["Rancangan 1"], ["Rancangan 2"]],
+          "jumlahBaris": 2,
+          "indikatorVariabel": ["LI4"]
         }
       ]
     },
@@ -336,7 +343,7 @@
       "id": "l5",
       "judul": "Neraca energi Bumi dan arah proses alami",
       "tahap": "pemodelan",
-      "stem": ["S", "T", "M"],
+      "stem": ["S", "T", "R", "M"],
       "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
       "peranGuru": "Mencontohkan tabel analisis Hukum Pertama untuk setiap proses.",
       "blok": [
@@ -365,12 +372,7 @@
           "src": "https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html",
           "judul": "Greenhouse Effect",
           "rasio": "3/4",
-          "instruksi": [
-            "Ketuk Nyalakan sinar Matahari.",
-            "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.",
-            "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.",
-            "Geser slider konsentrasi ke kanan. Amati neraca energi dan suhu permukaan sampai stabil kembali."
-          ]
+          "instruksi": ["Ketuk Nyalakan sinar Matahari.", "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.", "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.", "Geser slider konsentrasi ke kanan. Amati neraca energi dan suhu permukaan sampai stabil kembali."]
         },
         {
           "tipe": "isian",
@@ -434,7 +436,7 @@
             {
               "id": "r4-4",
               "tahap": "menyajikan",
-              "instruksi": "Sajikan kedua rancangan dan hasil ujinya. Tunjukkan arah aliran kalor pada setiap rancangan dengan diagram panah.",
+              "instruksi": "Sajikan kedua rancangan, tabel uji singkat, dan perbandingan laju penurunan suhunya. Tunjukkan arah aliran kalor pada setiap rancangan dengan diagram panah.",
               "format": "unggah-atau-teks"
             }
           ]
@@ -512,8 +514,10 @@
       "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
       "peranGuru": "Menilai LKPD dan rancangan dengan rubrik.",
       "blok": [
+        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik di bawah." },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-1",
           "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang lemari es adalah ...",
           "opsi": [
@@ -528,6 +532,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-2",
           "pertanyaan": "Seseorang mengklaim mesinnya terus menghasilkan usaha tanpa bahan bakar dan tanpa listrik dari luar. Argumen yang paling tepat untuk menolaknya adalah ...",
           "opsi": [
@@ -542,6 +547,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-3",
           "pertanyaan": "Gas memuai secara adiabatik dan melakukan usaha 120 J. Perubahan energi dalam gas adalah ...",
           "opsi": [
@@ -556,6 +562,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-4",
           "pertanyaan": "Perhitungan entropi total untuk beberapa aliran kalor spontan menghasilkan +0,83 J/K, +0,42 J/K, dan +1,25 J/K. Kesimpulan umum yang didukung data ini adalah ...",
           "opsi": [
@@ -570,6 +577,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-5",
           "pertanyaan": "Termometer A dicelupkan ke air dalam gelas 1 dan menunjukkan 40 °C. Termometer yang sama kemudian dicelupkan ke air dalam gelas 2 dan juga menunjukkan 40 °C. Kesimpulan yang tepat adalah ...",
           "opsi": [
@@ -584,6 +592,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-4-6",
           "pertanyaan": "Untuk menilai klaim sebuah alat energi gratis, sumber manakah yang paling dapat dipercaya?",
           "opsi": [
@@ -598,6 +607,7 @@
         },
         {
           "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
           "id": "rubrik-4",
           "judul": "Rubrik rancangan pendinginan minuman",
           "untuk": "rancangan-4",
@@ -615,12 +625,12 @@
             },
             {
               "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": ["BK2"],
+              "indikatorVariabel": ["BK2", "LI4"],
               "deskriptor": {
-                "4": "Dua rancangan diuji atau diperkirakan dengan data suhu dan waktu, lalu dibandingkan",
-                "3": "Dua rancangan dibandingkan tanpa data suhu atau waktu yang lengkap",
-                "2": "Hanya satu rancangan",
-                "1": "Rancangan tidak dapat dilakukan"
+                "4": "Kedua rancangan diuji dengan cara yang sama, laju penurunan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
+                "3": "Kedua rancangan diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
+                "2": "Hanya satu rancangan yang diuji",
+                "1": "Tidak ada data uji"
               }
             },
             {
@@ -638,6 +648,35 @@
       ]
     }
   ],
+  "rangkuman": {
+    "judul": "Rangkuman KB 4: Hukum-hukum Termodinamika",
+    "tampilSetelah": "lkpd-4-11",
+    "poin": [
+      {
+        "tp": "4.1",
+        "teks": "Dua benda bersentuhan mencapai kesetimbangan termal ketika suhunya sama. Hukum Ke-Nol: jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal. Termometer berperan sebagai benda ketiga."
+      },
+      {
+        "tp": "4.2",
+        "teks": "Hukum Pertama: ΔU = Q − W (Persamaan 4.1). Pada proses isokhorik ΔU = Q, pada proses adiabatik ΔU = −W, dan pada satu siklus penuh ΔU = 0 sehingga W = Q. Perubahan energi dalam gas ideal adalah ΔU = nC_VΔT, dengan C_p − C_V = R (Persamaan 4.2)."
+      },
+      {
+        "tp": "4.3",
+        "teks": "Semua proses alami bersifat ireversibel dan hanya berlangsung spontan ke satu arah. Proses reversibel adalah keadaan ideal yang berlangsung sangat lambat sehingga sistem hampir selalu setimbang."
+      },
+      {
+        "tp": "4.4",
+        "teks": "Rumusan Clausius: kalor tidak mengalir spontan dari benda dingin ke benda panas. Rumusan Kelvin-Planck: tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha. Kedua rumusan setara. Perubahan entropi ΔS = Q/T (Persamaan 4.3), dan entropi total bertambah pada proses tak reversibel. Simulasi Greenhouse Effect menunjukkan suhu permukaan Bumi naik ketika konsentrasi gas rumah kaca dinaikkan."
+      }
+    ],
+    "literasiInformasi": "Juri 22 ahli menyatakan Steorn tidak berhasil menunjukkan produksi energi dari alat Orbo. Klaim yang bertentangan dengan Hukum Pertama memerlukan bukti uji independen yang dapat diperiksa, bukan sekadar demonstrasi dari pembuatnya.",
+    "rumusKunci": [
+      "4.1",
+      "4.2",
+      "4.3"
+    ],
+    "berikutnya": "KB 5 menerapkan hukum-hukum ini pada mesin kalor dan pompa kalor."
+  },
   "glosarium": [
     { "istilah": "Kesetimbangan termal", "arti": "Keadaan dua benda bersentuhan yang suhunya sama sehingga tidak ada lagi aliran energi termal bersih" },
     { "istilah": "Hukum Ke-Nol", "arti": "Jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal" },

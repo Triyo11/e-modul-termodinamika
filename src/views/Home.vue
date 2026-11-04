@@ -23,12 +23,6 @@ const pendahuluanList = [
     linkName: "peta-konsep",
   },
   {
-    title: "Prasyarat",
-    description:
-      "Pengetahuan yang harus dimiliki sebelum mempelajari e-modul ini",
-    linkName: "prasyarat",
-  },
-  {
     title: "Petunjuk Penggunaan",
     description: "Cara menggunakan e-modul ini",
     linkName: "petunjuk-penggunaan",

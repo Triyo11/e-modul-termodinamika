@@ -1,8 +1,8 @@
 {
   "id": "kegiatan-05",
-  "versi": "2.0",
+  "versi": "2.1",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-10-18",
+  "revisiTerakhir": "2026-11-04",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 5,
   "judul": "Mesin Kalor dan Pompa Kalor",
@@ -45,7 +45,8 @@
     "Blok widget-carnot adalah widget buatan sendiri; spesifikasinya ada di skema-json-stem-ctl.md.",
     "Persamaan 5.1 = (2.18), 5.4 = (2.19), 5.2 = (2.20), 5.5 = (2.21) Bab II. Persamaan 5.3 (koefisien performansi pompa kalor) tidak bernomor di kajian teori; rujukannya Giancoli (2014, hlm. 427).",
     "Faktor emisi listrik sengaja tidak diisi. Sesuai Rencana Kegiatan Belajar, murid menelusurinya sendiri. Dokumen resminya Kepmen ESDM No. 163.K/HK.02/MEM.S/2021 (diberitakan RuangEnergi, 5 September 2021); lampiran berisi nilai faktor emisi belum dapat dibuka karena situs JDIH ESDM sedang dalam perbaikan saat dicek (18 Oktober 2026). Guru perlu memeriksa nilainya sebelum pembelajaran.",
-    "Halaman ESDM tentang label hemat energi AC (2018) merujuk Permen ESDM No. 57 Tahun 2017. Apakah aturan itu sudah diganti belum dapat dicek karena situs JDIH ESDM sedang dalam perbaikan."
+    "Halaman ESDM tentang label hemat energi AC (2018) merujuk Permen ESDM No. 57 Tahun 2017. Apakah aturan itu sudah diganti belum dapat dicek karena situs JDIH ESDM sedang dalam perbaikan.",
+    "Rubrik aspek kedua diseragamkan menjadi \"Kelayakan rancangan\" (4 Nov 2026); deskriptornya tetap memuat perhitungan."
   ],
   "layar": [
     {
@@ -475,8 +476,10 @@
       "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
       "peranGuru": "Menilai laporan dengan rubrik rancangan dan rubrik penggunaan sumber.",
       "blok": [
+        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan laporan rekomendasi pemakaian AC kelompok Anda dengan rubrik di bawah." },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-1",
           "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang AC adalah ...",
           "opsi": [
@@ -491,6 +494,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-2",
           "pertanyaan": "Argumen yang paling tepat untuk menjelaskan mengapa efisiensi mesin kalor selalu kurang dari 100% adalah ...",
           "opsi": [
@@ -505,6 +509,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-3",
           "pertanyaan": "Mesin Carnot bekerja di antara reservoir 500 K dan 300 K. Efisiensinya adalah ...",
           "opsi": [
@@ -519,6 +524,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-4",
           "pertanyaan": "Data koefisien performansi Carnot sebuah AC (ruangan 297 K): suhu luar 305 K → 37; 308 K → 27; 313 K → 18,6. Kesimpulan umum yang didukung data ini adalah ...",
           "opsi": [
@@ -533,6 +539,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-5",
           "pertanyaan": "Sebuah iklan menyebut mesinnya mencapai efisiensi 70% ketika bekerja di antara 600 K dan 300 K. Kesimpulan yang tepat adalah ...",
           "opsi": [
@@ -547,6 +554,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-5-6",
           "pertanyaan": "Untuk memperkirakan penghematan listrik AC inverter, data manakah yang paling layak dipakai?",
           "opsi": [
@@ -561,6 +569,7 @@
         },
         {
           "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
           "id": "rubrik-5",
           "judul": "Rubrik laporan rekomendasi AC hemat energi",
           "untuk": "rancangan-5",
@@ -577,7 +586,7 @@
               }
             },
             {
-              "aspek": "Kelayakan dan perhitungan",
+              "aspek": "Kelayakan rancangan",
               "indikatorVariabel": ["BK2", "LI4"],
               "deskriptor": {
                 "4": "Perhitungan energi dan emisi benar, satuan konsisten, dan semua asumsi tertulis",
@@ -601,6 +610,33 @@
       ]
     }
   ],
+  "rangkuman": {
+    "judul": "Rangkuman KB 5: Mesin Kalor dan Pompa Kalor",
+    "tampilSetelah": "lkpd-5-9",
+    "poin": [
+      {
+        "tp": "5.1",
+        "teks": "Efisiensi mesin kalor e = W/Q_H = 1 − Q_C/Q_H (Persamaan 5.1) selalu kurang dari 1 karena selalu ada kalor yang dibuang. Efisiensi Carnot e_C = 1 − T_C/T_H (Persamaan 5.4) adalah batas tertinggi; mesin nyata selalu di bawahnya."
+      },
+      {
+        "tp": "5.2",
+        "teks": "Mesin pendingin dinilai dengan K = Q_C/W (Persamaan 5.2), sedangkan pompa kalor dengan K_P = Q_H/W yang selalu lebih besar dari 1 (Persamaan 5.3). Koefisien performansi Carnot K_C = T_C/(T_H − T_C) (Persamaan 5.5) turun ketika selisih suhu kedua reservoir makin besar, sehingga AC bekerja lebih berat pada hari yang sangat panas."
+      },
+      {
+        "tp": "5.3",
+        "teks": "Emisi dari pemakaian AC dapat diperkirakan dari energi listrik yang dipakai dikalikan faktor emisi dari sumber resmi. Rekomendasi penghematan energi perlu didasarkan pada data terukur dan asumsi yang ditulis jelas."
+      }
+    ],
+    "literasiInformasi": "Angka \"hemat hingga 60%\" di berita tidak menyebut sumber maupun kondisi uji. Eksperimen dengan kondisi yang dijelaskan (AC 1 PK, 3 jam, 24 °C di dalam dan 32 °C di luar) menghasilkan penghematan 24,1%. Angka penghematan hanya bermakna jika kondisi ujinya diketahui.",
+    "rumusKunci": [
+      "5.1",
+      "5.4",
+      "5.2",
+      "5.3",
+      "5.5"
+    ],
+    "berikutnya": "Rangkuman seluruh modul tersedia di bagian penutup."
+  },
   "glosarium": [
     { "istilah": "Mesin kalor", "arti": "Alat yang menyerap kalor dari sumber bersuhu tinggi untuk melakukan usaha dan membuang sisanya ke reservoir bersuhu rendah" },
     { "istilah": "Efisiensi termal", "arti": "Perbandingan usaha yang dihasilkan dengan kalor yang diserap dalam satu siklus" },

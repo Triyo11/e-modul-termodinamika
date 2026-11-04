@@ -1,8 +1,8 @@
 {
   "id": "kegiatan-01",
-  "versi": "2.0",
+  "versi": "2.1",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-10-17",
+  "revisiTerakhir": "2026-11-04",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 1,
   "judul": "Gas Ideal",
@@ -45,7 +45,8 @@
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
     "Blok gambar dan video fenomena di layar l1 belum punya berkas (src null). Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
     "Simulasi Gas Properties diganti widget buatan sendiri (SimulasiPartikelGas.vue). Instruksi memakai nama kontrol widget (Jumlah partikel, Lebar wadah, Jaga tetap).",
-    "Persamaan e-modul diberi nomor 1.1 sampai 1.9. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals."
+    "Persamaan e-modul diberi nomor 1.1 sampai 1.9. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals.",
+    "Revisi 4 Nov 2026: ditambahkan field rangkuman, jenisPenilaian (kuis = formatif, rubrik = autentik), dan teks pengantar layar penilaian, menyusul keputusan 18 Okt 2026 yang belum masuk ke salinan ini. Perubahan widget simulasi oleh pengguna dipertahankan. Satuan lebar wadah diubah dari nm ke m sesuai tampilan widget SimulasiPartikelGas."
   ],
   "layar": [
     {
@@ -243,7 +244,7 @@
           "tipe": "callout",
           "gaya": "ingat",
           "judul": "Membaca volume di simulasi",
-          "isi": "Tinggi dan kedalaman wadah di simulasi tidak berubah. Volume wadah sebanding dengan lebarnya, jadi lebar (nm) dapat dipakai untuk mewakili volume."
+          "isi": "Tinggi dan kedalaman wadah di simulasi tidak berubah. Volume wadah sebanding dengan lebarnya, jadi lebar (m) dapat dipakai untuk mewakili volume."
         },
         {
           "tipe": "tabel-isian",
@@ -251,10 +252,10 @@
           "judul": "Percobaan A: suhu dan jumlah partikel tetap",
           "instruksi": "Tahan suhu tetap. Ubah lebar wadah lima kali, lalu catat tekanannya.",
           "kolom": [
-            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "m", "tipe": "angka" },
             { "kunci": "p", "label": "Tekanan", "satuan": "kPa", "tipe": "angka" },
-            { "kunci": "invV", "label": "1/V", "satuan": "1/nm", "tipe": "hitung", "hitung": "1/V" },
-            { "kunci": "pV", "label": "p × V", "satuan": "kPa·nm", "tipe": "hitung", "hitung": "p*V" }
+            { "kunci": "invV", "label": "1/V", "satuan": "1/m", "tipe": "hitung", "hitung": "1/V" },
+            { "kunci": "pV", "label": "p × V", "satuan": "kPa·m", "tipe": "hitung", "hitung": "p*V" }
           ],
           "jumlahBaris": 5,
           "indikatorVariabel": ["LI2"]
@@ -266,8 +267,8 @@
           "instruksi": "Tahan tekanan tetap dengan pilihan yang mengubah volume. Panaskan atau dinginkan gas lima kali, lalu catat suhu dan lebar wadah.",
           "kolom": [
             { "kunci": "T", "label": "Suhu", "satuan": "K", "tipe": "angka" },
-            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
-            { "kunci": "VperT", "label": "V/T", "satuan": "nm/K", "tipe": "hitung", "hitung": "V/T" }
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "m", "tipe": "angka" },
+            { "kunci": "VperT", "label": "V/T", "satuan": "m/K", "tipe": "hitung", "hitung": "V/T" }
           ],
           "jumlahBaris": 5,
           "indikatorVariabel": ["LI2"]
@@ -292,8 +293,8 @@
           "instruksi": "Tahan tekanan tetap dengan pilihan yang mengubah volume. Tambahkan partikel secara bertahap, lalu catat jumlah partikel dan lebar wadah. Catat juga suhunya; jika suhu ikut berubah, tuliskan di kolom catatan.",
           "kolom": [
             { "kunci": "N", "label": "Jumlah partikel", "satuan": "-", "tipe": "angka" },
-            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "nm", "tipe": "angka" },
-            { "kunci": "VperN", "label": "V/N", "satuan": "nm", "tipe": "hitung", "hitung": "V/N" },
+            { "kunci": "V", "label": "Lebar wadah (mewakili V)", "satuan": "m", "tipe": "angka" },
+            { "kunci": "VperN", "label": "V/N", "satuan": "m", "tipe": "hitung", "hitung": "V/N" },
             { "kunci": "catatan", "label": "Catatan suhu", "satuan": "", "tipe": "teks" }
           ],
           "jumlahBaris": 4,
@@ -541,7 +542,7 @@
           "sumberData": "data-1-boyle",
           "sumbuX": "invV",
           "sumbuY": "p",
-          "labelX": "1/V (1/nm)",
+          "labelX": "1/V (1/m)",
           "labelY": "p (kPa)",
           "garisTren": "linear-melalui-nol",
           "instruksi": "Amati grafik p terhadap 1/V dari data Percobaan A. Apakah titik-titiknya membentuk garis lurus yang melalui titik nol?"
@@ -553,7 +554,7 @@
           "sumbuX": "T",
           "sumbuY": "V",
           "labelX": "T (K)",
-          "labelY": "V (nm)",
+          "labelY": "V (m)",
           "garisTren": "linear-melalui-nol",
           "instruksi": "Amati grafik V terhadap T dari data Percobaan B. Ke mana garisnya mengarah jika diperpanjang ke suhu yang sangat rendah?"
         },
@@ -700,8 +701,10 @@
       "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
       "peranGuru": "Menilai LKPD dan panduan dengan rubrik.",
       "blok": [
+        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan panduan pengisian tekanan ban kelompok Anda dengan rubrik di bawah." },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-1",
           "pertanyaan": "Andi melihat tekanan ban naik setelah perjalanan jauh. Rumusan masalah yang paling dapat diselidiki adalah ...",
           "opsi": [
@@ -716,6 +719,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-2",
           "pertanyaan": "Seorang teman berkata, \"Ban nitrogen tidak bertambah tekanannya ketika panas.\" Argumen yang paling tepat untuk menanggapinya adalah ...",
           "opsi": [
@@ -730,6 +734,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-3",
           "pertanyaan": "Gas dalam wadah kaku tertutup bertekanan mutlak 120 kPa pada 300 K. Gas dipanaskan hingga 450 K. Tekanan mutlaknya menjadi ...",
           "opsi": [
@@ -744,6 +749,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-4",
           "pertanyaan": "Data gas pada suhu tetap: 100 kPa dan 6,0 L; 150 kPa dan 4,0 L; 200 kPa dan 3,0 L; 300 kPa dan 2,0 L. Kesimpulan umum yang didukung data adalah ...",
           "opsi": [
@@ -758,6 +764,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-5",
           "pertanyaan": "Pada kondisi manakah model gas ideal paling tepat dipakai?",
           "opsi": [
@@ -772,6 +779,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-1-6",
           "pertanyaan": "Rina ingin mengetahui tekanan ban yang dianjurkan untuk mobilnya. Sumber yang paling tepat adalah ...",
           "opsi": [
@@ -786,6 +794,7 @@
         },
         {
           "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
           "id": "rubrik-1",
           "judul": "Rubrik panduan pengisian tekanan ban",
           "untuk": "rancangan-1",
@@ -826,6 +835,36 @@
       ]
     }
   ],
+  "rangkuman": {
+    "judul": "Rangkuman KB 1: Gas Ideal",
+    "tampilSetelah": "lkpd-1-11",
+    "poin": [
+      {
+        "tp": "1.1",
+        "teks": "Sifat makroskopis gas (tekanan, volume, suhu, jumlah zat) dapat diukur langsung. Sifat mikroskopis berkaitan dengan gerak dan tumbukan molekul. Tekanan gas berasal dari tumbukan molekul pada dinding wadah. Energi kinetik rata-rata molekul sebanding dengan suhu mutlak (Persamaan 1.1)."
+      },
+      {
+        "tp": "1.2",
+        "teks": "Hukum Boyle: pada T dan n tetap, tekanan berbanding terbalik dengan volume. Hukum Charles: pada p dan n tetap, volume sebanding dengan suhu mutlak. Hukum Gay-Lussac: pada V dan n tetap, tekanan sebanding dengan suhu mutlak. Hukum Avogadro: pada p dan T tetap, volume sebanding dengan jumlah mol. Untuk gas bermassa tetap, nilai pV/T selalu tetap (Persamaan 1.8)."
+      },
+      {
+        "tp": "1.3",
+        "teks": "Persamaan pV = nRT (Persamaan 1.2) berlaku sama untuk semua gas yang berperilaku ideal. Tekanan dalam persamaan ini adalah tekanan mutlak, yaitu tekanan terukur ditambah tekanan udara luar. Suhu selalu dinyatakan dalam kelvin. Ban yang memanas pada volume hampir tetap mengalami kenaikan tekanan sesuai Persamaan 1.4."
+      },
+      {
+        "tp": "1.4",
+        "teks": "Model gas ideal paling tepat pada tekanan rendah dan suhu jauh di atas titik cair. Di dekat titik cair, volume molekul dan gaya tarik antarmolekul tidak dapat diabaikan, sehingga dipakai persamaan van der Waals (Persamaan 1.9)."
+      }
+    ],
+    "literasiInformasi": "Klaim ban nitrogen perlu dipisah menjadi dua bagian. Uji Consumer Reports yang dikutip Edmunds menunjukkan ban nitrogen kehilangan tekanan sedikit lebih lambat (2,2 psi dibanding 3,5 psi dalam setahun). Kenaikan tekanan akibat panas tidak bergantung pada jenis gas. Sumber yang menyertakan data uji lebih kuat daripada sumber yang hanya berisi pernyataan.",
+    "rumusKunci": [
+      "1.1",
+      "1.2",
+      "1.4",
+      "1.8"
+    ],
+    "berikutnya": "KB 2 memandang gas sebagai sebuah sistem yang bertukar massa dan energi dengan lingkungannya."
+  },
   "glosarium": [
     {
       "istilah": "Gas ideal",

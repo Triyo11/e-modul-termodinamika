@@ -1,8 +1,8 @@
 {
   "id": "kegiatan-03",
-  "versi": "2.0",
+  "versi": "2.1",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-10-18",
+  "revisiTerakhir": "2026-11-04",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 3,
   "judul": "Proses Termodinamika",
@@ -44,7 +44,9 @@
     "Blok video fenomena di layar l1 belum punya berkas (src null).",
     "Blok diagram-pv adalah widget buatan sendiri; spesifikasinya ada di skema-json-stem-ctl.md.",
     "File ini menggantikan kegiatan-03-teori-kinetik-gas.json yang lama. Isi teori kinetik sudah dilebur ke KB 1.",
-    "Layar Explore Gas Properties diganti widget buatan sendiri (SimulasiPartikelGas.vue). Instruksi lama menyebut menggeser dinding ke kiri sebagai memampatkan; ini keliru karena pegangan ada di dinding kiri, sudah dibetulkan."
+    "Instruksi layar Explore PhET Gas Properties perlu dicocokkan dengan tampilan simulasi sebelum validasi.",
+    "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap pemodelan diberi widget diagram p-V untuk memeriksa hitungan usaha (unsur T) dan label R. Contoh isotermal 1 mol pada 300 K tidak muat di rentang sumbu widget, jadi pemeriksaan isotermal memakai 200 kPa dan 1,0 L → 2,0 L (W = 200 ln 2 ≈ 138,6 J).",
+    "Rubrik aspek ketiga diseragamkan menjadi \"Penggunaan sumber\" (4 Nov 2026)."
   ],
   "layar": [
     {
@@ -115,12 +117,7 @@
           "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
           "judul": "Gas Properties (layar Explore)",
           "rasio": "3/4",
-          "instruksi": [
-            "Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.",
-            "Pilih Tidak ada pada panel Jaga tetap.",
-            "Seret pegangan di dinding kiri ke kanan untuk memampatkan gas. Catat perubahan suhu dan tekanan.",
-            "Seret pegangan ke kiri untuk memuaikan gas. Catat lagi perubahan suhu dan tekanan."
-          ]
+          "instruksi": ["Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.", "Pilih Tidak ada pada panel Jaga tetap.", "Seret pegangan di dinding kiri ke kanan untuk memampatkan gas. Catat perubahan suhu dan tekanan.", "Seret pegangan ke kiri untuk memuaikan gas. Catat lagi perubahan suhu dan tekanan."]
         },
         {
           "tipe": "isian",
@@ -323,9 +320,9 @@
       "id": "l5",
       "judul": "Menghitung usaha dan meringkas empat proses",
       "tahap": "pemodelan",
-      "stem": ["S", "M"],
+      "stem": ["S", "T", "R", "M"],
       "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
-      "peranGuru": "Mencontohkan perhitungan W = pΔV dan W = nRT ln(V2/V1).",
+      "peranGuru": "Mencontohkan perhitungan W = pΔV dan W = nRT ln(V2/V1), lalu meminta murid memeriksa hasilnya dengan widget diagram p-V.",
       "blok": [
         {
           "tipe": "rumus",
@@ -374,6 +371,32 @@
           "catatan": "Jika gas dimampatkan, $V_2/V_1 < 1$ sehingga logaritmanya negatif dan usaha oleh gas bernilai negatif."
         },
         {
+          "tipe": "teks",
+          "isi": "Periksa hitungan Anda dengan diagram p-V. Widget menghitung usaha sebagai luas daerah di bawah lintasan, sehingga hasil hitungan dengan rumus dapat dibandingkan langsung dengan luasnya."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-3-10",
+          "format": "angka",
+          "inputmode": "decimal",
+          "pertanyaan": "Gas ideal mula-mula bertekanan 200 kPa dan bervolume 1,0 L. Gas memuai secara isotermal hingga volumenya 2,0 L. Hitung usaha yang dilakukan gas dengan Persamaan 3.3.",
+          "satuan": "J",
+          "toleransi": 1,
+          "jawabanRujukan": 138.6,
+          "petunjuk": "Pada proses isotermal, $nRT = p_1 V_1$. Ingat bahwa 1 kPa·L = 1 J.",
+          "indikatorVariabel": ["LI4"]
+        },
+        {
+          "tipe": "diagram-pv",
+          "id": "pv-3-periksa",
+          "mode": "jelajah",
+          "sumbu": { "pMin": 0, "pMax": 400, "VMin": 0, "VMax": 5, "satuanP": "kPa", "satuanV": "L" },
+          "keadaanAwal": { "p": 200, "V": 1 },
+          "prosesTersedia": ["isobarik", "isotermal"],
+          "tampilkanLuas": true,
+          "instruksi": "Pilih proses isobarik dan seret titik akhir ke 3 L. Bandingkan luasnya dengan hasil contoh soal isobarik (400 J). Lalu mulai lagi dari keadaan awal, pilih proses isotermal, dan seret titik akhir ke 2 L. Bandingkan luasnya dengan hasil hitungan Anda."
+        },
+        {
           "tipe": "rumus",
           "nomor": "3.4",
           "tex": "pV^{\\gamma} = \\text{konstan}, \\qquad \\gamma = \\frac{C_p}{C_V}",
@@ -416,7 +439,7 @@
           "tipe": "isian",
           "id": "lkpd-3-8",
           "format": "teks-panjang",
-          "pertanyaan": "Dari contoh soal dan tabel, rumuskan pola umum: pada proses mana usaha bernilai nol, pada proses mana energi dalam tidak berubah, dan pada proses mana kalor bernilai nol? Mengapa usaha pada dua lintasan berbeda antara dua keadaan yang sama bisa berbeda?",
+          "pertanyaan": "Dari contoh soal, hasil pemeriksaan dengan widget, dan tabel, rumuskan pola umum: pada proses mana usaha bernilai nol, pada proses mana energi dalam tidak berubah, dan pada proses mana kalor bernilai nol? Mengapa usaha pada dua lintasan berbeda antara dua keadaan yang sama bisa berbeda?",
           "baris": 6,
           "indikatorVariabel": ["BK4", "LI4"]
         },
@@ -485,8 +508,10 @@
       "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
       "peranGuru": "Menilai rancangan dan LKPD dengan rubrik.",
       "blok": [
+        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan rancangan siklus kelompok Anda dengan rubrik di bawah." },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-1",
           "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang kabut di leher botol soda adalah ...",
           "opsi": [
@@ -501,6 +526,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-2",
           "pertanyaan": "Kabut muncul saat botol soda bersuhu ruang dibuka. Argumen yang paling tepat untuk menjelaskannya adalah ...",
           "opsi": [
@@ -515,6 +541,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-3",
           "pertanyaan": "Gas di dalam tabung baja tertutup dipanaskan sehingga tekanannya naik dari 100 kPa menjadi 150 kPa. Usaha yang dilakukan gas adalah ...",
           "opsi": [
@@ -529,6 +556,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-4",
           "pertanyaan": "Tiga lintasan berbeda menghubungkan keadaan A dan B yang sama. Usaha yang dihitung: 300 J, 450 J, dan 600 J. Kesimpulan umum yang didukung data ini adalah ...",
           "opsi": [
@@ -543,6 +571,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-5",
           "pertanyaan": "Udara di dalam silinder dimampatkan sangat cepat sehingga tidak sempat bertukar kalor. Kesimpulan yang tepat adalah ...",
           "opsi": [
@@ -557,6 +586,7 @@
         },
         {
           "tipe": "kuis",
+          "jenisPenilaian": "formatif",
           "id": "kuis-3-6",
           "pertanyaan": "Sebuah siklus berbentuk persegi panjang pada diagram p-V dengan tekanan 100 kPa dan 300 kPa serta volume 1 L dan 3 L, berjalan searah jarum jam. Usaha bersihnya adalah ...",
           "opsi": [
@@ -571,6 +601,7 @@
         },
         {
           "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
           "id": "rubrik-3",
           "judul": "Rubrik rancangan siklus",
           "untuk": "rancangan-3",
@@ -588,22 +619,22 @@
             },
             {
               "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": ["BK2"],
+              "indikatorVariabel": ["BK2", "LI4"],
               "deskriptor": {
-                "4": "Tiga alternatif dibandingkan, semuanya dalam batas, dan pilihan akhir beralasan",
+                "4": "Tiga alternatif dibandingkan dengan usaha bersih yang dihitung benar, semuanya dalam batas, dan pilihan akhir beralasan",
                 "3": "Tiga alternatif dibandingkan, tetapi alasan pilihan kurang jelas",
                 "2": "Kurang dari tiga alternatif atau ada siklus yang keluar batas",
                 "1": "Tidak ada perbandingan alternatif"
               }
             },
             {
-              "aspek": "Penyajian dan sumber",
-              "indikatorVariabel": ["LI4", "LI5"],
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": ["LI5"],
               "deskriptor": {
-                "4": "Diagram dan tabel tersaji rapi, dan rumus yang dipakai disertai sumbernya",
-                "3": "Diagram dan tabel rapi, tetapi sumber tidak lengkap",
-                "2": "Diagram atau tabel tidak lengkap",
-                "1": "Penyajian tidak dapat dibaca"
+                "4": "Setiap rumus yang dipakai disertai sumbernya dan dicantumkan lengkap",
+                "3": "Sumber rumus dicantumkan, tetapi tidak lengkap",
+                "2": "Hanya sebagian rumus yang disertai sumber",
+                "1": "Tidak ada sumber"
               }
             }
           ]
@@ -611,6 +642,32 @@
       ]
     }
   ],
+  "rangkuman": {
+    "judul": "Rangkuman KB 3: Proses Termodinamika",
+    "tampilSetelah": "lkpd-3-9",
+    "poin": [
+      {
+        "tp": "3.1",
+        "teks": "Setiap titik pada diagram p-V mewakili satu keadaan setimbang, dan arah panah menunjukkan arah proses. Usaha oleh gas sama dengan luas daerah di bawah lintasan. Usaha bersih satu siklus sama dengan luas yang dikelilingi lintasan, bernilai positif jika siklus searah jarum jam."
+      },
+      {
+        "tp": "3.2",
+        "teks": "Usaha pada tekanan tetap adalah W = pΔV (Persamaan 3.2). Usaha gas ideal pada suhu tetap adalah W = nRT ln(V₂/V₁) (Persamaan 3.3). Usaha positif saat gas memuai dan negatif saat gas dimampatkan. Lintasan berbeda antara dua keadaan yang sama dapat menghasilkan usaha berbeda."
+      },
+      {
+        "tp": "3.3",
+        "teks": "Isobarik berlangsung pada tekanan tetap. Isokhorik berlangsung pada volume tetap sehingga W = 0. Isotermal berlangsung pada suhu tetap sehingga ΔU = 0 untuk gas ideal. Adiabatik berlangsung tanpa pertukaran kalor (Q = 0) dan memenuhi pV^γ = konstan (Persamaan 3.4)."
+      }
+    ],
+    "literasiInformasi": "Kabut di leher botol soda terjadi karena gas memuai sangat cepat (mendekati adiabatik), sehingga suhunya turun di bawah titik embun. Jawaban terpilih di situs tanya-jawab tidak konsisten dengan penjelasannya sendiri. Sumber demonstrasi fisika dan artikel jurnal bereviu sejawat menjelaskannya dengan konsep yang dapat diperiksa.",
+    "rumusKunci": [
+      "3.1",
+      "3.2",
+      "3.3",
+      "3.4"
+    ],
+    "berikutnya": "KB 4 menjelaskan proses-proses ini dengan hukum-hukum termodinamika."
+  },
   "glosarium": [
     { "istilah": "Diagram p-V", "arti": "Grafik tekanan terhadap volume yang menggambarkan keadaan dan proses gas" },
     { "istilah": "Isoterm", "arti": "Kurva pada diagram p-V untuk gas bersuhu tetap" },
