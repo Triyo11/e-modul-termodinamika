@@ -63,7 +63,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
 </script>
 
 <template>
-  <section class="flex flex-col gap-6 border-t border-ink-200 pt-10">
+  <section :data-tahap="layar.tahap" class="flex scroll-mt-24 flex-col gap-6 border-t border-ink-200 pt-10">
     <header class="flex flex-col gap-1">
       <div class="flex flex-wrap items-center gap-2">
         <span class="text-xs font-semibold uppercase tracking-wide text-accent">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, nextTick, provide, ref, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { PhArrowLeft, PhArrowRight } from "@phosphor-icons/vue";
+import { PhArrowLeft, PhArrowRight, PhCaretDown, PhCheck, PhX } from "@phosphor-icons/vue";
 import LayarSection from "@/components/materi/LayarSection.vue";
 import { cariKegiatanKb, daftarKegiatan } from "@/content";
 import { kegiatanKey } from "@/lib/tabelIsian";
@@ -54,20 +54,98 @@ watch(
   { immediate: true },
 );
 
-const navRef = ref<HTMLElement | null>(null);
+// ---------- Kepala halaman ringkas ----------
+const URUTAN_TAHAP = [
+  "konstruktivisme",
+  "inkuiri",
+  "bertanya",
+  "masyarakat-belajar",
+  "pemodelan",
+  "refleksi",
+  "penilaian-autentik",
+] as const;
+const LABEL_TAHAP: Record<string, string> = {
+  konstruktivisme: "Konstruktivisme",
+  inkuiri: "Inkuiri",
+  bertanya: "Bertanya",
+  "masyarakat-belajar": "Masyarakat belajar",
+  pemodelan: "Pemodelan",
+  refleksi: "Refleksi",
+  "penilaian-autentik": "Penilaian autentik",
+};
+
+const tahapAktif = ref<string | null>(null);
+const nomorTahap = computed(() =>
+  tahapAktif.value ? URUTAN_TAHAP.indexOf(tahapAktif.value as (typeof URUTAN_TAHAP)[number]) + 1 : 0,
+);
+const kepalaTampak = ref(true);
+const daftarTerbuka = ref(false);
+const tombolDaftarRef = ref<HTMLButtonElement | null>(null);
+
+let posisiTerakhir = 0;
+let menungguFrame = false;
+function perbaruiSaatGulir() {
+  const y = window.scrollY;
+  // Sembunyikan saat menggulir ke bawah, tampilkan lagi saat menggulir ke atas atau di dekat puncak.
+  if (y < 80 || y < posisiTerakhir - 4) kepalaTampak.value = true;
+  else if (y > posisiTerakhir + 4) kepalaTampak.value = false;
+  posisiTerakhir = y;
+
+  // Tahap aktif = layar terakhir yang bagian atasnya sudah melewati sepertiga layar.
+  let aktif: string | null = null;
+  for (const el of document.querySelectorAll<HTMLElement>("[data-tahap]")) {
+    if (el.getBoundingClientRect().top <= window.innerHeight / 3) aktif = el.dataset.tahap ?? null;
+    else break;
+  }
+  tahapAktif.value = aktif;
+}
+function saatGulir() {
+  if (menungguFrame) return;
+  menungguFrame = true;
+  requestAnimationFrame(() => {
+    menungguFrame = false;
+    perbaruiSaatGulir();
+  });
+}
+function saatTombol(e: KeyboardEvent) {
+  if (e.key === "Escape" && daftarTerbuka.value) tutupDaftar();
+}
+onMounted(() => {
+  window.addEventListener("scroll", saatGulir, { passive: true });
+  window.addEventListener("keydown", saatTombol);
+  perbaruiSaatGulir();
+});
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", saatGulir);
+  window.removeEventListener("keydown", saatTombol);
+});
+
+function bukaDaftar() {
+  daftarTerbuka.value = true;
+}
+function tutupDaftar() {
+  daftarTerbuka.value = false;
+  nextTick(() => tombolDaftarRef.value?.focus());
+}
+function pilihKb(kb: number) {
+  daftarTerbuka.value = false;
+  bukaKb(kb);
+}
+
 watch(
   kbAktif,
-  async (kb) => {
+  async (kb, lama) => {
     try {
       localStorage.setItem(KUNCI_KB_TERAKHIR, String(kb));
     } catch {
       /* abaikan */
     }
-    // Pastikan tombol KB aktif terlihat di bilah yang dapat digulir mendatar.
+    if (lama !== undefined) {
+      window.scrollTo({ top: 0 });
+      kepalaTampak.value = true;
+    }
     await nextTick();
-    navRef.value
-      ?.querySelector<HTMLElement>('[aria-current="page"]')
-      ?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+    perbaruiSaatGulir();
   },
   { immediate: true },
 );
@@ -79,30 +157,85 @@ const tujuan = computed(() =>
 
 <template>
   <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
-    <nav
-      ref="navRef"
-      aria-label="Kegiatan belajar"
-      class="sticky top-0 z-10 border-b border-ink-200 bg-ink-50/95 backdrop-blur"
+    <header
+      class="sticky top-0 z-20 border-b border-ink-200 bg-ink-50/95 backdrop-blur transition-transform duration-200"
+      :class="kepalaTampak || daftarTerbuka ? 'translate-y-0' : '-translate-y-full'"
     >
-      <ol class="flex gap-1.5 overflow-x-auto px-5 py-2 scrollbar-none">
-        <li v-for="k in daftarKegiatan" :key="k.id" class="shrink-0">
-          <button
-            type="button"
-            :aria-current="k.kb === kbAktif ? 'page' : undefined"
-            class="flex h-full max-w-44 flex-col items-start rounded-lg border px-3 py-1.5 text-left transition-colors"
-            :class="
-              k.kb === kbAktif
-                ? 'border-brand bg-brand text-brand-dark'
-                : 'border-ink-200 bg-white text-ink-600 hover:border-accent-1/40'
-            "
-            @click="bukaKb(k.kb)"
-          >
-            <span class="text-[11px] font-semibold uppercase tracking-wide opacity-80">KB {{ k.kb }}</span>
-            <span class="line-clamp-2 w-full text-sm font-medium leading-tight">{{ k.judul }}</span>
-          </button>
-        </li>
-      </ol>
-    </nav>
+      <div class="flex flex-col gap-1.5 px-5 py-2.5 sm:px-8 lg:px-12">
+        <button
+          ref="tombolDaftarRef"
+          type="button"
+          class="flex items-center gap-2 self-start rounded-lg py-0.5 text-left text-ink-900 hover:text-accent-1"
+          aria-haspopup="dialog"
+          :aria-expanded="daftarTerbuka"
+          @click="bukaDaftar"
+        >
+          <span class="font-semibold">KB {{ data.kb }} · {{ data.judul }}</span>
+          <PhCaretDown :size="16" weight="bold" class="shrink-0" />
+        </button>
+        <div
+          class="flex items-center gap-2.5"
+          role="progressbar"
+          aria-label="Tahap STEM-CTL"
+          aria-valuemin="0"
+          aria-valuemax="7"
+          :aria-valuenow="nomorTahap"
+          :aria-valuetext="tahapAktif ? `${LABEL_TAHAP[tahapAktif]}, tahap ${nomorTahap} dari 7` : 'Pengantar'"
+        >
+          <span class="flex gap-1" aria-hidden="true">
+            <span
+              v-for="(t, i) in URUTAN_TAHAP"
+              :key="t"
+              class="h-2 w-2 rounded-full transition-colors"
+              :class="i < nomorTahap ? 'bg-brand' : 'bg-ink-200'"
+            ></span>
+          </span>
+          <span class="text-sm text-ink-600">
+            <template v-if="tahapAktif">{{ LABEL_TAHAP[tahapAktif] }} ({{ nomorTahap }} dari 7)</template>
+            <template v-else>Pengantar</template>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <Teleport to="body">
+      <div v-if="daftarTerbuka" class="fixed inset-0 z-50 flex items-end justify-center">
+        <div class="absolute inset-0 bg-brand-dark/40" aria-hidden="true" @click="tutupDaftar"></div>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="judul-daftar-kb"
+          class="relative w-full rounded-t-2xl bg-white p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] shadow-xl lg:w-2/3"
+        >
+          <div class="mb-3 flex items-center justify-between">
+            <h2 id="judul-daftar-kb" class="text-lg font-semibold text-ink-900">Kegiatan belajar</h2>
+            <button
+              type="button"
+              class="rounded-lg p-1.5 text-ink-600 hover:bg-ink-100"
+              aria-label="Tutup daftar kegiatan belajar"
+              @click="tutupDaftar"
+            >
+              <PhX :size="20" weight="bold" />
+            </button>
+          </div>
+          <ol class="flex flex-col gap-1.5">
+            <li v-for="k in daftarKegiatan" :key="k.id">
+              <button
+                type="button"
+                class="flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left"
+                :class="k.kb === kbAktif ? 'border-brand bg-brand-light' : 'border-ink-200 hover:bg-ink-50'"
+                :aria-current="k.kb === kbAktif ? 'page' : undefined"
+                @click="pilihKb(k.kb!)"
+              >
+                <span class="w-10 shrink-0 text-sm font-semibold text-accent-1">KB {{ k.kb }}</span>
+                <span class="flex-1 font-medium text-ink-900">{{ k.judul }}</span>
+                <PhCheck v-if="k.kb === kbAktif" :size="18" weight="bold" class="shrink-0 text-accent-1" />
+              </button>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </Teleport>
 
     <main :key="data.id" class="flex w-full flex-col gap-16 px-5 py-8 pb-40 sm:px-8 lg:px-12">
       <section class="flex flex-col gap-3">
