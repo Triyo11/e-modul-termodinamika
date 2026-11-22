@@ -3,30 +3,30 @@
 @import "tailwindcss";
 
 @theme default {
-  /* Palet dasar: #1E2019 (gelap), #00A9A5 (teal), #EDF6F9 (terang).
-     #00A9A5 hanya untuk bidang warna dengan teks gelap (5,7:1); teks teal memakai accent-1.
+  /* Palet dasar: #1E2019 (gelap), #00A6FB (biru), #EDF6F9 (terang).
+     #00A6FB hanya untuk bidang warna dengan teks gelap (6,2:1); teks biru memakai accent-1.
      Kontras teks diuji WCAG: ink-500 ke atas >= 4,5:1 pada putih, ink-50, dan ink-100. */
-  --color-brand: #00A9A5;
-  --color-brand-light: #D9F1F1;
+  --color-brand: #00A6FB;
+  --color-brand-light: #D9F0FA;
   --color-brand-dark: #1E2019;
 
   --color-accent: var(--color-accent-1);
-  --color-accent-1: #0B7873;
-  --color-accent-2: #C2E8EA;
+  --color-accent-1: #0C70A1;
+  --color-accent-2: #BEE6F9;
   --color-accent-3: #1E2019;
   --color-benar:   #0D6E4A;
   --color-salah:   #B3261E;
   --color-periksa: #8A5C00;
 
   --color-ink-50: #EDF6F9;
-  --color-ink-100: #E1ECEF;
-  --color-ink-200: #C6D3D5;
-  --color-ink-300: #A8B6B7;
-  --color-ink-400: #859491;
-  --color-ink-500: #5C6865;
-  --color-ink-600: #4E5955;
-  --color-ink-700: #404944;
-  --color-ink-800: #2F352F;
+  --color-ink-100: #DAE8EF;
+  --color-ink-200: #C5D7DE;
+  --color-ink-300: #A8BAC1;
+  --color-ink-400: #86979B;
+  --color-ink-500: #5A6668;
+  --color-ink-600: #535D5C;
+  --color-ink-700: #414A47;
+  --color-ink-800: #323733;
   --color-ink-900: #1E2019;
 
   --font-sans:  "Literata Variable", Georgia, serif;

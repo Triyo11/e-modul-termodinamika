@@ -37,7 +37,7 @@ const PANJANG_GRAFIK_DETIK = 120;
 const PERATAAN_SUHU_DETIK = 1.5; // meredam fluktuasi bacaan suhu tiap sisi
 const INTERVAL_SAMPEL = 0.5;
 
-const WARNA: Record<Jenis, string> = { 0: "#0B7873", 1: "#C2331F" };
+const WARNA: Record<Jenis, string> = { 0: "#0C70A1", 1: "#C2331F" };
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const versi = ref(0);
@@ -279,7 +279,7 @@ function gambar() {
 
   // Garis tengah tipis sebagai acuan kiri/kanan setelah sekat diangkat.
   c.setLineDash([3, 4]);
-  c.strokeStyle = "#C6D3D5";
+  c.strokeStyle = "#C5D7DE";
   c.lineWidth = 1;
   c.beginPath();
   c.moveTo(X_SEKAT, 0);
@@ -295,7 +295,7 @@ function gambar() {
   }
 
   if (posisiSekatAnimasi < 1) {
-    c.fillStyle = "#404944";
+    c.fillStyle = "#414A47";
     c.fillRect(X_SEKAT - TEBAL_SEKAT / 2, -posisiSekatAnimasi * TINGGI, TEBAL_SEKAT, TINGGI);
   }
 
@@ -432,12 +432,12 @@ onBeforeUnmount(() => {
       </span>
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik persentase partikel di sisi asalnya terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 50 ? '#A8B6B7' : '#E1ECEF'" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5C6865">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 50 ? '#A8BAC1' : '#DAE8EF'" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5A6668">{{ s.v }}</text>
         </g>
         <polyline :points="grafik.biru" fill="none" :stroke="WARNA[0]" stroke-width="1.6" />
         <polyline :points="grafik.merah" fill="none" :stroke="WARNA[1]" stroke-width="1.6" />
-        <text v-if="!sudahDiangkat" :x="G_LEBAR / 2" :y="G_TINGGI / 2" text-anchor="middle" font-size="9" fill="#5C6865">
+        <text v-if="!sudahDiangkat" :x="G_LEBAR / 2" :y="G_TINGGI / 2" text-anchor="middle" font-size="9" fill="#5A6668">
           Grafik mulai saat sekat diangkat
         </text>
       </svg>

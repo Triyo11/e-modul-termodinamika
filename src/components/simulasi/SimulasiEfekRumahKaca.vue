@@ -357,7 +357,7 @@ function gambar() {
   c.fillRect(0, Y_TANAH, LEBAR, TINGGI - Y_TANAH);
   c.fillStyle = "rgba(0,0,0,0.08)";
   c.fillRect(0, Y_TANAH, LEBAR, 3);
-  c.fillStyle = "#2F352F";
+  c.fillStyle = "#323733";
   c.textAlign = "left";
   c.font = "8px sans-serif";
   c.fillText("Permukaan Bumi", 6, TINGGI - 8);
@@ -500,8 +500,8 @@ onBeforeUnmount(() => {
       <span class="px-1 text-[11px] text-ink-500">Suhu permukaan selama {{ PANJANG_GRAFIK_DETIK }} detik terakhir (°C)</span>
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik suhu permukaan terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#A8B6B7' : '#E1ECEF'" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5C6865">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#A8BAC1' : '#DAE8EF'" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5A6668">{{ s.v }}</text>
         </g>
         <polyline :points="grafik.titik" fill="none" stroke="#c0502f" stroke-width="1.8" />
       </svg>
