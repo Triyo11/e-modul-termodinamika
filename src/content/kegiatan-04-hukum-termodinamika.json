@@ -71,7 +71,8 @@
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: label STEM tahap inkuiri menjadi S, T sesuai Tabel 2.3. Tahap inkuiri ditambah isian strategi penelusuran (lkpd-4-12) dan tautan Radjawane et al. (2022) hlm. 188–197 serta OpenStax College Physics 2e 15.6 (dibuka 22 Nov 2026).",
-    "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor."
+    "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor.",
+    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb4-tiga-peristiwa.svg) ditambahkan; status perlu-media dihapus."
   ],
   "layar": [
     {
@@ -107,12 +108,11 @@
       "blok": [
         {
           "tipe": "gambar",
-          "src": null,
+          "src": "/media/kb4-tiga-peristiwa.svg",
           "alt": "Termometer badan di ketiak, lemari es tersambung ke stopkontak, dan botol parfum terbuka di sudut ruangan",
           "rasio": "16/9",
           "caption": "Tiga peristiwa sehari-hari yang berkaitan dengan arah aliran energi.",
-          "sumber": null,
-          "status": "perlu-media"
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "teks",

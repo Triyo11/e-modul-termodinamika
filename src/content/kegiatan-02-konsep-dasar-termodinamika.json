@@ -64,7 +64,8 @@
     "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026. LI2 = menentukan strategi penelusuran (isian strategi sebelum tautan sumber), LI4 = mengintegrasikan informasi dari berbagai sumber (tidak dipakai untuk tabel data sendiri), LI5 = menggunakan informasi untuk memecahkan masalah.",
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
-    "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-2-12) dan tautan sumber Radjawane et al. (2022) hlm. 182–184 serta OpenStax College Physics 2e 15.1 (dibuka 22 Nov 2026). Tahap pemodelan ditambah lkpd-2-13 (LI4)."
+    "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-2-12) dan tautan sumber Radjawane et al. (2022) hlm. 182–184 serta OpenStax College Physics 2e 15.1 (dibuka 22 Nov 2026). Tahap pemodelan ditambah lkpd-2-13 (LI4).",
+    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb2-tiga-benda.svg) ditambahkan; status perlu-media dihapus."
   ],
   "layar": [
     {
@@ -100,12 +101,11 @@
       "blok": [
         {
           "tipe": "gambar",
-          "src": null,
+          "src": "/media/kb2-tiga-benda.svg",
           "alt": "Tiga benda berjajar: panci berisi air mendidih tanpa tutup, silinder kaca berpiston, dan termos tertutup",
           "rasio": "16/9",
           "caption": "Panci terbuka, silinder berpiston, dan termos.",
-          "sumber": null,
-          "status": "perlu-media"
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "teks",
