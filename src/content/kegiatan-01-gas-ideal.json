@@ -60,7 +60,7 @@
   ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
-    "Blok gambar dan video berstatus perlu-media (l1 dan l5) belum punya berkas. Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
+    "Blok gambar dan video berstatus perlu-media di l1 belum punya berkas. Diagram katup pemberat (l5) sudah tersedia di public/media. Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
     "Revisi 3.0 (22 Nov 2026): tugas rekayasa diganti dari panduan tekanan ban menjadi rancangan katup pengaman kotak kedap udara (keputusan pengguna 22 Nov 2026). Luaran tetap rancangan di atas kertas, bukan produk fisik.",
     "Revisi 3.0: label STEM memakai E (Engineering/Rekayasa) agar sama dengan Tabel 2.3 Bab II. LayarSection.vue perlu menambah E pada labelStem.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Field ini belum dibaca aplikasi.",
@@ -814,12 +814,11 @@
         },
         {
           "tipe": "gambar",
-          "src": null,
-          "alt": "Penampang katup pemberat: lubang kecil di tutup kotak ditutup cakram berbeban. Udara di dalam mendorong ke atas, berat beban dan udara luar menekan ke bawah.",
+          "src": "/media/kb1-katup-pemberat.svg",
+          "alt": "Penampang katup pemberat. Lubang berdiameter d di tutup kotak ditutup cakram berbeban. Udara di dalam mendorong ke atas dengan gaya p_dalam kali A, sedangkan berat beban mg dan udara luar p_luar kali A menekan ke bawah. Katup terangkat jika Δp kali A sama dengan mg.",
           "rasio": "4/3",
           "caption": "Penampang katup pemberat pada tutup kotak.",
-          "sumber": null,
-          "status": "perlu-media"
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "teks",

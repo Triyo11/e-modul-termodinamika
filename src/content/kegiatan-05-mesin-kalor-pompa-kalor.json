@@ -61,7 +61,8 @@
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: lkpd-5-5 diubah agar murid menuliskan strategi penelusuran sebelum mencari label energi AC (LI2).",
-    "Revisi 3.0 (22 Nov 2026, keputusan pengguna): tugas rekayasa KB 5 diganti dari rekomendasi pemakaian AC menjadi rancangan peneduh dan penempatan unit luar AC dengan uji suhu udara (termometer lab). TP 5.3 di JSON disesuaikan; Rencana Kegiatan Belajar akan direvisi pengguna."
+    "Revisi 3.0 (22 Nov 2026, keputusan pengguna): tugas rekayasa KB 5 diganti dari rekomendasi pemakaian AC menjadi rancangan peneduh dan penempatan unit luar AC dengan uji suhu udara (termometer lab). TP 5.3 di JSON disesuaikan; Rencana Kegiatan Belajar akan direvisi pengguna.",
+    "Revisi 3.0: diagram peneduh unit luar AC (public/media/kb5-peneduh-unit-luar-ac.svg) ditambahkan di awal tahap masyarakat belajar."
   ],
   "layar": [
     {
@@ -514,6 +515,14 @@
         {
           "tipe": "teks",
           "isi": "Unit luar AC membuang kalor ke udara di sekitarnya. Udara itu berperan sebagai reservoir panas $T_H$, sedangkan ruangan berperan sebagai reservoir dingin $T_C$. Widget siklus Carnot di tahap inkuiri menunjukkan bahwa koefisien performansi Carnot $K_C = T_C/(T_H - T_C)$ makin kecil ketika selisih kedua suhu makin besar. Akibatnya, AC memerlukan usaha listrik lebih banyak untuk memindahkan kalor yang sama."
+        },
+        {
+          "tipe": "gambar",
+          "src": "/media/kb5-peneduh-unit-luar-ac.svg",
+          "alt": "Unit luar AC di dekat dinding gedung, tampak samping. Peneduh di atasnya menghalangi sinar matahari. Udara masuk dari belakang unit dan udara panas keluar dari depan. Jarak bebas A di belakang, B di atas, dan C di depan unit tidak boleh terhalang; nilainya dilihat di buku manual AC.",
+          "rasio": "4/3",
+          "caption": "Contoh peneduh unit luar AC beserta arah aliran udara dan jarak bebasnya.",
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "tugas-rancangan",
