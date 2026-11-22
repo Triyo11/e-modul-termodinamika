@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, ref, watch } from "vue";
+import { PhMagnifyingGlassMinus, PhMagnifyingGlassPlus, PhX } from "@phosphor-icons/vue";
 
 const props = defineProps<{
   src: string;
@@ -68,7 +69,7 @@ onBeforeUnmount(() => {
       <span
         class="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-brand-dark/85 px-3 py-1 text-xs font-semibold text-white"
       >
-        <span class="material-symbols-outlined text-base!">zoom_in</span>
+        <PhMagnifyingGlassPlus :size="16" />
         Ketuk untuk memperbesar
       </span>
     </button>
@@ -99,7 +100,7 @@ onBeforeUnmount(() => {
             @click="ubahZoom(-ZOOM_STEP)"
             class="flex size-11 items-center justify-center rounded-lg hover:bg-white/15 disabled:opacity-40"
           >
-            <span class="material-symbols-outlined">zoom_out</span>
+            <PhMagnifyingGlassMinus :size="24" />
           </button>
           <button
             type="button"
@@ -108,7 +109,7 @@ onBeforeUnmount(() => {
             @click="ubahZoom(ZOOM_STEP)"
             class="flex size-11 items-center justify-center rounded-lg hover:bg-white/15 disabled:opacity-40"
           >
-            <span class="material-symbols-outlined">zoom_in</span>
+            <PhMagnifyingGlassPlus :size="24" />
           </button>
           <button
             type="button"
@@ -116,7 +117,7 @@ onBeforeUnmount(() => {
             @click="tutup"
             class="flex size-11 items-center justify-center rounded-lg hover:bg-white/15"
           >
-            <span class="material-symbols-outlined">close</span>
+            <PhX :size="24" />
           </button>
         </div>
       </div>

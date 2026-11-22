@@ -142,7 +142,7 @@ const tujuan = computed(() =>
 
       <section v-if="data.referensi.length" class="flex flex-col gap-2">
         <h2 class="text-xl font-semibold text-ink-900">Referensi</h2>
-        <ol class="flex list-decimal flex-col gap-1 pl-5 text-sm text-ink-600">
+        <ol class="flex list-decimal flex-col gap-1 pl-5 text-sm wrap-break-word text-ink-600">
           <li v-for="r in data.referensi" :key="r">{{ r }}</li>
         </ol>
       </section>

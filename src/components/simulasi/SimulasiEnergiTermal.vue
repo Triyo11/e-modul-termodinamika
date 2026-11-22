@@ -715,7 +715,7 @@ onBeforeUnmount(() => {
       <div class="flex flex-wrap gap-x-4 gap-y-2">
         <label class="flex items-center gap-1.5">
           <input v-model="tampilKeping" type="checkbox" class="accent-accent-1" />
-          Simbol energi <span class="text-ink-400">(Energy Symbols)</span>
+          Simbol energi
         </label>
         <label class="flex items-center gap-1.5">
           <input v-model="tampilGrafik" type="checkbox" class="accent-accent-1" />

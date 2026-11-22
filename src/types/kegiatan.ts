@@ -68,12 +68,12 @@ export interface BlokCallout {
   isi: string;
 }
 
+export type IdWidgetSimulasi = "partikel-gas" | "difusi" | "energi-termal" | "efek-rumah-kaca";
+
 export interface BlokSimulasi {
   tipe: "simulasi";
-  penyedia: string;
-  src: string;
+  widget: IdWidgetSimulasi;
   judul?: string;
-  rasio?: string;
   /** Langkah kerja, ditampilkan sebagai daftar bernomor. */
   instruksi?: string[];
 }
@@ -106,6 +106,7 @@ export interface BlokKuis {
   kunci: string;
   pembahasan?: string;
   indikatorVariabel?: string[];
+  jenisPenilaian?: "formatif" | "autentik";
 }
 
 export interface BlokAnimasi {
@@ -246,6 +247,7 @@ export interface BlokRubrik {
   untuk?: string;
   skala: number[];
   kriteria: { aspek: string; indikatorVariabel?: string[]; deskriptor: Record<string, string> }[];
+  jenisPenilaian?: "formatif" | "autentik";
 }
 
 export type ProsesPV = "isobarik" | "isokhorik" | "isotermal";
@@ -330,6 +332,17 @@ export interface Glosarium {
   arti: string;
 }
 
+export interface Rangkuman {
+  judul: string;
+  /** id blok isian kesimpulan di tahap refleksi; rangkuman tampil tepat setelah blok ini. */
+  tampilSetelah: string;
+  /** Satu poin per kode tujuan pembelajaran. */
+  poin: { tp: string; teks: string }[];
+  literasiInformasi: string;
+  /** Nomor blok rumus di berkas yang sama, mis. ["1.1", "1.2"]. */
+  rumusKunci: string[];
+}
+
 export interface Kegiatan {
   id: string;
   versi: string;
@@ -350,6 +363,7 @@ export interface Kegiatan {
   prasyarat: string[];
   tujuanPembelajaran: (string | TujuanPembelajaranBerkode)[];
   layar: Layar[];
+  rangkuman?: Rangkuman;
   glosarium: Glosarium[];
   referensi: string[];
 }

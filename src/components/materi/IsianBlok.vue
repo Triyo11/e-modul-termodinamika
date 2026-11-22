@@ -74,7 +74,7 @@ function periksa() {
       <div class="flex flex-wrap items-center gap-2">
         <button
           type="button"
-          class="rounded-lg bg-accent px-3 py-2 text-sm font-medium text-accent-1"
+          class="rounded-lg bg-accent-1 px-3 py-2 text-sm font-medium text-white"
           @click="periksa"
         >
           Periksa jawaban
@@ -105,7 +105,7 @@ function periksa() {
       <span v-if="blok.satuan" class="text-sm text-ink-500">{{ blok.satuan }}</span>
       <button
         type="button"
-        class="rounded-lg bg-accent px-3 py-2 text-sm font-medium text-accent-1"
+        class="rounded-lg bg-accent-1 px-3 py-2 text-sm font-medium text-white"
         @click="periksa"
       >
         Periksa jawaban

@@ -45,17 +45,18 @@
     "Pemanasan global sebagai neraca energi Bumi"
   ],
   "simulasiUtama": [
-    "PhET Energy Forms and Changes",
-    "PhET Gas Properties (layar Diffusion)",
-    "PhET Greenhouse Effect"
+    "Widget simulasi energi termal (buatan sendiri)",
+    "Widget simulasi difusi gas (buatan sendiri)",
+    "Widget simulasi efek rumah kaca (buatan sendiri)"
   ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 4 dari ATP guru mitra tersedia.",
     "Blok gambar fenomena di layar l1 belum punya berkas (src null).",
     "Persamaan 4.1 = Persamaan (2.14) Bab II. Nomor padanan persamaan lain belum dicocokkan.",
-    "Instruksi Greenhouse Effect hanya memakai fitur yang disebut di halaman resmi PhET (mengubah konsentrasi gas rumah kaca, membandingkan zaman es dan masa kini). Nama kontrolnya perlu dicocokkan dengan simulasi.",
+    "Instruksi simulasi efek rumah kaca memakai kontrol widget: tombol Nyalakan sinar Matahari, pilihan Zaman es dan Masa kini, serta slider Atur konsentrasi sendiri.",
     "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju penurunan suhu (unsur M); tahap pemodelan diberi label R.",
-    "Uji singkat di layar l4 memerlukan termometer dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026). Karena botol minuman tidak boleh dibuka, suhu diukur pada botol sejenis berisi air sebagai model."
+    "Uji singkat di layar l4 memerlukan termometer dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026). Karena botol minuman tidak boleh dibuka, suhu diukur pada botol sejenis berisi air sebagai model.",
+    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET."
   ],
   "layar": [
     {
@@ -117,10 +118,8 @@
       "blok": [
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html",
-          "judul": "Energy Forms and Changes (layar Intro)",
-          "rasio": "3/4",
+          "widget": "energi-termal",
+          "judul": "Simulasi energi termal",
           "instruksi": ["Pindahkan balok besi ke atas salah satu pemanas, lalu panaskan.", "Ketuk Matikan pada pemanas itu.", "Tumpukkan besi panas di atas balok bata yang masih dingin di meja.", "Centang Grafik suhu.", "Amati suhu kedua balok sampai tidak berubah lagi."]
         },
         {
@@ -151,11 +150,9 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
-          "judul": "Gas Properties (layar Diffusion)",
-          "rasio": "3/4",
-          "instruksi": ["Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.", "Ketuk Angkat sekat.", "Amati wadah dan grafiknya selama beberapa menit. Boleh memakai kecepatan Cepat.", "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."]
+          "widget": "difusi",
+          "judul": "Simulasi difusi gas",
+          "instruksi": ["Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.", "Ketuk Angkat sekat.", "Amati wadah dan grafiknya selama beberapa menit. Boleh mengetuk tombol Normal agar berubah menjadi Cepat ×4.", "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."]
         },
         {
           "tipe": "isian",
@@ -368,11 +365,9 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html",
-          "judul": "Greenhouse Effect",
-          "rasio": "3/4",
-          "instruksi": ["Ketuk Nyalakan sinar Matahari.", "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.", "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.", "Geser slider konsentrasi ke kanan. Amati neraca energi dan suhu permukaan sampai stabil kembali."]
+          "widget": "efek-rumah-kaca",
+          "judul": "Simulasi efek rumah kaca",
+          "instruksi": ["Ketuk Nyalakan sinar Matahari.", "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.", "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.", "Geser slider Atur konsentrasi sendiri ke arah Banyak. Amati neraca energi dan suhu permukaan sampai stabil kembali."]
         },
         {
           "tipe": "isian",
@@ -694,9 +689,6 @@
     "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Boran, M. (2009, 15 Desember). Steorn's free energy device goes on display. Silicon Republic. https://www.siliconrepublic.com/?p=441623",
-    "Novella, S. (2009, 29 Juni). The jury is in for Steorn – No free energy. NeuroLogica Blog. https://theness.com/neurologicablog/the-jury-is-in-for-steorn-no-free-energy/",
-    "PhET Interactive Simulations. (t.t.). Energy forms and changes [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/energy-forms-and-changes",
-    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties",
-    "PhET Interactive Simulations. (t.t.). Greenhouse effect [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/greenhouse-effect"
+    "Novella, S. (2009, 29 Juni). The jury is in for Steorn – No free energy. NeuroLogica Blog. https://theness.com/neurologicablog/the-jury-is-in-for-steorn-no-free-energy/"
   ]
 }

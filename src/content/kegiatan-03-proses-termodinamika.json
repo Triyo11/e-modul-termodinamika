@@ -38,15 +38,19 @@
     "Pompa sepeda",
     "Kabut tipis saat tutup botol minuman bersoda dibuka"
   ],
-  "simulasiUtama": ["PhET Gas Properties (layar Explore)", "Diagram p-V interaktif (widget e-modul)"],
+  "simulasiUtama": [
+    "Widget simulasi partikel gas (buatan sendiri)",
+    "Widget diagram p-V (buatan sendiri)"
+  ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 3 dari ATP guru mitra tersedia.",
     "Blok video fenomena di layar l1 belum punya berkas (src null).",
     "Blok diagram-pv adalah widget buatan sendiri; spesifikasinya ada di skema-json-stem-ctl.md.",
     "File ini menggantikan kegiatan-03-teori-kinetik-gas.json yang lama. Isi teori kinetik sudah dilebur ke KB 1.",
-    "Instruksi layar Explore PhET Gas Properties perlu dicocokkan dengan tampilan simulasi sebelum validasi.",
+    "Instruksi layar l2 memakai kontrol widget partikel-gas: pilihan Tidak ada pada panel Jaga tetap dan dinding kiri yang diseret.",
     "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap pemodelan diberi widget diagram p-V untuk memeriksa hitungan usaha (unsur T) dan label R. Contoh isotermal 1 mol pada 300 K tidak muat di rentang sumbu widget, jadi pemeriksaan isotermal memakai 200 kPa dan 1,0 L → 2,0 L (W = 200 ln 2 ≈ 138,6 J).",
-    "Rubrik aspek ketiga diseragamkan menjadi \"Penggunaan sumber\" (4 Nov 2026)."
+    "Rubrik aspek ketiga diseragamkan menjadi \"Penggunaan sumber\" (4 Nov 2026).",
+    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET. Tautan sumber di tahap inkuiri diganti buku teks Kemendikbudristek (Radjawane et al., 2022)."
   ],
   "layar": [
     {
@@ -113,11 +117,9 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
-          "judul": "Gas Properties (layar Explore)",
-          "rasio": "3/4",
-          "instruksi": ["Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.", "Pilih Tidak ada pada panel Jaga tetap.", "Seret pegangan di dinding kiri ke kanan untuk memampatkan gas. Catat perubahan suhu dan tekanan.", "Seret pegangan ke kiri untuk memuaikan gas. Catat lagi perubahan suhu dan tekanan."]
+          "widget": "partikel-gas",
+          "judul": "Simulasi partikel gas",
+          "instruksi": ["Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.", "Pilih Tidak ada pada panel Jaga tetap.", "Seret dinding kiri wadah ke kanan untuk memampatkan gas. Catat perubahan suhu dan tekanan.", "Seret dinding kiri ke kiri untuk memuaikan gas. Catat lagi perubahan suhu dan tekanan."]
         },
         {
           "tipe": "isian",
@@ -150,11 +152,11 @@
           "judul": "Sumber terpercaya untuk penyelidikan ini",
           "daftar": [
             {
-              "judul": "Gas Properties: Teacher Tips",
-              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
-              "url": "https://phet.colorado.edu/files/teachers-guide/gas-properties-html-guide_en.pdf",
-              "kegunaan": "Penjelasan layar Explore, termasuk usaha tekanan-volume",
-              "bahasa": "Inggris"
+              "judul": "Fisika untuk SMA/MA Kelas XI, Bab 7 Termodinamika, subbab Proses-Proses Termodinamika (hlm. 184–187)",
+              "penerbit": "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+              "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
+              "kegunaan": "Penjelasan diagram p-V, usaha pada gas ideal, dan empat proses termodinamika",
+              "bahasa": "Indonesia"
             }
           ]
         }
@@ -681,11 +683,11 @@
   "referensi": [
     "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
     "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Radjawane, M. M., Tinambunan, A., & Jono, S. (2022). Fisika untuk SMA/MA kelas XI. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
     "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Berg, R. E. (t.t.). Question of the week, answer #347. https://instructional-resources.physics.uiowa.edu/sites/instructional-resources.physics.uiowa.edu/files/2024-12/University%2520of%2520Maryland%2520QOTW%2520Answer%2520%23347_2.pdf",
     "Brainly.co.id. (t.t.). Saat seseorang membuka tutup botol minuman dingin, terlihat asap putih keluar dari dalam botol. https://brainly.co.id/tugas/56228391",
-    "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L. (2023). Culinary fluid mechanics and other currents in food science. Reviews of Modern Physics, 95(2), 025004. https://doi.org/10.1103/RevModPhys.95.025004",
-    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties"
+    "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L. (2023). Culinary fluid mechanics and other currents in food science. Reviews of Modern Physics, 95(2), 025004. https://doi.org/10.1103/RevModPhys.95.025004"
   ]
 }

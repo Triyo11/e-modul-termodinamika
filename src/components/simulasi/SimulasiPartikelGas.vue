@@ -550,7 +550,7 @@ onBeforeUnmount(() => {
       </label>
 
       <fieldset class="flex flex-col gap-1.5">
-        <legend class="mb-1 text-ink-600">Jaga tetap <span class="text-ink-400">(Hold Constant)</span></legend>
+        <legend class="mb-1 text-ink-600">Jaga tetap</legend>
         <div class="grid grid-cols-2 gap-1.5">
           <label
             v-for="p in pilihanJagaTetap"

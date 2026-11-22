@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { inject } from "vue";
 import BlokRenderer from "./BlokRenderer.vue";
+import RangkumanBlok from "./RangkumanBlok.vue";
+import { kegiatanKey } from "@/lib/tabelIsian";
 import type { Layar } from "@/types/kegiatan";
 
 defineProps<{ layar: Layar; kegiatanId: string }>();
+
+const kegiatan = inject(kegiatanKey, null);
 
 const labelPeran: Record<string, string> = {
   apersepsi: "Apersepsi",
@@ -46,6 +51,9 @@ const labelStem: Record<string, string> = {
       <h2 class="text-xl font-semibold text-ink-900">{{ layar.judul }}</h2>
     </header>
 
-    <BlokRenderer v-for="(b, i) in layar.blok" :key="`${layar.id}-${i}`" :blok="b" :kegiatan-id="kegiatanId" />
+    <template v-for="(b, i) in layar.blok" :key="`${layar.id}-${i}`">
+      <BlokRenderer :blok="b" :kegiatan-id="kegiatanId" />
+      <RangkumanBlok v-if="'id' in b && b.id === kegiatan?.rangkuman?.tampilSetelah" />
+    </template>
   </section>
 </template>

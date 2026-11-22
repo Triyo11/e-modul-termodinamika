@@ -481,7 +481,7 @@ onBeforeUnmount(() => {
 
       <label class="flex items-center gap-1.5">
         <input v-model="tampilPusatMassa" type="checkbox" class="accent-accent-1" />
-        Pusat massa tiap jenis partikel <span class="text-ink-400">(Center of Mass)</span>
+        Pusat massa tiap jenis partikel
       </label>
 
       <div class="flex gap-2">

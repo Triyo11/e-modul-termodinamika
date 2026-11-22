@@ -3,29 +3,11 @@
 @import "@fontsource-variable/literata/standard-italic.css";
 @import "tailwindcss";
 
-.material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  letter-spacing: normal;
-  text-transform: none;
-  font-feature-settings: "liga";
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
 @theme default {
   --color-brand-light: #F5F1E8;
   --color-brand-dark: #2B2520;
 
+  --color-accent: var(--color-accent-1);
   --color-accent-1: #1f5fbf;
   --color-accent-2: #ffe66d;
   --color-accent-3: #ff6b6b;

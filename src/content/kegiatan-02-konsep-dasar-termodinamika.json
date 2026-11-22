@@ -39,16 +39,19 @@
     "Termos",
     "Bumi sebagai sistem yang bertukar energi dengan Matahari dan antariksa"
   ],
-  "simulasiUtama": ["PhET Energy Forms and Changes", "PhET Greenhouse Effect", "Widget partikel gas (meniru PhET Gas Properties layar Ideal)"],
+  "simulasiUtama": [
+    "Widget simulasi energi termal (buatan sendiri)",
+    "Widget simulasi efek rumah kaca (buatan sendiri)",
+    "Widget simulasi partikel gas (buatan sendiri)"
+  ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 2 dari ATP guru mitra tersedia.",
     "Blok gambar fenomena di layar l1 belum punya berkas (src null).",
-    "Instruksi simulasi menyebut kontrol PhET dalam bahasa Inggris. Cocokkan dengan tampilan simulasi sebelum validasi.",
-    "Tautan Greenhouse Effect memakai versi bahasa Inggris (_en.html) yang tercantum di halaman resmi PhET. Versi _all.html belum dicek.",
     "Klaim TP 2.3 tentang kalor dan usaha mengikuti Rencana Kegiatan Belajar. Catatan rencana masih menandai 'TP 2.3 memuat kalor/usaha atau tidak' sebagai hal terbuka; hapus layar l6 bagian konvensi tanda bila diputuskan tidak.",
-    "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju es mencair (unsur M); tahap pemodelan diberi simulasi Gas Properties layar Ideal untuk uji pembagian sistem (unsur T) dan label R.",
+    "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju es mencair (unsur M); tahap pemodelan diberi widget simulasi partikel gas untuk uji pembagian sistem (unsur T) dan label R.",
     "Uji singkat di layar l4 memerlukan timbangan dapur dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026).",
-    "Layar l5 memakai widget SimulasiPartikelGas (dipilih SimulasiBlok.vue karena src mengandung gas-properties). Instruksi memakai nama kontrol widget: Jaga tetap, Jumlah partikel (10–200, langkah 5), Lebar wadah (5–15 m, langkah 0,1 m)."
+    "Layar l5 memakai widget partikel-gas. Instruksi memakai nama kontrol widget: Jaga tetap, Jumlah partikel (10–200, langkah 5), Lebar wadah (5–15 m, langkah 0,1 m).",
+    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET."
   ],
   "layar": [
     {
@@ -115,17 +118,15 @@
       "blok": [
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html",
-          "judul": "Energy Forms and Changes (layar Intro)",
-          "rasio": "3/4",
+          "widget": "energi-termal",
+          "judul": "Simulasi energi termal",
           "instruksi": ["Pindahkan balok besi ke atas Pemanas 1 dan gelas berisi air ke atas Pemanas 2. Seret bendanya, atau ketuk benda lalu ketuk tempat tujuannya.", "Centang Simbol energi.", "Geser slider Pemanas 1 ke arah Panaskan sampai besi panas.", "Pindahkan besi panas ke dalam gelas.", "Amati suhu besi dan air serta arah gerak simbol energi."]
         },
         {
           "tipe": "callout",
           "gaya": "hati-hati",
           "judul": "Penyederhanaan simulasi",
-          "isi": "Simbol energi di simulasi ini hanya untuk gambaran kualitatif. Jumlahnya terlalu kasar untuk dihitung. Udara juga tidak ditampilkan sebagai penyimpan energi."
+          "isi": "Simbol energi di simulasi ini hanya gambaran kualitatif, jadi jumlahnya tidak untuk dihitung. Energi yang dilepas ke udara tampak sebagai simbol yang terbang ke atas, tetapi suhu udara tidak ditampilkan."
         },
         {
           "tipe": "isian",
@@ -149,10 +150,8 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html",
-          "judul": "Greenhouse Effect",
-          "rasio": "3/4",
+          "widget": "efek-rumah-kaca",
+          "judul": "Simulasi efek rumah kaca",
           "instruksi": ["Ketuk Nyalakan sinar Matahari.", "Amati sinar Matahari (kuning) yang masuk ke atmosfer.", "Amati radiasi inframerah (merah) yang dipancarkan permukaan Bumi.", "Perhatikan apa saja yang melewati batas atmosfer."]
         },
         {
@@ -345,10 +344,8 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
-          "judul": "Gas Properties (layar Ideal)",
-          "rasio": "3/4",
+          "widget": "partikel-gas",
+          "judul": "Simulasi partikel gas",
           "instruksi": ["Pilih Suhu pada panel Jaga tetap.", "Atur jumlah partikel menjadi 50 dan lebar wadah menjadi 6,0 m. Tunggu jarum tekanan stabil, lalu catat jumlah partikel, lebar wadah, dan tekanan.", "Gandakan keduanya: jumlah partikel menjadi 100 dan lebar wadah menjadi 12,0 m. Tunggu jarum tekanan stabil, lalu catat lagi."]
         },
         {
@@ -688,9 +685,6 @@
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Chilly's. (t.t.). Chilly's bottles. https://www.chillys.com/",
     "Rossi, M. (2016, 8 November). PBO tested: Chilly's bottle. Practical Boat Owner. https://www.pbo.co.uk/gear/pbo-tested-chillys-bottle-45192",
-    "Thess, A. (2024, 5 Juni). Best insulated water bottles. Outdoor Life. https://www.outdoorlife.com/gear/best-insulated-water-bottles/",
-    "PhET Interactive Simulations. (t.t.). Energy forms and changes [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/energy-forms-and-changes",
-    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties",
-    "PhET Interactive Simulations. (t.t.). Greenhouse effect [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/greenhouse-effect"
+    "Thess, A. (2024, 5 Juni). Best insulated water bottles. Outdoor Life. https://www.outdoorlife.com/gear/best-insulated-water-bottles/"
   ]
 }

@@ -616,11 +616,11 @@
     "poin": [
       {
         "tp": "5.1",
-        "teks": "Efisiensi mesin kalor e = W/Q_H = 1 − Q_C/Q_H (Persamaan 5.1) selalu kurang dari 1 karena selalu ada kalor yang dibuang. Efisiensi Carnot e_C = 1 − T_C/T_H (Persamaan 5.4) adalah batas tertinggi; mesin nyata selalu di bawahnya."
+        "teks": "Efisiensi mesin kalor $e = W/Q_H = 1 - Q_C/Q_H$ (Persamaan 5.1) selalu kurang dari 1 karena selalu ada kalor yang dibuang. Efisiensi Carnot $e_C = 1 - T_C/T_H$ (Persamaan 5.4) adalah batas tertinggi; mesin nyata selalu di bawahnya."
       },
       {
         "tp": "5.2",
-        "teks": "Mesin pendingin dinilai dengan K = Q_C/W (Persamaan 5.2), sedangkan pompa kalor dengan K_P = Q_H/W yang selalu lebih besar dari 1 (Persamaan 5.3). Koefisien performansi Carnot K_C = T_C/(T_H − T_C) (Persamaan 5.5) turun ketika selisih suhu kedua reservoir makin besar, sehingga AC bekerja lebih berat pada hari yang sangat panas."
+        "teks": "Mesin pendingin dinilai dengan $K = Q_C/W$ (Persamaan 5.2), sedangkan pompa kalor dengan $K_P = Q_H/W$ yang selalu lebih besar dari 1 (Persamaan 5.3). Koefisien performansi Carnot $K_C = T_C/(T_H - T_C)$ (Persamaan 5.5) turun ketika selisih suhu kedua reservoir makin besar, sehingga AC bekerja lebih berat pada hari yang sangat panas."
       },
       {
         "tp": "5.3",
@@ -634,8 +634,7 @@
       "5.2",
       "5.3",
       "5.5"
-    ],
-    "berikutnya": "Rangkuman seluruh modul tersedia di bagian penutup."
+    ]
   },
   "glosarium": [
     { "istilah": "Mesin kalor", "arti": "Alat yang menyerap kalor dari sumber bersuhu tinggi untuk melakukan usaha dan membuang sisanya ke reservoir bersuhu rendah" },

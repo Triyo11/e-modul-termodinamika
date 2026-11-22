@@ -40,13 +40,16 @@
     }
   ],
   "fenomena": ["Tekanan ban naik setelah perjalanan jauh", "Panci presto"],
-  "simulasiUtama": ["PhET Gas Properties"],
+  "simulasiUtama": [
+    "Widget simulasi partikel gas (buatan sendiri)"
+  ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
     "Blok gambar dan video fenomena di layar l1 belum punya berkas (src null). Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
     "Simulasi Gas Properties diganti widget buatan sendiri (SimulasiPartikelGas.vue). Instruksi memakai nama kontrol widget (Jumlah partikel, Lebar wadah, Jaga tetap).",
     "Persamaan e-modul diberi nomor 1.1 sampai 1.9. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals.",
-    "Revisi 4 Nov 2026: ditambahkan field rangkuman, jenisPenilaian (kuis = formatif, rubrik = autentik), dan teks pengantar layar penilaian, menyusul keputusan 18 Okt 2026 yang belum masuk ke salinan ini. Perubahan widget simulasi oleh pengguna dipertahankan. Satuan lebar wadah diubah dari nm ke m sesuai tampilan widget SimulasiPartikelGas."
+    "Revisi 4 Nov 2026: ditambahkan field rangkuman, jenisPenilaian (kuis = formatif, rubrik = autentik), dan teks pengantar layar penilaian, menyusul keputusan 18 Okt 2026 yang belum masuk ke salinan ini. Perubahan widget simulasi oleh pengguna dipertahankan. Satuan lebar wadah diubah dari nm ke m sesuai tampilan widget SimulasiPartikelGas.",
+    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET. Tautan sumber di tahap inkuiri diganti buku teks Kemendikbudristek (Radjawane et al., 2022) dan OpenStax College Physics 2e."
   ],
   "layar": [
     {
@@ -229,13 +232,11 @@
         },
         {
           "tipe": "simulasi",
-          "penyedia": "phet",
-          "src": "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html",
-          "judul": "Gas Properties (layar Ideal)",
-          "rasio": "3/4",
+          "widget": "partikel-gas",
+          "judul": "Simulasi partikel gas",
           "instruksi": [
             "Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.",
-            "Baca lebar wadah (mewakili volume) pada panel di samping wadah.",
+            "Baca nilai Lebar wadah (mewakili volume).",
             "Pada setiap percobaan, pilih satu besaran di panel Jaga tetap (Volume, Suhu, atau Tekanan).",
             "Ubah satu besaran lain, lalu catat bagaimana besaran ketiga berubah."
           ]
@@ -313,17 +314,17 @@
           "judul": "Sumber terpercaya untuk penyelidikan ini",
           "daftar": [
             {
-              "judul": "Gas Properties",
-              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
-              "url": "https://phet.colorado.edu/en/simulations/gas-properties",
-              "kegunaan": "Halaman resmi simulasi beserta deskripsi topiknya",
-              "bahasa": "Inggris"
+              "judul": "Fisika untuk SMA/MA Kelas XI, Bab 7 Termodinamika, subbab Hukum-Hukum tentang Gas (hlm. 177–181)",
+              "penerbit": "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+              "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
+              "kegunaan": "Buku teks resmi untuk mencocokkan hubungan p, V, T, dan n yang Anda temukan di simulasi",
+              "bahasa": "Indonesia"
             },
             {
-              "judul": "Gas Properties: Teacher Tips",
-              "penerbit": "PhET Interactive Simulations, University of Colorado Boulder",
-              "url": "https://phet.colorado.edu/files/teachers-guide/gas-properties-html-guide_en.pdf",
-              "kegunaan": "Penjelasan kontrol simulasi dan penyederhanaan modelnya",
+              "judul": "College Physics 2e, subbab 13.3 The Ideal Gas Law",
+              "penerbit": "OpenStax, Rice University",
+              "url": "https://openstax.org/books/college-physics-2e/pages/13-3-the-ideal-gas-law",
+              "kegunaan": "Penjelasan hukum gas ideal dalam jumlah molekul (pV = NkT) dan jumlah mol (pV = nRT)",
               "bahasa": "Inggris"
             }
           ]
@@ -898,12 +899,13 @@
   "referensi": [
     "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
     "Halliday, D., Resnick, R., & Walker, J. (2014). Fundamentals of physics (10th ed.). John Wiley & Sons.",
+    "Radjawane, M. M., Tinambunan, A., & Jono, S. (2022). Fisika untuk SMA/MA kelas XI. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
     "Sang, D., Jones, G., Chadha, G., & Woodside, R. (2014). Cambridge International AS and A Level physics coursebook (2nd ed.). Cambridge University Press.",
     "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
+    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e",
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Auto2000. (2020, 24 Maret). Ketahui kelebihan isi ban dengan nitrogen. https://auto2000.co.id/berita-dan-tips/ketahui-kelebihan-isi-ban-dengan-nitrogen",
     "Montoya, R. (2018, 19 Desember). Should you fill your car's tires with nitrogen? Edmunds. https://www.edmunds.com/car-buying/should-you-fill-your-cars-tires-with-nitrogen.html",
-    "National Highway Traffic Safety Administration. (t.t.). Tire safety: Everything rides on it. https://www.nhtsa.gov/document/tire-safety-everything-rides-it",
-    "PhET Interactive Simulations. (t.t.). Gas properties [Simulasi]. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties"
+    "National Highway Traffic Safety Administration. (t.t.). Tire safety: Everything rides on it. https://www.nhtsa.gov/document/tire-safety-everything-rides-it"
   ]
 }
