@@ -25,7 +25,7 @@ if (!widget) console.warn(`Widget simulasi tidak dikenal: ${props.blok.widget}`)
   <div class="flex flex-col gap-2">
     <p v-if="blok.judul" class="font-semibold text-ink-800">{{ blok.judul }}</p>
 
-    <div v-if="blok.instruksi?.length" class="rounded-xl bg-ink-100 p-3 text-sm text-ink-700">
+    <div v-if="blok.instruksi?.length" class="rounded-xl bg-ink-100 p-4 text-base leading-relaxed text-ink-700">
       <p class="mb-1.5 font-semibold text-ink-800">Langkah kerja</p>
       <ol class="flex list-decimal flex-col gap-1 pl-5 marker:font-semibold marker:text-accent-1">
         <li v-for="(langkah, i) in blok.instruksi" :key="i">{{ langkah }}</li>

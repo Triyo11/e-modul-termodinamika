@@ -28,17 +28,17 @@ const gayaAktif = computed(() => gaya[props.blok.gaya] ?? gaya.ingat);
 <template>
   <div class="flex gap-3 rounded-xl border p-4" :class="gayaAktif.kelas">
     <span v-if="gayaAktif.ikon == 'warning'" class="shrink-0"
-      ><PhWarning :size="32" weight="bold"
+      ><PhWarning :size="24" weight="bold"
     /></span>
     <span v-else-if="gayaAktif.ikon == 'push_pin'" class="shrink-0"
-      ><PhPushPin :size="32" weight="bold"
+      ><PhPushPin :size="24" weight="bold"
     /></span>
     <span v-else-if="gayaAktif.ikon == 'lightbulb'" class="shrink-0"
-      ><PhLightbulb :size="32" weight="bold"
+      ><PhLightbulb :size="24" weight="bold"
     /></span>
     <div class="min-w-0">
       <p v-if="blok.judul" class="font-semibold">{{ blok.judul }}</p>
-      <p class="mt-0.5 text-sm text-justify leading-relaxed" v-html="html"></p>
+      <p class="mt-1 text-base leading-relaxed text-ink-800" v-html="html"></p>
     </div>
   </div>
 </template>

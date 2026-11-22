@@ -104,7 +104,7 @@ const tujuan = computed(() =>
       </ol>
     </nav>
 
-    <main :key="data.id" class="flex flex-col gap-8 px-5 py-6 pb-40">
+    <main :key="data.id" class="mx-auto flex w-full max-w-2xl flex-col gap-16 px-5 py-8 pb-40">
       <section class="flex flex-col gap-3">
         <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
           {{ data.bab }}<template v-if="data.kb"> · KB {{ data.kb }}</template> · Kelas {{ data.kelas }}
@@ -125,7 +125,7 @@ const tujuan = computed(() =>
 
         <div class="rounded-xl border border-ink-200 bg-white p-4">
           <p class="font-semibold text-ink-800">Tujuan pembelajaran</p>
-          <ul class="mt-2 flex list-disc flex-col gap-1 pl-5 text-sm leading-relaxed text-ink-700">
+          <ul class="mt-2 flex list-disc flex-col gap-2 pl-5 text-base leading-relaxed text-ink-700">
             <li v-for="t in tujuan" :key="t.teks">
               <span v-if="t.kode" class="mr-1.5 font-semibold text-ink-800">{{ t.kode }}</span>{{ t.teks }}
             </li>

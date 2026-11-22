@@ -34,7 +34,7 @@ function ubah(i: number, nilai: string) {
     </div>
 
     <label v-for="(p, i) in blok.pertanyaan" :key="i" class="flex flex-col gap-1.5">
-      <span class="text-sm font-medium text-ink-800">{{ p }}</span>
+      <span class="text-base font-medium text-ink-800">{{ p }}</span>
       <textarea
         :value="jawaban[i] ?? ''"
         rows="3"

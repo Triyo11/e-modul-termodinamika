@@ -16,18 +16,18 @@ defineProps<{ blok: BlokTugasRancangan; kegiatanId: string }>();
       </div>
     </div>
 
-    <p class="text-justify text-body leading-relaxed text-ink-800">{{ blok.masalah }}</p>
+    <p class="text-body leading-relaxed text-ink-800">{{ blok.masalah }}</p>
 
     <div class="grid gap-3 sm:grid-cols-2">
       <div>
         <p class="text-sm font-semibold text-ink-800">Kriteria</p>
-        <ul class="mt-1 flex list-disc flex-col gap-1 pl-5 text-sm text-ink-700">
+        <ul class="mt-1 flex list-disc flex-col gap-1 pl-5 text-base text-ink-700">
           <li v-for="k in blok.kriteria" :key="k">{{ k }}</li>
         </ul>
       </div>
       <div>
         <p class="text-sm font-semibold text-ink-800">Batasan</p>
-        <ul class="mt-1 flex list-disc flex-col gap-1 pl-5 text-sm text-ink-700">
+        <ul class="mt-1 flex list-disc flex-col gap-1 pl-5 text-base text-ink-700">
           <li v-for="b in blok.batasan" :key="b">{{ b }}</li>
         </ul>
       </div>

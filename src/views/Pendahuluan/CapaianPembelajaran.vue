@@ -18,7 +18,7 @@
       <section>
         <h2 class="font-bold text-xl text-center pb-4">Capaian Pembelajaran</h2>
         <div class="flex flex-col gap-2">
-          <p class="text-justify mx-4">
+          <p class="mx-4">
             Capaian pembelajaran diadaptasi dari
             <a
               href="https://guru.kemendikdasmen.go.id/dokumen/74r6Yln0zK"

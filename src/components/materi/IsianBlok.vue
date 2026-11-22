@@ -49,7 +49,7 @@ function periksa() {
 
 <template>
   <div class="rounded-xl border border-ink-200 p-4">
-    <p class="text-justify font-medium text-ink-800" v-html="pertanyaanHtml"></p>
+    <p class="font-medium text-ink-800" v-html="pertanyaanHtml"></p>
 
     <div v-if="blok.format === 'pilih-kelompok'" class="mt-3 flex flex-col gap-2">
       <div

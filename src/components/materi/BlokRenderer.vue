@@ -29,11 +29,11 @@ defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
 <template>
   <!-- Tanpa nomor worksheet, pembungkus memakai display: contents agar tata letak blok tidak berubah. -->
   <div
-    :class="nomorWorksheet ? 'flex flex-col gap-1.5' : 'contents'"
+    :class="nomorWorksheet ? 'flex flex-col gap-2' : 'contents'"
     :role="nomorWorksheet ? 'group' : undefined"
     :aria-label="nomorWorksheet ? `Student e-Worksheet ${nomorWorksheet}` : undefined"
   >
-    <p v-if="nomorWorksheet" aria-hidden="true" class="text-xs font-semibold uppercase tracking-wide text-accent">
+    <p v-if="nomorWorksheet" aria-hidden="true" class="self-start rounded-full bg-accent-2 px-2.5 py-0.5 text-xs font-semibold text-brand-dark">
       Student e-Worksheet {{ nomorWorksheet }}
     </p>
     <GambarBlok v-if="blok.tipe === 'gambar'" :blok="blok" />

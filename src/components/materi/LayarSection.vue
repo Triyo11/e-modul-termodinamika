@@ -63,7 +63,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
 </script>
 
 <template>
-  <section class="flex flex-col gap-4">
+  <section class="flex flex-col gap-6 border-t border-ink-200 pt-10">
     <header class="flex flex-col gap-1">
       <div class="flex flex-wrap items-center gap-2">
         <span class="text-xs font-semibold uppercase tracking-wide text-accent">
@@ -78,7 +78,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
           {{ s }}
         </span>
       </div>
-      <h2 class="text-xl font-semibold text-ink-900">{{ layar.judul }}</h2>
+      <h2 class="text-2xl font-semibold leading-snug text-ink-900">{{ layar.judul }}</h2>
     </header>
 
     <details

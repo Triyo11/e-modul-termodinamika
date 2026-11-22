@@ -22,7 +22,7 @@ const tujuanPembelajaran = [
     >
       <section>
         <h2 class="font-bold text-xl text-center pb-4">Tujuan Pembelajaran</h2>
-        <div v-for="(v, i) in tujuanPembelajaran" class="px-4 text-justify hyphens-auto">
+        <div v-for="(v, i) in tujuanPembelajaran" class="px-4 hyphens-auto">
             <li :key="i">
                 {{ v }}
             </li>

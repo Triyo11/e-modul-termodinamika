@@ -55,7 +55,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
         <dl class="flex flex-col gap-1.5">
           <div v-for="(sel, j) in baris1" :key="j" class="flex flex-col gap-0.5">
             <dt class="text-xs font-medium uppercase tracking-wide text-ink-500" v-html="kolom[j]"></dt>
-            <dd class="text-justify text-sm text-ink-800" v-html="sel"></dd>
+            <dd class="text-sm text-ink-800" v-html="sel"></dd>
           </div>
         </dl>
       </div>
