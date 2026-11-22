@@ -93,6 +93,16 @@ export function isiAwal(blok: BlokTabelIsian, i: number, j: number): string | un
   return v === undefined || v === "" ? undefined : v;
 }
 
+/** Baris tersimpan ditambah isi `barisAwal`, agar sel terkunci ikut dipakai kolom hitung. */
+export function barisDenganAwal(blok: BlokTabelIsian, baris: BarisTabel, i: number): BarisTabel {
+  const hasil: BarisTabel = { ...baris };
+  blok.kolom.forEach((k, j) => {
+    const v = isiAwal(blok, i, j);
+    if (v !== undefined) hasil[k.kunci] = v;
+  });
+  return hasil;
+}
+
 /** True jika semua sel yang harus diisi murid (bukan kolom hitung, bukan isi awal) sudah terisi. */
 export function tabelLengkap(blok: BlokTabelIsian, baris: BarisTabel[]): boolean {
   for (let i = 0; i < blok.jumlahBaris; i++) {

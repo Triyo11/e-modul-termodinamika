@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
-import { formatAngka, isiAwal, nilaiBaris, type BarisTabel } from "@/lib/tabelIsian";
+import { barisDenganAwal, formatAngka, isiAwal, nilaiBaris, type BarisTabel } from "@/lib/tabelIsian";
 import type { BlokTabelIsian, KolomTabelIsian } from "@/types/kegiatan";
 
 const props = defineProps<{ blok: BlokTabelIsian; kegiatanId: string }>();
@@ -11,7 +11,11 @@ const baris = useJawabanTersimpan<BarisTabel[]>(
   Array.from({ length: props.blok.jumlahBaris }, () => ({})),
 );
 
-const hasil = computed(() => baris.value.map((b) => nilaiBaris(props.blok.kolom, b)));
+const hasil = computed(() =>
+  Array.from({ length: props.blok.jumlahBaris }, (_, i) =>
+    nilaiBaris(props.blok.kolom, barisDenganAwal(props.blok, baris.value[i] ?? {}, i)),
+  ),
+);
 
 function ubah(i: number, kunci: string, nilai: string) {
   const salinan = baris.value.map((b) => ({ ...b }));

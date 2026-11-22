@@ -318,7 +318,15 @@ export interface Layar {
   stem?: string[];
   indikatorTahap?: { bk?: string[]; li?: string[] };
   peranGuru?: string;
+  /** Panduan rinci untuk guru. Hanya tampil dalam mode guru (?guru=1). */
+  panduanGuru?: PanduanGuru;
   blok: Blok[];
+}
+
+export interface PanduanGuru {
+  kegiatan: string[];
+  pertanyaanPemantik?: string[];
+  antisipasi?: string[];
 }
 
 export interface TujuanPembelajaranBerkode {

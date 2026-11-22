@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { computed, inject } from "vue";
+import { useRoute } from "vue-router";
 import BlokRenderer from "./BlokRenderer.vue";
 import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
@@ -25,11 +26,16 @@ const labelPeran: Record<string, string> = {
 };
 
 const labelStem: Record<string, string> = {
-  S: "Sains",
-  T: "Teknologi",
-  R: "Rekayasa",
-  M: "Matematika",
+  S: "Sains (Science)",
+  T: "Teknologi (Technology)",
+  E: "Rekayasa (Engineering)",
+  R: "Rekayasa (Engineering)",
+  M: "Matematika (Mathematics)",
 };
+
+// Mode guru: buka halaman dengan ?guru=1 agar panduan guru tampil.
+const route = useRoute();
+const modeGuru = computed(() => route.query.guru !== undefined);
 </script>
 
 <template>
@@ -50,6 +56,32 @@ const labelStem: Record<string, string> = {
       </div>
       <h2 class="text-xl font-semibold text-ink-900">{{ layar.judul }}</h2>
     </header>
+
+    <details
+      v-if="modeGuru && (layar.panduanGuru || layar.peranGuru)"
+      class="rounded-xl border border-dashed border-ink-300 bg-ink-100 p-3 text-sm text-ink-700"
+    >
+      <summary class="cursor-pointer font-semibold text-ink-800">Panduan guru</summary>
+      <p v-if="layar.peranGuru" class="mt-2">{{ layar.peranGuru }}</p>
+      <template v-if="layar.panduanGuru">
+        <p class="mt-2 font-semibold text-ink-800">Kegiatan guru</p>
+        <ol class="list-decimal pl-5">
+          <li v-for="(k, i) in layar.panduanGuru.kegiatan" :key="i">{{ k }}</li>
+        </ol>
+        <template v-if="layar.panduanGuru.pertanyaanPemantik?.length">
+          <p class="mt-2 font-semibold text-ink-800">Pertanyaan pemantik</p>
+          <ul class="list-disc pl-5">
+            <li v-for="(q, i) in layar.panduanGuru.pertanyaanPemantik" :key="i">{{ q }}</li>
+          </ul>
+        </template>
+        <template v-if="layar.panduanGuru.antisipasi?.length">
+          <p class="mt-2 font-semibold text-ink-800">Antisipasi kesulitan murid</p>
+          <ul class="list-disc pl-5">
+            <li v-for="(a, i) in layar.panduanGuru.antisipasi" :key="i">{{ a }}</li>
+          </ul>
+        </template>
+      </template>
+    </details>
 
     <template v-for="(b, i) in layar.blok" :key="`${layar.id}-${i}`">
       <BlokRenderer :blok="b" :kegiatan-id="kegiatanId" />

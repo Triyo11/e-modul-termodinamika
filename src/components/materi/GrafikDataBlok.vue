@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
-import { formatAngka, nilaiBaris, useCariBlok, type BarisTabel } from "@/lib/tabelIsian";
+import { barisDenganAwal, formatAngka, nilaiBaris, useCariBlok, type BarisTabel } from "@/lib/tabelIsian";
 import type { BlokGrafikData, BlokTabelIsian } from "@/types/kegiatan";
 
 const props = defineProps<{ blok: BlokGrafikData; kegiatanId: string }>();
@@ -15,7 +15,7 @@ const baris = useJawabanTersimpan<BarisTabel[]>(
 const titik = computed(() => {
   if (!sumber) return [];
   return baris.value
-    .map((b) => nilaiBaris(sumber.kolom, b))
+    .map((b, i) => nilaiBaris(sumber.kolom, barisDenganAwal(sumber, b, i)))
     .map((n) => ({ x: n[props.blok.sumbuX] ?? null, y: n[props.blok.sumbuY] ?? null }))
     .filter((t): t is { x: number; y: number } => t.x !== null && t.y !== null);
 });
