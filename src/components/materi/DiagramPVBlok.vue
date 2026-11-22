@@ -459,7 +459,7 @@ const fP = (p: number) => formatDesimal(p, 0);
       <div class="flex flex-wrap gap-2">
         <button
           type="button"
-          class="rounded-lg bg-accent-1 px-3 py-1.5 text-sm font-medium text-white disabled:opacity-40"
+          class="rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-brand-dark disabled:opacity-40"
           :disabled="alt.tertutup || alt.titik.length < 2"
           @click="tutupSiklus"
         >

@@ -37,7 +37,7 @@ const PANJANG_GRAFIK_DETIK = 120;
 const PERATAAN_SUHU_DETIK = 1.5; // meredam fluktuasi bacaan suhu tiap sisi
 const INTERVAL_SAMPEL = 0.5;
 
-const WARNA: Record<Jenis, string> = { 0: "#2E6E6A", 1: "#C2331F" };
+const WARNA: Record<Jenis, string> = { 0: "#0B7873", 1: "#C2331F" };
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const versi = ref(0);
@@ -485,7 +485,7 @@ onBeforeUnmount(() => {
       </label>
 
       <div class="flex gap-2">
-        <button type="button" class="flex-1 rounded-lg bg-accent-1 px-3 py-2 font-medium text-white" @click="berjalan = !berjalan">
+        <button type="button" class="flex-1 rounded-lg bg-brand px-3 py-2 font-semibold text-brand-dark" @click="berjalan = !berjalan">
           {{ berjalan ? "Jeda" : "Lanjutkan" }}
         </button>
         <button

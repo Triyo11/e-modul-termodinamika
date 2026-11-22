@@ -42,7 +42,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
       <button
         type="button"
         :disabled="!sumberLengkap"
-        class="rounded-lg bg-accent-1 px-3 py-2 text-sm font-medium text-white disabled:opacity-40"
+        class="rounded-lg bg-brand px-3 py-2 text-sm font-semibold text-brand-dark disabled:opacity-40"
         @click="dibuka = true"
       >
         Tampilkan tabel rujukan

@@ -92,7 +92,7 @@ const tujuan = computed(() =>
             class="flex h-full max-w-44 flex-col items-start rounded-lg border px-3 py-1.5 text-left transition-colors"
             :class="
               k.kb === kbAktif
-                ? 'border-accent-1 bg-accent-1 text-white'
+                ? 'border-brand bg-brand text-brand-dark'
                 : 'border-ink-200 bg-white text-ink-600 hover:border-accent-1/40'
             "
             @click="bukaKb(k.kb)"

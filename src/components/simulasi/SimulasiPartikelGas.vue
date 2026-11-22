@@ -213,7 +213,7 @@ function gambar() {
 
   // Dinding kiri dan tuasnya (selalu muat karena RUANG_PEGANGAN)
   const aktif = sedangMenyeret.value || (dekatPegangan.value && !dindingTerkunci.value);
-  const warnaDinding = dindingTerkunci.value ? "#859491" : aktif ? "#2E6E6A" : "#404944";
+  const warnaDinding = dindingTerkunci.value ? "#859491" : aktif ? "#0B7873" : "#404944";
   ctx.fillStyle = warnaDinding;
   ctx.fillRect(xd - 2, 0, 4, TINGGI);
   if (!dindingTerkunci.value) {
@@ -573,7 +573,7 @@ onBeforeUnmount(() => {
       <div class="flex gap-2">
         <button
           type="button"
-          class="flex-1 rounded-lg bg-accent px-3 py-2 font-medium text-white bg-accent-1"
+          class="flex-1 rounded-lg bg-brand px-3 py-2 font-semibold text-brand-dark"
           @click="berjalan = !berjalan"
         >
           {{ berjalan ? "Jeda" : "Lanjutkan" }}

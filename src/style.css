@@ -3,15 +3,16 @@
 @import "tailwindcss";
 
 @theme default {
-  /* Palet dasar: #1E2019 (gelap), #36827F (teal), #EDF6F9 (terang).
+  /* Palet dasar: #1E2019 (gelap), #00A9A5 (teal), #EDF6F9 (terang).
+     #00A9A5 hanya untuk bidang warna dengan teks gelap (5,7:1); teks teal memakai accent-1.
      Kontras teks diuji WCAG: ink-500 ke atas >= 4,5:1 pada putih, ink-50, dan ink-100. */
-  --color-brand: #36827F;
-  --color-brand-light: #E3F1F0;
+  --color-brand: #00A9A5;
+  --color-brand-light: #D9F1F1;
   --color-brand-dark: #1E2019;
 
   --color-accent: var(--color-accent-1);
-  --color-accent-1: #2E6E6A;
-  --color-accent-2: #CDE6E4;
+  --color-accent-1: #0B7873;
+  --color-accent-2: #C2E8EA;
   --color-accent-3: #1E2019;
   --color-benar:   #0D6E4A;
   --color-salah:   #B3261E;

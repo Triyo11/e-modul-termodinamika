@@ -535,7 +535,7 @@ onBeforeUnmount(() => {
       </label>
 
       <div class="flex gap-2">
-        <button type="button" class="flex-1 rounded-lg bg-accent-1 px-3 py-2 font-medium text-white" @click="berjalan = !berjalan">
+        <button type="button" class="flex-1 rounded-lg bg-brand px-3 py-2 font-semibold text-brand-dark" @click="berjalan = !berjalan">
           {{ berjalan ? "Jeda" : "Lanjutkan" }}
         </button>
         <button

@@ -48,7 +48,7 @@ interface KepingTerbang {
 const BENDA: Record<IdBenda, SifatBenda> = {
   besi: { nama: "Besi", kapasitas: 880, suhuMax: 300, warna: [150, 152, 158], warnaGaris: "#404944", kUdara: 1.8 },
   bata: { nama: "Bata", kapasitas: 400, suhuMax: 300, warna: [176, 82, 58], warnaGaris: "#c0502f", kUdara: 0.8 },
-  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#2E6E6A", kUdara: 2.1 },
+  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#0B7873", kUdara: 2.1 },
 };
 const URUTAN: IdBenda[] = ["besi", "bata", "air"];
 
@@ -583,7 +583,7 @@ onBeforeUnmount(() => {
 
         <!-- Tempat tujuan saat memindah -->
         <g v-for="x in adegan.target" :key="'t' + x">
-          <ellipse :cx="x" :cy="Y_MEJA - 2" rx="30" ry="5" fill="none" stroke="#2E6E6A" stroke-dasharray="4 3" />
+          <ellipse :cx="x" :cy="Y_MEJA - 2" rx="30" ry="5" fill="none" stroke="#0B7873" stroke-dasharray="4 3" />
         </g>
 
         <!-- Benda -->
@@ -600,7 +600,7 @@ onBeforeUnmount(() => {
             <path
               :d="`M${b.kotak.x},${b.kotak.y} V${b.kotak.y + b.kotak.h - 4} Q${b.kotak.x},${b.kotak.y + b.kotak.h} ${b.kotak.x + 4},${b.kotak.y + b.kotak.h} H${b.kotak.x + b.kotak.w - 4} Q${b.kotak.x + b.kotak.w},${b.kotak.y + b.kotak.h} ${b.kotak.x + b.kotak.w},${b.kotak.y + b.kotak.h - 4} V${b.kotak.y}`"
               fill="rgba(255,255,255,0.18)"
-              :stroke="b.terpilih ? '#2E6E6A' : '#5C6865'"
+              :stroke="b.terpilih ? '#0B7873' : '#5C6865'"
               :stroke-width="b.terpilih ? 2.5 : 1.5"
             />
           </template>
@@ -612,7 +612,7 @@ onBeforeUnmount(() => {
             :height="b.kotak.h"
             rx="3"
             :fill="b.isi"
-            :stroke="b.terpilih ? '#2E6E6A' : 'rgba(0,0,0,0.35)'"
+            :stroke="b.terpilih ? '#0B7873' : 'rgba(0,0,0,0.35)'"
             :stroke-width="b.terpilih ? 2.5 : 1"
           />
         </g>
@@ -724,7 +724,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="flex gap-2">
-        <button type="button" class="flex-1 rounded-lg bg-accent-1 px-3 py-2 font-medium text-white" @click="berjalan = !berjalan">
+        <button type="button" class="flex-1 rounded-lg bg-brand px-3 py-2 font-semibold text-brand-dark" @click="berjalan = !berjalan">
           {{ berjalan ? "Jeda" : "Lanjutkan" }}
         </button>
         <button
