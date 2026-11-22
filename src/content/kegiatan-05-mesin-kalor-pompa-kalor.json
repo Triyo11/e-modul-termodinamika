@@ -33,7 +33,7 @@
     },
     {
       "kode": "5.3",
-      "teks": "Merancang rekomendasi penghematan energi pada AC atau kendaraan dan menganalisis kaitannya dengan dampak perubahan iklim berdasarkan sumber yang telah dievaluasi",
+      "teks": "Merancang penempatan dan peneduh unit luar AC berdasarkan data suhu terukur dan koefisien performansi, serta memperkirakan dampaknya terhadap energi listrik dan emisi gas rumah kaca",
       "kajianTeori": [
         "5.a",
         "5.b"
@@ -60,7 +60,8 @@
     "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026. LI2 = menentukan strategi penelusuran (isian strategi sebelum tautan sumber), LI4 = mengintegrasikan informasi dari berbagai sumber (tidak dipakai untuk tabel data sendiri), LI5 = menggunakan informasi untuk memecahkan masalah.",
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
-    "Revisi 3.0: lkpd-5-5 diubah agar murid menuliskan strategi penelusuran sebelum mencari label energi AC (LI2)."
+    "Revisi 3.0: lkpd-5-5 diubah agar murid menuliskan strategi penelusuran sebelum mencari label energi AC (LI2).",
+    "Revisi 3.0 (22 Nov 2026, keputusan pengguna): tugas rekayasa KB 5 diganti dari rekomendasi pemakaian AC menjadi rancangan peneduh dan penempatan unit luar AC dengan uji suhu udara (termometer lab). TP 5.3 di JSON disesuaikan; Rencana Kegiatan Belajar akan direvisi pengguna."
   ],
   "layar": [
     {
@@ -477,7 +478,7 @@
     },
     {
       "id": "l4",
-      "judul": "Merancang rekomendasi pemakaian AC hemat energi",
+      "judul": "Merancang peneduh dan penempatan unit luar AC",
       "tahap": "masyarakat-belajar",
       "stem": [
         "E",
@@ -491,83 +492,85 @@
           "LI3"
         ]
       },
-      "peranGuru": "Membagi peran, memeriksa kewajaran perhitungan, dan asal data faktor emisi.",
+      "peranGuru": "Membagi peran, menyiapkan termometer dari lab, mengawasi pengukuran yang aman, dan memeriksa perhitungan koefisien performansi.",
       "panduanGuru": {
         "kegiatan": [
-          "Membagi kelompok dan peran, lalu membacakan masalah, kriteria, dan batasan.",
-          "Memeriksa dasar fisika setiap rekomendasi, misalnya hubungan setelan suhu dengan koefisien performansi.",
-          "Membimbing kelompok menelusuri faktor emisi dari sumber resmi dan mencatat asalnya.",
-          "Memeriksa pengisian tabel energi dan emisi serta asumsi yang ditulis."
+          "Menghubungkan udara di sekitar unit luar dengan reservoir panas T_H, lalu membacakan masalah, kriteria, dan batasan.",
+          "Membagi peran dan memeriksa sketsa alternatif setiap kelompok, terutama arah udara buang dan jarak bebas unit.",
+          "Menyiapkan termometer dari lab dan mengawasi pengukuran suhu di lokasi kandidat pada waktu yang sama.",
+          "Memeriksa tabel uji suhu dan cara kelompok memperkirakan energi dan emisi, termasuk asumsi yang ditulis."
         ],
         "pertanyaanPemantik": [
-          "Mengapa setelan suhu AC yang lebih tinggi dapat menghemat listrik?",
-          "Dari mana angka faktor emisi kelompok Anda berasal?"
+          "Mengapa suhu udara di sekitar unit luar memengaruhi kebutuhan listrik AC?",
+          "Apa akibatnya jika peneduh justru menghalangi udara panas yang diembuskan unit?"
         ],
         "antisipasi": [
-          "Kelompok menyalin faktor emisi dari blog tanpa sumber. Minta mereka menelusuri dokumen resminya."
+          "Kelompok mengukur suhu permukaan unit atau dinding, bukan suhu udara. Minta termometer tidak menyentuh benda apa pun.",
+          "Kelompok membandingkan lokasi yang diukur pada jam berbeda. Tegaskan bahwa pengukuran harus pada waktu yang sama.",
+          "Murid menganggap perkiraan dengan K_C sebagai penghematan sebenarnya. Tegaskan bahwa itu batas atas."
         ]
       },
       "blok": [
         {
+          "tipe": "teks",
+          "isi": "Unit luar AC membuang kalor ke udara di sekitarnya. Udara itu berperan sebagai reservoir panas $T_H$, sedangkan ruangan berperan sebagai reservoir dingin $T_C$. Widget siklus Carnot di tahap inkuiri menunjukkan bahwa koefisien performansi Carnot $K_C = T_C/(T_H - T_C)$ makin kecil ketika selisih kedua suhu makin besar. Akibatnya, AC memerlukan usaha listrik lebih banyak untuk memindahkan kalor yang sama."
+        },
+        {
           "tipe": "tugas-rancangan",
           "id": "rancangan-5",
-          "judul": "Rekomendasi pemakaian AC hemat energi dan perkiraan pengurangan emisi",
-          "masalah": "Sekolah atau keluarga Anda ingin mengurangi tagihan listrik dan emisi gas rumah kaca dari pemakaian AC. Susunlah rekomendasi setelan dan durasi pemakaian AC beserta perkiraan pengurangan energi dan emisinya.",
+          "judul": "Peneduh dan penempatan unit luar AC ruang kelas",
+          "masalah": "Unit luar AC ruang kelas terpapar sinar matahari langsung pada siang hari, sehingga udara di sekitarnya menjadi panas. Rancanglah penempatan baru atau peneduh sederhana untuk unit luar tersebut agar AC memerlukan energi listrik lebih sedikit untuk mendinginkan ruangan yang sama, tanpa menghalangi udara panas yang diembuskan unit.",
           "kriteria": [
-            "Rekomendasi dapat diterapkan di ruang kelas atau rumah",
-            "Setiap rekomendasi dijelaskan dengan konsep koefisien performansi",
-            "Perhitungan energi memakai data dari sumber yang telah dinilai",
-            "Faktor emisi diambil dari sumber resmi yang ditelusuri sendiri dan dicantumkan"
+            "Menurunkan suhu udara di sekitar unit luar, dibuktikan dengan data suhu terukur",
+            "Tidak menghalangi aliran udara masuk dan keluar unit luar; jarak bebas mengikuti buku manual AC",
+            "Minimal dua alternatif dibandingkan berdasarkan koefisien performansi Carnot dan usaha minimum",
+            "Memuat perkiraan pengurangan energi listrik dan emisi beserta asumsinya"
           ],
           "batasan": [
-            "Semua angka harus berasal dari sumber yang dicantumkan atau dari pengukuran sendiri",
-            "Asumsi perhitungan (misalnya lama pemakaian per hari) ditulis dengan jelas"
+            "Rancangan dibuat di atas kertas; pemindahan atau pemasangan sebenarnya dikerjakan teknisi",
+            "Suhu udara diukur di tempat yang aman dijangkau, tanpa menyentuh atau membuka unit AC",
+            "Suhu ruangan dijaga 24 °C (297 K)",
+            "Bahan peneduh mudah didapat dan tidak menutup sisi tempat udara keluar"
           ],
           "peranKelompok": [
             {
-              "peran": "Penelusur sumber",
-              "tugas": "Mencari dan menilai data konsumsi listrik AC serta faktor emisi resmi"
+              "peran": "Pengukur",
+              "tugas": "Mengukur suhu udara di setiap lokasi kandidat pada waktu yang sama"
             },
             {
               "peran": "Penghitung",
-              "tugas": "Menghitung energi dan emisi untuk setiap skenario"
+              "tugas": "Menghitung koefisien performansi Carnot, usaha minimum, energi, dan emisi"
             },
             {
-              "peran": "Pemeriksa",
-              "tugas": "Memeriksa satuan, asumsi, dan kewajaran hasil"
+              "peran": "Penelusur informasi",
+              "tugas": "Mencari jarak bebas unit luar di buku manual AC dan faktor emisi listrik dari sumber resmi"
             },
             {
               "peran": "Penyaji",
-              "tugas": "Menyusun rekomendasi dan daftar sumber"
+              "tugas": "Menyusun sketsa berlabel dan menyajikan rancangan"
             }
           ],
           "langkah": [
             {
               "id": "r5-1",
               "tahap": "menetapkan-masalah",
-              "instruksi": "Tetapkan ruangan sasaran, pengguna, dan tujuan rekomendasi Anda.",
-              "format": "teks-panjang"
+              "format": "teks-panjang",
+              "instruksi": "Tuliskan masalahnya dengan kata-kata kelompok Anda. Tandai sistem (ruangan, AC, dan udara luar), arah aliran kalor dan usaha listrik, serta dua kriteria utama rancangan."
             },
             {
               "id": "r5-2",
               "tahap": "merancang",
-              "instruksi": "Susun minimal tiga rekomendasi, misalnya setelan suhu, durasi pemakaian, atau pemilihan jenis AC. Jelaskan dasar fisikanya.",
-              "format": "tabel",
-              "kolom": [
-                "Rekomendasi",
-                "Dasar fisika",
-                "Sumber data"
-              ],
-              "jumlahBaris": 3
+              "format": "unggah-atau-teks",
+              "instruksi": "Buat sketsa minimal dua alternatif, misalnya memindahkan unit ke sisi gedung yang teduh atau memasang peneduh di atas unit. Tandai arah sinar matahari, arah udara yang diembuskan unit, dan jarak bebas di sekitar unit."
             },
             {
               "id": "r5-3",
               "tahap": "analisis-kelayakan",
-              "instruksi": "Hitung perkiraan pengurangan energi dan emisi dengan tabel di bawah. Tuliskan semua asumsi Anda.",
-              "format": "teks-panjang"
+              "format": "teks-panjang",
+              "instruksi": "Ukur suhu udara di lokasi setiap alternatif dan isi Tabel uji suhu. Alternatif mana yang paling layak menurut kriteria? Perkirakan pengurangan energi dan emisinya dengan tabel kedua, lalu tuliskan semua asumsi Anda."
             }
           ],
-          "produk": "Laporan rekomendasi satu halaman berisi rekomendasi, perhitungan, asumsi, dan daftar sumber",
+          "produk": "Rancangan satu halaman berisi sketsa alternatif, data suhu, perhitungan koefisien performansi, perkiraan energi dan emisi, serta daftar sumber",
           "rubrik": "rubrik-5",
           "indikatorVariabel": [
             "BK2",
@@ -576,13 +579,55 @@
         },
         {
           "tipe": "tabel-isian",
+          "id": "data-5-lokasi",
+          "judul": "Tabel uji suhu: lokasi kandidat unit luar",
+          "instruksi": "Ukur suhu udara di setiap lokasi pada waktu yang sama, misalnya pukul 12.00. Kolom lain dihitung otomatis dengan suhu ruangan 297 K. Usaha minimum adalah usaha listrik terkecil menurut siklus Carnot untuk memindahkan 1000 J kalor dari ruangan.",
+          "kolom": [
+            {
+              "kunci": "lokasi",
+              "label": "Lokasi",
+              "satuan": "",
+              "tipe": "teks"
+            },
+            {
+              "kunci": "tluar",
+              "label": "Suhu udara",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "TH",
+              "label": "Suhu udara",
+              "satuan": "K",
+              "tipe": "hitung",
+              "hitung": "tluar+273"
+            },
+            {
+              "kunci": "KC",
+              "label": "Koefisien performansi Carnot",
+              "satuan": "-",
+              "tipe": "hitung",
+              "hitung": "297/(TH-297)"
+            },
+            {
+              "kunci": "Wmin",
+              "label": "Usaha minimum per 1000 J kalor",
+              "satuan": "J",
+              "tipe": "hitung",
+              "hitung": "1000/KC"
+            }
+          ],
+          "jumlahBaris": 3
+        },
+        {
+          "tipe": "tabel-isian",
           "id": "data-5-emisi",
-          "judul": "Perkiraan energi dan emisi",
-          "instruksi": "Isi energi per hari untuk setiap skenario dan faktor emisi dari sumber resmi yang Anda temukan. Contoh baris pertama dapat memakai data s2 yang disetarakan ke 8 jam per hari (asumsi: konsumsi sebanding dengan lama pemakaian).",
+          "judul": "Perkiraan energi dan emisi sebelum dan sesudah rancangan",
+          "instruksi": "Baris pertama untuk lokasi semula, baris kedua untuk alternatif terpilih. Energi per hari lokasi semula dapat memakai data s2 yang disetarakan ke 8 jam per hari. Untuk alternatif terpilih, kalikan energi per hari semula dengan perbandingan usaha minimum kedua lokasi. Hasilnya adalah perkiraan batas atas penghematan, karena AC nyata tidak bekerja seperti mesin Carnot. Faktor emisi diambil dari sumber resmi yang Anda temukan.",
           "kolom": [
             {
               "kunci": "skenario",
-              "label": "Skenario",
+              "label": "Lokasi",
               "satuan": "",
               "tipe": "teks"
             },
@@ -619,7 +664,7 @@
               "hitung": "Ehari*hari*FE"
             }
           ],
-          "jumlahBaris": 3
+          "jumlahBaris": 2
         }
       ]
     },
@@ -646,7 +691,7 @@
         "kegiatan": [
           "Mengerjakan contoh mesin kalor dan contoh batas teoretis AC sebagai model.",
           "Meminta murid menghitung K_C untuk suhu luar 40 °C dan merumuskan pola umumnya ({lkpd-5-8}).",
-          "Meminta kelompok menyajikan rekomendasi beserta asal setiap angka ({r5-4})."
+          "Meminta kelompok menyajikan rancangan peneduh atau penempatan unit luar beserta asal setiap angka ({r5-4})."
         ],
         "pertanyaanPemantik": [
           "Apa yang terjadi pada koefisien performansi ketika selisih suhu makin besar?"
@@ -725,8 +770,8 @@
             {
               "id": "r5-4",
               "tahap": "menyajikan",
-              "instruksi": "Sajikan rekomendasi kelompok Anda beserta tabel perhitungan energi dan emisi. Tunjukkan asal setiap angka.",
-              "format": "unggah-atau-teks"
+              "format": "unggah-atau-teks",
+              "instruksi": "Sajikan alternatif terpilih kelompok Anda. Muat sketsa berlabel, tabel uji suhu, satu baris perhitungan lengkap dari suhu udara sampai usaha minimum, serta perkiraan energi dan emisi beserta asumsinya."
             }
           ]
         }
@@ -753,15 +798,16 @@
       "peranGuru": "Memfasilitasi presentasi dan memberi umpan balik.",
       "panduanGuru": {
         "kegiatan": [
-          "Memfasilitasi presentasi rekomendasi setiap kelompok dan tanggapan dari kelompok lain.",
+          "Memfasilitasi presentasi rancangan setiap kelompok dan tanggapan dari kelompok lain berdasarkan kriteria.",
           "Membimbing murid menjawab pertanyaan refleksi tentang efisiensi, AC, dan perubahan iklim ({refleksi-5}).",
-          "Meminta kelompok memperbaiki rekomendasi ({r5-5}) dan murid menulis kesimpulan bersumber ({lkpd-5-9})."
+          "Meminta kelompok memperbaiki rancangan ({r5-5}) dan murid menulis kesimpulan bersumber ({lkpd-5-9})."
         ],
         "pertanyaanPemantik": [
-          "Bagaimana rekomendasi kelompok Anda berkaitan dengan pengurangan dampak perubahan iklim?"
+          "Mengapa AC nyata tidak mencapai koefisien performansi Carnot?",
+          "Bagaimana rancangan kelompok Anda berkaitan dengan pengurangan dampak perubahan iklim?"
         ],
         "antisipasi": [
-          "Rekomendasi hanya berisi ajakan tanpa angka. Minta kelompok menunjukkan perkiraan energi dan emisinya."
+          "Rancangan hanya berisi sketsa tanpa angka. Minta kelompok menunjukkan data suhu dan perkiraan energinya."
         ]
       },
       "blok": [
@@ -773,7 +819,7 @@
           "pertanyaan": [
             "Jelaskan kembali mengapa efisiensi mesin selalu kurang dari 100% dengan rumusan Kelvin-Planck.",
             "Udara panas dari unit luar AC berasal dari mana? Jelaskan dengan aliran energi pada mesin pendingin.",
-            "Bagaimana rekomendasi kelompok Anda berkaitan dengan upaya mengurangi dampak perubahan iklim?"
+            "Bagaimana rancangan peneduh atau penempatan unit luar AC kelompok Anda berkaitan dengan upaya mengurangi dampak perubahan iklim?"
           ],
           "indikatorVariabel": [
             "BK5"
@@ -786,8 +832,8 @@
             {
               "id": "r5-5",
               "tahap": "memperbaiki",
-              "instruksi": "Perbaiki rekomendasi berdasarkan umpan balik. Pastikan semua sumber tercantum lengkap dan semua asumsi tertulis.",
-              "format": "teks-panjang"
+              "format": "teks-panjang",
+              "instruksi": "Perbaiki rancangan berdasarkan umpan balik kelompok lain dan guru. Jelaskan juga mengapa penghematan nyata kemungkinan lebih kecil daripada perkiraan dengan koefisien performansi Carnot."
             }
           ]
         },
@@ -795,7 +841,7 @@
           "tipe": "isian",
           "id": "lkpd-5-9",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang batas efisiensi mesin kalor, koefisien performansi AC, dan kaitan pemakaian AC dengan emisi gas rumah kaca. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang batas efisiensi mesin kalor, koefisien performansi AC, pengaruh suhu udara di sekitar unit luar, dan kaitan pemakaian AC dengan emisi gas rumah kaca. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -828,7 +874,7 @@
       "panduanGuru": {
         "kegiatan": [
           "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
-          "Menilai student e-worksheet dan laporan rekomendasi pemakaian AC dengan rubrik.",
+          "Menilai student e-worksheet dan rancangan peneduh atau penempatan unit luar AC dengan rubrik.",
           "Memberi umpan balik tertulis singkat pada setiap aspek rubrik."
         ],
         "pertanyaanPemantik": [],
@@ -839,7 +885,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rekomendasi pemakaian AC kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan peneduh atau penempatan unit luar AC kelompok Anda dengan rubrik di bawah."
         },
         {
           "tipe": "kuis",
@@ -1048,7 +1094,7 @@
           "tipe": "rubrik",
           "jenisPenilaian": "autentik",
           "id": "rubrik-5",
-          "judul": "Rubrik laporan rekomendasi AC hemat energi",
+          "judul": "Rubrik rancangan peneduh dan penempatan unit luar AC",
           "untuk": "rancangan-5",
           "skala": [
             4,
@@ -1063,10 +1109,10 @@
                 "BK3"
               ],
               "deskriptor": {
-                "4": "Setiap rekomendasi dijelaskan dengan koefisien performansi atau aliran energi secara benar",
-                "3": "Sebagian besar rekomendasi dijelaskan dengan benar",
-                "2": "Penjelasan fisika sebagian besar keliru",
-                "1": "Tidak ada penjelasan fisika"
+                "4": "Menjelaskan dengan benar bahwa suhu udara di sekitar unit luar adalah T_H yang menentukan koefisien performansi dan usaha listrik; semua suhu dalam kelvin",
+                "3": "Penjelasan benar, tetapi ada satu kesalahan konversi atau satuan",
+                "2": "Mengaitkan rancangan dengan suhu, tetapi tidak dengan koefisien performansi atau usaha",
+                "1": "Penjelasan fisika keliru atau tidak ada"
               }
             },
             {
@@ -1075,10 +1121,10 @@
                 "BK2"
               ],
               "deskriptor": {
-                "4": "Perhitungan energi dan emisi benar, satuan konsisten, dan semua asumsi tertulis",
-                "3": "Perhitungan benar, tetapi ada asumsi yang tidak tertulis",
-                "2": "Ada kesalahan perhitungan atau satuan",
-                "1": "Tidak ada perhitungan"
+                "4": "Alternatif terpilih memenuhi semua kriteria, didukung data suhu terukur dan perhitungan, serta perkiraan energi dan emisi disertai asumsi dan disebut sebagai batas atas",
+                "3": "Memenuhi kriteria dan didukung data, tetapi asumsi atau sifat batas atas perkiraannya tidak ditulis",
+                "2": "Hanya satu alternatif atau tidak didukung data suhu terukur",
+                "1": "Rancangan menghalangi aliran udara unit atau tidak disertai perhitungan"
               }
             },
             {
@@ -1088,10 +1134,10 @@
                 "LI5"
               ],
               "deskriptor": {
-                "4": "Data konsumsi listrik dan faktor emisi berasal dari sumber yang dinilai, dan faktor emisi dari sumber resmi; semua dicantumkan lengkap",
-                "3": "Sumber resmi dipakai, tetapi pencantumannya belum lengkap",
-                "2": "Sumber dicantumkan, tetapi faktor emisi bukan dari sumber resmi",
-                "1": "Tidak ada sumber"
+                "4": "Memadukan data suhu terukur, persamaan dari buku, jarak bebas dari buku manual AC, dan faktor emisi dari sumber resmi; semua sumber dicantumkan lengkap",
+                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
+                "2": "Hanya memakai satu atau dua sumber informasi, atau faktor emisi bukan dari sumber resmi",
+                "1": "Tidak menunjukkan sumber informasi yang dipakai"
               }
             }
           ]
@@ -1113,7 +1159,7 @@
       },
       {
         "tp": "5.3",
-        "teks": "Emisi dari pemakaian AC dapat diperkirakan dari energi listrik yang dipakai dikalikan faktor emisi dari sumber resmi. Rekomendasi penghematan energi perlu didasarkan pada data terukur dan asumsi yang ditulis jelas."
+        "teks": "Suhu udara di sekitar unit luar AC berperan sebagai T_H. Makin panas udara itu, makin kecil koefisien performansi dan makin besar usaha listrik untuk memindahkan kalor yang sama. Peneduh atau penempatan yang tepat dapat menurunkan kebutuhan energi, dan emisinya dapat diperkirakan dari energi listrik dikalikan faktor emisi resmi. Perkiraan dengan siklus Carnot merupakan batas atas penghematan."
       }
     ],
     "literasiInformasi": "Angka \"hemat hingga 60%\" di berita tidak menyebut sumber maupun kondisi uji. Eksperimen dengan kondisi yang dijelaskan (AC 1 PK, 3 jam, 24 °C di dalam dan 32 °C di luar) menghasilkan penghematan 24,1%. Angka penghematan hanya bermakna jika kondisi ujinya diketahui.",
