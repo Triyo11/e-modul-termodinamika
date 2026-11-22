@@ -12,6 +12,28 @@ defineProps<{ layar: Layar; kegiatanId: string }>();
 const kegiatan = inject(kegiatanKey, null);
 const nomorWorksheet = inject(nomorWorksheetKey, null);
 
+// Panduan guru boleh merujuk blok dengan {id}, mis. "{lkpd-1-12}" atau "{r1-4}".
+// Rujukan diganti nomor yang tampil ke murid, mis. "Student e-Worksheet 1.11".
+const nomorPerId = computed(() => {
+  const peta = new Map<string, string>();
+  for (const l of kegiatan?.value.layar ?? []) {
+    for (const b of l.blok) {
+      const no = nomorWorksheet?.value.get(toRaw(b));
+      if (!no) continue;
+      if ("id" in b) peta.set(b.id, no);
+      if (b.tipe === "tugas-rancangan" || b.tipe === "tugas-rancangan-lanjutan")
+        for (const s of b.langkah) peta.set(s.id, no);
+    }
+  }
+  return peta;
+});
+function teksPanduan(teks: string) {
+  return teks.replace(/\{([\w-]+)\}/g, (asli, id: string) => {
+    const no = nomorPerId.value.get(id);
+    return no ? `Student e-Worksheet ${no}` : asli;
+  });
+}
+
 const labelPeran: Record<string, string> = {
   apersepsi: "Apersepsi",
   konsep: "Konsep",
@@ -68,18 +90,18 @@ const modeGuru = computed(() => route.query.guru !== undefined);
       <template v-if="layar.panduanGuru">
         <p class="mt-2 font-semibold text-ink-800">Kegiatan guru</p>
         <ol class="list-decimal pl-5">
-          <li v-for="(k, i) in layar.panduanGuru.kegiatan" :key="i">{{ k }}</li>
+          <li v-for="(k, i) in layar.panduanGuru.kegiatan" :key="i">{{ teksPanduan(k) }}</li>
         </ol>
         <template v-if="layar.panduanGuru.pertanyaanPemantik?.length">
           <p class="mt-2 font-semibold text-ink-800">Pertanyaan pemantik</p>
           <ul class="list-disc pl-5">
-            <li v-for="(q, i) in layar.panduanGuru.pertanyaanPemantik" :key="i">{{ q }}</li>
+            <li v-for="(q, i) in layar.panduanGuru.pertanyaanPemantik" :key="i">{{ teksPanduan(q) }}</li>
           </ul>
         </template>
         <template v-if="layar.panduanGuru.antisipasi?.length">
           <p class="mt-2 font-semibold text-ink-800">Antisipasi kesulitan murid</p>
           <ul class="list-disc pl-5">
-            <li v-for="(a, i) in layar.panduanGuru.antisipasi" :key="i">{{ a }}</li>
+            <li v-for="(a, i) in layar.panduanGuru.antisipasi" :key="i">{{ teksPanduan(a) }}</li>
           </ul>
         </template>
       </template>

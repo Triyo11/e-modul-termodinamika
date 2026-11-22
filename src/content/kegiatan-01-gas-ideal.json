@@ -91,8 +91,8 @@
         "kegiatan": [
           "Menayangkan video pengukuran tekanan ban dan gambar panci presto, lalu meminta murid mengamati apa yang berubah dan apa yang tetap.",
           "Menunjukkan katup pemberat pada tutup panci presto (benda asli atau gambar) dan bertanya mengapa katup itu bisa terangkat sendiri.",
-          "Meminta murid menulis dugaan awal di lkpd-1-1 tanpa mengoreksinya. Dugaan ini akan ditinjau ulang di tahap refleksi.",
-          "Membimbing murid mengubah rasa ingin tahu menjadi pertanyaan masalah yang menyebut variabel (lkpd-1-2), lalu mendaftar informasi yang dibutuhkan (lkpd-1-3)."
+          "Meminta murid menulis dugaan awal di {lkpd-1-1} tanpa mengoreksinya. Dugaan ini akan ditinjau ulang di tahap refleksi.",
+          "Membimbing murid mengubah rasa ingin tahu menjadi pertanyaan masalah yang menyebut variabel ({lkpd-1-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-1-3})."
         ],
         "pertanyaanPemantik": [
           "Udara di dalam ban tidak ditambah. Lalu apa yang bertambah?",
@@ -100,7 +100,7 @@
         ],
         "antisipasi": [
           "Murid menjawab 'udaranya memuai'. Tanyakan: ban hampir tidak membesar, jadi ke mana pemuaian itu?",
-          "Pertanyaan masalah belum menyebut variabel tetap. Arahkan dengan pola di petunjuk lkpd-1-2."
+          "Pertanyaan masalah belum menyebut variabel tetap. Arahkan dengan pola di petunjuk {lkpd-1-2}."
         ]
       },
       "blok": [
@@ -190,8 +190,8 @@
         "kegiatan": [
           "Membacakan atau menayangkan tabel postulat, lalu memutar animasi tumbukan molekul dengan dinding.",
           "Menegaskan makna Persamaan 1.1 bahwa suhu mutlak menunjukkan energi kinetik rata-rata molekul.",
-          "Memeriksa pengelompokan sifat makroskopis dan mikroskopis (lkpd-1-4) dan membahas butir yang paling banyak keliru.",
-          "Meminta murid menalar dari postulat ke kasus ban secara bertahap (lkpd-1-5), mulai dari pernyataan umum ke kasus khusus."
+          "Memeriksa pengelompokan sifat makroskopis dan mikroskopis ({lkpd-1-4}) dan membahas butir yang paling banyak keliru.",
+          "Meminta murid menalar dari postulat ke kasus ban secara bertahap ({lkpd-1-5}), mulai dari pernyataan umum ke kasus khusus."
         ],
         "pertanyaanPemantik": [
           "Jika molekul bergerak lebih cepat, apa yang berubah pada tumbukannya dengan dinding?"
@@ -338,8 +338,8 @@
         "kegiatan": [
           "Mencontohkan cara memakai panel Jaga tetap pada simulasi partikel gas, lalu membagi kelompok untuk Percobaan A sampai D.",
           "Berkeliling memeriksa bahwa setiap kelompok hanya mengubah satu besaran dan menahan besaran lain tetap.",
-          "Meminta murid membandingkan data Percobaan C dengan dugaannya (lkpd-1-6).",
-          "Meminta murid menentukan strategi penelusuran (kata kunci, jenis sumber, bagian yang dibaca) sebelum membuka tautan sumber (lkpd-1-12)."
+          "Meminta murid membandingkan data Percobaan C dengan dugaannya ({lkpd-1-6}).",
+          "Meminta murid menentukan strategi penelusuran (kata kunci, jenis sumber, bagian yang dibaca) sebelum membuka tautan sumber ({lkpd-1-12})."
         ],
         "pertanyaanPemantik": [
           "Mengapa hanya satu besaran yang boleh diubah dalam satu percobaan?",
@@ -574,8 +574,8 @@
         "kegiatan": [
           "Menghubungkan pola data dengan Persamaan 1.2 dan 1.3.",
           "Membacakan klaim ban nitrogen, lalu meminta murid menilai dua sumber dengan daftar periksa (penulis, tujuan, bukti, kebaruan).",
-          "Membimbing konversi psi ke kPa (lkpd-1-8) dan meminta murid memisahkan bagian klaim yang didukung data dari yang tidak.",
-          "Meminta beberapa murid membacakan argumennya (lkpd-1-9), lalu menanggapi dengan pertanyaan, bukan jawaban."
+          "Membimbing konversi psi ke kPa ({lkpd-1-8}) dan meminta murid memisahkan bagian klaim yang didukung data dari yang tidak.",
+          "Meminta beberapa murid membacakan argumennya ({lkpd-1-9}), lalu menanggapi dengan pertanyaan, bukan jawaban."
         ],
         "pertanyaanPemantik": [
           "Apakah persamaan gas ideal membedakan jenis gas?",
@@ -754,7 +754,7 @@
         "kegiatan": [
           "Mengulas contoh soal ban untuk menegaskan beda tekanan terukur dan tekanan mutlak.",
           "Memperkenalkan masalah klien dan lembar spesifikasi, lalu membagi empat peran kelompok.",
-          "Meminta penelusur informasi menilai keterangan mana yang relevan untuk menentukan batas tekanan (lkpd-1-13).",
+          "Meminta penelusur informasi menilai keterangan mana yang relevan untuk menentukan batas tekanan ({lkpd-1-13}).",
           "Memeriksa pemahaman setiap kelompok tentang Persamaan 1.10 sebelum mereka mengisi tabel alternatif rancangan.",
           "Membimbing kelompok menguji alternatif terpilih dengan tabel uji virtual dan menilai kelayakannya terhadap kriteria."
         ],
@@ -1116,9 +1116,9 @@
       "panduanGuru": {
         "kegiatan": [
           "Menampilkan grafik p terhadap 1/V, V terhadap T, dan p terhadap T dari data murid, lalu memodelkan cara membaca garis yang melalui titik nol.",
-          "Meminta murid menuliskan pola umum dari keempat percobaan (lkpd-1-10).",
+          "Meminta murid menuliskan pola umum dari keempat percobaan ({lkpd-1-10}).",
           "Mengerjakan contoh perhitungan suhu buka katup langkah demi langkah sebagai model, termasuk memeriksa hasilnya terhadap kriteria.",
-          "Meminta murid menjelaskan bagaimana data simulasi, buku, dan spesifikasi klien dipadukan (lkpd-1-14), lalu menyajikan rancangan terpilih (r1-4)."
+          "Meminta murid menjelaskan bagaimana data simulasi, buku, dan spesifikasi klien dipadukan ({lkpd-1-14}), lalu menyajikan rancangan terpilih ({r1-4})."
         ],
         "pertanyaanPemantik": [
           "Ke mana garis V terhadap T mengarah jika diperpanjang?",
@@ -1289,9 +1289,9 @@
       "panduanGuru": {
         "kegiatan": [
           "Memfasilitasi presentasi singkat setiap kelompok dan meminta kelompok lain memberi satu tanggapan berdasarkan kriteria.",
-          "Memberi umpan balik kepada semua kelompok tentang tekanan di dalam kotak setelah katup terbuka lalu kotak mendingin (lkpd-1-15).",
-          "Meminta kelompok memperbaiki rancangan berdasarkan umpan balik (r1-5).",
-          "Membimbing murid meninjau dugaan awalnya (refleksi-1), membahas batas berlakunya model gas ideal, lalu menulis kesimpulan bersumber (lkpd-1-11)."
+          "Memberi umpan balik kepada semua kelompok tentang tekanan di dalam kotak setelah katup terbuka lalu kotak mendingin ({lkpd-1-15}).",
+          "Meminta kelompok memperbaiki rancangan berdasarkan umpan balik ({r1-5}).",
+          "Membimbing murid meninjau dugaan awalnya ({refleksi-1}), membahas batas berlakunya model gas ideal, lalu menulis kesimpulan bersumber ({lkpd-1-11})."
         ],
         "pertanyaanPemantik": [
           "Katup kalian melepas sebagian udara saat kotak panas. Apa yang terjadi ketika kotak kembali dingin?",
@@ -1441,7 +1441,7 @@
       "panduanGuru": {
         "kegiatan": [
           "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
-          "Menilai student e-worksheet dan rancangan katup kelompok dengan rubrik-1 di tampilan guru.",
+          "Menilai student e-worksheet dan rancangan katup kelompok dengan rubrik di tampilan guru.",
           "Memberi umpan balik tertulis singkat pada setiap aspek rubrik."
         ],
         "pertanyaanPemantik": [],
