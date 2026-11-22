@@ -5,6 +5,7 @@ import { PhArrowLeft, PhArrowRight } from "@phosphor-icons/vue";
 import LayarSection from "@/components/materi/LayarSection.vue";
 import { cariKegiatanKb, daftarKegiatan } from "@/content";
 import { kegiatanKey } from "@/lib/tabelIsian";
+import { hitungNomorWorksheet, nomorWorksheetKey } from "@/lib/worksheet";
 
 const KUNCI_KB_TERAKHIR = "materi:kb-terakhir";
 const route = useRoute();
@@ -28,6 +29,10 @@ const kbAktif = computed(() => {
 
 const data = computed(() => cariKegiatanKb(kbAktif.value) ?? daftarKegiatan[0]!);
 provide(kegiatanKey, data);
+provide(
+  nomorWorksheetKey,
+  computed(() => hitungNomorWorksheet(data.value)),
+);
 
 const indeks = computed(() => daftarKegiatan.indexOf(data.value));
 const sebelumnya = computed(() => daftarKegiatan[indeks.value - 1]);
@@ -84,7 +89,7 @@ const tujuan = computed(() =>
           <button
             type="button"
             :aria-current="k.kb === kbAktif ? 'page' : undefined"
-            class="flex max-w-44 flex-col items-start rounded-lg border px-3 py-1.5 text-left transition-colors"
+            class="flex h-full max-w-44 flex-col items-start rounded-lg border px-3 py-1.5 text-left transition-colors"
             :class="
               k.kb === kbAktif
                 ? 'border-accent-1 bg-accent-1 text-white'
@@ -93,7 +98,7 @@ const tujuan = computed(() =>
             @click="bukaKb(k.kb)"
           >
             <span class="text-[11px] font-semibold uppercase tracking-wide opacity-80">KB {{ k.kb }}</span>
-            <span class="w-full truncate text-sm font-medium leading-tight">{{ k.judul }}</span>
+            <span class="line-clamp-2 w-full text-sm font-medium leading-tight">{{ k.judul }}</span>
           </button>
         </li>
       </ol>

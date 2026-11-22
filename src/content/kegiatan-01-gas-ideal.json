@@ -1437,7 +1437,7 @@
           "LI5"
         ]
       },
-      "peranGuru": "Menilai LKPD dan rancangan katup dengan rubrik.",
+      "peranGuru": "Menilai student e-worksheet dan rancangan katup dengan rubrik.",
       "panduanGuru": {
         "kegiatan": [
           "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
@@ -1452,7 +1452,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan rancangan katup pengaman kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan katup pengaman kelompok Anda dengan rubrik di bawah."
         },
         {
           "tipe": "kuis",

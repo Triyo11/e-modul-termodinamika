@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { computed, inject } from "vue";
+import { computed, inject, toRaw } from "vue";
 import { useRoute } from "vue-router";
 import BlokRenderer from "./BlokRenderer.vue";
 import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
+import { nomorWorksheetKey } from "@/lib/worksheet";
 import type { Layar } from "@/types/kegiatan";
 
 defineProps<{ layar: Layar; kegiatanId: string }>();
 
 const kegiatan = inject(kegiatanKey, null);
+const nomorWorksheet = inject(nomorWorksheetKey, null);
 
 const labelPeran: Record<string, string> = {
   apersepsi: "Apersepsi",
@@ -84,7 +86,11 @@ const modeGuru = computed(() => route.query.guru !== undefined);
     </details>
 
     <template v-for="(b, i) in layar.blok" :key="`${layar.id}-${i}`">
-      <BlokRenderer :blok="b" :kegiatan-id="kegiatanId" />
+      <BlokRenderer
+        :blok="b"
+        :kegiatan-id="kegiatanId"
+        :nomor-worksheet="nomorWorksheet?.get(toRaw(b))"
+      />
       <RangkumanBlok v-if="'id' in b && b.id === kegiatan?.rangkuman?.tampilSetelah" />
     </template>
   </section>

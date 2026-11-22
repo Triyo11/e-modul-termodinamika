@@ -508,9 +508,9 @@
       "tahap": "penilaian-autentik",
       "stem": ["S", "T", "R", "M"],
       "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
-      "peranGuru": "Menilai rancangan dan LKPD dengan rubrik.",
+      "peranGuru": "Menilai rancangan dan student e-worksheet dengan rubrik.",
       "blok": [
-        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap LKPD dan rancangan siklus kelompok Anda dengan rubrik di bawah." },
+        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan siklus kelompok Anda dengan rubrik di bawah." },
         {
           "tipe": "kuis",
           "jenisPenilaian": "formatif",

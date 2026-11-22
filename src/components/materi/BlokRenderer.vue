@@ -23,34 +23,44 @@ import DiagramPVBlok from "./DiagramPVBlok.vue";
 import WidgetCarnotBlok from "./WidgetCarnotBlok.vue";
 import type { Blok } from "@/types/kegiatan";
 
-defineProps<{ blok: Blok; kegiatanId: string }>();
+defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
 </script>
 
 <template>
-  <GambarBlok v-if="blok.tipe === 'gambar'" :blok="blok" />
-  <VideoBlok v-else-if="blok.tipe === 'video'" :blok="blok" />
-  <TeksBlok v-else-if="blok.tipe === 'teks'" :blok="blok" />
-  <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" />
-  <SimulasiBlok v-else-if="blok.tipe === 'simulasi'" :blok="blok" />
-  <RumusBlok v-else-if="blok.tipe === 'rumus'" :blok="blok" />
-  <ContohBlok v-else-if="blok.tipe === 'contoh'" :blok="blok" />
-  <KuisBlok v-else-if="blok.tipe === 'kuis'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <Animasi v-else-if="blok.tipe === 'animasi'" :blok="blok" />
-  <KebutuhanInformasiBlok v-else-if="blok.tipe === 'kebutuhan-informasi'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TabelIsianBlok v-else-if="blok.tipe === 'tabel-isian'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TautanSumberBlok v-else-if="blok.tipe === 'tautan-sumber'" :blok="blok" />
-  <KlaimUjiBlok v-else-if="blok.tipe === 'klaim-uji'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TugasRancanganBlok v-else-if="blok.tipe === 'tugas-rancangan'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <TugasRancanganLanjutanBlok
-    v-else-if="blok.tipe === 'tugas-rancangan-lanjutan'"
-    :blok="blok"
-    :kegiatan-id="kegiatanId"
-  />
-  <GrafikDataBlok v-else-if="blok.tipe === 'grafik-data'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <RefleksiBlok v-else-if="blok.tipe === 'refleksi'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <RubrikBlok v-else-if="blok.tipe === 'rubrik'" :blok="blok" />
-  <DiagramPVBlok v-else-if="blok.tipe === 'diagram-pv'" :blok="blok" :kegiatan-id="kegiatanId" />
-  <WidgetCarnotBlok v-else-if="blok.tipe === 'widget-carnot'" :blok="blok" />
+  <!-- Tanpa nomor worksheet, pembungkus memakai display: contents agar tata letak blok tidak berubah. -->
+  <div
+    :class="nomorWorksheet ? 'flex flex-col gap-1.5' : 'contents'"
+    :role="nomorWorksheet ? 'group' : undefined"
+    :aria-label="nomorWorksheet ? `Student e-Worksheet ${nomorWorksheet}` : undefined"
+  >
+    <p v-if="nomorWorksheet" aria-hidden="true" class="text-xs font-semibold uppercase tracking-wide text-accent">
+      Student e-Worksheet {{ nomorWorksheet }}
+    </p>
+    <GambarBlok v-if="blok.tipe === 'gambar'" :blok="blok" />
+    <VideoBlok v-else-if="blok.tipe === 'video'" :blok="blok" />
+    <TeksBlok v-else-if="blok.tipe === 'teks'" :blok="blok" />
+    <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" />
+    <SimulasiBlok v-else-if="blok.tipe === 'simulasi'" :blok="blok" />
+    <RumusBlok v-else-if="blok.tipe === 'rumus'" :blok="blok" />
+    <ContohBlok v-else-if="blok.tipe === 'contoh'" :blok="blok" />
+    <KuisBlok v-else-if="blok.tipe === 'kuis'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <Animasi v-else-if="blok.tipe === 'animasi'" :blok="blok" />
+    <KebutuhanInformasiBlok v-else-if="blok.tipe === 'kebutuhan-informasi'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <TabelIsianBlok v-else-if="blok.tipe === 'tabel-isian'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <TautanSumberBlok v-else-if="blok.tipe === 'tautan-sumber'" :blok="blok" />
+    <KlaimUjiBlok v-else-if="blok.tipe === 'klaim-uji'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <TugasRancanganBlok v-else-if="blok.tipe === 'tugas-rancangan'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <TugasRancanganLanjutanBlok
+      v-else-if="blok.tipe === 'tugas-rancangan-lanjutan'"
+      :blok="blok"
+      :kegiatan-id="kegiatanId"
+    />
+    <GrafikDataBlok v-else-if="blok.tipe === 'grafik-data'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <RefleksiBlok v-else-if="blok.tipe === 'refleksi'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <RubrikBlok v-else-if="blok.tipe === 'rubrik'" :blok="blok" />
+    <DiagramPVBlok v-else-if="blok.tipe === 'diagram-pv'" :blok="blok" :kegiatan-id="kegiatanId" />
+    <WidgetCarnotBlok v-else-if="blok.tipe === 'widget-carnot'" :blok="blok" />
+  </div>
 </template>
