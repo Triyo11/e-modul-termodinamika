@@ -1,8 +1,8 @@
 {
   "id": "kegiatan-04",
-  "versi": "2.1",
+  "versi": "3.0",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-11-04",
+  "revisiTerakhir": "2026-11-22",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 4,
   "judul": "Hukum-hukum Termodinamika",
@@ -20,22 +20,31 @@
     {
       "kode": "4.1",
       "teks": "Menjelaskan kesetimbangan termal dan Hukum Ke-Nol pada prinsip kerja termometer",
-      "kajianTeori": ["4.a"]
+      "kajianTeori": [
+        "4.a"
+      ]
     },
     {
       "kode": "4.2",
       "teks": "Menerapkan Hukum Pertama (ΔU = Q − W) untuk menganalisis kalor, usaha, dan energi dalam pada empat proses",
-      "kajianTeori": ["4.b"]
+      "kajianTeori": [
+        "4.b"
+      ]
     },
     {
       "kode": "4.3",
       "teks": "Membedakan proses reversibel dan ireversibel pada fenomena alam",
-      "kajianTeori": ["4.c", "Tabel 2.4"]
+      "kajianTeori": [
+        "4.c",
+        "Tabel 2.4"
+      ]
     },
     {
       "kode": "4.4",
       "teks": "Menjelaskan arah proses alami menggunakan rumusan Kelvin-Planck, Clausius, dan konsep entropi",
-      "kajianTeori": ["4.d"]
+      "kajianTeori": [
+        "4.d"
+      ]
     }
   ],
   "fenomena": [
@@ -56,16 +65,45 @@
     "Instruksi simulasi efek rumah kaca memakai kontrol widget: tombol Nyalakan sinar Matahari, pilihan Zaman es dan Masa kini, serta slider Atur konsentrasi sendiri.",
     "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju penurunan suhu (unsur M); tahap pemodelan diberi label R.",
     "Uji singkat di layar l4 memerlukan termometer dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026). Karena botol minuman tidak boleh dibuka, suhu diukur pada botol sejenis berisi air sebagai model.",
-    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET."
+    "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET.",
+    "Revisi 3.0 (22 Nov 2026): label STEM memakai E (Engineering/Rekayasa) sesuai Tabel 2.3 Bab II.",
+    "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026. LI2 = menentukan strategi penelusuran (isian strategi sebelum tautan sumber), LI4 = mengintegrasikan informasi dari berbagai sumber (tidak dipakai untuk tabel data sendiri), LI5 = menggunakan informasi untuk memecahkan masalah.",
+    "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
+    "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
+    "Revisi 3.0: label STEM tahap inkuiri menjadi S, T sesuai Tabel 2.3. Tahap inkuiri ditambah isian strategi penelusuran (lkpd-4-12) dan tautan Radjawane et al. (2022) hlm. 188–197 serta OpenStax College Physics 2e 15.6 (dibuka 22 Nov 2026).",
+    "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor."
   ],
   "layar": [
     {
       "id": "l1",
       "judul": "Termometer, lemari es, dan parfum",
       "tahap": "konstruktivisme",
-      "stem": ["S"],
-      "indikatorTahap": { "bk": ["BK1"], "li": ["LI1"] },
+      "stem": [
+        "S"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK1"
+        ],
+        "li": [
+          "LI1"
+        ]
+      },
       "peranGuru": "Menyajikan fenomena dan mengaitkannya dengan KB 2–3.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Menampilkan termometer badan, lemari es, dan parfum, lalu mengingatkan konsep sistem dan energi dalam dari KB 2.",
+          "Meminta murid menulis dugaan tentang lemari es dan parfum ({lkpd-4-1}).",
+          "Membimbing murid merumuskan pertanyaan masalah ({lkpd-4-2}) dan daftar informasi yang dibutuhkan ({lkpd-4-3})."
+        ],
+        "pertanyaanPemantik": [
+          "Mengapa lemari es berhenti mendingin ketika listrik padam?",
+          "Pernahkah aroma parfum kembali sendiri ke botolnya?"
+        ],
+        "antisipasi": [
+          "Murid menyebut lemari es \"menghasilkan dingin\". Tanyakan ke mana kalor dari makanan dibuang."
+        ]
+      },
       "blok": [
         {
           "tipe": "gambar",
@@ -87,7 +125,9 @@
           "pertanyaan": "Apa dugaan awal Anda: mengapa lemari es memerlukan listrik untuk mendinginkan isinya? Mengapa aroma parfum tidak pernah kembali sendiri ke botolnya?",
           "petunjuk": "Tidak ada jawaban salah di tahap ini.",
           "baris": 4,
-          "indikatorVariabel": ["BK1"]
+          "indikatorVariabel": [
+            "BK1"
+          ]
         },
         {
           "tipe": "isian",
@@ -95,16 +135,23 @@
           "format": "teks-panjang",
           "pertanyaan": "Rumuskan satu pertanyaan masalah tentang arah aliran kalor atau arah proses alami.",
           "baris": 3,
-          "indikatorVariabel": ["BK1"]
+          "indikatorVariabel": [
+            "BK1"
+          ]
         },
         {
           "tipe": "kebutuhan-informasi",
           "id": "lkpd-4-3",
           "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
           "petunjuk": "Tuliskan minimal tiga informasi beserta perkiraan sumbernya.",
-          "kolom": ["Informasi yang saya butuhkan", "Perkiraan sumbernya"],
+          "kolom": [
+            "Informasi yang saya butuhkan",
+            "Perkiraan sumbernya"
+          ],
           "jumlahBaris": 3,
-          "indikatorVariabel": ["LI1"]
+          "indikatorVariabel": [
+            "LI1"
+          ]
         }
       ]
     },
@@ -112,15 +159,47 @@
       "id": "l2",
       "judul": "Kesetimbangan termal dan arah aliran kalor",
       "tahap": "inkuiri",
-      "stem": ["S", "T", "M"],
-      "indikatorTahap": { "bk": ["BK3"], "li": ["LI2"] },
-      "peranGuru": "Membimbing penurunan kasus khusus Hukum Pertama.",
+      "stem": [
+        "S",
+        "T"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK3"
+        ],
+        "li": [
+          "LI2"
+        ]
+      },
+      "peranGuru": "Membimbing pengamatan kesetimbangan termal, penurunan kasus khusus Hukum Pertama, dan strategi penelusuran sumber.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Mencontohkan simulasi energi termal lalu meminta murid mencatat suhu besi dan bata sampai setimbang.",
+          "Menjelaskan Hukum Ke-Nol dan meminta murid menerapkannya pada termometer badan ({lkpd-4-4}).",
+          "Meminta murid mengamati simulasi difusi dan mengaitkannya dengan parfum ({lkpd-4-5}).",
+          "Meminta murid menurunkan bentuk Hukum Pertama untuk proses isokhorik dan adiabatik ({lkpd-4-6}).",
+          "Meminta murid menentukan strategi penelusuran sebelum membuka tautan ({lkpd-4-12})."
+        ],
+        "pertanyaanPemantik": [
+          "Kapan aliran energi antara besi dan bata berhenti?",
+          "Benda manakah yang berperan sebagai benda C pada termometer badan?"
+        ],
+        "antisipasi": [
+          "Murid menganggap kesetimbangan berarti energi dalam sama. Tegaskan bahwa yang sama adalah suhunya."
+        ]
+      },
       "blok": [
         {
           "tipe": "simulasi",
           "widget": "energi-termal",
           "judul": "Simulasi energi termal",
-          "instruksi": ["Pindahkan balok besi ke atas salah satu pemanas, lalu panaskan.", "Ketuk Matikan pada pemanas itu.", "Tumpukkan besi panas di atas balok bata yang masih dingin di meja.", "Centang Grafik suhu.", "Amati suhu kedua balok sampai tidak berubah lagi."]
+          "instruksi": [
+            "Pindahkan balok besi ke atas salah satu pemanas, lalu panaskan.",
+            "Ketuk Matikan pada pemanas itu.",
+            "Tumpukkan besi panas di atas balok bata yang masih dingin di meja.",
+            "Centang Grafik suhu.",
+            "Amati suhu kedua balok sampai tidak berubah lagi."
+          ]
         },
         {
           "tipe": "tabel-isian",
@@ -128,13 +207,33 @@
           "judul": "Pengamatan suhu besi dan bata",
           "instruksi": "Catat suhu kedua balok setiap kali Anda mengamati perubahan yang jelas.",
           "kolom": [
-            { "kunci": "t", "label": "Pengamatan ke-", "satuan": "", "tipe": "angka" },
-            { "kunci": "Tbesi", "label": "Suhu besi", "satuan": "°C", "tipe": "angka" },
-            { "kunci": "Tbata", "label": "Suhu bata", "satuan": "°C", "tipe": "angka" },
-            { "kunci": "selisih", "label": "Selisih suhu", "satuan": "°C", "tipe": "hitung", "hitung": "Tbesi-Tbata" }
+            {
+              "kunci": "t",
+              "label": "Pengamatan ke-",
+              "satuan": "",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "Tbesi",
+              "label": "Suhu besi",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "Tbata",
+              "label": "Suhu bata",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "selisih",
+              "label": "Selisih suhu",
+              "satuan": "°C",
+              "tipe": "hitung",
+              "hitung": "Tbesi-Tbata"
+            }
           ],
-          "jumlahBaris": 5,
-          "indikatorVariabel": ["LI2"]
+          "jumlahBaris": 5
         },
         {
           "tipe": "teks",
@@ -146,13 +245,20 @@
           "format": "teks-panjang",
           "pertanyaan": "Gunakan Hukum Ke-Nol. Mengapa termometer badan harus dibiarkan beberapa saat sebelum dibaca? Benda manakah yang berperan sebagai benda C?",
           "baris": 4,
-          "indikatorVariabel": ["BK3"]
+          "indikatorVariabel": [
+            "BK3"
+          ]
         },
         {
           "tipe": "simulasi",
           "widget": "difusi",
           "judul": "Simulasi difusi gas",
-          "instruksi": ["Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.", "Ketuk Angkat sekat.", "Amati wadah dan grafiknya selama beberapa menit. Boleh mengetuk tombol Normal agar berubah menjadi Cepat ×4.", "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."]
+          "instruksi": [
+            "Atur jumlah partikel biru di sisi kiri dan partikel merah di sisi kanan.",
+            "Ketuk Angkat sekat.",
+            "Amati wadah dan grafiknya selama beberapa menit. Boleh mengetuk tombol Normal agar berubah menjadi Cepat ×4.",
+            "Ketuk Ulangi, atur suhu awal kedua sisi berbeda, lalu angkat sekat lagi dan amati suhu kedua sisi."
+          ]
         },
         {
           "tipe": "isian",
@@ -160,7 +266,9 @@
           "format": "teks-panjang",
           "pertanyaan": "Setelah bercampur, apakah kedua jenis partikel pernah kembali terpisah dengan sendirinya? Kaitkan dengan aroma parfum di layar pertama.",
           "baris": 3,
-          "indikatorVariabel": ["LI2"]
+          "indikatorVariabel": [
+            "BK3"
+          ]
         },
         {
           "tipe": "teks",
@@ -175,9 +283,21 @@
           "nomor": "4.1",
           "tex": "\\Delta U = Q - W",
           "keterangan": [
-            { "simbol": "\\Delta U", "arti": "perubahan energi dalam sistem", "satuan": "J" },
-            { "simbol": "Q", "arti": "kalor yang diserap sistem (negatif jika dilepas)", "satuan": "J" },
-            { "simbol": "W", "arti": "usaha yang dilakukan sistem (negatif jika usaha dilakukan pada sistem)", "satuan": "J" }
+            {
+              "simbol": "\\Delta U",
+              "arti": "perubahan energi dalam sistem",
+              "satuan": "J"
+            },
+            {
+              "simbol": "Q",
+              "arti": "kalor yang diserap sistem (negatif jika dilepas)",
+              "satuan": "J"
+            },
+            {
+              "simbol": "W",
+              "arti": "usaha yang dilakukan sistem (negatif jika usaha dilakukan pada sistem)",
+              "satuan": "J"
+            }
           ]
         },
         {
@@ -186,7 +306,40 @@
           "format": "teks-panjang",
           "pertanyaan": "Terapkan Persamaan 4.1 pada dua kasus dari KB 3. Pada proses isokhorik, W = 0. Pada proses adiabatik, Q = 0. Turunkan bentuk Hukum Pertama untuk masing-masing proses dan jelaskan artinya.",
           "baris": 5,
-          "indikatorVariabel": ["BK3"]
+          "indikatorVariabel": [
+            "BK3"
+          ]
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-4-12",
+          "format": "teks-panjang",
+          "pertanyaan": "Anda perlu mencocokkan temuan di layar ini dengan sumber tertulis tentang Hukum Ke-Nol, Hukum Pertama, dan Hukum Kedua Termodinamika. Sebelum membuka tautan di bawah, tentukan strategi penelusuran Anda. (1) Kata kunci apa yang akan Anda pakai? (2) Jenis sumber apa yang Anda cari, dan mengapa? (3) Bagian sumber mana yang perlu dibaca untuk memastikan arah aliran kalor yang Anda amati?",
+          "petunjuk": "Setelah membuka tautan, tambahkan satu kalimat: apakah strategi Anda akan menemukan sumber tersebut? Jika tidak, apa yang perlu diubah?",
+          "baris": 5,
+          "indikatorVariabel": [
+            "LI2"
+          ]
+        },
+        {
+          "tipe": "tautan-sumber",
+          "judul": "Sumber tertulis untuk penyelidikan ini",
+          "daftar": [
+            {
+              "judul": "Fisika untuk SMA/MA Kelas XI",
+              "penerbit": "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (2022)",
+              "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
+              "kegunaan": "Buku teks resmi. Bab 7, subbab Hukum-Hukum Termodinamika (Hukum ke Nol, Hukum I, Hukum II), hlm. 188–197",
+              "bahasa": "Indonesia"
+            },
+            {
+              "judul": "College Physics 2e, 15.6 Entropy and the Second Law of Thermodynamics",
+              "penerbit": "OpenStax (2022)",
+              "url": "https://openstax.org/books/college-physics-2e/pages/15-6-entropy-and-the-second-law-of-thermodynamics-disorder-and-the-unavailability-of-energy",
+              "kegunaan": "Pengertian entropi dan contoh bertambahnya entropi total saat kalor mengalir dari benda panas ke benda dingin",
+              "bahasa": "Inggris"
+            }
+          ]
         }
       ]
     },
@@ -194,9 +347,33 @@
       "id": "l3",
       "judul": "Benarkah ada mesin energi gratis?",
       "tahap": "bertanya",
-      "stem": ["S", "M"],
-      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "stem": [
+        "S",
+        "M"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK2"
+        ],
+        "li": [
+          "LI3"
+        ]
+      },
       "peranGuru": "Menanyakan \"Hukum mana yang dilanggar jika klaim itu benar?\"",
+      "panduanGuru": {
+        "kegiatan": [
+          "Menjelaskan rumusan Kelvin-Planck, lalu membacakan klaim alat Orbo.",
+          "Meminta murid menilai kedua sumber dengan daftar periksa dan membaca putusan juri.",
+          "Meminta murid menunjukkan pelanggaran Hukum Pertama ({lkpd-4-7}) dan menilai keahlian penulis s2 ({lkpd-4-8})."
+        ],
+        "pertanyaanPemantik": [
+          "Hukum mana yang dilanggar jika klaim itu benar?",
+          "Apakah gelar penulis lebih penting daripada bukti yang dikutipnya?"
+        ],
+        "antisipasi": [
+          "Murid langsung menolak s2 karena penulisnya dokter. Arahkan ke bukti yang dikutip, yaitu putusan 22 ahli."
+        ]
+      },
       "blok": [
         {
           "tipe": "teks",
@@ -230,13 +407,35 @@
             }
           ],
           "daftarPeriksa": [
-            { "id": "penulis", "aspek": "Penulis", "pertanyaan": "Siapa penulisnya? Apakah keahliannya sesuai dengan topik energi?" },
-            { "id": "tujuan", "aspek": "Tujuan", "pertanyaan": "Apakah sumber ini melaporkan, menilai, atau mempromosikan klaim?" },
-            { "id": "bukti", "aspek": "Bukti", "pertanyaan": "Apakah ada hasil uji independen yang dapat diperiksa?" },
-            { "id": "kebaruan", "aspek": "Kebaruan", "pertanyaan": "Kapan sumber ini terbit? Apakah ada informasi lebih baru yang mengubah penilaian?" }
+            {
+              "id": "penulis",
+              "aspek": "Penulis",
+              "pertanyaan": "Siapa penulisnya? Apakah keahliannya sesuai dengan topik energi?"
+            },
+            {
+              "id": "tujuan",
+              "aspek": "Tujuan",
+              "pertanyaan": "Apakah sumber ini melaporkan, menilai, atau mempromosikan klaim?"
+            },
+            {
+              "id": "bukti",
+              "aspek": "Bukti",
+              "pertanyaan": "Apakah ada hasil uji independen yang dapat diperiksa?"
+            },
+            {
+              "id": "kebaruan",
+              "aspek": "Kebaruan",
+              "pertanyaan": "Kapan sumber ini terbit? Apakah ada informasi lebih baru yang mengubah penilaian?"
+            }
           ],
-          "pilihanPenilaian": ["Ya", "Tidak", "Tidak jelas"],
-          "indikatorVariabel": ["LI3"]
+          "pilihanPenilaian": [
+            "Ya",
+            "Tidak",
+            "Tidak jelas"
+          ],
+          "indikatorVariabel": [
+            "LI3"
+          ]
         },
         {
           "tipe": "callout",
@@ -251,7 +450,9 @@
           "pertanyaan": "Misalkan alat itu bekerja dalam siklus dan menghasilkan usaha tanpa menerima energi dari luar. Gunakan Persamaan 4.1 untuk menunjukkan hukum mana yang dilanggar. Tuliskan argumen Anda langkah demi langkah.",
           "petunjuk": "Pada satu siklus penuh, sistem kembali ke keadaan awal, sehingga ΔU = 0.",
           "baris": 5,
-          "indikatorVariabel": ["BK2"]
+          "indikatorVariabel": [
+            "BK2"
+          ]
         },
         {
           "tipe": "isian",
@@ -259,7 +460,10 @@
           "format": "teks-panjang",
           "pertanyaan": "Penulis s2 adalah seorang dokter, bukan fisikawan. Apakah hal itu membuat s2 tidak dapat dipercaya? Nilailah dengan memperhatikan bukti yang dikutipnya.",
           "baris": 4,
-          "indikatorVariabel": ["BK2", "LI3"]
+          "indikatorVariabel": [
+            "BK2",
+            "LI3"
+          ]
         }
       ]
     },
@@ -267,9 +471,34 @@
       "id": "l4",
       "judul": "Mendinginkan minuman secepat mungkin",
       "tahap": "masyarakat-belajar",
-      "stem": ["R", "M"],
-      "indikatorTahap": { "bk": ["BK2"], "li": ["LI3"] },
+      "stem": [
+        "E",
+        "M"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK2"
+        ],
+        "li": [
+          "LI3"
+        ]
+      },
       "peranGuru": "Memeriksa alasan ilmiah setiap rancangan, menyiapkan termometer dari lab, dan memeriksa kewajaran perhitungan laju penurunan suhu.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Membagi kelompok dan peran, lalu membacakan masalah, kriteria, dan batasan.",
+          "Memeriksa arah aliran kalor yang ditulis setiap kelompok pada kedua rancangannya.",
+          "Menyiapkan termometer dan mengawasi uji singkat kedua rancangan dengan botol model berisi air.",
+          "Memeriksa pengisian tabel uji singkat dan satuan waktu (menit)."
+        ],
+        "pertanyaanPemantik": [
+          "Faktor apa yang diubah agar kalor berpindah lebih cepat?",
+          "Mengapa perlu dua rancangan yang dibandingkan?"
+        ],
+        "antisipasi": [
+          "Kelompok membandingkan suhu akhir, bukan laju. Ingatkan bahwa lama uji kedua rancangan bisa berbeda."
+        ]
+      },
       "blok": [
         {
           "tipe": "tugas-rancangan",
@@ -287,10 +516,22 @@
             "Botol minuman tidak dibuka"
           ],
           "peranKelompok": [
-            { "peran": "Penelusur sumber", "tugas": "Mencari informasi faktor yang memengaruhi laju aliran kalor dan menilai sumbernya" },
-            { "peran": "Perancang", "tugas": "Menyusun langkah dan gambar rancangan" },
-            { "peran": "Penguji", "tugas": "Mengukur suhu air di botol model dan mencatat waktu" },
-            { "peran": "Penyaji", "tugas": "Menyusun perbandingan rancangan dan daftar sumber" }
+            {
+              "peran": "Penelusur sumber",
+              "tugas": "Mencari informasi faktor yang memengaruhi laju aliran kalor dan menilai sumbernya"
+            },
+            {
+              "peran": "Perancang",
+              "tugas": "Menyusun langkah dan gambar rancangan"
+            },
+            {
+              "peran": "Penguji",
+              "tugas": "Mengukur suhu air di botol model dan mencatat waktu"
+            },
+            {
+              "peran": "Penyaji",
+              "tugas": "Menyusun perbandingan rancangan dan daftar sumber"
+            }
           ],
           "langkah": [
             {
@@ -304,7 +545,13 @@
               "tahap": "merancang",
               "instruksi": "Susun dua rancangan berbeda. Untuk setiap rancangan, jelaskan ke mana kalor mengalir dan faktor apa yang Anda ubah agar alirannya lebih cepat.",
               "format": "tabel",
-              "kolom": ["Rancangan", "Langkah", "Arah aliran kalor", "Faktor yang dipercepat", "Sumber informasi"],
+              "kolom": [
+                "Rancangan",
+                "Langkah",
+                "Arah aliran kalor",
+                "Faktor yang dipercepat",
+                "Sumber informasi"
+              ],
               "jumlahBaris": 2
             },
             {
@@ -316,7 +563,10 @@
           ],
           "produk": "Laporan perbandingan dua rancangan beserta tabel uji singkat, hasil uji, dan daftar sumber",
           "rubrik": "rubrik-4",
-          "indikatorVariabel": ["BK2", "LI3"]
+          "indikatorVariabel": [
+            "BK2",
+            "LI3"
+          ]
         },
         {
           "tipe": "tabel-isian",
@@ -324,15 +574,47 @@
           "judul": "Uji singkat: laju penurunan suhu",
           "instruksi": "Agar botol minuman tidak dibuka, pakai botol sejenis berisi air sebagai model dan masukkan termometer ke dalamnya. Gunakan botol, volume air, dan lama uji yang sama untuk kedua rancangan.",
           "kolom": [
-            { "kunci": "rancangan", "label": "Rancangan", "satuan": "", "tipe": "teks" },
-            { "kunci": "T0", "label": "Suhu awal", "satuan": "°C", "tipe": "angka" },
-            { "kunci": "T1", "label": "Suhu akhir", "satuan": "°C", "tipe": "angka" },
-            { "kunci": "t", "label": "Lama uji", "satuan": "menit", "tipe": "angka" },
-            { "kunci": "laju", "label": "Laju penurunan suhu", "satuan": "°C/menit", "tipe": "hitung", "hitung": "(T0-T1)/t" }
+            {
+              "kunci": "rancangan",
+              "label": "Rancangan",
+              "satuan": "",
+              "tipe": "teks"
+            },
+            {
+              "kunci": "T0",
+              "label": "Suhu awal",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "T1",
+              "label": "Suhu akhir",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "t",
+              "label": "Lama uji",
+              "satuan": "menit",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "laju",
+              "label": "Laju penurunan suhu",
+              "satuan": "°C/menit",
+              "tipe": "hitung",
+              "hitung": "(T0-T1)/t"
+            }
           ],
-          "barisAwal": [["Rancangan 1"], ["Rancangan 2"]],
-          "jumlahBaris": 2,
-          "indikatorVariabel": ["LI4"]
+          "barisAwal": [
+            [
+              "Rancangan 1"
+            ],
+            [
+              "Rancangan 2"
+            ]
+          ],
+          "jumlahBaris": 2
         }
       ]
     },
@@ -340,9 +622,36 @@
       "id": "l5",
       "judul": "Neraca energi Bumi dan arah proses alami",
       "tahap": "pemodelan",
-      "stem": ["S", "T", "R", "M"],
-      "indikatorTahap": { "bk": ["BK4"], "li": ["LI4"] },
-      "peranGuru": "Mencontohkan tabel analisis Hukum Pertama untuk setiap proses.",
+      "stem": [
+        "S",
+        "T",
+        "E",
+        "M"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK4"
+        ],
+        "li": [
+          "LI4"
+        ]
+      },
+      "peranGuru": "Mencontohkan tabel analisis Hukum Pertama dan perhitungan entropi.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Mengerjakan contoh Hukum Pertama pada tiga proses sebagai model, termasuk tanda Q dan W.",
+          "Meminta murid mengamati simulasi efek rumah kaca dan menganalisis neraca energi Bumi ({lkpd-4-9}).",
+          "Mengerjakan contoh entropi aliran kalor, lalu meminta murid mengisi tabel entropi sendiri.",
+          "Meminta murid merumuskan pola umum entropi total ({lkpd-4-10}) dan menyajikan rancangan ({r4-4})."
+        ],
+        "pertanyaanPemantik": [
+          "Kapan entropi total bertambah, tetap, atau berkurang?",
+          "Apa yang terjadi pada energi dalam Bumi jika energi masuk lebih besar daripada energi keluar?"
+        ],
+        "antisipasi": [
+          "Murid memakai suhu Celsius pada ΔS = Q/T. Ingatkan bahwa suhu harus dalam kelvin."
+        ]
+      },
       "blok": [
         {
           "tipe": "contoh",
@@ -359,15 +668,28 @@
           "nomor": "4.2",
           "tex": "\\Delta U = n C_V \\Delta T, \\qquad C_p - C_V = R",
           "keterangan": [
-            { "simbol": "C_V", "arti": "kapasitas kalor molar pada volume tetap; (3/2)R untuk gas monoatomik dan (5/2)R untuk gas diatomik pada suhu sedang", "satuan": "J/(mol·K)" },
-            { "simbol": "C_p", "arti": "kapasitas kalor molar pada tekanan tetap", "satuan": "J/(mol·K)" }
+            {
+              "simbol": "C_V",
+              "arti": "kapasitas kalor molar pada volume tetap; (3/2)R untuk gas monoatomik dan (5/2)R untuk gas diatomik pada suhu sedang",
+              "satuan": "J/(mol·K)"
+            },
+            {
+              "simbol": "C_p",
+              "arti": "kapasitas kalor molar pada tekanan tetap",
+              "satuan": "J/(mol·K)"
+            }
           ]
         },
         {
           "tipe": "simulasi",
           "widget": "efek-rumah-kaca",
           "judul": "Simulasi efek rumah kaca",
-          "instruksi": ["Ketuk Nyalakan sinar Matahari.", "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.", "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.", "Geser slider Atur konsentrasi sendiri ke arah Banyak. Amati neraca energi dan suhu permukaan sampai stabil kembali."]
+          "instruksi": [
+            "Ketuk Nyalakan sinar Matahari.",
+            "Pilih Zaman es dan tunggu sampai suhu permukaan stabil. Catat suhunya.",
+            "Pilih Masa kini dan tunggu sampai stabil lagi. Catat suhunya.",
+            "Geser slider Atur konsentrasi sendiri ke arah Banyak. Amati neraca energi dan suhu permukaan sampai stabil kembali."
+          ]
         },
         {
           "tipe": "isian",
@@ -375,7 +697,9 @@
           "format": "teks-panjang",
           "pertanyaan": "Pandang Bumi sebagai sistem. Saat konsentrasi gas rumah kaca dinaikkan, bagaimana perbandingan energi yang masuk dan energi yang keluar sesaat setelahnya? Apa akibatnya bagi energi dalam dan suhu permukaan Bumi? Gunakan gagasan Hukum Pertama.",
           "baris": 5,
-          "indikatorVariabel": ["LI4"]
+          "indikatorVariabel": [
+            "LI4"
+          ]
         },
         {
           "tipe": "teks",
@@ -386,9 +710,21 @@
           "nomor": "4.3",
           "tex": "\\Delta S = \\frac{Q}{T}",
           "keterangan": [
-            { "simbol": "\\Delta S", "arti": "perubahan entropi", "satuan": "J/K" },
-            { "simbol": "Q", "arti": "kalor yang dipindahkan secara reversibel", "satuan": "J" },
-            { "simbol": "T", "arti": "suhu mutlak", "satuan": "K" }
+            {
+              "simbol": "\\Delta S",
+              "arti": "perubahan entropi",
+              "satuan": "J/K"
+            },
+            {
+              "simbol": "Q",
+              "arti": "kalor yang dipindahkan secara reversibel",
+              "satuan": "J"
+            },
+            {
+              "simbol": "T",
+              "arti": "suhu mutlak",
+              "satuan": "K"
+            }
           ]
         },
         {
@@ -408,13 +744,33 @@
           "judul": "Hitung sendiri: entropi total untuk beberapa aliran kalor",
           "instruksi": "Isilah suhu reservoir untuk tiga kasus pilihan Anda dengan Q = 500 J. Kolom terakhir dihitung otomatis.",
           "kolom": [
-            { "kunci": "Q", "label": "Kalor yang mengalir", "satuan": "J", "tipe": "angka" },
-            { "kunci": "Tasal", "label": "Suhu reservoir asal", "satuan": "K", "tipe": "angka" },
-            { "kunci": "Ttuju", "label": "Suhu reservoir tujuan", "satuan": "K", "tipe": "angka" },
-            { "kunci": "dS", "label": "ΔS total", "satuan": "J/K", "tipe": "hitung", "hitung": "Q/Ttuju-Q/Tasal" }
+            {
+              "kunci": "Q",
+              "label": "Kalor yang mengalir",
+              "satuan": "J",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "Tasal",
+              "label": "Suhu reservoir asal",
+              "satuan": "K",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "Ttuju",
+              "label": "Suhu reservoir tujuan",
+              "satuan": "K",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "dS",
+              "label": "ΔS total",
+              "satuan": "J/K",
+              "tipe": "hitung",
+              "hitung": "Q/Ttuju-Q/Tasal"
+            }
           ],
-          "jumlahBaris": 3,
-          "indikatorVariabel": ["LI4"]
+          "jumlahBaris": 3
         },
         {
           "tipe": "isian",
@@ -422,7 +778,10 @@
           "format": "teks-panjang",
           "pertanyaan": "Dari contoh soal dan tabel Anda, rumuskan pola umum: kapan entropi total bertambah, kapan tetap, dan kapan berkurang? Hubungkan dengan arah aliran kalor yang terjadi di alam.",
           "baris": 5,
-          "indikatorVariabel": ["BK4", "LI4"]
+          "indikatorVariabel": [
+            "BK4",
+            "LI4"
+          ]
         },
         {
           "tipe": "tugas-rancangan-lanjutan",
@@ -442,9 +801,35 @@
       "id": "l6",
       "judul": "Reversibel atau ireversibel?",
       "tahap": "refleksi",
-      "stem": ["S", "T", "R", "M"],
-      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "stem": [
+        "S",
+        "T",
+        "E",
+        "M"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK5"
+        ],
+        "li": [
+          "LI5"
+        ]
+      },
       "peranGuru": "Memberi pertanyaan refleksi dan meluruskan konvensi tanda.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Membahas tabel proses reversibel dan ireversibel.",
+          "Membimbing murid menjelaskan lemari es dengan rumusan Clausius dan menggolongkan beberapa proses ({refleksi-4}).",
+          "Meminta kelompok memperbaiki rancangan ({r4-5}) dan murid menulis kesimpulan bersumber ({lkpd-4-11})."
+        ],
+        "pertanyaanPemantik": [
+          "Mengapa semua proses alami bersifat ireversibel?",
+          "Bagaimana kaitan neraca energi Bumi dengan pemanasan global?"
+        ],
+        "antisipasi": [
+          "Murid menganggap entropi sistem tidak pernah berkurang. Tegaskan bahwa yang tidak berkurang adalah entropi total sistem dan lingkungan."
+        ]
+      },
       "blok": [
         {
           "tipe": "teks",
@@ -454,14 +839,42 @@
           "tipe": "tabel",
           "judul": "Perbedaan proses reversibel dan proses ireversibel",
           "mobile": "kartu",
-          "kolom": ["Aspek", "Proses reversibel", "Proses ireversibel"],
+          "kolom": [
+            "Aspek",
+            "Proses reversibel",
+            "Proses ireversibel"
+          ],
           "baris": [
-            ["Keadaan selama proses", "Selalu setimbang", "Tidak setimbang"],
-            ["Laju proses", "Sangat lambat (kuasistatis)", "Berlangsung pada laju berhingga"],
-            ["Arah proses", "Dapat dibalik melalui lintasan yang sama", "Hanya spontan ke satu arah"],
-            ["Entropi sistem tertutup", "Tetap", "Bertambah"],
-            ["Contoh", "Peleburan es 0 °C dalam kotak 0 °C; pemampatan isotermal yang sangat lambat", "Aliran kalor dari benda panas ke dingin, pemuaian bebas, gesekan"],
-            ["Keberadaan di alam", "Hanya ideal", "Semua proses alami"]
+            [
+              "Keadaan selama proses",
+              "Selalu setimbang",
+              "Tidak setimbang"
+            ],
+            [
+              "Laju proses",
+              "Sangat lambat (kuasistatis)",
+              "Berlangsung pada laju berhingga"
+            ],
+            [
+              "Arah proses",
+              "Dapat dibalik melalui lintasan yang sama",
+              "Hanya spontan ke satu arah"
+            ],
+            [
+              "Entropi total (sistem dan lingkungan)",
+              "Tetap",
+              "Bertambah"
+            ],
+            [
+              "Contoh",
+              "Peleburan es 0 °C dalam kotak 0 °C; pemampatan isotermal yang sangat lambat",
+              "Aliran kalor dari benda panas ke dingin, pemuaian bebas, gesekan"
+            ],
+            [
+              "Keberadaan di alam",
+              "Hanya ideal",
+              "Semua proses alami"
+            ]
           ],
           "sumber": "Diadaptasi dari Serway et al. (2009, hlm. 405), Young dan Freedman (2012, hlm. 652–653), dan Halliday et al. (2014, hlm. 589)"
         },
@@ -475,7 +888,9 @@
             "Golongkan menyebarnya parfum, mencairnya es di udara terbuka, dan pemampatan gas yang sangat lambat ke dalam proses reversibel atau ireversibel. Gunakan tabel di atas.",
             "Bagaimana kaitan neraca energi Bumi yang Anda amati dengan pemanasan global?"
           ],
-          "indikatorVariabel": ["BK5"]
+          "indikatorVariabel": [
+            "BK5"
+          ]
         },
         {
           "tipe": "tugas-rancangan-lanjutan",
@@ -497,7 +912,10 @@
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
-          "indikatorVariabel": ["BK5", "LI5"]
+          "indikatorVariabel": [
+            "BK5",
+            "LI5"
+          ]
         }
       ]
     },
@@ -505,25 +923,65 @@
       "id": "l7",
       "judul": "Penilaian KB 4",
       "tahap": "penilaian-autentik",
-      "stem": ["S", "T", "R", "M"],
-      "indikatorTahap": { "bk": ["BK5"], "li": ["LI5"] },
+      "stem": [
+        "S",
+        "T",
+        "E",
+        "M"
+      ],
+      "indikatorTahap": {
+        "bk": [
+          "BK5"
+        ],
+        "li": [
+          "LI5"
+        ]
+      },
       "peranGuru": "Menilai student e-worksheet dan rancangan dengan rubrik.",
+      "panduanGuru": {
+        "kegiatan": [
+          "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
+          "Menilai student e-worksheet dan laporan rancangan pendinginan minuman dengan rubrik.",
+          "Memberi umpan balik tertulis singkat pada setiap aspek rubrik."
+        ],
+        "pertanyaanPemantik": [],
+        "antisipasi": [
+          "Rubrik ditunjukkan kepada murid sejak awal tugas sebagai panduan."
+        ]
+      },
       "blok": [
-        { "tipe": "teks", "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik di bawah." },
+        {
+          "tipe": "teks",
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik di bawah."
+        },
         {
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-4-1",
           "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang lemari es adalah ...",
           "opsi": [
-            { "id": "a", "teks": "Mengapa lemari es berwarna putih?" },
-            { "id": "b", "teks": "Bagaimana hubungan antara energi listrik yang dipakai lemari es dan banyaknya kalor yang dipindahkan dari ruang dalamnya?" },
-            { "id": "c", "teks": "Merek lemari es apa yang paling bagus?" },
-            { "id": "d", "teks": "Apakah lemari es perlu dibersihkan setiap minggu?" }
+            {
+              "id": "a",
+              "teks": "Mengapa lemari es berwarna putih?"
+            },
+            {
+              "id": "b",
+              "teks": "Bagaimana hubungan antara energi listrik yang dipakai lemari es dan banyaknya kalor yang dipindahkan dari ruang dalamnya?"
+            },
+            {
+              "id": "c",
+              "teks": "Merek lemari es apa yang paling bagus?"
+            },
+            {
+              "id": "d",
+              "teks": "Apakah lemari es perlu dibersihkan setiap minggu?"
+            }
           ],
           "kunci": "b",
           "pembahasan": "Rumusan b menghubungkan dua besaran yang dapat diukur dan berkaitan dengan arah aliran kalor.",
-          "indikatorVariabel": ["BK1"]
+          "indikatorVariabel": [
+            "BK1"
+          ]
         },
         {
           "tipe": "kuis",
@@ -531,14 +989,28 @@
           "id": "kuis-4-2",
           "pertanyaan": "Seseorang mengklaim mesinnya terus menghasilkan usaha tanpa bahan bakar dan tanpa listrik dari luar. Argumen yang paling tepat untuk menolaknya adalah ...",
           "opsi": [
-            { "id": "a", "teks": "Mesin itu terlalu mahal untuk dibuat" },
-            { "id": "b", "teks": "Dalam satu siklus ΔU = 0, sehingga usaha bersih harus sama dengan kalor bersih yang diterima; tanpa energi masuk, usaha bersih tidak mungkin positif" },
-            { "id": "c", "teks": "Belum ada yang membeli mesin tersebut" },
-            { "id": "d", "teks": "Mesin itu tidak memiliki knalpot" }
+            {
+              "id": "a",
+              "teks": "Mesin itu terlalu mahal untuk dibuat"
+            },
+            {
+              "id": "b",
+              "teks": "Dalam satu siklus ΔU = 0, sehingga usaha bersih harus sama dengan kalor bersih yang diterima; tanpa energi masuk, usaha bersih tidak mungkin positif"
+            },
+            {
+              "id": "c",
+              "teks": "Belum ada yang membeli mesin tersebut"
+            },
+            {
+              "id": "d",
+              "teks": "Mesin itu tidak memiliki knalpot"
+            }
           ],
           "kunci": "b",
           "pembahasan": "Dari Persamaan 4.1 dengan ΔU = 0 untuk satu siklus, W = Q. Tanpa energi masuk, Q = 0, jadi W = 0. Klaim itu melanggar Hukum Pertama.",
-          "indikatorVariabel": ["BK2"]
+          "indikatorVariabel": [
+            "BK2"
+          ]
         },
         {
           "tipe": "kuis",
@@ -546,14 +1018,28 @@
           "id": "kuis-4-3",
           "pertanyaan": "Gas memuai secara adiabatik dan melakukan usaha 120 J. Perubahan energi dalam gas adalah ...",
           "opsi": [
-            { "id": "a", "teks": "+120 J" },
-            { "id": "b", "teks": "0 J" },
-            { "id": "c", "teks": "−120 J" },
-            { "id": "d", "teks": "−240 J" }
+            {
+              "id": "a",
+              "teks": "+120 J"
+            },
+            {
+              "id": "b",
+              "teks": "0 J"
+            },
+            {
+              "id": "c",
+              "teks": "−120 J"
+            },
+            {
+              "id": "d",
+              "teks": "−240 J"
+            }
           ],
           "kunci": "c",
           "pembahasan": "Pada proses adiabatik Q = 0, sehingga ΔU = −W = −120 J.",
-          "indikatorVariabel": ["BK3"]
+          "indikatorVariabel": [
+            "BK3"
+          ]
         },
         {
           "tipe": "kuis",
@@ -561,14 +1047,28 @@
           "id": "kuis-4-4",
           "pertanyaan": "Perhitungan entropi total untuk beberapa aliran kalor spontan menghasilkan +0,83 J/K, +0,42 J/K, dan +1,25 J/K. Kesimpulan umum yang didukung data ini adalah ...",
           "opsi": [
-            { "id": "a", "teks": "Entropi total selalu berkurang pada proses alami" },
-            { "id": "b", "teks": "Entropi total bertambah pada proses alami yang tak reversibel" },
-            { "id": "c", "teks": "Entropi tidak berkaitan dengan arah aliran kalor" },
-            { "id": "d", "teks": "Entropi total selalu nol" }
+            {
+              "id": "a",
+              "teks": "Entropi total selalu berkurang pada proses alami"
+            },
+            {
+              "id": "b",
+              "teks": "Entropi total bertambah pada proses alami yang tak reversibel"
+            },
+            {
+              "id": "c",
+              "teks": "Entropi tidak berkaitan dengan arah aliran kalor"
+            },
+            {
+              "id": "d",
+              "teks": "Entropi total selalu nol"
+            }
           ],
           "kunci": "b",
           "pembahasan": "Semua aliran kalor spontan menghasilkan perubahan entropi total positif. Pola ini sesuai dengan pernyataan bahwa entropi sistem tertutup bertambah pada proses tak reversibel.",
-          "indikatorVariabel": ["BK4"]
+          "indikatorVariabel": [
+            "BK4"
+          ]
         },
         {
           "tipe": "kuis",
@@ -576,14 +1076,28 @@
           "id": "kuis-4-5",
           "pertanyaan": "Termometer A dicelupkan ke air dalam gelas 1 dan menunjukkan 40 °C. Termometer yang sama kemudian dicelupkan ke air dalam gelas 2 dan juga menunjukkan 40 °C. Kesimpulan yang tepat adalah ...",
           "opsi": [
-            { "id": "a", "teks": "Air dalam kedua gelas memiliki energi dalam yang sama" },
-            { "id": "b", "teks": "Air dalam kedua gelas berada dalam kesetimbangan termal satu sama lain" },
-            { "id": "c", "teks": "Air dalam kedua gelas memiliki massa yang sama" },
-            { "id": "d", "teks": "Termometer tidak dapat dipakai untuk membandingkan kedua gelas" }
+            {
+              "id": "a",
+              "teks": "Air dalam kedua gelas memiliki energi dalam yang sama"
+            },
+            {
+              "id": "b",
+              "teks": "Air dalam kedua gelas berada dalam kesetimbangan termal satu sama lain"
+            },
+            {
+              "id": "c",
+              "teks": "Air dalam kedua gelas memiliki massa yang sama"
+            },
+            {
+              "id": "d",
+              "teks": "Termometer tidak dapat dipakai untuk membandingkan kedua gelas"
+            }
           ],
           "kunci": "b",
           "pembahasan": "Termometer berperan sebagai benda ketiga. Menurut Hukum Ke-Nol, kedua gelas setimbang termal karena masing-masing setimbang termal dengan termometer. Energi dalam bergantung juga pada banyaknya air, sehingga belum tentu sama.",
-          "indikatorVariabel": ["BK5"]
+          "indikatorVariabel": [
+            "BK5"
+          ]
         },
         {
           "tipe": "kuis",
@@ -591,14 +1105,57 @@
           "id": "kuis-4-6",
           "pertanyaan": "Untuk menilai klaim sebuah alat energi gratis, sumber manakah yang paling dapat dipercaya?",
           "opsi": [
-            { "id": "a", "teks": "Video demonstrasi dari perusahaan pembuat alat" },
-            { "id": "b", "teks": "Laporan uji oleh tim ahli independen yang menjelaskan cara ujinya" },
-            { "id": "c", "teks": "Komentar pembeli di toko daring" },
-            { "id": "d", "teks": "Berita berjudul sensasional tanpa nama narasumber" }
+            {
+              "id": "a",
+              "teks": "Video demonstrasi dari perusahaan pembuat alat"
+            },
+            {
+              "id": "b",
+              "teks": "Laporan uji oleh tim ahli independen yang menjelaskan cara ujinya"
+            },
+            {
+              "id": "c",
+              "teks": "Komentar pembeli di toko daring"
+            },
+            {
+              "id": "d",
+              "teks": "Berita berjudul sensasional tanpa nama narasumber"
+            }
           ],
           "kunci": "b",
           "pembahasan": "Uji independen dengan cara uji yang dijelaskan dapat diperiksa ulang dan tidak memiliki kepentingan menjual.",
-          "indikatorVariabel": ["LI3"]
+          "indikatorVariabel": [
+            "LI3"
+          ]
+        },
+        {
+          "tipe": "kuis",
+          "jenisPenilaian": "formatif",
+          "id": "kuis-4-7",
+          "pertanyaan": "Hasil uji singkat dua rancangan pendingin minuman: rancangan A menurunkan suhu dari 27 °C ke 12 °C dalam 10 menit, rancangan B dari 27 °C ke 17 °C dalam 5 menit. Berdasarkan laju penurunan suhu, rancangan yang lebih cepat adalah ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "A, karena suhu akhirnya lebih rendah"
+            },
+            {
+              "id": "b",
+              "teks": "B, karena lajunya 2,0 °C/menit, lebih besar daripada A (1,5 °C/menit)"
+            },
+            {
+              "id": "c",
+              "teks": "Keduanya sama cepat"
+            },
+            {
+              "id": "d",
+              "teks": "Tidak dapat ditentukan karena waktunya berbeda"
+            }
+          ],
+          "kunci": "b",
+          "pembahasan": "Laju A = (27 − 12)/10 = 1,5 °C/menit. Laju B = (27 − 17)/5 = 2,0 °C/menit. Suhu akhir yang lebih rendah pada A terjadi karena waktunya lebih lama, bukan karena lebih cepat.",
+          "indikatorVariabel": [
+            "LI5"
+          ]
         },
         {
           "tipe": "rubrik",
@@ -606,11 +1163,18 @@
           "id": "rubrik-4",
           "judul": "Rubrik rancangan pendinginan minuman",
           "untuk": "rancangan-4",
-          "skala": [4, 3, 2, 1],
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
           "kriteria": [
             {
               "aspek": "Ketepatan konsep",
-              "indikatorVariabel": ["BK3"],
+              "indikatorVariabel": [
+                "BK3"
+              ],
               "deskriptor": {
                 "4": "Arah aliran kalor, kesetimbangan termal, dan batas pendinginan dijelaskan dengan benar",
                 "3": "Arah aliran kalor benar, tetapi batas pendinginan tidak dijelaskan",
@@ -620,7 +1184,9 @@
             },
             {
               "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": ["BK2", "LI4"],
+              "indikatorVariabel": [
+                "BK2"
+              ],
               "deskriptor": {
                 "4": "Kedua rancangan diuji dengan cara yang sama, laju penurunan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
                 "3": "Kedua rancangan diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
@@ -630,7 +1196,10 @@
             },
             {
               "aspek": "Penggunaan sumber",
-              "indikatorVariabel": ["LI3", "LI5"],
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
               "deskriptor": {
                 "4": "Informasi faktor aliran kalor berasal dari sumber yang dinilai dan dicantumkan lengkap",
                 "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
@@ -673,14 +1242,38 @@
     "berikutnya": "KB 5 menerapkan hukum-hukum ini pada mesin kalor dan pompa kalor."
   },
   "glosarium": [
-    { "istilah": "Kesetimbangan termal", "arti": "Keadaan dua benda bersentuhan yang suhunya sama sehingga tidak ada lagi aliran energi termal bersih" },
-    { "istilah": "Hukum Ke-Nol", "arti": "Jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal" },
-    { "istilah": "Hukum Pertama", "arti": "Perubahan energi dalam sama dengan kalor yang diserap dikurangi usaha yang dilakukan sistem" },
-    { "istilah": "Rumusan Clausius", "arti": "Kalor tidak pernah mengalir secara spontan dari benda dingin ke benda panas" },
-    { "istilah": "Rumusan Kelvin-Planck", "arti": "Tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha" },
-    { "istilah": "Proses reversibel", "arti": "Proses ideal yang dapat dibalik tanpa meninggalkan perubahan pada sistem dan lingkungan" },
-    { "istilah": "Proses ireversibel", "arti": "Proses yang hanya berlangsung spontan ke satu arah; semua proses alami termasuk jenis ini" },
-    { "istilah": "Entropi", "arti": "Besaran yang menunjukkan arah proses alami; entropi sistem tertutup tidak pernah berkurang" }
+    {
+      "istilah": "Kesetimbangan termal",
+      "arti": "Keadaan dua benda bersentuhan yang suhunya sama sehingga tidak ada lagi aliran energi termal bersih"
+    },
+    {
+      "istilah": "Hukum Ke-Nol",
+      "arti": "Jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal"
+    },
+    {
+      "istilah": "Hukum Pertama",
+      "arti": "Perubahan energi dalam sama dengan kalor yang diserap dikurangi usaha yang dilakukan sistem"
+    },
+    {
+      "istilah": "Rumusan Clausius",
+      "arti": "Kalor tidak pernah mengalir secara spontan dari benda dingin ke benda panas"
+    },
+    {
+      "istilah": "Rumusan Kelvin-Planck",
+      "arti": "Tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha"
+    },
+    {
+      "istilah": "Proses reversibel",
+      "arti": "Proses ideal yang dapat dibalik tanpa meninggalkan perubahan pada sistem dan lingkungan"
+    },
+    {
+      "istilah": "Proses ireversibel",
+      "arti": "Proses yang hanya berlangsung spontan ke satu arah; semua proses alami termasuk jenis ini"
+    },
+    {
+      "istilah": "Entropi",
+      "arti": "Besaran yang menunjukkan arah proses alami; entropi sistem tertutup tidak pernah berkurang"
+    }
   ],
   "referensi": [
     "Giancoli, D. C. (2014). Physics: Principles with applications (7th ed.). Pearson Education.",
@@ -689,6 +1282,8 @@
     "Serway, R. A., Vuille, C., & Faughn, J. S. (2009). College physics (8th ed.). Brooks/Cole, Cengage Learning.",
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Boran, M. (2009, 15 Desember). Steorn's free energy device goes on display. Silicon Republic. https://www.siliconrepublic.com/?p=441623",
-    "Novella, S. (2009, 29 Juni). The jury is in for Steorn – No free energy. NeuroLogica Blog. https://theness.com/neurologicablog/the-jury-is-in-for-steorn-no-free-energy/"
+    "Novella, S. (2009, 29 Juni). The jury is in for Steorn – No free energy. NeuroLogica Blog. https://theness.com/neurologicablog/the-jury-is-in-for-steorn-no-free-energy/",
+    "Radjawane, M. M., Tinambunan, A., & Jono, S. (2022). Fisika untuk SMA/MA kelas XI. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
+    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e"
   ]
 }
