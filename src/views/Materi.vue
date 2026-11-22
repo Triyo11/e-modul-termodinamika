@@ -104,7 +104,7 @@ const tujuan = computed(() =>
       </ol>
     </nav>
 
-    <main :key="data.id" class="mx-auto flex w-full max-w-2xl flex-col gap-16 px-5 py-8 pb-40">
+    <main :key="data.id" class="flex w-full flex-col gap-16 px-5 py-8 pb-40 sm:px-8 lg:px-12">
       <section class="flex flex-col gap-3">
         <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
           {{ data.bab }}<template v-if="data.kb"> · KB {{ data.kb }}</template> · Kelas {{ data.kelas }}
