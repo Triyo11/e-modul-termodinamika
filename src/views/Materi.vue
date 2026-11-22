@@ -106,7 +106,7 @@ const tujuan = computed(() =>
 
     <main :key="data.id" class="flex flex-col gap-8 px-5 py-6 pb-40">
       <section class="flex flex-col gap-3">
-        <span class="text-sm font-semibold uppercase tracking-wide text-ink-400">
+        <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
           {{ data.bab }}<template v-if="data.kb"> · KB {{ data.kb }}</template> · Kelas {{ data.kelas }}
           <template v-if="data.alokasiWaktu"> · {{ data.alokasiWaktu }} menit</template>
         </span>
@@ -159,7 +159,7 @@ const tujuan = computed(() =>
           class="col-start-1 flex flex-col items-start gap-0.5 rounded-xl border border-ink-200 bg-white p-3 text-left hover:border-accent-1/40"
           @click="bukaKb(sebelumnya.kb)"
         >
-          <span class="flex items-center gap-1 text-xs font-semibold text-ink-400">
+          <span class="flex items-center gap-1 text-xs font-semibold text-ink-500">
             <PhArrowLeft :size="14" weight="bold" /> KB {{ sebelumnya.kb }}
           </span>
           <span class="text-sm font-medium text-ink-800">{{ sebelumnya.judul }}</span>

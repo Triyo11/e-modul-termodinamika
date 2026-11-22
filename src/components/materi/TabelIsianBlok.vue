@@ -68,7 +68,7 @@ function label(k: KolomTabelIsian) {
         </tbody>
       </table>
     </div>
-    <p v-if="blok.kolom.some((k) => k.tipe === 'hitung')" class="text-xs text-ink-400">
+    <p v-if="blok.kolom.some((k) => k.tipe === 'hitung')" class="text-xs text-ink-500">
       Kolom abu-abu dihitung otomatis dari isian Anda.
     </p>
   </div>

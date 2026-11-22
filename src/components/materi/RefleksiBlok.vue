@@ -26,7 +26,7 @@ function ubah(i: number, nilai: string) {
     </div>
 
     <div v-if="blok.tinjauUlang" class="rounded-lg border border-ink-200 bg-white p-3">
-      <p v-if="blok.pengantar" class="text-xs font-medium uppercase tracking-wide text-ink-400">{{ blok.pengantar }}</p>
+      <p v-if="blok.pengantar" class="text-xs font-medium uppercase tracking-wide text-ink-500">{{ blok.pengantar }}</p>
       <p v-if="jawabanAwal" class="mt-1 whitespace-pre-line font-serif text-sm italic text-ink-700">
         “{{ jawabanAwal }}”
       </p>

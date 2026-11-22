@@ -15,7 +15,7 @@ const informasiUmum = {
 <template>
   <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-40">
     <div
-      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-accent-2 mb-4 p-8 lg:p-24"
+      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-accent-2 via-ink-50 to-white mb-4 p-8 lg:p-24"
     >
       <img
         src="@/assets/logo fix.png"

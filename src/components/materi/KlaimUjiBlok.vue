@@ -37,7 +37,7 @@ function tanggal(t?: string) {
 
     <div v-for="s in blok.sumber" :key="s.id" class="flex flex-col gap-3 rounded-lg border border-ink-200 bg-white p-3">
       <div class="flex flex-col gap-0.5">
-        <span class="text-xs font-semibold uppercase text-ink-400">Sumber {{ s.id }}</span>
+        <span class="text-xs font-semibold uppercase text-ink-500">Sumber {{ s.id }}</span>
         <a
           :href="s.url"
           target="_blank"

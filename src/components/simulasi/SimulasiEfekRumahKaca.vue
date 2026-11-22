@@ -275,7 +275,7 @@ function gambarMolekul(m: Molekul) {
     ctx.arc(m.x + s * dx, m.y + s * dy, 2.6, 0, Math.PI * 2);
     ctx.fill();
   }
-  ctx.fillStyle = "#2B2520";
+  ctx.fillStyle = "#1E2019";
   ctx.beginPath();
   ctx.arc(m.x, m.y, 3, 0, Math.PI * 2);
   ctx.fill();
@@ -357,7 +357,7 @@ function gambar() {
   c.fillRect(0, Y_TANAH, LEBAR, TINGGI - Y_TANAH);
   c.fillStyle = "rgba(0,0,0,0.08)";
   c.fillRect(0, Y_TANAH, LEBAR, 3);
-  c.fillStyle = "#372F27";
+  c.fillStyle = "#2F352F";
   c.textAlign = "left";
   c.font = "8px sans-serif";
   c.fillText("Permukaan Bumi", 6, TINGGI - 8);
@@ -471,7 +471,7 @@ onBeforeUnmount(() => {
       <span class="flex items-center gap-1.5"><span class="h-2 w-4 rounded-full bg-[#f2b705]"></span>Sinar Matahari (cahaya tampak)</span>
       <span class="flex items-center gap-1.5"><span class="h-2 w-4 rounded-full bg-[#e0402a]"></span>Radiasi inframerah</span>
       <span class="flex items-center gap-1.5">
-        <svg viewBox="0 0 20 10" class="h-2.5 w-5"><circle cx="4" cy="5" r="2.6" fill="#d9463b" /><circle cx="16" cy="5" r="2.6" fill="#d9463b" /><circle cx="10" cy="5" r="3" fill="#2B2520" /></svg>
+        <svg viewBox="0 0 20 10" class="h-2.5 w-5"><circle cx="4" cy="5" r="2.6" fill="#d9463b" /><circle cx="16" cy="5" r="2.6" fill="#d9463b" /><circle cx="10" cy="5" r="3" fill="#1E2019" /></svg>
         Gas rumah kaca
       </span>
     </div>
@@ -500,8 +500,8 @@ onBeforeUnmount(() => {
       <span class="px-1 text-[11px] text-ink-500">Suhu permukaan selama {{ PANJANG_GRAFIK_DETIK }} detik terakhir (°C)</span>
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik suhu permukaan terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#CDC1AA' : '#F0EBE1'" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#8F7F66">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#A8B6B7' : '#E1ECEF'" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5C6865">{{ s.v }}</text>
         </g>
         <polyline :points="grafik.titik" fill="none" stroke="#c0502f" stroke-width="1.8" />
       </svg>

@@ -54,7 +54,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
       <div v-for="(baris1, i) in baris" :key="i" class="rounded-xl border border-ink-200 p-3">
         <dl class="flex flex-col gap-1.5">
           <div v-for="(sel, j) in baris1" :key="j" class="flex flex-col gap-0.5">
-            <dt class="text-xs font-medium uppercase tracking-wide text-ink-400" v-html="kolom[j]"></dt>
+            <dt class="text-xs font-medium uppercase tracking-wide text-ink-500" v-html="kolom[j]"></dt>
             <dd class="text-justify text-sm text-ink-800" v-html="sel"></dd>
           </div>
         </dl>
@@ -75,7 +75,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
         </tbody>
       </table>
     </div>
-    <p v-if="blok.sumber" class="text-xs text-ink-400">Sumber: {{ blok.sumber }}</p>
+    <p v-if="blok.sumber" class="text-xs text-ink-500">Sumber: {{ blok.sumber }}</p>
     </template>
   </div>
 </template>

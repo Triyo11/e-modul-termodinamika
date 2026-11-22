@@ -23,7 +23,7 @@ const rasioStyle = { aspectRatio: (props.blok.rasio ?? "16/9").replace("/", " / 
     </div>
     <figcaption v-if="blok.caption" class="text-sm text-ink-600">
       {{ blok.caption }}
-      <span v-if="blok.sumber" class="text-ink-400">· {{ blok.sumber }}</span>
+      <span v-if="blok.sumber" class="text-ink-500">· {{ blok.sumber }}</span>
     </figcaption>
   </figure>
 </template>

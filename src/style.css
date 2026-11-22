@@ -3,27 +3,30 @@
 @import "tailwindcss";
 
 @theme default {
-  --color-brand-light: #F5F1E8;
-  --color-brand-dark: #2B2520;
+  /* Palet dasar: #1E2019 (gelap), #36827F (teal), #EDF6F9 (terang).
+     Kontras teks diuji WCAG: ink-500 ke atas >= 4,5:1 pada putih, ink-50, dan ink-100. */
+  --color-brand: #36827F;
+  --color-brand-light: #E3F1F0;
+  --color-brand-dark: #1E2019;
 
   --color-accent: var(--color-accent-1);
-  --color-accent-1: #1f5fbf;
-  --color-accent-2: #ffe66d;
-  --color-accent-3: #ff6b6b;
-  --color-benar:   #0f7a52;
-  --color-salah:   #b3261e;
-  --color-periksa: #9a6700;
+  --color-accent-1: #2E6E6A;
+  --color-accent-2: #CDE6E4;
+  --color-accent-3: #1E2019;
+  --color-benar:   #0D6E4A;
+  --color-salah:   #B3261E;
+  --color-periksa: #8A5C00;
 
-  --color-ink-50:  #F8F5EF;
-  --color-ink-100: #F0EBE1;
-  --color-ink-200: #E2DACB;
-  --color-ink-300: #CDC1AA;
-  --color-ink-400: #B0A084;
-  --color-ink-500: #8F7F66;
-  --color-ink-600: #6E6150;
-  --color-ink-700: #52483B;
-  --color-ink-800: #372F27;
-  --color-ink-900: #241E19;
+  --color-ink-50: #EDF6F9;
+  --color-ink-100: #E1ECEF;
+  --color-ink-200: #C6D3D5;
+  --color-ink-300: #A8B6B7;
+  --color-ink-400: #859491;
+  --color-ink-500: #5C6865;
+  --color-ink-600: #4E5955;
+  --color-ink-700: #404944;
+  --color-ink-800: #2F352F;
+  --color-ink-900: #1E2019;
 
   --font-sans:  "Literata Variable", Georgia, serif;
   --font-serif: "Literata Variable", Georgia, serif;

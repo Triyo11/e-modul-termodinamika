@@ -46,9 +46,9 @@ interface KepingTerbang {
 }
 
 const BENDA: Record<IdBenda, SifatBenda> = {
-  besi: { nama: "Besi", kapasitas: 880, suhuMax: 300, warna: [150, 152, 158], warnaGaris: "#52483B", kUdara: 1.8 },
+  besi: { nama: "Besi", kapasitas: 880, suhuMax: 300, warna: [150, 152, 158], warnaGaris: "#404944", kUdara: 1.8 },
   bata: { nama: "Bata", kapasitas: 400, suhuMax: 300, warna: [176, 82, 58], warnaGaris: "#c0502f", kUdara: 0.8 },
-  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#1f5fbf", kUdara: 2.1 },
+  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#2E6E6A", kUdara: 2.1 },
 };
 const URUTAN: IdBenda[] = ["besi", "bata", "air"];
 
@@ -567,8 +567,8 @@ onBeforeUnmount(() => {
 
         <!-- Pemanas -->
         <g v-for="(l, i) in LOKASI_PEMANAS" :key="l.id">
-          <rect :x="l.x - 32" :y="Y_MEJA" width="64" :height="TINGGI - Y_MEJA - 4" rx="4" fill="#52483B" />
-          <rect :x="l.x - 28" :y="Y_MEJA" width="56" height="6" fill="#372F27" />
+          <rect :x="l.x - 32" :y="Y_MEJA" width="64" :height="TINGGI - Y_MEJA - 4" rx="4" fill="#404944" />
+          <rect :x="l.x - 28" :y="Y_MEJA" width="56" height="6" fill="#2F352F" />
           <ellipse
             v-if="Math.abs(pemanas[i]) >= 0.025"
             :cx="l.x"
@@ -578,12 +578,12 @@ onBeforeUnmount(() => {
             :fill="pemanas[i] > 0 ? '#ff8a2a' : '#7cc7ff'"
             :opacity="0.35 + 0.65 * Math.abs(pemanas[i])"
           />
-          <text :x="l.x" :y="TINGGI - 14" text-anchor="middle" font-size="9" fill="#F0EBE1">Pemanas {{ i + 1 }}</text>
+          <text :x="l.x" :y="TINGGI - 14" text-anchor="middle" font-size="9" fill="#E1ECEF">Pemanas {{ i + 1 }}</text>
         </g>
 
         <!-- Tempat tujuan saat memindah -->
         <g v-for="x in adegan.target" :key="'t' + x">
-          <ellipse :cx="x" :cy="Y_MEJA - 2" rx="30" ry="5" fill="none" stroke="#1f5fbf" stroke-dasharray="4 3" />
+          <ellipse :cx="x" :cy="Y_MEJA - 2" rx="30" ry="5" fill="none" stroke="#2E6E6A" stroke-dasharray="4 3" />
         </g>
 
         <!-- Benda -->
@@ -600,7 +600,7 @@ onBeforeUnmount(() => {
             <path
               :d="`M${b.kotak.x},${b.kotak.y} V${b.kotak.y + b.kotak.h - 4} Q${b.kotak.x},${b.kotak.y + b.kotak.h} ${b.kotak.x + 4},${b.kotak.y + b.kotak.h} H${b.kotak.x + b.kotak.w - 4} Q${b.kotak.x + b.kotak.w},${b.kotak.y + b.kotak.h} ${b.kotak.x + b.kotak.w},${b.kotak.y + b.kotak.h - 4} V${b.kotak.y}`"
               fill="rgba(255,255,255,0.18)"
-              :stroke="b.terpilih ? '#1f5fbf' : '#8F7F66'"
+              :stroke="b.terpilih ? '#2E6E6A' : '#5C6865'"
               :stroke-width="b.terpilih ? 2.5 : 1.5"
             />
           </template>
@@ -612,7 +612,7 @@ onBeforeUnmount(() => {
             :height="b.kotak.h"
             rx="3"
             :fill="b.isi"
-            :stroke="b.terpilih ? '#1f5fbf' : 'rgba(0,0,0,0.35)'"
+            :stroke="b.terpilih ? '#2E6E6A' : 'rgba(0,0,0,0.35)'"
             :stroke-width="b.terpilih ? 2.5 : 1"
           />
         </g>
@@ -638,8 +638,8 @@ onBeforeUnmount(() => {
         <!-- Label dan termometer -->
         <g v-for="b in adegan.benda" :key="'l' + b.id" pointer-events="none">
           <template v-if="b.id === 'air'">
-            <rect :x="b.kotak.x + b.kotak.w / 2 - 30" :y="b.kotak.y - 17" width="60" height="14" rx="7" fill="#fff" stroke="#E2DACB" />
-            <text :x="b.kotak.x + b.kotak.w / 2" :y="b.kotak.y - 7" text-anchor="middle" font-size="9" fill="#372F27">
+            <rect :x="b.kotak.x + b.kotak.w / 2 - 30" :y="b.kotak.y - 17" width="60" height="14" rx="7" fill="#fff" stroke="#C6D3D5" />
+            <text :x="b.kotak.x + b.kotak.w / 2" :y="b.kotak.y - 7" text-anchor="middle" font-size="9" fill="#2F352F">
               Air · <tspan font-weight="700">{{ formatSuhu(suhuTampil[2]?.suhu ?? 0) }}</tspan>
             </text>
           </template>
@@ -648,7 +648,7 @@ onBeforeUnmount(() => {
               {{ BENDA[b.id].nama }}
             </text>
             <rect :x="b.kotak.x + 4" :y="b.kotak.y + b.kotak.h - 16" :width="b.kotak.w - 8" height="12" rx="6" fill="rgba(255,255,255,0.9)" />
-            <text :x="b.kotak.x + b.kotak.w / 2" :y="b.kotak.y + b.kotak.h - 7" text-anchor="middle" font-size="8.5" font-weight="700" fill="#372F27">
+            <text :x="b.kotak.x + b.kotak.w / 2" :y="b.kotak.y + b.kotak.h - 7" text-anchor="middle" font-size="8.5" font-weight="700" fill="#2F352F">
               {{ formatSuhu(suhuTampil.find((s) => s.id === b.id)?.suhu ?? 0) }}
             </text>
           </template>
@@ -673,13 +673,13 @@ onBeforeUnmount(() => {
     <div v-if="tampilGrafik" class="rounded-xl border border-ink-200 bg-white p-2">
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik suhu terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" stroke="#F0EBE1" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#8F7F66">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" stroke="#E1ECEF" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5C6865">{{ s.v }}</text>
         </g>
         <polyline v-for="g in grafik.garis" :key="g.id" :points="g.titik" fill="none" :stroke="g.warna" stroke-width="1.8" />
-        <text :x="gPad.kiri" :y="G_TINGGI - 6" font-size="8" fill="#8F7F66">−{{ PANJANG_GRAFIK_DETIK }} s</text>
-        <text :x="G_LEBAR - gPad.kanan" :y="G_TINGGI - 6" text-anchor="end" font-size="8" fill="#8F7F66">sekarang</text>
-        <text x="4" :y="gPad.atas + 4" font-size="8" fill="#8F7F66">°C</text>
+        <text :x="gPad.kiri" :y="G_TINGGI - 6" font-size="8" fill="#5C6865">−{{ PANJANG_GRAFIK_DETIK }} s</text>
+        <text :x="G_LEBAR - gPad.kanan" :y="G_TINGGI - 6" text-anchor="end" font-size="8" fill="#5C6865">sekarang</text>
+        <text x="4" :y="gPad.atas + 4" font-size="8" fill="#5C6865">°C</text>
       </svg>
     </div>
 

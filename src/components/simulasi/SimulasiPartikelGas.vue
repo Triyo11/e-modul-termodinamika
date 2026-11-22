@@ -195,11 +195,11 @@ function gambar() {
   ctx.clearRect(0, 0, LEBAR, TINGGI);
 
   // Ruang di luar wadah
-  ctx.fillStyle = "#E2DACB";
+  ctx.fillStyle = "#C6D3D5";
   ctx.fillRect(0, 0, xd, TINGGI);
-  ctx.fillStyle = "#F8F5EF";
+  ctx.fillStyle = "#EDF6F9";
   ctx.fillRect(xd, 0, LEBAR - xd, TINGGI);
-  ctx.strokeStyle = "#CDC1AA";
+  ctx.strokeStyle = "#A8B6B7";
   ctx.lineWidth = 2;
   ctx.strokeRect(xd + 1, 1, LEBAR - xd - 2, TINGGI - 2);
 
@@ -213,7 +213,7 @@ function gambar() {
 
   // Dinding kiri dan tuasnya (selalu muat karena RUANG_PEGANGAN)
   const aktif = sedangMenyeret.value || (dekatPegangan.value && !dindingTerkunci.value);
-  const warnaDinding = dindingTerkunci.value ? "#B0A084" : aktif ? "#1f5fbf" : "#52483B";
+  const warnaDinding = dindingTerkunci.value ? "#859491" : aktif ? "#2E6E6A" : "#404944";
   ctx.fillStyle = warnaDinding;
   ctx.fillRect(xd - 2, 0, 4, TINGGI);
   if (!dindingTerkunci.value) {
@@ -477,7 +477,7 @@ onBeforeUnmount(() => {
         class="flex w-full shrink-0 flex-col items-center justify-center gap-0.5 self-center rounded-xl border border-ink-200 bg-white p-2 sm:w-28 sm:self-auto sm:p-1.5"
       >
         <svg viewBox="0 0 200 120" class="w-24 sm:w-full">
-          <path d="M10,100 A90,90 0 0 1 190,100" fill="none" stroke="#E2DACB" stroke-width="16" stroke-linecap="round" />
+          <path d="M10,100 A90,90 0 0 1 190,100" fill="none" stroke="#C6D3D5" stroke-width="16" stroke-linecap="round" />
           <g :style="{ transform: `rotate(${sudutJarum}deg)`, transformOrigin: '100px 100px' }">
             <line x1="100" y1="100" x2="100" y2="26" :stroke="warnaJarum" stroke-width="6" stroke-linecap="round" />
           </g>
