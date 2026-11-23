@@ -24,6 +24,9 @@ provide(
   computed(() => hitungNomorWorksheet(data.value)),
 );
 
+// Mode guru: buka halaman dengan ?guru=1 (sama seperti panduan guru di LayarSection).
+const modeGuru = computed(() => route.query.guru !== undefined);
+
 const indeks = computed(() => daftarKegiatan.indexOf(data.value));
 const sebelumnya = computed(() => daftarKegiatan[indeks.value - 1]);
 const berikutnya = computed(() => daftarKegiatan[indeks.value + 1]);
@@ -148,8 +151,9 @@ const tujuan = computed(() =>
         <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
           <template v-if="data.alokasiWaktu">Alokasi waktu : {{ data.alokasiWaktu }} menit</template>
         </span>
-        <span class="font-medium text-ink-800 pt-4">Materi Prasyarat</span>
-        <div v-if="data.prasyarat.length" class="flex flex-wrap gap-1.5">
+        <!-- Materi prasyarat hanya untuk guru (?guru=1). -->
+        <span v-if="modeGuru && data.prasyarat.length" class="font-medium text-ink-800 pt-4">Materi Prasyarat</span>
+        <div v-if="modeGuru && data.prasyarat.length" class="flex flex-wrap gap-1.5">
           <span
             v-for="p in data.prasyarat"
             :key="p"
