@@ -20,7 +20,7 @@ import GambarZoom from "@/components/micro/GambarZoom.vue";
       <section>
         <h2 class="font-bold text-xl text-center pb-4">Peta Konsep</h2>
         <GambarZoom
-          src="/peta-konsep.jpg"
+          src="/peta-konsep.png"
           alt="Peta konsep termodinamika: teori kinetik gas, proses termodinamika, dan hukum termodinamika"
           caption="Peta konsep materi Termodinamika."
           :lebar-asli="842"

@@ -239,12 +239,11 @@ const tujuan = computed(() =>
 
     <main :key="data.id" class="flex w-full flex-col gap-16 px-5 py-8 pb-40 sm:px-8 lg:px-12">
       <section class="flex flex-col gap-3">
-        <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
-          <template v-if="data.alokasiWaktu"> · {{ data.alokasiWaktu }} menit</template>
-        </span>
         <h1 class="text-2xl font-bold text-ink-900">{{ data.judul }}</h1>
-        <!-- <p class="text-body text-ink-600">{{ data.subJudul }}</p> -->
-
+        
+        <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
+          <template v-if="data.alokasiWaktu">Alokasi waktu : {{ data.alokasiWaktu }} menit</template>
+        </span>
         <span class="font-medium text-ink-800 pt-4">Materi Prasyarat</span>
         <div v-if="data.prasyarat.length" class="flex flex-wrap gap-1.5">
           <span
