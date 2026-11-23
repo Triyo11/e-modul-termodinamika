@@ -140,8 +140,10 @@ const tujuan = computed(() =>
   <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
     <main :key="data.id" class="flex w-full flex-col gap-16 px-5 py-8 pb-40 sm:px-8 lg:px-12">
       <section class="flex flex-col gap-3">
-        <span class="text-sm font-semibold text-accent-1">Kegiatan Belajar {{ data.kb }}</span>
-        <h1 class="text-2xl font-bold text-ink-900">{{ data.judul }}</h1>
+        <div class="w-full flex flex-col gap-1 bg-accent-1/5 p-4 rounded-xl border-3 border-dashed border-accent-1/40">
+          <span class="text-sm font-semibold text-accent-1">Kegiatan Belajar {{ data.kb }}</span>
+          <h1 class="text-2xl font-bold text-ink-900">{{ data.judul }}</h1>
+        </div>
         
         <span class="text-sm font-semibold uppercase tracking-wide text-ink-500">
           <template v-if="data.alokasiWaktu">Alokasi waktu : {{ data.alokasiWaktu }} menit</template>
