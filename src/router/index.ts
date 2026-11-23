@@ -62,7 +62,9 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(_to, _from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
+    // Halaman KB memulihkan posisi gulirnya sendiri (lihat Materi.vue).
+    if (to.name === "materi-kb") return false;
     if (savedPosition) {
       return savedPosition;
     } else {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, provide, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, provide, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { PhArrowLeft, PhArrowRight } from "@phosphor-icons/vue";
 import LayarSection from "@/components/materi/LayarSection.vue";
@@ -44,15 +44,89 @@ watch(
   { immediate: true },
 );
 
+// ---------- Posisi gulir per KB ----------
+// Tiap KB mengingat posisi gulir terakhirnya, jadi membuka KB lagi kembali ke titik yang sama.
+const kunciPosisi = (kb: number) => `materi:posisi-gulir:${kb}`;
+
+function bacaPosisi(kb: number): number {
+  try {
+    const y = Number(localStorage.getItem(kunciPosisi(kb)));
+    return Number.isFinite(y) && y > 0 ? y : 0;
+  } catch {
+    return 0;
+  }
+}
+function simpanPosisi(kb: number, y: number) {
+  try {
+    localStorage.setItem(kunciPosisi(kb), String(Math.round(y)));
+  } catch {
+    /* abaikan */
+  }
+}
+
+// Selama posisi dipulihkan, gulir dari browser (mis. halaman memendek saat konten berganti) tidak disimpan.
+let sedangMemulihkan = false;
+let idPemulihan = 0;
+
+function pulihkanPosisi(target: number) {
+  const id = ++idPemulihan;
+  sedangMemulihkan = true;
+  const mulai = performance.now();
+  // Gambar dan media bisa memperpanjang halaman setelah tampil, jadi coba lagi sampai
+  // halaman cukup tinggi untuk mencapai posisi tujuan (paling lama ~1,5 detik).
+  const coba = () => {
+    if (id !== idPemulihan) return;
+    window.scrollTo({ top: target });
+    const cukupTinggi = document.documentElement.scrollHeight - window.innerHeight >= target;
+    if (cukupTinggi || performance.now() - mulai > 1500) {
+      sedangMemulihkan = false;
+      return;
+    }
+    requestAnimationFrame(coba);
+  };
+  requestAnimationFrame(coba);
+}
+
+let menungguFrame = false;
+function saatGulir() {
+  if (menungguFrame || sedangMemulihkan) return;
+  menungguFrame = true;
+  requestAnimationFrame(() => {
+    menungguFrame = false;
+    if (!sedangMemulihkan) simpanPosisi(kbAktif.value, window.scrollY);
+  });
+}
+function hentikanPemulihan() {
+  // Murid menggulir sendiri saat pemulihan berjalan: hormati guliran mereka.
+  if (sedangMemulihkan) {
+    idPemulihan++;
+    sedangMemulihkan = false;
+  }
+}
+onMounted(() => {
+  window.addEventListener("scroll", saatGulir, { passive: true });
+  window.addEventListener("wheel", hentikanPemulihan, { passive: true });
+  window.addEventListener("touchstart", hentikanPemulihan, { passive: true });
+});
+onBeforeUnmount(() => {
+  idPemulihan++;
+  window.removeEventListener("scroll", saatGulir);
+  window.removeEventListener("wheel", hentikanPemulihan);
+  window.removeEventListener("touchstart", hentikanPemulihan);
+});
+
 watch(
   kbAktif,
-  (kb, lama) => {
+  (kb) => {
     try {
       localStorage.setItem(KUNCI_KB_TERAKHIR, String(kb));
     } catch {
       /* abaikan */
     }
-    if (lama !== undefined) window.scrollTo({ top: 0 });
+    // Baca posisi sebelum konten berganti, lalu pulihkan setelah konten KB baru tampil.
+    const target = bacaPosisi(kb);
+    sedangMemulihkan = true;
+    nextTick(() => pulihkanPosisi(target));
   },
   { immediate: true },
 );
