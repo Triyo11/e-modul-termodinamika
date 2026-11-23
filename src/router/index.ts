@@ -37,9 +37,14 @@ const routes = [
     component: () => import("../views/Home.vue"),
   },
   {
-    // /materi membuka KB terakhir yang dibaca; /materi/3 membuka KB 3.
-    path: "/materi/:kb(\\d+)?",
+    // /materi menampilkan pilihan kegiatan belajar; /materi/3 membuka KB 3.
+    path: "/materi",
     name: "materi",
+    component: () => import("../views/DaftarMateri.vue"),
+  },
+  {
+    path: "/materi/:kb(\\d+)",
+    name: "materi-kb",
     component: () => import("../views/Materi.vue"),
   },
   {

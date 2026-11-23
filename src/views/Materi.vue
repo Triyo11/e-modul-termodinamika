@@ -11,20 +11,10 @@ const KUNCI_KB_TERAKHIR = "materi:kb-terakhir";
 const route = useRoute();
 const router = useRouter();
 
-function kbTersimpan(): number {
-  try {
-    const n = Number(localStorage.getItem(KUNCI_KB_TERAKHIR));
-    if (cariKegiatanKb(n)) return n;
-  } catch {
-    /* localStorage tidak tersedia */
-  }
-  return daftarKegiatan[0]?.kb ?? 1;
-}
-
-// KB aktif dibaca dari /materi/:kb agar dapat dibagikan lewat tautan; /materi saja membuka KB terakhir.
+// KB aktif dibaca dari /materi/:kb agar dapat dibagikan lewat tautan.
 const kbAktif = computed(() => {
   const n = Number(route.params.kb);
-  return cariKegiatanKb(n) ? n : kbTersimpan();
+  return cariKegiatanKb(n) ? n : (daftarKegiatan[0]?.kb ?? 1);
 });
 
 const data = computed(() => cariKegiatanKb(kbAktif.value) ?? daftarKegiatan[0]!);
@@ -40,15 +30,15 @@ const berikutnya = computed(() => daftarKegiatan[indeks.value + 1]);
 
 function bukaKb(kb: number | undefined) {
   if (kb === undefined || kb === kbAktif.value) return;
-  router.push({ name: "materi", params: { kb: String(kb) } });
+  router.push({ name: "materi-kb", params: { kb: String(kb) } });
 }
 
-// Rapikan URL /materi (atau KB yang tidak ada) menjadi /materi/<kb> tanpa menambah riwayat.
+// Nomor KB yang tidak ada dikembalikan ke halaman pilihan materi.
 watch(
   () => route.params.kb,
   (kb) => {
-    if (String(kb ?? "") !== String(kbAktif.value)) {
-      router.replace({ name: "materi", params: { kb: String(kbAktif.value) } });
+    if (route.name === "materi-kb" && !cariKegiatanKb(Number(kb))) {
+      router.replace({ name: "materi" });
     }
   },
   { immediate: true },
