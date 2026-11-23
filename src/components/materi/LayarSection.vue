@@ -66,7 +66,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
   <section :data-tahap="layar.tahap" class="flex scroll-mt-24 flex-col gap-6 border-t border-ink-200 pt-10">
     <header class="flex flex-col gap-1">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs font-semibold uppercase tracking-wide text-accent">
+        <span class="rounded-[10px] border-2 border-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-ink-900">
           {{ labelPeran[layar.tahap ?? layar.peran ?? ""] ?? layar.tahap ?? layar.peran }}
         </span>
         <span

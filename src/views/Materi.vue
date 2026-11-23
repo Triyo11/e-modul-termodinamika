@@ -45,29 +45,6 @@ watch(
 );
 
 // ---------- Kepala halaman ringkas ----------
-const URUTAN_TAHAP = [
-  "konstruktivisme",
-  "inkuiri",
-  "bertanya",
-  "masyarakat-belajar",
-  "pemodelan",
-  "refleksi",
-  "penilaian-autentik",
-] as const;
-const LABEL_TAHAP: Record<string, string> = {
-  konstruktivisme: "Konstruktivisme",
-  inkuiri: "Inkuiri",
-  bertanya: "Bertanya",
-  "masyarakat-belajar": "Masyarakat belajar",
-  pemodelan: "Pemodelan",
-  refleksi: "Refleksi",
-  "penilaian-autentik": "Penilaian autentik",
-};
-
-const tahapAktif = ref<string | null>(null);
-const nomorTahap = computed(() =>
-  tahapAktif.value ? URUTAN_TAHAP.indexOf(tahapAktif.value as (typeof URUTAN_TAHAP)[number]) + 1 : 0,
-);
 const kepalaTampak = ref(true);
 const daftarTerbuka = ref(false);
 const tombolDaftarRef = ref<HTMLButtonElement | null>(null);
@@ -80,14 +57,6 @@ function perbaruiSaatGulir() {
   if (y < 80 || y < posisiTerakhir - 4) kepalaTampak.value = true;
   else if (y > posisiTerakhir + 4) kepalaTampak.value = false;
   posisiTerakhir = y;
-
-  // Tahap aktif = layar terakhir yang bagian atasnya sudah melewati sepertiga layar.
-  let aktif: string | null = null;
-  for (const el of document.querySelectorAll<HTMLElement>("[data-tahap]")) {
-    if (el.getBoundingClientRect().top <= window.innerHeight / 3) aktif = el.dataset.tahap ?? null;
-    else break;
-  }
-  tahapAktif.value = aktif;
 }
 function saatGulir() {
   if (menungguFrame) return;
@@ -148,14 +117,14 @@ const tujuan = computed(() =>
 <template>
   <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
     <header
-      class="sticky top-0 z-20 border-b border-ink-200 bg-ink-50/95 backdrop-blur transition-transform duration-200"
+      class="sticky top-0 z-20 border-b border-brand-dark/15 bg-brand/95 backdrop-blur transition-transform duration-200"
       :class="kepalaTampak || daftarTerbuka ? 'translate-y-0' : '-translate-y-full'"
     >
       <div class="flex flex-col gap-1.5 px-5 py-2.5 sm:px-8 lg:px-12">
         <button
           ref="tombolDaftarRef"
           type="button"
-          class="flex items-center gap-2 self-start rounded-lg py-0.5 text-left text-ink-900 hover:text-accent-1"
+          class="flex items-center gap-2 self-start rounded-lg py-0.5 text-left text-ink-900 underline-offset-4 hover:underline"
           aria-haspopup="dialog"
           :aria-expanded="daftarTerbuka"
           @click="bukaDaftar"
@@ -163,28 +132,6 @@ const tujuan = computed(() =>
           <span class="font-semibold">KB {{ data.kb }} · {{ data.judul }}</span>
           <PhCaretDown :size="16" weight="bold" class="shrink-0" />
         </button>
-        <div
-          class="flex items-center gap-2.5"
-          role="progressbar"
-          aria-label="Tahap STEM-CTL"
-          aria-valuemin="0"
-          aria-valuemax="7"
-          :aria-valuenow="nomorTahap"
-          :aria-valuetext="tahapAktif ? `${LABEL_TAHAP[tahapAktif]}, tahap ${nomorTahap} dari 7` : 'Pengantar'"
-        >
-          <span class="flex gap-1" aria-hidden="true">
-            <span
-              v-for="(t, i) in URUTAN_TAHAP"
-              :key="t"
-              class="h-2 w-2 rounded-full transition-colors"
-              :class="i < nomorTahap ? 'bg-brand' : 'bg-ink-200'"
-            ></span>
-          </span>
-          <span class="text-sm text-ink-600">
-            <template v-if="tahapAktif">{{ LABEL_TAHAP[tahapAktif] }} ({{ nomorTahap }} dari 7)</template>
-            <template v-else>Pengantar</template>
-          </span>
-        </div>
       </div>
     </header>
 
