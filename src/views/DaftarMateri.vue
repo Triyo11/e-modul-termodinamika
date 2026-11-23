@@ -27,9 +27,8 @@ function buka(kb: number | undefined) {
 <template>
   <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
     <main class="flex flex-col gap-4 px-5 py-8 pb-40 sm:px-8 lg:px-12">
-      <header class="flex flex-col gap-1">
-        <h1 class="text-2xl font-bold text-ink-900">Materi</h1>
-        <p class="text-ink-600">Pilih kegiatan belajar yang ingin kamu pelajari.</p>
+      <header class="flex flex-col gap-1 pb-4">
+        <h1 class="text-2xl font-bold text-ink-900">Daftar materi</h1>
       </header>
 
       <ol class="flex flex-col gap-3">
@@ -48,7 +47,6 @@ function buka(kb: number | undefined) {
             </span>
             <span class="flex flex-1 flex-col gap-0.5">
               <span class="font-semibold text-ink-900">{{ k.judul }}</span>
-              <span v-if="k.subJudul" class="text-sm text-ink-600">{{ k.subJudul }}</span>
               <span class="flex flex-wrap gap-x-3 text-xs text-ink-500">
                 <span v-if="k.alokasiWaktu">{{ k.alokasiWaktu }} menit</span>
                 <span v-if="k.kb === kbTerakhir" class="font-semibold text-accent-1">Terakhir dibaca</span>
