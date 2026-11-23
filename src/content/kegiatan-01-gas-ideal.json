@@ -110,7 +110,7 @@
           "alt": "Pengukur tekanan ban sesudah kendaraan menempuh perjalanan jauh",
           "rasio": "4/3",
           "caption": "Tekanan ban diukur setelah perjalanan jauh.",
-          "sumber": "Ilustrasi penulis"
+          "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
@@ -122,7 +122,7 @@
           "alt": "Panci presto di atas kompor dengan katup pengaman di tutupnya",
           "rasio": "4/3",
           "caption": "Panci presto memiliki tutup yang terkunci rapat dan katup pengaman.",
-          "sumber": "Ilustrasi penulis"
+          "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
@@ -228,7 +228,7 @@
               "Energi kinetik total tidak hilang karena tumbukan"
             ]
           ],
-          "sumber": "Diadaptasi dari Giancoli (2014, hlm. 373) dan Sang et al. (2014, hlm. 353)"
+          "sumber": "diadaptasi dari Giancoli (2014, hlm. 373) dan Sang et al. (2014, hlm. 353)"
         },
         {
           "tipe": "animasi",
@@ -238,7 +238,7 @@
           "alt": "Molekul bergerak ke kanan, menumbuk dinding, lalu memantul ke kiri dengan laju sama",
           "rasio": "4/3",
           "caption": "Tumbukan lenting molekul gas dengan dinding wadah.",
-          "sumber": "Animasi penulis menggunakan Manim Community Edition"
+          "sumber": "animasi penulis menggunakan Manim Community Edition"
         },
         {
           "tipe": "teks",
@@ -815,7 +815,7 @@
           "alt": "Penampang katup pemberat. Lubang berdiameter d di tutup kotak ditutup cakram berbeban. Udara di dalam mendorong ke atas dengan gaya p_dalam kali A, sedangkan berat beban mg dan udara luar p_luar kali A menekan ke bawah. Katup terangkat jika Δp kali A sama dengan mg.",
           "rasio": "4/3",
           "caption": "Penampang katup pemberat pada tutup kotak.",
-          "sumber": "Ilustrasi penulis"
+          "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
@@ -898,7 +898,7 @@
               "2–100 g"
             ]
           ],
-          "sumber": "Data ilustratif untuk keperluan pembelajaran"
+          "sumber": "data ilustratif untuk keperluan pembelajaran"
         },
         {
           "tipe": "isian",
@@ -1338,7 +1338,7 @@
               "Berlaku juga di dekat titik cair"
             ]
           ],
-          "sumber": "Diadaptasi dari Young dan Freedman (2012, hlm. 595–597) dan Sang et al. (2014, hlm. 353)"
+          "sumber": "diadaptasi dari Young dan Freedman (2012, hlm. 595–597) dan Sang et al. (2014, hlm. 353)"
         },
         {
           "tipe": "rumus",
