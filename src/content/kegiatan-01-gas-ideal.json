@@ -105,14 +105,12 @@
       },
       "blok": [
         {
-          "tipe": "video",
-          "src": null,
-          "poster": null,
-          "alt": "Pengukur tekanan ban sebelum dan sesudah kendaraan menempuh perjalanan jauh",
-          "rasio": "16/9",
-          "caption": "Tekanan ban diukur sebelum berangkat dan setelah perjalanan jauh.",
-          "sumber": null,
-          "status": "perlu-media"
+          "tipe": "gambar",
+          "src": "/media/kb1-tekanan-ban-jalan-tol.webp",
+          "alt": "Pengukur tekanan ban sesudah kendaraan menempuh perjalanan jauh",
+          "rasio": "4/3",
+          "caption": "Tekanan ban diukur setelah perjalanan jauh.",
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "teks",
@@ -120,12 +118,11 @@
         },
         {
           "tipe": "gambar",
-          "src": null,
+          "src": "/media/kb1-tutup-panci-presto.webp",
           "alt": "Panci presto di atas kompor dengan katup pengaman di tutupnya",
           "rasio": "4/3",
           "caption": "Panci presto memiliki tutup yang terkunci rapat dan katup pengaman.",
-          "sumber": null,
-          "status": "perlu-media"
+          "sumber": "Ilustrasi penulis"
         },
         {
           "tipe": "teks",
