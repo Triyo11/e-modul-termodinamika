@@ -4,7 +4,7 @@ import VideoBlok from "./VideoBlok.vue";
 import TeksBlok from "./TeksBlok.vue";
 import IsianBlok from "./IsianBlok.vue";
 import TabelBlok from "./TabelBlok.vue";
-import CalloutBlok from "./CalloutBlok.vue";
+// import CalloutBlok from "./CalloutBlok.vue";
 import SimulasiBlok from "./SimulasiBlok.vue";
 import RumusBlok from "./RumusBlok.vue";
 import ContohBlok from "./ContohBlok.vue";
