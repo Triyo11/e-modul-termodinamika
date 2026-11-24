@@ -12,11 +12,11 @@ const pendahuluanList = [
     description: "Hal yang akan dicapai setelah mempelajari e-modul ini",
     linkName: "capaian-pembelajaran",
   },
-  {
-    title: "Tujuan Pembelajaran",
-    description: "Tujuan pembelajaran yang ingin dicapai",
-    linkName: "tujuan-pembelajaran",
-  },
+  // {
+  //   title: "Tujuan Pembelajaran",
+  //   description: "Tujuan pembelajaran yang ingin dicapai",
+  //   linkName: "tujuan-pembelajaran",
+  // },
   {
     title: "Peta Konsep",
     description: "Peta konsep materi yang akan dipelajari",
