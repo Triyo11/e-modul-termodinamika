@@ -36,7 +36,7 @@ defineProps<{ blok: BlokTugasRancangan; kegiatanId: string }>();
     <div>
       <p class="text-sm font-semibold text-ink-800">Peran dalam kelompok</p>
       <dl class="mt-1 grid gap-2 sm:grid-cols-2">
-        <div v-for="p in blok.peranKelompok" :key="p.peran" class="rounded-lg border border-ink-200 bg-white p-2.5">
+        <div v-for="p in blok.peranKelompok" :key="p.peran" class="rounded-lg border border-ink-200 bg-surface p-2.5">
           <dt class="text-sm font-medium text-ink-800">{{ p.peran }}</dt>
           <dd class="text-sm text-ink-600">{{ p.tugas }}</dd>
         </div>
@@ -45,7 +45,7 @@ defineProps<{ blok: BlokTugasRancangan; kegiatanId: string }>();
 
     <p v-if="blok.produk" class="text-sm text-ink-700"><span class="font-semibold">Produk:</span> {{ blok.produk }}</p>
 
-    <div class="flex flex-col gap-4 rounded-lg border border-ink-200 bg-white p-3">
+    <div class="flex flex-col gap-4 rounded-lg border border-ink-200 bg-surface p-3">
       <LangkahRancangan
         v-for="l in blok.langkah"
         :key="l.id"

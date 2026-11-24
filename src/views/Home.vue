@@ -3,11 +3,6 @@ import ButtonLink from "@/components/micro/ButtonLink.vue";
 
 const pendahuluanList = [
   {
-    title: "Identitas",
-    description: "Informasi tentang e-modul ini",
-    linkName: "informasi-umum",
-  },
-  {
     title: "Capaian Pembelajaran",
     description: "Hal yang akan dicapai setelah mempelajari e-modul ini",
     linkName: "capaian-pembelajaran",
@@ -17,11 +12,6 @@ const pendahuluanList = [
   //   description: "Tujuan pembelajaran yang ingin dicapai",
   //   linkName: "tujuan-pembelajaran",
   // },
-  {
-    title: "Peta Konsep",
-    description: "Peta konsep materi yang akan dipelajari",
-    linkName: "peta-konsep",
-  },
   {
     title: "Petunjuk Penggunaan",
     description: "Cara menggunakan e-modul ini",
@@ -35,7 +25,7 @@ const pendahuluanList = [
   <div class="min-h-dvh bg-ink-50 text-ink-900">
     <main class="px-5 py-6 pb-40">
       <div
-        class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-accent-2 via-ink-50 to-white mb-4 p-8 lg:p-24"
+        class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-ink-900 via-ink-900 to-ink-700 mb-4 p-8 lg:p-24"
       >
         <img
           src="@/assets/logo fix.png"
@@ -44,7 +34,7 @@ const pendahuluanList = [
         />
       </div>
       <div
-        class="grid grid-cols-1 gap-6 rounded-xl border border-ink-200 bg-white p-4"
+        class="grid grid-cols-1 gap-6 rounded-xl border border-ink-200 bg-surface p-4"
       >
         <div
           v-for="(item, index) in pendahuluanList"

@@ -6,7 +6,7 @@ defineProps<{ blok: BlokTautanSumber }>();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 rounded-xl border border-ink-200 bg-white p-4">
+  <div class="flex flex-col gap-2 rounded-xl border border-ink-200 bg-surface p-4">
     <p class="font-semibold text-ink-800">{{ blok.judul ?? "Sumber terpercaya" }}</p>
     <ul class="flex flex-col gap-3">
       <li v-for="s in blok.daftar" :key="s.url" class="flex flex-col gap-0.5">

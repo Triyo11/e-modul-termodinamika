@@ -35,7 +35,7 @@ function tanggal(t?: string) {
       </div>
     </div>
 
-    <div v-for="s in blok.sumber" :key="s.id" class="flex flex-col gap-3 rounded-lg border border-ink-200 bg-white p-3">
+    <div v-for="s in blok.sumber" :key="s.id" class="flex flex-col gap-3 rounded-lg border border-ink-200 bg-surface p-3">
       <div class="flex flex-col gap-0.5">
         <span class="text-xs font-semibold uppercase text-ink-500">Sumber {{ s.id }}</span>
         <a

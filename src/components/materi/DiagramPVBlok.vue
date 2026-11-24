@@ -293,7 +293,7 @@ const fP = (p: number) => formatDesimal(p, 0);
 </script>
 
 <template>
-  <div class="flex flex-col gap-3 rounded-xl border border-ink-200 bg-white p-4">
+  <div class="flex flex-col gap-3 rounded-xl border border-ink-200 bg-surface p-4">
     <p v-if="blok.instruksi" class="text-sm text-ink-700">{{ blok.instruksi }}</p>
 
     <!-- Pilihan proses -->
@@ -324,7 +324,7 @@ const fP = (p: number) => formatDesimal(p, 0);
         :key="i"
         type="button"
         class="rounded-lg border px-3 py-1 text-xs font-medium"
-        :class="aktif === i - 1 ? 'border-ink-800 bg-ink-800 text-white' : 'border-ink-200 text-ink-600'"
+        :class="aktif === i - 1 ? 'border-ink-800 bg-ink-800 text-ink-50' : 'border-ink-200 text-ink-600'"
         @click="(aktif = i - 1), (pesan = '')"
       >
         Alternatif {{ i }}<template v-if="alternatif[i - 1]?.tertutup"> ✓</template>
@@ -381,7 +381,7 @@ const fP = (p: number) => formatDesimal(p, 0);
         <path v-if="blok.tampilkanLuas" :d="dLuasBawah(lintasanJelajah)" class="fill-accent-1/15" />
         <path :d="d(lintasanJelajah)" fill="none" :class="warnaProses[prosesJelajah]" stroke-width="2.5" />
         <circle :cx="x(keadaanAwal.V)" :cy="y(keadaanAwal.p)" r="5" class="fill-ink-800" />
-        <circle :cx="x(akhirJelajah.V)" :cy="y(akhirJelajah.p)" r="7" class="fill-white stroke-accent-1" stroke-width="3" />
+        <circle :cx="x(akhirJelajah.V)" :cy="y(akhirJelajah.p)" r="7" class="fill-surface stroke-accent-1" stroke-width="3" />
       </template>
 
       <!-- Mode rancang -->
@@ -410,7 +410,7 @@ const fP = (p: number) => formatDesimal(p, 0);
           :cx="x(t.V)"
           :cy="y(t.p)"
           :r="i === 0 ? 6 : 4"
-          :class="i === 0 ? 'fill-white stroke-ink-800' : 'fill-ink-800'"
+          :class="i === 0 ? 'fill-surface stroke-ink-800' : 'fill-ink-800'"
           :stroke-width="i === 0 ? 2.5 : 0"
         />
         <circle v-if="pratinjau" :cx="x(pratinjau.V)" :cy="y(pratinjau.p)" r="4" class="fill-ink-400" />
@@ -449,7 +449,7 @@ const fP = (p: number) => formatDesimal(p, 0);
         </div>
       </dl>
       <p class="text-xs text-ink-500">
-        Seret titik akhir pada diagram atau gunakan penggeser. Daerah biru adalah luas di bawah lintasan, yang
+        Seret titik akhir pada diagram atau gunakan penggeser. Daerah berarsir adalah luas di bawah lintasan, yang
         nilainya sama dengan usaha gas. Usaha negatif berarti gas dimampatkan.
       </p>
     </template>

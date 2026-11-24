@@ -5,6 +5,7 @@ import BlokRenderer from "./BlokRenderer.vue";
 import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
 import { nomorWorksheetKey } from "@/lib/worksheet";
+import { labelTahap } from "@/lib/tahap";
 import type { Layar } from "@/types/kegiatan";
 
 defineProps<{ layar: Layar; kegiatanId: string }>();
@@ -34,21 +35,6 @@ function teksPanduan(teks: string) {
   });
 }
 
-const labelPeran: Record<string, string> = {
-  apersepsi: "Apersepsi",
-  konsep: "Konsep",
-  penerapan: "Penerapan",
-  latihan: "Latihan",
-  // Tahap STEM-CTL (skema 2.0)
-  konstruktivisme: "Konstruktivisme",
-  inkuiri: "Inkuiri",
-  bertanya: "Bertanya",
-  "masyarakat-belajar": "Masyarakat belajar",
-  pemodelan: "Pemodelan",
-  refleksi: "Refleksi",
-  "penilaian-autentik": "Penilaian autentik",
-};
-
 const labelStem: Record<string, string> = {
   S: "Sains (Science)",
   T: "Teknologi (Technology)",
@@ -67,13 +53,13 @@ const modeGuru = computed(() => route.query.guru !== undefined);
     <header class="flex flex-col gap-1">
       <div class="flex flex-wrap items-center gap-2">
         <span class="rounded-[10px] border-2 border-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-ink-900">
-          {{ labelPeran[layar.tahap ?? layar.peran ?? ""] ?? layar.tahap ?? layar.peran }}
+          {{ labelTahap[layar.tahap ?? layar.peran ?? ""] ?? layar.tahap ?? layar.peran }}
         </span>
         <span
           v-for="s in layar.stem"
           :key="s"
           :title="labelStem[s]"
-          class="rounded-full border border-ink-200 bg-white px-2 py-0.5 text-[11px] font-semibold text-ink-600"
+          class="rounded-full border border-accent-4/60 bg-surface px-2 py-0.5 text-[11px] font-semibold text-accent-4-teks"
         >
           {{ s }}
         </span>

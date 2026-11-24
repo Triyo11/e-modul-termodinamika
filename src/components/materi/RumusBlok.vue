@@ -18,7 +18,7 @@ const keterangan = computed(
 </script>
 
 <template>
-  <div class="rounded-xl border border-ink-200 bg-white p-4">
+  <div class="rounded-xl border border-ink-200 bg-surface p-4">
     <div class="relative flex items-start gap-3">
       <span
         v-if="blok.nomor"

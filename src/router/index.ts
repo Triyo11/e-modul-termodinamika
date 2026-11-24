@@ -7,9 +7,9 @@ const routes = [
     component: () => import("../views/Home.vue"),
   },
   {
+    // Isi Identitas dipindah ke menu profil; alamat lama dialihkan agar tautan lama tetap jalan.
     path: "/informasi-umum",
-    name: "informasi-umum",
-    component: () => import("../views/Pendahuluan/InformasiUmum.vue"),
+    redirect: { name: "profil" },
   },
   {
     path: "/capaian-pembelajaran",
@@ -22,9 +22,9 @@ const routes = [
     component: () => import("../views/Pendahuluan/TujuanPembelajaran.vue"),
   },
   {
+    // Peta konsep dipindah ke menu materi (di atas daftar KB); alamat lama dialihkan.
     path: "/peta-konsep",
-    name: "peta-konsep",
-    component: () => import("../views/Pendahuluan/PetaKonsep.vue"),
+    redirect: { name: "materi" },
   },
   {
     path: "/prasyarat",
@@ -43,7 +43,8 @@ const routes = [
     component: () => import("../views/DaftarMateri.vue"),
   },
   {
-    path: "/materi/:kb(\\d+)",
+    // /materi/3 = pengantar KB 3; /materi/3/inkuiri = halaman tahap inkuiri KB 3.
+    path: "/materi/:kb(\\d+)/:tahap?",
     name: "materi-kb",
     component: () => import("../views/Materi.vue"),
   },
@@ -55,7 +56,7 @@ const routes = [
   {
     path: "/profil",
     name: "profil",
-    component: () => import("../views/Home.vue"),
+    component: () => import("../views/Profil.vue"),
   },
 ];
 

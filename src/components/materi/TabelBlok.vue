@@ -30,7 +30,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
   <div class="flex flex-col gap-2">
     <p v-if="blok.judul" class="font-semibold text-ink-800">{{ blok.judul }}</p>
 
-    <div v-if="terkunci" class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-white p-4">
+    <div v-if="terkunci" class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-surface p-4">
       <p class="flex items-center gap-1.5 text-sm text-ink-600">
         <PhLockSimple :size="16" weight="bold" />
         {{

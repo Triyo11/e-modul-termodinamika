@@ -41,7 +41,7 @@ function kelasOpsi(id: string) {
         v-for="o in blok.opsi"
         :key="o.id"
         type="button"
-        class="flex items-center gap-2 rounded-lg border p-2.5 text-left text-sm transition-colors"
+        class="tombol-opsi flex items-center gap-2 rounded-lg border p-2.5 text-left text-sm transition-colors"
         :class="kelasOpsi(o.id)"
         :disabled="sudahDijawab"
         @click="pilih(o.id)"

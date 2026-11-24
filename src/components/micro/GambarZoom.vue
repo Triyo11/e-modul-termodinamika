@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
     <button
       type="button"
       @click="buka"
-      class="relative block w-full cursor-zoom-in rounded-xl border border-ink-200 bg-white p-2 hover:border-ink-400"
+      class="relative block w-full cursor-zoom-in rounded-xl border border-ink-200 bg-surface p-2 hover:border-ink-400"
     >
       <img
         :src="src"
@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
         class="mx-auto block max-h-[60vh] w-auto max-w-full object-contain"
       />
       <span
-        class="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-brand-dark/85 px-3 py-1 text-xs font-semibold text-white"
+        class="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-ink-50/85 px-3 py-1 text-xs font-semibold text-white"
       >
         <PhMagnifyingGlassPlus :size="16" />
         Ketuk untuk memperbesar
@@ -84,12 +84,12 @@ onBeforeUnmount(() => {
       role="dialog"
       aria-modal="true"
       :aria-label="alt"
-      class="fixed inset-0 z-50 flex flex-col bg-brand-dark/95"
+      class="fixed inset-0 z-50 flex flex-col bg-ink-50/95"
     >
       <div
         class="flex items-center justify-between gap-2 px-3 py-2 text-white pt-[max(0.5rem,env(safe-area-inset-top))]"
       >
-        <p class="pl-2 text-xs text-ink-200">
+        <p class="pl-2 text-xs text-ink-600">
           Cubit atau ketuk dua kali untuk memperbesar
         </p>
         <div class="flex items-center gap-1">
@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
           :alt="alt"
           @dblclick="toggleZoom"
           :style="{ width: lebarGambar }"
-          class="mx-auto block h-auto max-w-none rounded-lg bg-white"
+          class="mx-auto block h-auto max-w-none rounded-lg bg-surface"
           :class="zoom > ZOOM_MIN ? 'cursor-zoom-out' : 'cursor-zoom-in'"
         />
       </div>

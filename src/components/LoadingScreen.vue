@@ -17,7 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
     </div>
 
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
-      <div class="flex items-center gap-3 rounded-xl border border-ink-200 bg-white px-5 py-3 shadow-sm">
+      <div class="flex items-center gap-3 rounded-xl border border-ink-200 bg-surface px-5 py-3 shadow-sm">
         <Spinner class="size-6 text-accent-1" />
         <span class="text-body text-ink-700">Memuat…</span>
       </div>

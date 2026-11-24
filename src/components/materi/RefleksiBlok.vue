@@ -25,7 +25,7 @@ function ubah(i: number, nilai: string) {
       <p class="font-semibold">Refleksi</p>
     </div>
 
-    <div v-if="blok.tinjauUlang" class="rounded-lg border border-ink-200 bg-white p-3">
+    <div v-if="blok.tinjauUlang" class="rounded-lg border border-ink-200 bg-surface p-3">
       <p v-if="blok.pengantar" class="text-xs font-medium uppercase tracking-wide text-ink-500">{{ blok.pengantar }}</p>
       <p v-if="jawabanAwal" class="mt-1 whitespace-pre-line font-serif text-sm italic text-ink-700">
         “{{ jawabanAwal }}”
@@ -39,7 +39,7 @@ function ubah(i: number, nilai: string) {
         :value="jawaban[i] ?? ''"
         rows="3"
         placeholder="Tulis refleksi Anda di sini..."
-        class="w-full resize-y rounded-lg border border-ink-200 bg-white p-2.5 text-md text-ink-800 outline-none focus:border-accent"
+        class="w-full resize-y rounded-lg border border-ink-200 bg-surface p-2.5 text-md text-ink-800 outline-none focus:border-accent"
         @input="ubah(i, ($event.target as HTMLTextAreaElement).value)"
       ></textarea>
     </label>

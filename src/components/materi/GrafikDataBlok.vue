@@ -60,7 +60,7 @@ const tick = (min: number, max: number) => [0, 0.5, 1].map((f) => min + (max - m
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 rounded-xl border border-ink-200 bg-white p-4">
+  <div class="flex flex-col gap-2 rounded-xl border border-ink-200 bg-surface p-4">
     <p v-if="blok.instruksi" class="text-sm text-ink-700">{{ blok.instruksi }}</p>
 
     <p v-if="!sumber" class="text-sm text-salah">Tabel data "{{ blok.sumberData }}" tidak ditemukan.</p>

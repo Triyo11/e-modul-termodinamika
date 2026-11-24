@@ -36,7 +36,7 @@ if (!widget) console.warn(`Widget simulasi tidak dikenal: ${props.blok.widget}`)
       <component :is="widget" />
     </div>
 
-    <p v-else class="rounded-xl border border-dashed border-ink-300 bg-white p-4 text-sm text-ink-600">
+    <p v-else class="rounded-xl border border-dashed border-ink-300 bg-surface p-4 text-sm text-ink-600">
       Simulasi belum tersedia
     </p>
   </div>

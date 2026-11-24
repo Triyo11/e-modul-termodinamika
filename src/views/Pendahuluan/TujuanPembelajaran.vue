@@ -8,7 +8,7 @@ const tujuanPembelajaran = [
 <template>
   <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-40">
     <div
-      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-accent-2 via-ink-50 to-white mb-4 p-8 lg:p-24"
+      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-ink-900 via-ink-900 to-ink-700 mb-4 p-8 lg:p-24"
     >
       <img
         src="@/assets/logo fix.png"
@@ -18,7 +18,7 @@ const tujuanPembelajaran = [
     </div>
 
     <main
-      class="flex flex-col gap-4 rounded-xl border-2 border-brand-dark bg-white p-4 content-shadow"
+      class="flex flex-col gap-4 rounded-xl border-2 border-brand-dark bg-surface p-4 content-shadow"
     >
       <section>
         <h2 class="font-bold text-xl text-center pb-4">Tujuan Pembelajaran</h2>

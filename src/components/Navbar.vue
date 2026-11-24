@@ -4,7 +4,7 @@ import ButtonNavbar from '@/components/micro/ButtonNavbar.vue';
 
 <template>
   <nav
-    class="fixed bottom-0 inset-x-0 z-20 mx-auto w-full lg:w-2/3 bg-white border-t border-ink-200 pb-[env(safe-area-inset-bottom)]"
+    class="fixed bottom-0 inset-x-0 z-20 mx-auto w-full lg:w-2/3 bg-surface border-t border-ink-200 pb-[env(safe-area-inset-bottom)]"
   >
     <!-- 4 tab, tiap tombol min-h-[44px] -->
     <div class="flex justify-center items-center">

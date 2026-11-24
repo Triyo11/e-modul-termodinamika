@@ -68,7 +68,7 @@ const dSiklus = computed(
 </script>
 
 <template>
-  <div class="flex flex-col gap-3 rounded-xl border border-ink-200 bg-white p-4">
+  <div class="flex flex-col gap-3 rounded-xl border border-ink-200 bg-surface p-4">
     <p class="text-xs font-semibold uppercase tracking-wide text-accent-1">Siklus Carnot</p>
     <p v-if="blok.instruksi" class="text-sm text-ink-700">{{ blok.instruksi }}</p>
 

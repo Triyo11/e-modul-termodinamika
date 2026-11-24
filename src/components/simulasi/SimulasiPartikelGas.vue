@@ -205,11 +205,12 @@ function gambar() {
   ctx.clearRect(0, 0, LEBAR, TINGGI);
 
   // Ruang di luar wadah
-  ctx.fillStyle = "#C5D7DE";
+  // Warna kanvas mengikuti tema gelap: luar wadah = ink-200, dalam wadah = ink-950, tepi = ink-300.
+  ctx.fillStyle = "#4A5751";
   ctx.fillRect(0, 0, xd, TINGGI);
-  ctx.fillStyle = "#EDF6F9";
+  ctx.fillStyle = "#050807";
   ctx.fillRect(xd, 0, LEBAR - xd, TINGGI);
-  ctx.strokeStyle = "#A8BAC1";
+  ctx.strokeStyle = "#66746D";
   ctx.lineWidth = 2;
   ctx.strokeRect(xd + 1, 1, LEBAR - xd - 2, TINGGI - 2);
 
@@ -223,7 +224,7 @@ function gambar() {
 
   // Dinding kiri dan tuasnya (selalu muat karena RUANG_PEGANGAN)
   const aktif = sedangMenyeret.value || (dekatPegangan.value && !dindingTerkunci.value);
-  const warnaDinding = dindingTerkunci.value ? "#86979B" : aktif ? "#0C70A1" : "#414A47";
+  const warnaDinding = dindingTerkunci.value ? "#8A9790" : aktif ? "#F47CB4" : "#DDE5E0";
   ctx.fillStyle = warnaDinding;
   ctx.fillRect(xd - 2, 0, 4, TINGGI);
   if (!dindingTerkunci.value) {
@@ -235,7 +236,7 @@ function gambar() {
     ctx.roundRect(xd - 22, hy - 14, 10, 28, 4);
     ctx.fill();
     // Alur pegangan
-    ctx.strokeStyle = "rgba(255,255,255,0.7)";
+    ctx.strokeStyle = "rgba(10,15,13,0.7)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     for (const dy of [-6, 0, 6]) {
@@ -471,10 +472,10 @@ onBeforeUnmount(() => {
       ></canvas>
 
       <div
-        class="flex w-full shrink-0 flex-col items-center justify-center gap-0.5 self-center rounded-xl border border-ink-200 bg-white p-2 sm:w-28 sm:self-auto sm:p-1.5"
+        class="flex w-full shrink-0 flex-col items-center justify-center gap-0.5 self-center rounded-xl border border-ink-200 bg-surface p-2 sm:w-28 sm:self-auto sm:p-1.5"
       >
         <svg viewBox="0 0 200 120" class="w-24 sm:w-full">
-          <path d="M10,100 A90,90 0 0 1 190,100" fill="none" stroke="#C5D7DE" stroke-width="16" stroke-linecap="round" />
+          <path d="M10,100 A90,90 0 0 1 190,100" fill="none" stroke="#4A5751" stroke-width="16" stroke-linecap="round" />
           <g :style="{ transform: `rotate(${sudutJarum}deg)`, transformOrigin: '100px 100px' }">
             <line x1="100" y1="100" x2="100" y2="26" :stroke="warnaJarum" stroke-width="6" stroke-linecap="round" />
           </g>

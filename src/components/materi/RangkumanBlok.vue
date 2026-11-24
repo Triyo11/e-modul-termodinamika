@@ -40,7 +40,7 @@ const rumusKunci = rangkuman.rumusKunci.flatMap((nomor) => {
 <template>
   <div
     v-if="!terkirim"
-    class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-white p-4"
+    class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-surface p-4"
   >
     <p class="flex items-center gap-1.5 text-sm text-ink-600">
       <PhLockSimple :size="16" weight="bold" class="shrink-0" />
@@ -58,7 +58,7 @@ const rumusKunci = rangkuman.rumusKunci.flatMap((nomor) => {
 
   <div
     v-else
-    class="flex flex-col gap-4 rounded-xl border border-ink-200 bg-white p-4"
+    class="flex flex-col gap-4 rounded-xl border border-ink-200 bg-surface p-4"
   >
     <p class="text-lg font-semibold text-ink-900">{{ rangkuman.judul }}</p>
 

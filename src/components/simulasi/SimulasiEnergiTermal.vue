@@ -46,9 +46,9 @@ interface KepingTerbang {
 }
 
 const BENDA: Record<IdBenda, SifatBenda> = {
-  besi: { nama: "Besi", kapasitas: 880, suhuMax: 300, warna: [150, 152, 158], warnaGaris: "#414A47", kUdara: 1.8 },
-  bata: { nama: "Bata", kapasitas: 400, suhuMax: 300, warna: [176, 82, 58], warnaGaris: "#c0502f", kUdara: 0.8 },
-  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#0C70A1", kUdara: 2.1 },
+  besi: { nama: "Besi", kapasitas: 880, suhuMax: 300, warna: [150, 152, 158], warnaGaris: "#C2B9AE", kUdara: 1.8 },
+  bata: { nama: "Bata", kapasitas: 400, suhuMax: 300, warna: [176, 82, 58], warnaGaris: "#F08A6A", kUdara: 0.8 },
+  air: { nama: "Air", kapasitas: 1050, suhuMax: 100, warna: [96, 160, 220], warnaGaris: "#5BB0F0", kUdara: 2.1 },
 };
 const URUTAN: IdBenda[] = ["besi", "bata", "air"];
 
@@ -657,29 +657,29 @@ onBeforeUnmount(() => {
 
       <p
         v-if="pesan"
-        class="pointer-events-none absolute inset-x-2 top-2 rounded-lg bg-periksa/90 px-2 py-1 text-center text-xs text-white"
+        class="pointer-events-none absolute inset-x-2 top-2 rounded-lg bg-periksa/90 px-2 py-1 text-center text-xs text-ink-50"
       >
         {{ pesan }}
       </p>
     </div>
 
     <div class="grid grid-cols-3 gap-2 text-center">
-      <div v-for="s in suhuTampil" :key="s.id" class="rounded-lg border border-ink-200 bg-white px-2 py-1.5">
+      <div v-for="s in suhuTampil" :key="s.id" class="rounded-lg border border-ink-200 bg-surface px-2 py-1.5">
         <span class="block text-[11px] text-ink-500">{{ s.nama }}</span>
         <span class="text-sm font-semibold" :style="{ color: s.warna }">{{ formatSuhu(s.suhu) }}</span>
       </div>
     </div>
 
-    <div v-if="tampilGrafik" class="rounded-xl border border-ink-200 bg-white p-2">
+    <div v-if="tampilGrafik" class="rounded-xl border border-ink-200 bg-surface p-2">
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik suhu terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" stroke="#DAE8EF" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5A6668">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" stroke="#4A5751" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#B7C2BC">{{ s.v }}</text>
         </g>
         <polyline v-for="g in grafik.garis" :key="g.id" :points="g.titik" fill="none" :stroke="g.warna" stroke-width="1.8" />
-        <text :x="gPad.kiri" :y="G_TINGGI - 6" font-size="8" fill="#5A6668">−{{ PANJANG_GRAFIK_DETIK }} s</text>
-        <text :x="G_LEBAR - gPad.kanan" :y="G_TINGGI - 6" text-anchor="end" font-size="8" fill="#5A6668">sekarang</text>
-        <text x="4" :y="gPad.atas + 4" font-size="8" fill="#5A6668">°C</text>
+        <text :x="gPad.kiri" :y="G_TINGGI - 6" font-size="8" fill="#B7C2BC">−{{ PANJANG_GRAFIK_DETIK }} s</text>
+        <text :x="G_LEBAR - gPad.kanan" :y="G_TINGGI - 6" text-anchor="end" font-size="8" fill="#B7C2BC">sekarang</text>
+        <text x="4" :y="gPad.atas + 4" font-size="8" fill="#B7C2BC">°C</text>
       </svg>
     </div>
 

@@ -87,7 +87,7 @@ onBeforeUnmount(() => observer?.disconnect());
         @click="ketuk"
       >
         <span
-          class="flex h-11 w-11 items-center justify-center rounded-full bg-ink-900/70 text-white transition-opacity"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-ink-50/70 text-ink-900 transition-opacity"
           :class="berjalan ? 'opacity-40' : 'opacity-100'"
         >
           <svg

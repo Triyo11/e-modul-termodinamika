@@ -37,7 +37,8 @@ const PANJANG_GRAFIK_DETIK = 120;
 const PERATAAN_SUHU_DETIK = 1.5; // meredam fluktuasi bacaan suhu tiap sisi
 const INTERVAL_SAMPEL = 0.5;
 
-const WARNA: Record<Jenis, string> = { 0: "#0C70A1", 1: "#C2331F" };
+// Warna partikel dicerahkan untuk tema gelap (latar kanvas #050807).
+const WARNA: Record<Jenis, string> = { 0: "#4DA3F0", 1: "#FF6B5B" };
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const versi = ref(0);
@@ -274,12 +275,12 @@ function gambar() {
   if (!ctx) return;
   const c = ctx;
   c.clearRect(0, 0, LEBAR, TINGGI);
-  c.fillStyle = "#EDF6F9";
+  c.fillStyle = "#050807";
   c.fillRect(0, 0, LEBAR, TINGGI);
 
   // Garis tengah tipis sebagai acuan kiri/kanan setelah sekat diangkat.
   c.setLineDash([3, 4]);
-  c.strokeStyle = "#C5D7DE";
+  c.strokeStyle = "#66746D";
   c.lineWidth = 1;
   c.beginPath();
   c.moveTo(X_SEKAT, 0);
@@ -295,7 +296,7 @@ function gambar() {
   }
 
   if (posisiSekatAnimasi < 1) {
-    c.fillStyle = "#414A47";
+    c.fillStyle = "#DDE5E0";
     c.fillRect(X_SEKAT - TEBAL_SEKAT / 2, -posisiSekatAnimasi * TINGGI, TEBAL_SEKAT, TINGGI);
   }
 
@@ -305,7 +306,7 @@ function gambar() {
       if (!d.length) continue;
       const x = d.reduce((s, p) => s + p.x, 0) / d.length;
       c.fillStyle = WARNA[j];
-      c.strokeStyle = "#fff";
+      c.strokeStyle = "#0A0F0D";
       c.lineWidth = 1;
       c.beginPath();
       c.moveTo(x, TINGGI - 10);
@@ -414,7 +415,7 @@ onBeforeUnmount(() => {
       <div
         v-for="(sisi, kunci) in { kiri: data.kiri, kanan: data.kanan }"
         :key="kunci"
-        class="rounded-lg border border-ink-200 bg-white px-2 py-1.5"
+        class="rounded-lg border border-ink-200 bg-surface px-2 py-1.5"
       >
         <span class="block text-[11px] text-ink-500">Sisi {{ kunci }}</span>
         <span class="flex justify-center gap-3 font-semibold">
@@ -425,19 +426,19 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <div class="rounded-xl border border-ink-200 bg-white p-2">
+    <div class="rounded-xl border border-ink-200 bg-surface p-2">
       <span class="flex justify-between px-1 text-[11px] text-ink-500">
         <span>Partikel yang masih di sisi asalnya (%)</span>
         <span>Waktu sejak sekat diangkat: {{ stopwatch }} s</span>
       </span>
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik persentase partikel di sisi asalnya terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 50 ? '#A8BAC1' : '#DAE8EF'" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5A6668">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 50 ? '#66746D' : '#4A5751'" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#B7C2BC">{{ s.v }}</text>
         </g>
         <polyline :points="grafik.biru" fill="none" :stroke="WARNA[0]" stroke-width="1.6" />
         <polyline :points="grafik.merah" fill="none" :stroke="WARNA[1]" stroke-width="1.6" />
-        <text v-if="!sudahDiangkat" :x="G_LEBAR / 2" :y="G_TINGGI / 2" text-anchor="middle" font-size="9" fill="#5A6668">
+        <text v-if="!sudahDiangkat" :x="G_LEBAR / 2" :y="G_TINGGI / 2" text-anchor="middle" font-size="9" fill="#B7C2BC">
           Grafik mulai saat sekat diangkat
         </text>
       </svg>

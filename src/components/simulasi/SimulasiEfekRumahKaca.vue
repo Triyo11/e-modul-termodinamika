@@ -477,12 +477,12 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="grid grid-cols-2 gap-2">
-      <div class="rounded-lg border border-ink-200 bg-white px-3 py-2">
+      <div class="rounded-lg border border-ink-200 bg-surface px-3 py-2">
         <span class="block text-[11px] text-ink-500">Suhu permukaan</span>
         <span class="text-lg font-semibold text-ink-800">{{ formatAngka(bacaan.suhuC) }} °C</span>
         <span class="block text-[11px] text-ink-500">{{ formatAngka(bacaan.suhuK, 0) }} K</span>
       </div>
-      <div class="flex flex-col justify-center gap-1.5 rounded-lg border border-ink-200 bg-white px-3 py-2 text-[11px] text-ink-600">
+      <div class="flex flex-col justify-center gap-1.5 rounded-lg border border-ink-200 bg-surface px-3 py-2 text-[11px] text-ink-600">
         <span class="block text-ink-500">Neraca energi di batas atmosfer</span>
         <div>
           <span class="flex justify-between"><span>Masuk</span><span class="font-semibold">{{ formatAngka(bacaan.masuk, 0) }} W/m²</span></span>
@@ -496,14 +496,14 @@ onBeforeUnmount(() => {
     </div>
     <p class="text-xs font-medium" :class="bacaan.statusWarna">{{ bacaan.status }}</p>
 
-    <div class="rounded-xl border border-ink-200 bg-white p-2">
+    <div class="rounded-xl border border-ink-200 bg-surface p-2">
       <span class="px-1 text-[11px] text-ink-500">Suhu permukaan selama {{ PANJANG_GRAFIK_DETIK }} detik terakhir (°C)</span>
       <svg :viewBox="`0 0 ${G_LEBAR} ${G_TINGGI}`" class="block w-full" role="img" aria-label="Grafik suhu permukaan terhadap waktu">
         <g v-for="s in grafik.sumbuY" :key="s.v">
-          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#A8BAC1' : '#DAE8EF'" />
-          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#5A6668">{{ s.v }}</text>
+          <line :x1="gPad.kiri" :x2="G_LEBAR - gPad.kanan" :y1="s.y" :y2="s.y" :stroke="s.v === 0 ? '#66746D' : '#4A5751'" />
+          <text :x="gPad.kiri - 4" :y="s.y + 3" text-anchor="end" font-size="8" fill="#B7C2BC">{{ s.v }}</text>
         </g>
-        <polyline :points="grafik.titik" fill="none" stroke="#c0502f" stroke-width="1.8" />
+        <polyline :points="grafik.titik" fill="none" stroke="#FF6B5B" stroke-width="1.8" />
       </svg>
     </div>
 
