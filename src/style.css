@@ -85,9 +85,9 @@
 }
 
 /* ---------- Tombol kapsul bergradasi ----------
-   Tombol utama (semua <button> berkelas bg-brand): kapsul bergradasi 15% cyan neon, 70% biru, 15% pink neon.
+   Tombol utama (semua <button> berkelas bg-brand): kapsul bergradasi 15% cyan neon, 70% biru, 15% pink neon,
+   dengan glow tipis yang selalu tampil (tidak menunggu hover atau klik).
    Teks putih di atas bagian biru (6,5:1); cyan dan pink hanya di tepi, jauh dari teks.
-   Glow hanya muncul tipis saat kursor di atas tombol.
    Tombol kedua (<button> rounded-lg/md lainnya): kapsul dengan garis tepi nila.
    ATUR WARNA DI SINI. */
 :root {
@@ -96,52 +96,17 @@
   --tombol-pink: #FF2D95;
   --tombol-gradasi: linear-gradient(55deg, var(--tombol-cyan) 0%, var(--tombol-biru) 15%, var(--tombol-biru) 80%, var(--tombol-pink) 100%);
   --tombol-teks: #FFFFFF;
-  --tombol-glow-hover: 0 0 8px rgb(0 229 255 / 0.45), 0 0 10px rgb(20 82 214 / 0.40), 0 0 8px rgb(255 45 149 / 0.40);
+  --tombol-glow: 0 0 8px rgb(0 229 255 / 0.45), 0 0 10px rgb(20 82 214 / 0.40), 0 0 8px rgb(255 45 149 / 0.40);
   --tombol-kedua-garis: var(--color-brand);
-  --tombol-durasi-gradasi: 0.35s; /* lama animasi gradasi muncul/hilang */
-  --tombol-tebal-garis: 2px;      /* garis putus-putus saat tombol diam */
 }
 
-/* Saat diam tombol transparan dengan garis putus-putus biru 2px; gradasi ada di lapisan ::before
-   yang transparan dan muncul perlahan saat kursor di atas tombol (atau saat difokus dengan keyboard).
-   Lapisan itu menutup sampai ke garis tepi (inset -2px), jadi saat hover garis putus-putus tertutup gradasi. */
 button.bg-brand {
-  position: relative;
-  isolation: isolate; /* agar lapisan ::before (z-index -1) tetap di dalam tombol, di belakang teks */
-  border: var(--tombol-tebal-garis) dashed var(--tombol-biru);
+  border: none;
   border-radius: 9999px;
-  background-color: transparent;
-  background-image: none;
-  color: var(--tombol-teks);
-  box-shadow: none;
-  transition: box-shadow 0.2s, transform 0.1s, filter 0.2s;
-}
-button.bg-brand::before {
-  content: "";
-  position: absolute;
-  inset: calc(-1 * var(--tombol-tebal-garis));
-  z-index: -1;
-  border-radius: inherit;
   background-image: var(--tombol-gradasi);
-  opacity: 0;
-  transition: opacity var(--tombol-durasi-gradasi) ease;
-}
-button.bg-brand:is(:hover, :focus-visible, :active):not(:disabled)::before {
-  opacity: 1;
-}
-/* Saat ditekan/diketuk gradasi langsung muncul penuh (ketukan di HP sangat singkat),
-   lalu memudar perlahan setelah dilepas. */
-button.bg-brand:active:not(:disabled)::before {
-  transition-duration: 0s;
-}
-button.bg-brand:hover:not(:disabled) {
-  box-shadow: var(--tombol-glow-hover);
-  filter: brightness(1.05);
-}
-@media (prefers-reduced-motion: reduce) {
-  button.bg-brand::before {
-    transition: none;
-  }
+  color: var(--tombol-teks);
+  box-shadow: var(--tombol-glow);
+  transition: transform 0.1s;
 }
 button.bg-brand:active:not(:disabled) {
   transform: scale(0.98);
