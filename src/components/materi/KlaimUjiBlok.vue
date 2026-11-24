@@ -31,7 +31,7 @@ function tanggal(t?: string) {
       <div>
         <p class="text-xs font-semibold uppercase tracking-wide text-accent-1">Uji klaim</p>
         <p class="font-semibold text-ink-900">“{{ blok.klaim }}”</p>
-        <p v-if="blok.konteks" class="mt-1 text-sm text-ink-600">{{ blok.konteks }}</p>
+        <!-- <p v-if="blok.konteks" class="mt-1 text-sm text-ink-600">{{ blok.konteks }}</p> -->
       </div>
     </div>
 
@@ -51,9 +51,9 @@ function tanggal(t?: string) {
           <template v-if="s.tanggal"> · {{ tanggal(s.tanggal) }}</template>
           <template v-if="s.tanggalPembaruan"> (diperbarui {{ tanggal(s.tanggalPembaruan) }})</template>
         </span>
-        <span v-if="s.jenis" class="text-xs text-ink-500">
+        <!-- <span v-if="s.jenis" class="text-xs text-ink-500">
           {{ s.jenis }}<template v-if="s.bahasa"> · Bahasa {{ s.bahasa }}</template>
-        </span>
+        </span> -->
       </div>
 
       <div v-for="p in blok.daftarPeriksa" :key="p.id" class="flex flex-col gap-1.5 border-t border-ink-100 pt-2">

@@ -20,6 +20,8 @@ const SUHU_MIN = 50;
 const SUHU_MAX = 10000;
 const FAKTOR_KECEPATAN = 0.08;
 const JENDELA_RATA_RATA_DETIK = 2; // meredam noise pembacaan tumbukan/detik
+// Konstanta waktu jarum tekanan (detik): jarum bergerak halus ke nilai baru, seperti manometer sungguhan.
+const TAU_JARUM_DETIK = 0.3;
 
 // Dinding kiri dapat digeser seperti pada PhET Gas Properties; dinding kanan tetap.
 const LEBAR_M_MAX = 15;
@@ -75,12 +77,11 @@ let ctx: CanvasRenderingContext2D | null = null;
 let partikel: Partikel[] = [];
 let rafId = 0;
 let tumbukanAkumulasi = 0;
-let impulsAkumulasi = 0;
-let frameAkumulasi = 0;
-let kelilingAkumulasi = 0;
 let waktuHitungTerakhir = 0;
+let waktuFrameTerakhir = 0;
 let riwayatTumbukan: number[] = [];
-let riwayatTekanan: number[] = [];
+/** Nilai tekanan yang ditunjuk jarum sebelum dibulatkan; mengejar tekanan keadaan gas secara halus. */
+let tekananHalus = 0;
 let suhuTarget = 300;
 let tekananTarget = 0;
 
@@ -135,7 +136,12 @@ function skalakanSuhu(suhuBaru: number) {
   }
 }
 
-/** Tekanan menurut keadaan gas (P·A = N·kT) — dipakai untuk mode "jaga tekanan tetap". */
+/**
+ * Tekanan menurut keadaan gas (P·A = N·kT), dipakai untuk jarum tekanan dan mode "jaga tekanan tetap".
+ * Nilainya sama dengan rata-rata jangka panjang impuls tumbukan per panjang dinding, tetapi tanpa noise
+ * statistik dari sedikitnya partikel (gas nyata punya ~10²³ partikel, jadi manometer tidak bergetar).
+ * Karena tumbukan lenting tidak mengubah energi kinetik, nilai ini tetap selama N, T, dan V tidak diubah.
+ */
 // Pusat partikel hanya dapat menjangkau (lebar − 2r) × (tinggi − 2r); ukuran efektif ini dipakai untuk tekanan.
 function tekananTeoritis(lebarPx: number): number {
   const rataV2 = partikel.length ? FAKTOR_KECEPATAN * FAKTOR_KECEPATAN * suhuDariPartikel() : 0;
@@ -156,13 +162,17 @@ function buatPartikel(): Partikel {
 
 function resetPengukuran() {
   tumbukanAkumulasi = 0;
-  impulsAkumulasi = 0;
-  frameAkumulasi = 0;
-  kelilingAkumulasi = 0;
   tumbukanPerDetik.value = 0;
-  tekanan.value = 0;
   riwayatTumbukan = [];
-  riwayatTekanan = [];
+}
+
+/** Menggerakkan jarum secara halus menuju tekanan keadaan gas saat ini. */
+function perbaruiTekanan(dtDetik: number) {
+  const target = tekananTeoritis(LEBAR - posisiDinding.value);
+  const bobot = 1 - Math.exp(-dtDetik / TAU_JARUM_DETIK);
+  tekananHalus += (target - tekananHalus) * bobot;
+  if (Math.abs(target - tekananHalus) < 0.5) tekananHalus = target;
+  tekanan.value = Math.round(tekananHalus);
 }
 
 function sebarPartikel() {
@@ -301,25 +311,21 @@ function langkah(waktu: number) {
         p.x = xd + JARI;
         // Pantulan lenting pada dinding diam: laju tidak berubah. Kerja dinding sudah ditangani prosesAdiabatik.
         if (p.vx < 0) {
-          impulsAkumulasi += 2 * Math.abs(p.vx);
           p.vx *= -1;
           tumbukanAkumulasi++;
         }
       } else if (p.x + JARI > LEBAR) {
         p.x = LEBAR - JARI;
-        impulsAkumulasi += 2 * Math.abs(p.vx);
         p.vx *= -1;
         tumbukanAkumulasi++;
       }
 
       if (p.y - JARI < 0) {
         p.y = JARI;
-        impulsAkumulasi += 2 * Math.abs(p.vy);
         p.vy *= -1;
         tumbukanAkumulasi++;
       } else if (p.y + JARI > TINGGI) {
         p.y = TINGGI - JARI;
-        impulsAkumulasi += 2 * Math.abs(p.vy);
         p.vy *= -1;
         tumbukanAkumulasi++;
       }
@@ -331,28 +337,19 @@ function langkah(waktu: number) {
     else if (suhuSekarang > SUHU_MAX) skalakanSuhu(SUHU_MAX);
     else if (suhuSekarang < SUHU_MIN) skalakanSuhu(SUHU_MIN);
     suhu.value = suhuDariPartikel();
-
-    frameAkumulasi++;
-    kelilingAkumulasi += 2 * (LEBAR - xd - 2 * JARI) + 2 * (TINGGI - 2 * JARI);
   }
+
+  // Jarum tetap bergerak saat dijeda agar perubahan suhu atau jumlah partikel langsung terbaca.
+  const dt = waktuFrameTerakhir ? Math.min(0.1, (waktu - waktuFrameTerakhir) / 1000) : 1 / 60;
+  waktuFrameTerakhir = waktu;
+  perbaruiTekanan(dt);
 
   if (waktu - waktuHitungTerakhir >= 1000) {
     riwayatTumbukan.push(tumbukanAkumulasi);
     if (riwayatTumbukan.length > JENDELA_RATA_RATA_DETIK) riwayatTumbukan.shift();
     tumbukanPerDetik.value = Math.round(riwayatTumbukan.reduce((a, b) => a + b, 0) / riwayatTumbukan.length);
 
-    if (frameAkumulasi > 0) {
-      // Impuls per satuan panjang dinding per frame = tekanan (2D).
-      const kelilingRata = kelilingAkumulasi / frameAkumulasi;
-      riwayatTekanan.push((SKALA_TEKANAN * impulsAkumulasi) / (kelilingRata * frameAkumulasi));
-      if (riwayatTekanan.length > JENDELA_RATA_RATA_DETIK) riwayatTekanan.shift();
-      tekanan.value = Math.round(riwayatTekanan.reduce((a, b) => a + b, 0) / riwayatTekanan.length);
-    }
-
     tumbukanAkumulasi = 0;
-    impulsAkumulasi = 0;
-    frameAkumulasi = 0;
-    kelilingAkumulasi = 0;
     waktuHitungTerakhir = waktu;
   }
 
@@ -587,11 +584,5 @@ onBeforeUnmount(() => {
         </button>
       </div>
     </div>
-
-    <p class="text-xs text-ink-500">
-      Jarum tekanan mengikuti impuls tumbukan molekul per satuan panjang dinding; warna partikel menunjukkan kelajuan
-      relatif (biru = lambat, merah = cepat). Lebar wadah mewakili volume karena tinggi dan kedalamannya tetap. Nilai
-      suhu, tekanan, dan kelajuan bersifat ilustratif, bukan skala fisis sebenarnya.
-    </p>
   </div>
 </template>

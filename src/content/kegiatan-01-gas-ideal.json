@@ -114,7 +114,7 @@
         },
         {
           "tipe": "teks",
-          "isi": "Andi mengukur tekanan ban mobil ayahnya sebelum mudik. Setelah tiga jam di jalan tol, ia mengukurnya lagi. Angka di pengukur ternyata naik, padahal tidak ada udara yang ditambahkan."
+          "isi": "Andi mengukur tekanan ban mobilnya sebelum mudik. Tiga jam kemudian, dia mengukur tekanan ban mobilnya lagi saat masih di jalan tol. Berdasarkan alat pengukur tekanan, ternyata tekanan ban mobilnya naik. Padahal selama dalam perjalanan tidak ada udara yang ditambahkan ke dalam ban."
         },
         {
           "tipe": "gambar",
@@ -126,14 +126,14 @@
         },
         {
           "tipe": "teks",
-          "isi": "Hal serupa terjadi di dapur. Tutup panci presto terkunci rapat, lalu panci dipanaskan. Tekanan di dalamnya naik sampai katup pengaman mendesis."
+          "isi": "Di lain tempat Sisca sedang menggunakan panci presto di dapur. Tutup panci presto dikunci sangat rapat dan panci kemudian dipanaskan. Tekanan di dalamnya akan naik terus sampai katup pengaman di tutup panci presto mendesis dan mengeluarkan uap."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awal Anda tentang penyebab naiknya tekanan pada ban dan panci presto? Tuliskan dengan kata-kata sendiri.",
-          "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaan Anda akan ditinjau kembali di tahap refleksi.",
+          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan panci presto di atas? Tuliskan dengan kata-katamu.",
+          "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaanmu akan ditinjau kembali di tahap refleksi.",
           "baris": 4,
           "indikatorVariabel": [
             "BK1"
@@ -143,7 +143,7 @@
           "tipe": "isian",
           "id": "lkpd-1-2",
           "format": "teks-panjang",
-          "pertanyaan": "Rumuskan satu pertanyaan masalah yang dapat diselidiki dari kedua fenomena tersebut. Sebutkan besaran yang berubah dan besaran yang tetap.",
+          "pertanyaan": "Rumuskan satu pertanyaan yang dapat diselidiki dari kedua fenomena di atas. Sebutkan besaran yang berubah dan besaran yang tetap.",
           "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ... jika ... dijaga tetap?\"",
           "baris": 3,
           "indikatorVariabel": [
@@ -153,11 +153,10 @@
         {
           "tipe": "kebutuhan-informasi",
           "id": "lkpd-1-3",
-          "pertanyaan": "Apa yang perlu saya ketahui untuk menjawab pertanyaan masalah tadi?",
-          "petunjuk": "Tuliskan minimal tiga informasi. Untuk setiap informasi, perkirakan dari mana Anda bisa mendapatkannya.",
+          "pertanyaan": "Apa yang perlu kamu ketahui untuk menjawab pertanyaan masalah tadi?",
+          "petunjuk": "Tuliskan minimal tiga informasi yang kamu butuhkan.",
           "kolom": [
-            "Informasi yang saya butuhkan",
-            "Perkiraan sumbernya"
+            "Informasi yang saya butuhkan"
           ],
           "jumlahBaris": 3,
           "indikatorVariabel": [
@@ -200,23 +199,23 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Satu sentimeter kubik udara pada 0 °C dan 1 atm berisi sekitar $2{,}7 \\times 10^{19}$ molekul. Melacak gerak setiap molekul jelas mustahil. Fisikawan menyusun model sederhana yang tetap mampu meramalkan perilaku gas secara keseluruhan."
+          "isi": "Satu sentimeter kubik udara pada temperatur 0 °C dan tekanan 1 atm berisi sekitar $2{,}7 \\times 10^{19}$ molekul. Mengamati pergerakan setiap molekul jelas sangat sulit. Tetapi, ada model matematika sederhana yang mampu meramalkan perilaku gas secara keseluruhan."
         },
         {
           "tipe": "tabel",
-          "judul": "Postulat teori kinetik gas ideal dan konsekuensinya",
+          "judul": "Pernyataan teori kinetik gas ideal dan konsekuensinya",
           "mobile": "kartu",
           "kolom": [
-            "Postulat",
+            "Pernyataan",
             "Konsekuensi"
           ],
           "baris": [
             [
-              "Gas tersusun atas sangat banyak molekul yang bergerak acak",
-              "Tidak ada arah gerak yang diistimewakan, sehingga tekanan sama ke segala arah"
+              "Gas tersusun dari molekul yang sangat banyak dan bergerak acak",
+              "Tekanan udara sama ke segala arah"
             ],
             [
-              "Molekul saling berjauhan; volumenya diabaikan terhadap volume wadah",
+              "Molekul saling berjauhan dan volumenya diabaikan terhadap volume wadah",
               "Molekul diperlakukan sebagai titik bermassa"
             ],
             [
@@ -242,7 +241,7 @@
         },
         {
           "tipe": "teks",
-          "isi": "Setiap tumbukan memberikan dorongan kecil pada dinding. Jutaan tumbukan setiap detik terakumulasi menjadi gaya yang tetap. Gaya per satuan luas inilah yang terukur sebagai tekanan gas."
+          "isi": "Setiap tumbukan memberikan gaya dorongan kecil ke dinding. Jutaan tumbukan tiap detik itu diakumulasikan menjadi gaya yang tetap. Gaya per satuan luas inilah yang terukur sebagai tekanan gas."
         },
         {
           "tipe": "rumus",
@@ -269,8 +268,8 @@
         {
           "tipe": "callout",
           "gaya": "tahukah",
-          "judul": "Suhu itu apa, sebenarnya?",
-          "isi": "Persamaan 1.1 memberi makna mikroskopis pada suhu. Termometer yang menunjuk 300 K sedang melaporkan energi gerak rata-rata molekul di sekitarnya, yaitu sekitar $6{,}2 \\times 10^{-21}$ joule per molekul."
+          "judul": "Suhu itu apa sih?",
+          "isi": "Persamaan 1.1 memberikan makna mikroskopis pada suhu. Termometer yang menunjukkan angka 300 K berarti menunjukkan energi gerak rata-rata molekul di sekitarnya, yaitu sekitar $6{,}2 \\times 10^{-21}$ joule per molekul."
         },
         {
           "tipe": "isian",
@@ -305,8 +304,8 @@
           "tipe": "isian",
           "id": "lkpd-1-5",
           "format": "teks-panjang",
-          "pertanyaan": "Gunakan postulat dan Persamaan 1.1. Jika suhu udara di dalam ban naik sementara volume ban hampir tetap, apa yang terjadi pada gerak molekul, tumbukan pada dinding, dan tekanan ban? Tuliskan penalaran Anda langkah demi langkah.",
-          "petunjuk": "Mulailah dari pernyataan umum (postulat), lalu terapkan pada kasus ban.",
+          "pertanyaan": "Gunakan pernyataan dan Persamaan 1.1. Jika suhu udara di dalam ban naik sementara volume ban hampir tetap, apa yang terjadi pada gerak molekul, tumbukan pada dinding, dan tekanan ban? Tuliskan penalaranmu langkah demi langkah.",
+          "petunjuk": "Mulailah dari pernyataan umum, lalu terapkan pada kasus ban.",
           "baris": 5,
           "indikatorVariabel": [
             "BK3"
@@ -350,16 +349,16 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Dugaan di layar sebelumnya perlu diuji dengan data. Anda akan mengubah satu besaran, menahan besaran lain tetap, lalu mencatat hasilnya."
+          "isi": "Dugaan di bagian sebelumnya perlu diuji dengan data. Kamu akan mengubah satu besaran, menahan besaran lain tetap, lalu mencatat hasilnya."
         },
         {
           "tipe": "simulasi",
           "widget": "partikel-gas",
           "judul": "Simulasi partikel gas",
           "instruksi": [
-            "Atur jumlah partikel dalam wadah dengan slider Jumlah partikel.",
-            "Baca nilai Lebar wadah (mewakili volume).",
-            "Pada setiap percobaan, pilih satu besaran di panel Jaga tetap (Volume, Suhu, atau Tekanan).",
+            "Atur jumlah partikel dalam wadah dengan slider \"Jumlah partikel\".",
+            "Baca nilai \"Lebar wadah (mewakili volume)\".",
+            "Pada setiap percobaan, pilih satu besaran di panel \"Jaga tetap (Volume, Suhu, atau Tekanan)\".",
             "Ubah satu besaran lain, lalu catat bagaimana besaran ketiga berubah."
           ]
         },
@@ -510,7 +509,7 @@
           "tipe": "isian",
           "id": "lkpd-1-6",
           "format": "teks-panjang",
-          "pertanyaan": "Bandingkan hasil Percobaan C dengan dugaan Anda di layar sebelumnya. Apakah data mendukung dugaan tersebut? Tunjukkan baris data yang menjadi buktinya.",
+          "pertanyaan": "Bandingkan hasil Percobaan C dengan dugaan awal kamu tadi. Apakah data percobaan mendukung dugaan awalmu? Jelaskan baris data percobaan yang mana yang menjadi buktinya.",
           "baris": 4,
           "indikatorVariabel": [
             "BK3",
@@ -521,8 +520,8 @@
           "tipe": "isian",
           "id": "lkpd-1-12",
           "format": "teks-panjang",
-          "pertanyaan": "Data simulasi Anda perlu dicocokkan dengan sumber tertulis. Sebelum membuka tautan di bawah, tentukan strategi penelusuran Anda. (1) Kata kunci apa yang akan Anda pakai? (2) Jenis sumber apa yang Anda cari, dan mengapa? (3) Bagian sumber mana yang perlu dibaca untuk memastikan hasil Percobaan C?",
-          "petunjuk": "Setelah membuka tautan, tambahkan satu kalimat: apakah strategi Anda akan menemukan sumber tersebut? Jika tidak, apa yang perlu diubah?",
+          "pertanyaan": "Data simulasi kamu perlu dicocokkan dengan sumber tertulis. Sebelum membuka tautan di bawah, tentukan strategi penelusuran kamu. (1) Kata kunci apa yang akan kamu pakai? (2) Jenis sumber apa yang akan kamu cari, dan jelaskan alasannya?",
+          "petunjuk": "Setelah membuka tautan, tambahkan satu kalimat: apakah strategi kamu bisa untuk menemukan sumber tersebut? Jika tidak, apa yang perlu diubah dari strategi tersebut?",
           "baris": 5,
           "indikatorVariabel": [
             "LI2"
@@ -552,7 +551,7 @@
     },
     {
       "id": "l4",
-      "judul": "Benarkah ban nitrogen lebih stabil?",
+      "judul": "Benarkah ban yang diisi gas nitrogen lebih stabil?",
       "tahap": "bertanya",
       "stem": [
         "S",
@@ -585,7 +584,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Hubungan yang Anda temukan dari data dirangkum para fisikawan dalam satu persamaan keadaan. Persamaan ini disebut hukum gas ideal."
+          "isi": "Hubungan yang kamu temukan tadi dari data percobaan dirangkum dalam satu persamaan keadaan. Persamaan ini disebut hukum gas ideal."
         },
         {
           "tipe": "rumus",
@@ -639,7 +638,7 @@
         {
           "tipe": "klaim-uji",
           "id": "klaim-1",
-          "klaim": "Ban berisi nitrogen tekanannya lebih stabil daripada ban berisi udara biasa.",
+          "klaim": "Ban yang diisi gas nitrogen tekanannya lebih stabil daripada ban yang diisi udara biasa.",
           "konteks": "Klaim ini sering dijumpai di bengkel dan artikel otomotif. Ujilah klaim tersebut dengan dua sumber berikut.",
           "sumber": [
             {
@@ -683,7 +682,7 @@
             {
               "id": "kebaruan",
               "aspek": "Kebaruan",
-              "pertanyaan": "Kapan sumber ini terbit atau diperbarui?"
+              "pertanyaan": "Apakah sumber ini memuat informasi yang terbaru?"
             }
           ],
           "pilihanPenilaian": [

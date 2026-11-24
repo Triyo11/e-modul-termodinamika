@@ -30,7 +30,7 @@ function tambahBaris() {
     <p v-if="blok.petunjuk" class="text-sm text-ink-500">{{ blok.petunjuk }}</p>
 
     <div class="flex flex-col gap-3">
-      <div v-for="(b, i) in baris" :key="i" class="grid gap-2 rounded-lg border border-ink-100 p-2.5 sm:grid-cols-2">
+      <div v-for="(b, i) in baris" :key="i" class="grid grid-cols-1 gap-2 rounded-lg border border-ink-100 p-2.5">
         <label v-for="(k, j) in blok.kolom" :key="j" class="flex flex-col gap-1">
           <span class="text-xs font-medium uppercase tracking-wide text-ink-500">
             {{ k }}<template v-if="j === 0"> #{{ i + 1 }}</template>

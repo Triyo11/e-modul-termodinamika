@@ -89,7 +89,7 @@ function periksa() {
       v-else-if="blok.format === 'teks-panjang'"
       v-model="jawaban"
       :rows="blok.baris ?? 3"
-      placeholder="Tulis jawaban Anda di sini..."
+      placeholder="Tulis jawabanmu di sini..."
       class="mt-3 w-full resize-y rounded-lg border border-ink-200 p-2.5 text-md text-ink-800 outline-none focus:border-accent"
     ></textarea>
 

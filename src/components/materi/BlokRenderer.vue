@@ -41,7 +41,7 @@ defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
     <TeksBlok v-else-if="blok.tipe === 'teks'" :blok="blok" />
     <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
     <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" :kegiatan-id="kegiatanId" />
-    <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" />
+    <!-- <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" /> -->
     <SimulasiBlok v-else-if="blok.tipe === 'simulasi'" :blok="blok" />
     <RumusBlok v-else-if="blok.tipe === 'rumus'" :blok="blok" />
     <ContohBlok v-else-if="blok.tipe === 'contoh'" :blok="blok" />
