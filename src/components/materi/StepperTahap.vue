@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PhCheck, PhHouse } from "@phosphor-icons/vue";
+import { PhArrowLeft, PhCheck, PhHouse } from "@phosphor-icons/vue";
 import type { Tahap } from "@/lib/tahap";
 
 /**
@@ -15,7 +15,7 @@ defineProps<{
   dibuka: string[];
 }>();
 
-const emit = defineEmits<{ pilih: [id: string | null] }>();
+const emit = defineEmits<{ pilih: [id: string | null]; kembali: [] }>();
 </script>
 
 <template>
@@ -23,9 +23,20 @@ const emit = defineEmits<{ pilih: [id: string | null] }>();
     aria-label="Tahap pembelajaran"
     class="sticky top-0 z-20 border-b border-ink-200 bg-ink-50/95 px-3 pt-2 pb-2.5 backdrop-blur sm:px-6"
   >
-    <p class="truncate px-1 text-xs text-ink-500">
-      <span class="font-semibold text-accent-4-teks">KB {{ kb }}</span> · {{ judulKb }}
-    </p>
+    <div class="flex items-center gap-2.5 px-1">
+      <button
+        type="button"
+        class="tombol-ikon size-9 shrink-0"
+        aria-label="Kembali ke Daftar Materi"
+        title="Kembali ke Daftar Materi"
+        @click="emit('kembali')"
+      >
+        <PhArrowLeft :size="18" weight="bold" />
+      </button>
+      <p class="truncate text-sm text-ink-500">
+        <span class="font-semibold text-accent-4-teks">KB {{ kb }}</span> · {{ judulKb }}
+      </p>
+    </div>
 
     <ol class="relative mt-1.5 flex items-center">
       <!-- Garis penghubung di belakang lingkaran -->

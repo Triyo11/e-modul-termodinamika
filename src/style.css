@@ -532,3 +532,73 @@ code {
     border-right-color: var(--border);
   }
 } */
+
+/* ---------- Halaman materi (KB) ----------
+   Latar bertitik membuat teks panjang sulit difokuskan, jadi isi bacaan dan worksheet dibungkus kotak.
+   ATUR WARNA DI SINI. */
+:root {
+  --bacaan-isi: #121212;                         /* latar kotak bacaan (pembahasan, tabel materi) */
+  --bacaan-garis: var(--color-ink-200);
+  --worksheet-isi: #17150D;                      /* latar kotak Student e-Worksheet (kuning sangat gelap) */
+  --worksheet-garis: var(--color-pastel-kuning);
+}
+
+/* Kotak bacaan: tenang, garis tipis, tanpa bayangan. */
+.kotak-bacaan {
+  background-color: var(--bacaan-isi);
+  border: 1.5px solid var(--bacaan-garis);
+  border-radius: 1rem;
+  padding: 1rem 1.125rem;
+}
+
+/* Kotak Student e-Worksheet: neobrutalism kuning, label nomor menempel di garis atas. */
+.kotak-worksheet {
+  position: relative;
+  margin-top: 0.875rem;
+  padding: 1.75rem 1rem 1rem;
+  background-color: var(--worksheet-isi);
+  border: 3px solid var(--worksheet-garis);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--worksheet-garis);
+}
+.kotak-worksheet > .label-worksheet {
+  position: absolute;
+  top: -0.95rem;
+  left: 0.875rem;
+  color: var(--color-teks-gelap);
+  background-color: var(--worksheet-garis);
+  border: 2.5px solid var(--color-teks-gelap);
+}
+/* Blok di dalam kotak worksheet tidak perlu bingkai sendiri lagi. */
+.kotak-worksheet > :not(.label-worksheet) {
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Keterangan gambar/video: diberi latar agar tidak menyatu dengan titik latar. */
+.keterangan-media {
+  align-self: flex-start;
+  background-color: rgb(10 10 10 / 0.9);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.625rem;
+}
+
+/* Tombol neobrutalism berwarna pastel selain tombol utama (mis. tombol tahap sebelumnya). */
+.tombol-brutal {
+  border: 2.5px solid var(--color-brand-dark);
+  box-shadow: var(--shadow-button);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.tombol-brutal:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 0 var(--color-brand-dark);
+}
+.tombol-brutal:active,
+.tombol-brutal.sedang-ditekan {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--color-brand-dark);
+}
+

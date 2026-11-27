@@ -105,7 +105,7 @@ onBeforeUnmount(() => observer?.disconnect());
 
     <figcaption
       v-if="caption || sumber"
-      class="mt-2 text-sm text-center leading-relaxed text-ink-600"
+      class="keterangan-media mx-auto mt-2 w-fit text-sm text-center leading-relaxed text-ink-600"
     >
       <span v-if="caption" class="block" v-html="caption"></span>
       <span v-if="sumber" class="mt-0.5 block text-xs"

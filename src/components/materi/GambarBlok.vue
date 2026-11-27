@@ -12,7 +12,7 @@ const rasioStyle = props.blok.rasio ? { aspectRatio: props.blok.rasio.replace("/
       <img v-if="blok.src" :src="blok.src" :alt="blok.alt" class="h-full w-full object-contain" loading="lazy" />
       <MediaKosong v-else jenis="gambar" :alt="blok.alt" />
     </div>
-    <figcaption v-if="blok.caption" class="text-sm text-ink-600">
+    <figcaption v-if="blok.caption" class="keterangan-media text-sm text-ink-600">
       {{ blok.caption }}
       <span v-if="blok.sumber" class="text-ink-500"> (Sumber: {{ blok.sumber }})</span>
     </figcaption>

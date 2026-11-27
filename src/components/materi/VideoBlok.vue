@@ -21,7 +21,7 @@ const rasioStyle = { aspectRatio: (props.blok.rasio ?? "16/9").replace("/", " / 
       ></video>
       <MediaKosong v-else jenis="video" :alt="blok.alt" />
     </div>
-    <figcaption v-if="blok.caption" class="text-sm text-ink-600">
+    <figcaption v-if="blok.caption" class="keterangan-media text-sm text-ink-600">
       {{ blok.caption }}
       <span v-if="blok.sumber" class="text-ink-500">· {{ blok.sumber }}</span>
     </figcaption>

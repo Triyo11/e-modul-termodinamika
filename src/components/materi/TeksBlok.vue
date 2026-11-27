@@ -8,5 +8,7 @@ const html = computed(() => renderTeksCampuran(props.blok.isi));
 </script>
 
 <template>
-  <p class="font-serif text-body leading-relaxed text-ink-800" v-html="html"></p>
+  <div class="kotak-bacaan">
+    <p class="font-serif text-body leading-relaxed text-ink-800" v-html="html"></p>
+  </div>
 </template>

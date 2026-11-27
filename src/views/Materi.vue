@@ -179,6 +179,7 @@ const tujuan = computed(() =>
       :aktif="indeksTahap"
       :dibuka="tahapDibuka"
       @pilih="bukaTahap"
+      @kembali="router.push({ name: 'materi', query: route.query })"
     />
 
     <!-- ===================== Halaman pengantar KB ===================== -->
@@ -188,7 +189,7 @@ const tujuan = computed(() =>
       class="flex w-full flex-col gap-12 px-5 py-8 pb-32 sm:px-8 lg:px-12"
     >
       <section class="flex flex-col gap-3">
-        <div class="w-full flex flex-col gap-1 p-4 rounded-xl border-3 border-dashed border-accent-4/60">
+        <div class="w-full flex flex-col gap-1 p-4 rounded-xl border-3 border-dashed border-accent-4/60 bg-ink-50">
           <span class="text-sm font-semibold text-accent-4-teks">Kegiatan Belajar {{ data.kb }}</span>
           <h1 class="text-2xl font-bold text-ink-900">{{ data.judul }}</h1>
         </div>
@@ -275,9 +276,11 @@ const tujuan = computed(() =>
 
       <section v-if="data.referensi.length" class="flex flex-col gap-2">
         <h2 class="text-xl font-semibold text-ink-900">Referensi</h2>
-        <ol class="flex list-decimal flex-col gap-1 pl-5 text-sm wrap-break-word text-ink-600">
-          <li v-for="r in data.referensi" :key="r">{{ r }}</li>
-        </ol>
+        <div class="kotak-bacaan">
+          <ol class="flex list-decimal flex-col gap-1 pl-5 text-sm wrap-break-word text-ink-600">
+            <li v-for="r in data.referensi" :key="r">{{ r }}</li>
+          </ol>
+        </div>
       </section>
     </main>
 
@@ -292,15 +295,15 @@ const tujuan = computed(() =>
       <nav aria-label="Tahap sebelumnya dan berikutnya" class="grid grid-cols-2 gap-3">
         <button
           type="button"
-          class="col-start-1 flex flex-col items-start gap-0.5 rounded-lg border border-ink-300 px-5 py-3 text-left"
+          class="tombol-brutal col-start-1 flex flex-col items-start gap-0.5 rounded-lg bg-pastel-mint px-5 py-3 text-left"
           @click="bukaTahap(tahapSebelumnya?.id ?? null)"
         >
-          <span class="flex items-center gap-1 text-xs font-semibold text-ink-500">
+          <span class="flex items-center gap-1 text-xs font-semibold">
             <PhArrowLeft :size="14" weight="bold" />
             <template v-if="tahapSebelumnya">Tahap {{ indeksTahap }}</template>
             <template v-else>Pengantar</template>
           </span>
-          <span class="text-sm font-medium text-ink-800">{{ tahapSebelumnya?.label ?? `KB ${data.kb}` }}</span>
+          <span class="text-sm font-semibold">{{ tahapSebelumnya?.label ?? `KB ${data.kb}` }}</span>
         </button>
 
         <button

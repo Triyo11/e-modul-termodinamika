@@ -49,6 +49,8 @@ const routes = [
     path: "/materi/:kb(\\d+)/:tahap?",
     name: "materi-kb",
     component: () => import("../views/Materi.vue"),
+    // Tombol kembali ada di penunjuk tahap (StepperTahap).
+    meta: { tombolBerandaSendiri: true },
   },
   {
     path: "/kuis",
