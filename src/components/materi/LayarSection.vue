@@ -5,7 +5,7 @@ import BlokRenderer from "./BlokRenderer.vue";
 import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
 import { nomorWorksheetKey } from "@/lib/worksheet";
-import { labelTahap } from "@/lib/tahap";
+import { labelTahap, warnaTahap } from "@/lib/tahap";
 import type { Blok, Layar } from "@/types/kegiatan";
 
 const props = defineProps<{ layar: Layar; kegiatanId: string }>();
@@ -54,6 +54,9 @@ const kelompok = computed<Kelompok[]>(() => {
   return hasil;
 });
 
+// Warna pastel judul dan label sesuai tahap; tahap tanpa warna khusus memakai lavender.
+const warna = computed(() => warnaTahap[props.layar.tahap ?? props.layar.peran ?? ""] ?? "var(--color-pastel-lavender)");
+
 const labelStem: Record<string, string> = {
   S: "Sains (Science)",
   T: "Teknologi (Technology)",
@@ -71,7 +74,10 @@ const modeGuru = computed(() => route.query.guru !== undefined);
   <section :data-tahap="layar.tahap" class="flex scroll-mt-24 flex-col gap-6 border-t border-ink-200 pt-10">
     <header class="flex flex-col gap-1">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="rounded-[10px] border-2 border-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-ink-900">
+        <span
+          class="rounded-[10px] border-2 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide"
+          :style="{ borderColor: warna, color: warna }"
+        >
           {{ labelTahap[layar.tahap ?? layar.peran ?? ""] ?? layar.tahap ?? layar.peran }}
         </span>
         <span
@@ -83,7 +89,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
           {{ s }}
         </span>
       </div>
-      <h2 class="text-2xl font-semibold leading-snug text-ink-900">{{ layar.judul }}</h2>
+      <h2 class="text-2xl font-bold leading-snug" :style="{ color: warna }">{{ layar.judul }}</h2>
     </header>
 
     <details

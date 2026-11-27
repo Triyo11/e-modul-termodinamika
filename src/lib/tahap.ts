@@ -15,6 +15,17 @@ export const labelTahap: Record<string, string> = {
   "penilaian-autentik": "Penilaian autentik",
 };
 
+/** Warna pastel per tahap STEM-CTL (token di style.css), untuk judul dan label tahap. */
+export const warnaTahap: Record<string, string> = {
+  konstruktivisme: "var(--color-pastel-pink)",
+  inkuiri: "var(--color-pastel-biru)",
+  bertanya: "var(--color-pastel-kuning)",
+  "masyarakat-belajar": "var(--color-pastel-mint)",
+  pemodelan: "var(--color-pastel-peach)",
+  refleksi: "var(--color-pastel-lavender)",
+  "penilaian-autentik": "var(--color-pastel-pink)",
+};
+
 export interface Tahap {
   /** Dipakai di URL, mis. /materi/1/inkuiri. */
   id: string;
