@@ -34,7 +34,7 @@ const routes = [
   {
     path: "/petunjuk-penggunaan",
     name: "petunjuk-penggunaan",
-    component: () => import("../views/Home.vue"),
+    component: () => import("../views/Bantuan.vue"),
   },
   {
     // /materi menampilkan pilihan kegiatan belajar; /materi/3 membuka KB 3.

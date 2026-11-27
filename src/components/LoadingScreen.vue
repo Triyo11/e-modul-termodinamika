@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
     class="fixed inset-0 z-30 mx-auto w-full lg:w-2/3 min-h-dvh bg-ink-50 text-ink-900"
     aria-busy="true"
   >
-    <div class="px-5 py-6 pb-40">
+    <div class="px-5 py-6 pb-16">
       <!-- Kerangka halaman: banner lalu daftar kartu -->
       <Skeleton class="h-40 lg:h-80 w-full rounded-xl mb-4" />
       <div class="space-y-3">

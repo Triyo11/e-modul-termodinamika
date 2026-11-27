@@ -13,7 +13,7 @@ const informasiUmum = {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-40">
+  <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-16">
     <div
       class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-ink-900 via-ink-900 to-ink-700 mb-4 p-8 lg:p-24"
     >

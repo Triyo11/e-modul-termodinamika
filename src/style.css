@@ -3,36 +3,46 @@
 @import "tailwindcss";
 
 @theme default {
-  /* Tema gelap. Palet dasar: #0A0F0D (latar), #EFF6EE (teks terang), #5158BB (nila), #EB4B98 (magenta).
-     Skala ink dibalik: ink-50 = latar paling gelap, ink-900 = teks paling terang.
-     Kontras tinggi: ink-500 ke atas >= 7:1 (WCAG AAA) pada ink-50, surface, dan ink-100. */
-  --color-brand: #5158BB;        /* bidang warna dengan teks terang brand-dark (5,5:1) */
-  --color-brand-light: #2B2650;  /* kotak sorotan bernuansa nila; teks di atasnya terang */
-  --color-brand-dark: #EFF6EE;   /* warna kontras: teks di atas brand, garis tepi tegas, bayangan */
+  /* Tema gelap pastel + neobrutalism.
+     Latar hitam, teks krem, bidang warna pastel dengan teks hitam di atasnya,
+     garis tepi tebal krem, dan bayangan keras tanpa blur.
+     Skala ink dibalik: ink-50 = latar paling gelap, ink-900 = teks paling terang. */
+  --color-brand: #C4B5FD;        /* lavender pastel: bidang warna utama (teks di atasnya hitam) */
+  --color-brand-light: #221D36;  /* kotak sorotan bernuansa lavender gelap; teks di atasnya terang */
+  --color-brand-dark: #FFF8EC;   /* krem: teks terang, garis tepi tegas */
 
   --color-accent: var(--color-accent-1);
-  --color-accent-1: #F47CB4;     /* magenta #EB4B98 dicerahkan agar teks tetap >= 4,5:1, juga di atas accent-1/10 */
-  --color-accent-2: #353A7A;     /* nila gelap untuk chip dan gradasi; teks di atasnya terang */
-  --color-accent-3: #EB4B98;     /* magenta asli palet, untuk titik/isi grafik */
-  --color-accent-4: #1B998B;     /* toska: bidang warna (teks gelap ink-50 di atasnya, 5,5:1) dan garis tepi */
-  --color-accent-4-teks: #4FC9BA; /* toska cerah untuk teks: >= 7:1 pada ink-50 dan surface */
-  --color-benar:   #5FD39A;
-  --color-salah:   #FF8A80;
-  --color-periksa: #F5C063;
+  --color-accent-1: #F9A8D4;     /* pink pastel: teks sorotan di atas hitam (>= 10:1) */
+  --color-accent-2: #FDE68A;     /* kuning pastel: chip (teks hitam di atasnya) */
+  --color-accent-3: #F9A8D4;     /* pink pastel untuk titik/isi grafik */
+  --color-accent-4: #86EFAC;     /* mint pastel: bidang warna (teks hitam di atasnya) dan garis tepi */
+  --color-accent-4-teks: #A7F3D0; /* mint cerah untuk teks di atas hitam */
+  --color-benar:   #86EFAC;
+  --color-salah:   #FCA5A5;
+  --color-periksa: #FDE68A;
 
-  --color-surface: #18211D;      /* kartu dan panel (pengganti putih), dibuat jelas berbeda dari latar */
+  --color-surface: #161616;      /* kartu dan panel */
 
-  --color-ink-50: #0A0F0D;
-  --color-ink-100: #212B27;
-  --color-ink-200: #4A5751;      /* garis tepi kartu: terlihat jelas di atas latar dan surface */
-  --color-ink-300: #66746D;
-  --color-ink-400: #8A9790;
-  --color-ink-500: #B7C2BC;      /* teks paling redup: >= 7:1 pada ink-50, surface, dan ink-100 */
-  --color-ink-600: #CDD6D1;
-  --color-ink-700: #DDE5E0;
-  --color-ink-800: #E8F0EA;
-  --color-ink-900: #EFF6EE;
-  --color-ink-950: #050807;      /* latar di luar kolom aplikasi (layar lebar) */
+  --color-ink-50: #0A0A0A;
+  --color-ink-100: #1F1F1F;
+  --color-ink-200: #444444;      /* garis tepi tipis */
+  --color-ink-300: #5E5E5E;
+  --color-ink-400: #8A8782;
+  --color-ink-500: #BDB8AF;      /* teks paling redup: >= 9:1 pada latar hitam */
+  --color-ink-600: #D4CFC6;
+  --color-ink-700: #E4DFD6;
+  --color-ink-800: #F1ECE2;
+  --color-ink-900: #FFF8EC;
+  --color-ink-950: #000000;      /* latar di luar kolom aplikasi (layar lebar) */
+
+  /* Palet pastel lengkap, bisa dipakai langsung: bg-pastel-pink, text-pastel-mint, dst. */
+  --color-pastel-pink: #F9A8D4;
+  --color-pastel-lavender: #C4B5FD;
+  --color-pastel-mint: #86EFAC;
+  --color-pastel-kuning: #FDE68A;
+  --color-pastel-biru: #93C5FD;
+  --color-pastel-peach: #FDBA8C;
+  --color-teks-gelap: #0A0A0A;   /* teks di atas bidang pastel */
 
   --font-sans:  "Literata Variable", Georgia, serif;
   --font-serif: "Literata Variable", Georgia, serif;
@@ -40,30 +50,29 @@
   --text-body:  1.0625rem;
   --text-body--line-height: 1.7;
 
-  --shadow-button: 6px 6px 0 0 var(--color-brand);
-  --shadow-display: 0 6px 0 0 var(--color-brand);
+  --shadow-button: 4px 4px 0 0 var(--color-brand-dark);
+  --shadow-display: 6px 6px 0 0 var(--color-brand);
 };
 
 /* Kontrol bawaan browser (slider, isian angka, scrollbar) ikut bertema gelap. */
 :root {
   color-scheme: dark;
-  accent-color: var(--color-accent-3);
+  accent-color: var(--color-pastel-pink);
   background-color: var(--color-ink-950);
 }
 
 /* ---------- Kotak neobrutalism ----------
-   Kotak besar (rounded-xl/2xl): latar polos, garis tepi tebal, dan bayangan keras tanpa blur
-   yang digeser ke kanan bawah. Chip, tombol, dan navbar tidak terkena.
-
+   Kotak besar (rounded-xl/2xl): latar polos, garis tepi tebal krem, dan bayangan keras pastel
+   tanpa blur yang digeser ke kanan bawah.
    ATUR WARNA DI SINI. Nilai awal memakai token palet; ganti dengan token lain atau kode hex. */
 :root {
   --kotak-isi: var(--color-surface);          /* latar kotak biasa */
-  --kotak-isi-sorot: var(--color-brand-light); /* latar kotak nila (refleksi, sorotan) */
+  --kotak-isi-sorot: var(--color-brand-light); /* latar kotak lavender gelap (refleksi, sorotan) */
   --kotak-garis: var(--color-brand-dark);     /* warna garis tepi */
   --kotak-bayangan: var(--color-brand);       /* warna bayangan keras */
 
-  --kotak-tebal-garis: 2px;
-  --kotak-geser-bayangan: 5px;                /* jarak bayangan ke kanan dan ke bawah */
+  --kotak-tebal-garis: 3px;
+  --kotak-geser-bayangan: 6px;                /* jarak bayangan ke kanan dan ke bawah */
 }
 
 :is(.bg-surface, .bg-ink-100, .bg-brand-light):is(.rounded-xl, .rounded-2xl) {
@@ -84,49 +93,57 @@
   box-shadow: var(--kotak-geser-bayangan) var(--kotak-geser-bayangan) 0 0 var(--kotak-bayangan);
 }
 
-/* ---------- Tombol kapsul bergradasi ----------
-   Tombol utama (semua <button> berkelas bg-brand): kapsul bergradasi 15% cyan neon, 70% biru, 15% pink neon,
-   dengan glow tipis yang selalu tampil (tidak menunggu hover atau klik).
-   Teks putih di atas bagian biru (6,5:1); cyan dan pink hanya di tepi, jauh dari teks.
-   Tombol kedua (<button> rounded-lg/md lainnya): kapsul dengan garis tepi nila.
+/* Bidang pastel selalu memakai teks hitam agar terbaca. */
+:is(.bg-brand, .bg-accent-2, .bg-accent-4, .bg-pastel-pink, .bg-pastel-lavender, .bg-pastel-mint,
+    .bg-pastel-kuning, .bg-pastel-biru, .bg-pastel-peach) {
+  color: var(--color-teks-gelap);
+}
+
+/* ---------- Tombol neobrutalism ----------
+   Tombol utama (semua <button> berkelas bg-brand): bidang lavender pastel, teks hitam,
+   garis tepi krem tebal, dan bayangan keras krem. Saat ditekan, tombol "turun" menutup bayangannya.
+   Tombol kedua (<button> rounded-lg/md lainnya): garis tepi krem tanpa isi.
    ATUR WARNA DI SINI. */
 :root {
-  --tombol-cyan: #00E5FF;
-  --tombol-biru: #1452D6;
-  --tombol-pink: #FF2D95;
-  --tombol-gradasi: linear-gradient(55deg, var(--tombol-cyan) 0%, var(--tombol-biru) 15%, var(--tombol-biru) 80%, var(--tombol-pink) 100%);
-  --tombol-teks: #FFFFFF;
-  --tombol-glow: 0 0 8px rgb(0 229 255 / 0.45), 0 0 10px rgb(20 82 214 / 0.40), 0 0 8px rgb(255 45 149 / 0.40);
-  --tombol-kedua-garis: var(--color-brand);
+  --tombol-isi: var(--color-brand);
+  --tombol-teks: var(--color-teks-gelap);
+  --tombol-garis: var(--color-brand-dark);
+  --tombol-radius: 0.75rem;
+  --tombol-kedua-garis: var(--color-ink-600);
 }
 
 button.bg-brand {
-  border: none;
-  border-radius: 9999px;
-  background-image: var(--tombol-gradasi);
+  border: 2.5px solid var(--tombol-garis);
+  border-radius: var(--tombol-radius);
+  background-color: var(--tombol-isi);
   color: var(--tombol-teks);
-  box-shadow: var(--tombol-glow);
-  transition: transform 0.1s;
+  box-shadow: var(--shadow-button);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+button.bg-brand:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 0 var(--tombol-garis);
 }
 button.bg-brand:active:not(:disabled) {
-  transform: scale(0.98);
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--tombol-garis);
 }
 button.bg-brand:disabled {
   box-shadow: none;
 }
 
-/* Tombol kedua: semua tombol kecil bersudut lain ikut berbentuk kapsul.
+/* Tombol kedua: semua tombol kecil bersudut lain ikut sudut neobrutalism.
    Pilihan jawaban kuis (.tombol-opsi) dikecualikan karena teksnya bisa panjang. */
 button:is(.rounded-lg, .rounded-md):not(.bg-brand, .tombol-opsi) {
-  border-radius: 9999px;
+  border-radius: var(--tombol-radius);
 }
 button:is(.rounded-lg, .rounded-md).border-ink-300 {
   border-color: var(--tombol-kedua-garis);
-  border-width: 1.5px;
+  border-width: 2px;
   transition: background-color 0.2s;
 }
 button:is(.rounded-lg, .rounded-md).border-ink-300:hover:not(:disabled) {
-  background-color: rgb(81 88 187 / 0.15);
+  background-color: rgb(196 181 253 / 0.12);
 }
 
 /* :root {

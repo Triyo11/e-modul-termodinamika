@@ -27,7 +27,7 @@ function buka(kb: number | undefined) {
 
 <template>
   <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
-    <main class="flex flex-col gap-4 px-5 py-8 pb-40 sm:px-8 lg:px-12">
+    <main class="flex flex-col gap-4 px-5 py-8 pb-16 sm:px-8 lg:px-12">
       <header class="flex flex-col gap-1 pb-4">
         <h1 class="text-2xl font-bold text-ink-900">Daftar materi</h1>
       </header>
