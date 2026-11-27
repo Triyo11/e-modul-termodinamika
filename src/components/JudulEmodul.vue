@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IlustrasiTermo from "@/components/IlustrasiTermo.vue";
 
-// Kartu judul e-modul bergaya neobrutalism.
+// Judul e-modul (tanpa kotak pembungkus; langsung di atas latar bertitik).
 // ringkas = versi kecil tanpa ilustrasi untuk halaman selain Beranda.
 // Slot bawaan tampil di dalam kartu, di bawah judul dan ilustrasi (dipakai untuk menu Beranda).
 withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
@@ -9,7 +9,7 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
 
 <template>
   <header
-    class="judul-kartu kartu-kaca relative overflow-hidden p-5"
+    class="judul-kartu relative"
     :class="{ ringkas }"
   >
     <div class="tata-atas relative">
@@ -75,9 +75,6 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
 
 /* Kartu lebar: judul di kiri, ilustrasi di kanan. */
 @container (min-width: 600px) {
-  .judul-kartu:not(.ringkas) {
-    padding: 2rem;
-  }
   .tata-atas {
     flex-direction: row;
     align-items: center;

@@ -32,7 +32,7 @@ function buka(kb: number | undefined) {
 <template>
   <div class="min-h-dvh text-ink-900 font-sans">
     <main class="px-5 py-8 pb-16 sm:px-8 lg:px-12">
-      <section class="kartu-kaca flex flex-col gap-7 p-5 sm:p-7" aria-labelledby="judul-daftar-materi">
+      <section class="flex flex-col gap-7" aria-labelledby="judul-daftar-materi">
         <!-- Kepala kartu: tombol kembali + judul -->
         <header class="flex items-center gap-3">
           <button
