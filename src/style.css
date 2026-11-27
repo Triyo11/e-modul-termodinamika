@@ -666,3 +666,14 @@ code {
   background-color: transparent;
   box-shadow: none;
 }
+
+/* ---------- Kotak soal kuis ----------
+   Neobrutalism peach (senada tombol Kuis): garis dan bayangan keras peach, latar gelap.
+   Dipakai KuisBlok.vue (di tahap penilaian autentik dan di panel kuis). */
+.kotak-kuis {
+  background-color: var(--bacaan-isi);
+  border: 3px solid var(--color-pastel-peach);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--color-pastel-peach);
+}
+

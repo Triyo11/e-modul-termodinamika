@@ -42,7 +42,7 @@ function kelasOpsi(id: string) {
 </script>
 
 <template>
-  <div class="rounded-xl border border-ink-200 p-4">
+  <div class="kotak-kuis p-4">
     <p class="font-medium text-ink-800" v-html="pertanyaanHtml"></p>
 
     <div class="mt-3 flex flex-col gap-2">
@@ -60,7 +60,7 @@ function kelasOpsi(id: string) {
         >
           {{ o.id.toUpperCase() }}
         </span>
-        <span>{{ o.teks }}</span>
+        <span v-html="renderTeksCampuran(o.teks)"></span>
       </button>
     </div>
 
