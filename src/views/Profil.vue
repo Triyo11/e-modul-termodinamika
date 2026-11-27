@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import JudulEmodul from "@/components/JudulEmodul.vue";
+
+// Halaman About: informasi umum e-modul dan capaian pembelajaran.
 const informasiUmum = {
   "Nama Penyusun": "Triyo Krismantoro, S.T.",
   "Tahun Penyusunan": "2026",
@@ -13,35 +16,41 @@ const informasiUmum = {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-16">
-    <div
-      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-ink-900 via-ink-900 to-ink-700 mb-4 p-8 lg:p-24"
-    >
-      <img
-        src="@/assets/logo fix.png"
-        alt="E-modul Fisika"
-        class="h-full w-full object-contain"
-      />
-    </div>
+  <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans px-5 py-6 pb-16 sm:px-8 lg:px-12">
+    <JudulEmodul ringkas class="mb-8" />
 
-    <main
-      class="flex flex-col gap-4 rounded-xl border-2 border-brand-dark bg-surface p-4 content-shadow"
-    >
-      <section>
-        <h2 class="font-bold text-xl text-center pb-4">Informasi Umum</h2>
-        <div v-for="(value, key, i) in informasiUmum">
-            <div class="grid grid-cols-2 p-2 items-stretch">
-                <span :key="i" class="border-2 p-2">{{ key }}</span>
-                <span :key="i" class="border-2 p-2">{{ value }}</span>
-            </div>
+    <div class="flex flex-col gap-8">
+      <section class="rounded-xl bg-surface p-4 sm:p-5" aria-labelledby="judul-informasi-umum">
+        <h2 id="judul-informasi-umum" class="pb-4 text-xl font-bold">Informasi Umum</h2>
+        <dl class="flex flex-col">
+          <div
+            v-for="(value, key) in informasiUmum"
+            :key="key"
+            class="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-3 border-t-2 border-ink-200 py-2.5 first:border-t-0"
+          >
+            <dt class="font-semibold text-ink-600">{{ key }}</dt>
+            <dd class="text-ink-900">{{ value }}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="rounded-xl bg-surface p-4 sm:p-5" aria-labelledby="judul-capaian">
+        <h2 id="judul-capaian" class="pb-4 text-xl font-bold">Capaian Pembelajaran</h2>
+        <div class="flex flex-col gap-3">
+          <p class="text-ink-700">
+            Capaian pembelajaran diadaptasi dari
+            <a
+              href="https://guru.kemendikdasmen.go.id/dokumen/74r6Yln0zK"
+              class="font-semibold text-accent-1 underline"
+              >BSKAP Nomor 046/H/KR/2025</a
+            >. Setelah mempelajari modul ini, peserta didik diharapkan mampu:
+          </p>
+          <blockquote class="rounded-lg border-l-4 border-pastel-mint bg-ink-100 px-4 py-3 italic text-ink-900">
+            "Murid mampu memahami konsep kalor dan termodinamika serta penerapannya untuk mengidentifikasi
+            fenomena dan menganalisis dampak dari perubahan iklim."
+          </blockquote>
         </div>
       </section>
-    </main>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.content-shadow {
-  box-shadow: var(--shadow-display);
-}
-</style>

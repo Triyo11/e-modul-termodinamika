@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import JudulEmodul from "@/components/JudulEmodul.vue";
 import { PhRocketLaunch, PhQuestion, PhInfo, PhArrowRight } from "@phosphor-icons/vue";
 
 // Tiga menu utama di bawah judul e-modul. Warna isi tiap kartu memakai palet pastel (lihat style.css).
@@ -31,15 +32,7 @@ const menuUtama = [
   <div class="min-h-dvh bg-ink-50 text-ink-900">
     <main class="flex flex-col gap-8 px-5 py-8 pb-16 sm:px-8 lg:px-12">
       <!-- Judul e-modul -->
-      <div
-        class="kartu-judul flex h-40 lg:h-72 items-center justify-center rounded-2xl bg-ink-900 p-8 lg:p-20"
-      >
-        <img
-          src="@/assets/logo fix.png"
-          alt="E-modul Fisika Termodinamika"
-          class="h-full w-full object-contain"
-        />
-      </div>
+      <JudulEmodul />
 
       <!-- Tiga menu utama -->
       <nav aria-label="Menu utama" class="flex flex-col gap-5">
@@ -67,12 +60,6 @@ const menuUtama = [
 </template>
 
 <style scoped>
-/* Kartu judul: latar krem agar logo bertinta gelap terbaca, garis tepi dan bayangan keras pastel. */
-.kartu-judul {
-  border: 3px solid var(--color-brand-dark);
-  box-shadow: 8px 8px 0 0 var(--color-pastel-lavender);
-}
-
 /* Menu neobrutalism: bidang pastel, garis tepi krem tebal, bayangan keras krem.
    Saat ditekan kartu turun menutup bayangannya. */
 .menu-brutal {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import JudulEmodul from "@/components/JudulEmodul.vue";
 const tujuanPembelajaran = [
   "Peserta didik dapat menerapkan teori kinetik gas untuk menganalisis sifat-sifat gas.",
   "Peserta didik dapat menganalisis berbagai hukum gas yang membentuk persamaan gas ideal.",
@@ -7,15 +8,7 @@ const tujuanPembelajaran = [
 
 <template>
   <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-16">
-    <div
-      class="h-40 lg:h-80 flex flex-col items-center justify-center rounded-xl border border-ink-200 bg-linear-to-br from-ink-900 via-ink-900 to-ink-700 mb-4 p-8 lg:p-24"
-    >
-      <img
-        src="@/assets/logo fix.png"
-        alt="E-modul Fisika"
-        class="h-full w-full object-contain"
-      />
-    </div>
+    <JudulEmodul ringkas class="mb-6" />
 
     <main
       class="flex flex-col gap-4 rounded-xl border-2 border-brand-dark bg-surface p-4 content-shadow"

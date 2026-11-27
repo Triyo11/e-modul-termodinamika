@@ -12,9 +12,9 @@ const routes = [
     redirect: { name: "profil" },
   },
   {
+    // Capaian Pembelajaran dipindah ke halaman About (profil); alamat lama dialihkan.
     path: "/capaian-pembelajaran",
-    name: "capaian-pembelajaran",
-    component: () => import("../views/Pendahuluan/CapaianPembelajaran.vue"),
+    redirect: { name: "profil" },
   },
   {
     path: "/tujuan-pembelajaran",
