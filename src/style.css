@@ -630,3 +630,39 @@ code {
   box-shadow: 0 0 0 0 var(--color-brand-dark);
 }
 
+/* ---------- Kotak simulasi interaktif ----------
+   Seperti jendela aplikasi: bilah judul biru pastel, garis dan bayangan keras biru,
+   latar biru sangat gelap. Dipakai KotakSimulasi.vue. ATUR WARNA DI SINI. */
+:root {
+  --simulasi-garis: var(--color-pastel-biru);
+  --simulasi-isi: #0C121A;
+}
+.kotak-simulasi {
+  overflow: hidden;
+  background-color: var(--simulasi-isi);
+  border: 3px solid var(--simulasi-garis);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--simulasi-garis);
+}
+.kotak-simulasi > .kepala-simulasi {
+  color: var(--color-teks-gelap);
+  background-color: var(--simulasi-garis);
+  border-bottom: 3px solid var(--simulasi-garis);
+}
+/* Panel di dalam widget: garis tipis, tanpa gaya neobrutalism. */
+.kotak-simulasi .isi-simulasi :is(.rounded-xl, .rounded-2xl) {
+  box-shadow: none;
+}
+.kotak-simulasi .isi-simulasi :is(.bg-surface, .bg-ink-100, .bg-brand-light):is(.rounded-xl, .rounded-2xl) {
+  border-width: 1.5px;
+  border-color: rgb(147 197 253 / 0.35);
+  background-color: rgb(255 255 255 / 0.03);
+}
+/* Bingkai bawaan widget (lapis pertama) dilepas karena sudah dibungkus kotak simulasi.
+   Selektor dibuat lebih spesifik agar mengalahkan aturan panel di atas. */
+.kotak-simulasi > .isi-simulasi > :is(.rounded-xl, .rounded-2xl):is(.rounded-xl, .rounded-2xl, .bg-surface) {
+  border-width: 0;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}

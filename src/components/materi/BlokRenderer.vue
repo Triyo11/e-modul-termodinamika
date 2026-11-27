@@ -21,6 +21,7 @@ import RefleksiBlok from "./RefleksiBlok.vue";
 import RubrikBlok from "./RubrikBlok.vue";
 import DiagramPVBlok from "./DiagramPVBlok.vue";
 import WidgetCarnotBlok from "./WidgetCarnotBlok.vue";
+import KotakSimulasi from "./KotakSimulasi.vue";
 import type { Blok } from "@/types/kegiatan";
 
 defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
@@ -43,7 +44,9 @@ defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
     <IsianBlok v-else-if="blok.tipe === 'isian'" :blok="blok" :kegiatan-id="kegiatanId" />
     <TabelBlok v-else-if="blok.tipe === 'tabel'" :blok="blok" :kegiatan-id="kegiatanId" />
     <!-- <CalloutBlok v-else-if="blok.tipe === 'callout'" :blok="blok" /> -->
-    <SimulasiBlok v-else-if="blok.tipe === 'simulasi'" :blok="blok" />
+    <KotakSimulasi v-else-if="blok.tipe === 'simulasi'" :judul="blok.judul">
+      <SimulasiBlok :blok="blok" />
+    </KotakSimulasi>
     <RumusBlok v-else-if="blok.tipe === 'rumus'" :blok="blok" />
     <ContohBlok v-else-if="blok.tipe === 'contoh'" :blok="blok" />
     <KuisBlok v-else-if="blok.tipe === 'kuis'" :blok="blok" :kegiatan-id="kegiatanId" />
@@ -61,7 +64,11 @@ defineProps<{ blok: Blok; kegiatanId: string; nomorWorksheet?: string }>();
     <GrafikDataBlok v-else-if="blok.tipe === 'grafik-data'" :blok="blok" :kegiatan-id="kegiatanId" />
     <RefleksiBlok v-else-if="blok.tipe === 'refleksi'" :blok="blok" :kegiatan-id="kegiatanId" />
     <RubrikBlok v-else-if="blok.tipe === 'rubrik'" :blok="blok" />
-    <DiagramPVBlok v-else-if="blok.tipe === 'diagram-pv'" :blok="blok" :kegiatan-id="kegiatanId" />
-    <WidgetCarnotBlok v-else-if="blok.tipe === 'widget-carnot'" :blok="blok" />
+    <KotakSimulasi v-else-if="blok.tipe === 'diagram-pv'" judul="Diagram p–V">
+      <DiagramPVBlok :blok="blok" :kegiatan-id="kegiatanId" />
+    </KotakSimulasi>
+    <KotakSimulasi v-else-if="blok.tipe === 'widget-carnot'" judul="Siklus Carnot">
+      <WidgetCarnotBlok :blok="blok" />
+    </KotakSimulasi>
   </div>
 </template>

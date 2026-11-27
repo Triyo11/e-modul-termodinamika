@@ -23,7 +23,7 @@ if (!widget) console.warn(`Widget simulasi tidak dikenal: ${props.blok.widget}`)
 
 <template>
   <div class="flex flex-col gap-2">
-    <p v-if="blok.judul" class="font-semibold text-ink-800">{{ blok.judul }}</p>
+    <!-- Judul simulasi tampil di bilah judul KotakSimulasi (BlokRenderer). -->
 
     <div v-if="blok.instruksi?.length" class="rounded-xl bg-ink-100 p-4 text-base leading-relaxed text-ink-700">
       <p class="mb-1.5 font-semibold text-ink-800">Langkah kerja</p>
@@ -32,7 +32,7 @@ if (!widget) console.warn(`Widget simulasi tidak dikenal: ${props.blok.widget}`)
       </ol>
     </div>
 
-    <div v-if="widget" class="mt-2 flex flex-col gap-2 border-t border-ink-200 pt-4">
+    <div v-if="widget" class="mt-1 flex flex-col gap-2">
       <component :is="widget" />
     </div>
 
