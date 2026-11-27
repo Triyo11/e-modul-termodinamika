@@ -171,7 +171,7 @@ const tujuan = computed(() =>
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans">
+  <div class="min-h-dvh text-ink-900 font-sans">
     <StepperTahap
       :kb="data.kb ?? kbAktif"
       :judul-kb="data.judul"

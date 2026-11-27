@@ -7,7 +7,7 @@ const tujuanPembelajaran = [
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-brand-dark font-sans px-5 py-6 pb-16">
+  <div class="min-h-dvh text-brand-dark font-sans px-5 py-6 pb-16">
     <JudulEmodul ringkas class="mb-6" />
 
     <main

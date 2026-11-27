@@ -29,7 +29,7 @@ const menuUtama = [
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-ink-900">
+  <div class="min-h-dvh text-ink-900">
     <main class="px-5 py-8 pb-16 sm:px-8 lg:px-12">
       <!-- Kotak judul berisi ilustrasi dan tiga menu utama -->
       <JudulEmodul>

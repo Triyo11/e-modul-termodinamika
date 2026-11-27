@@ -58,7 +58,46 @@
 :root {
   color-scheme: dark;
   accent-color: var(--color-pastel-pink);
-  background-color: var(--color-ink-950);
+  background-color: var(--color-ink-50);
+}
+
+/* ---------- Latar aplikasi ----------
+   Grid seperti kertas milimeter (garis halus tiap 24 px, garis tegas tiap 120 px) ditambah
+   pendar pastel samar di sudut. Lapisan ini menempel di layar (fixed), memenuhi seluruh layar
+   perangkat, dan berada di belakang semua isi halaman.
+   ATUR DI SINI. */
+:root {
+  --latar-garis-halus: rgb(255 248 236 / 0.045);
+  --latar-garis-tegas: rgb(255 248 236 / 0.09);
+  --latar-jarak-halus: 24px;
+  --latar-jarak-tegas: 120px;
+}
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before {
+  background-image:
+    linear-gradient(var(--latar-garis-tegas) 1px, transparent 1px),
+    linear-gradient(90deg, var(--latar-garis-tegas) 1px, transparent 1px),
+    linear-gradient(var(--latar-garis-halus) 1px, transparent 1px),
+    linear-gradient(90deg, var(--latar-garis-halus) 1px, transparent 1px);
+  background-size:
+    var(--latar-jarak-tegas) var(--latar-jarak-tegas),
+    var(--latar-jarak-tegas) var(--latar-jarak-tegas),
+    var(--latar-jarak-halus) var(--latar-jarak-halus),
+    var(--latar-jarak-halus) var(--latar-jarak-halus);
+  background-position: center top;
+}
+body::after {
+  background-image:
+    radial-gradient(40rem 30rem at 0% 0%, rgb(196 181 253 / 0.13), transparent 70%),
+    radial-gradient(36rem 28rem at 100% 100%, rgb(249 168 212 / 0.10), transparent 70%),
+    radial-gradient(28rem 22rem at 100% 0%, rgb(134 239 172 / 0.06), transparent 70%);
 }
 
 /* ---------- Kotak neobrutalism ----------

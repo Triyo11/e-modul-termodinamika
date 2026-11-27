@@ -16,7 +16,7 @@ const informasiUmum = {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-ink-50 text-ink-900 font-sans px-5 py-6 pb-16 sm:px-8 lg:px-12">
+  <div class="min-h-dvh text-ink-900 font-sans px-5 py-6 pb-16 sm:px-8 lg:px-12">
     <JudulEmodul ringkas class="mb-8" />
 
     <div class="flex flex-col gap-8">

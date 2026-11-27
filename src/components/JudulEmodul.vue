@@ -12,9 +12,6 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
     class="judul-kartu relative overflow-hidden rounded-2xl p-5"
     :class="{ ringkas }"
   >
-    <!-- Pola titik di latar -->
-    <div class="pola-titik pointer-events-none absolute inset-0" aria-hidden="true"></div>
-
     <div class="tata-atas relative">
       <h1 class="flex flex-col items-start gap-2 sm:gap-3">
         <span
@@ -55,9 +52,15 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
    agar kata "Termodinamika" (lebar kira-kira 8,4 em) selalu muat. */
 .judul-kartu {
   container-type: inline-size;
-  background-color: var(--color-surface);
-  border: 3px solid var(--color-brand-dark);
-  box-shadow: 8px 8px 0 0 var(--color-pastel-lavender);
+  /* Kartu kaca semi-transparan (bukan neobrutalism): grid latar tetap samar terlihat di baliknya. */
+  border-radius: 1.75rem;
+  background-color: rgb(22 22 22 / 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(255 248 236 / 0.14);
+  box-shadow:
+    inset 0 1px 0 0 rgb(255 248 236 / 0.06),
+    0 24px 60px -20px rgb(0 0 0 / 0.75);
 }
 .ukuran-judul {
   font-size: min(calc((100cqi - 26px) / 8.6), 2.6rem);
@@ -98,10 +101,6 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
   }
 }
 
-.pola-titik {
-  background-image: radial-gradient(rgb(255 248 236 / 0.10) 1.5px, transparent 1.5px);
-  background-size: 18px 18px;
-}
 .label,
 .sorot,
 .chip {
