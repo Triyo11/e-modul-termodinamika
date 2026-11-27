@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
 import { PhHouse } from "@phosphor-icons/vue";
+import { sisaJedaTekan } from "@/lib/efekTekan";
 import LoadingScreen from '@/components/LoadingScreen.vue';
 
 const router = useRouter();
@@ -14,7 +15,8 @@ let timer: ReturnType<typeof setTimeout> | undefined;
 
 router.beforeEach(() => {
   clearTimeout(timer);
-  timer = setTimeout(() => (memuat.value = true), 150);
+  // Sisa jeda efek tekan tombol (lib/efekTekan.ts) ditambahkan agar layar muat tidak muncul karena jeda itu.
+  timer = setTimeout(() => (memuat.value = true), 150 + sisaJedaTekan());
 });
 
 const selesai = () => {

@@ -163,7 +163,8 @@ button.bg-brand:hover:not(:disabled) {
   transform: translate(-1px, -1px);
   box-shadow: 5px 5px 0 0 var(--tombol-garis);
 }
-button.bg-brand:active:not(:disabled) {
+button.bg-brand:active:not(:disabled),
+button.bg-brand.sedang-ditekan {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 0 var(--tombol-garis);
 }
@@ -183,6 +184,26 @@ button:is(.rounded-lg, .rounded-md).border-ink-300 {
 }
 button:is(.rounded-lg, .rounded-md).border-ink-300:hover:not(:disabled) {
   background-color: rgb(196 181 253 / 0.12);
+}
+
+/* Efek tekan (lihat lib/efekTekan.ts): kelas sedang-ditekan bertahan sebentar setelah klik
+   agar efeknya terlihat sebelum pindah halaman. */
+button:is(.rounded-lg, .rounded-md).border-ink-300 {
+  transition: background-color 0.2s, transform 0.08s;
+}
+button:is(.rounded-lg, .rounded-md).border-ink-300:active:not(:disabled),
+button:is(.rounded-lg, .rounded-md).border-ink-300.sedang-ditekan {
+  transform: scale(0.95);
+  background-color: rgb(196 181 253 / 0.22);
+}
+/* Kartu neobrutalism yang berupa tombol (mis. daftar KB): turun menutup bayangannya. */
+button:is(.bg-surface, .bg-ink-100):is(.rounded-xl, .rounded-2xl) {
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+button:is(.bg-surface, .bg-ink-100):is(.rounded-xl, .rounded-2xl):active,
+button:is(.bg-surface, .bg-ink-100):is(.rounded-xl, .rounded-2xl).sedang-ditekan {
+  transform: translate(var(--kotak-geser-bayangan), var(--kotak-geser-bayangan));
+  box-shadow: 0 0 0 0 var(--kotak-bayangan);
 }
 
 /* :root {

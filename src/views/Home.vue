@@ -71,7 +71,8 @@ const menuUtama = [
   transform: translate(-2px, -2px);
   box-shadow: 8px 8px 0 0 var(--color-brand-dark);
 }
-.menu-brutal:active {
+.menu-brutal:active,
+.menu-brutal.sedang-ditekan {
   transform: translate(5px, 5px);
   box-shadow: 0 0 0 0 var(--color-brand-dark);
 }

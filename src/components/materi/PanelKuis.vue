@@ -157,7 +157,8 @@ onBeforeUnmount(() => {
   transform: translate(-1px, -1px);
   box-shadow: 5px 5px 0 0 var(--color-brand-dark);
 }
-.tombol-kuis:active {
+.tombol-kuis:active,
+.tombol-kuis.sedang-ditekan {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 0 var(--color-brand-dark);
 }
