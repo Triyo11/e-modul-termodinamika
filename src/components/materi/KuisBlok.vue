@@ -4,12 +4,21 @@ import { renderTeksCampuran } from "@/lib/mathText";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
 import type { BlokKuis } from "@/types/kegiatan";
 
-const props = defineProps<{ blok: BlokKuis; kegiatanId: string }>();
+const props = defineProps<{
+  blok: BlokKuis;
+  kegiatanId: string;
+  /** Kunci penyimpanan jawaban. Bawaan: `${kegiatanId}:${blok.id}`. Panel kuis memakai kunci sendiri
+   *  agar jawabannya tidak tercampur dengan kuis di dalam tahap. */
+  kunciSimpan?: string;
+}>();
 
 const pertanyaanHtml = computed(() => renderTeksCampuran(props.blok.pertanyaan));
 const pembahasanHtml = computed(() => (props.blok.pembahasan ? renderTeksCampuran(props.blok.pembahasan) : ""));
 
-const pilihan = useJawabanTersimpan<string | null>(`${props.kegiatanId}:${props.blok.id}`, null);
+const pilihan = useJawabanTersimpan<string | null>(
+  props.kunciSimpan ?? `${props.kegiatanId}:${props.blok.id}`,
+  null,
+);
 const sudahDijawab = ref(pilihan.value !== null);
 
 function pilih(id: string) {

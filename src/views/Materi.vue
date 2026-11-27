@@ -4,6 +4,7 @@ import { useRoute, useRouter } from "vue-router";
 import { PhArrowLeft, PhArrowRight, PhCheck, PhFlagCheckered, PhPlay } from "@phosphor-icons/vue";
 import LayarSection from "@/components/materi/LayarSection.vue";
 import StepperTahap from "@/components/materi/StepperTahap.vue";
+import PanelKuis from "@/components/materi/PanelKuis.vue";
 import { cariKegiatanKb, daftarKegiatan } from "@/content";
 import { kegiatanKey } from "@/lib/tabelIsian";
 import { hitungNomorWorksheet, nomorWorksheetKey } from "@/lib/worksheet";
@@ -184,7 +185,7 @@ const tujuan = computed(() =>
     <main
       v-if="!tahapAktif"
       :key="`${data.id}:pengantar`"
-      class="flex w-full flex-col gap-12 px-5 py-8 pb-16 sm:px-8 lg:px-12"
+      class="flex w-full flex-col gap-12 px-5 py-8 pb-32 sm:px-8 lg:px-12"
     >
       <section class="flex flex-col gap-3">
         <div class="w-full flex flex-col gap-1 p-4 rounded-xl border-3 border-dashed border-accent-4/60">
@@ -284,7 +285,7 @@ const tujuan = computed(() =>
     <main
       v-else
       :key="`${data.id}:${tahapAktif.id}`"
-      class="flex w-full flex-col gap-16 px-5 py-8 pb-16 sm:px-8 lg:px-12 [&>section:first-child]:border-t-0 [&>section:first-child]:pt-0"
+      class="flex w-full flex-col gap-16 px-5 py-8 pb-32 sm:px-8 lg:px-12 [&>section:first-child]:border-t-0 [&>section:first-child]:pt-0"
     >
       <LayarSection v-for="l in tahapAktif.layar" :key="l.id" :layar="l" :kegiatan-id="data.id" />
 
@@ -338,5 +339,8 @@ const tujuan = computed(() =>
         </button>
       </nav>
     </main>
+
+    <!-- Panel kuis per KB: tombol mengambang + panel samping -->
+    <PanelKuis :kegiatan="data" />
   </div>
 </template>
