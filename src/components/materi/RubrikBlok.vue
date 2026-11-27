@@ -5,7 +5,8 @@ defineProps<{ blok: BlokRubrik }>();
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="kotak-rubrik flex flex-col gap-2">
+    <span class="label-rubrik rounded-full px-3 py-0.5 text-xs font-bold">Rubrik penilaian</span>
     <p class="font-semibold text-ink-800">{{ blok.judul }}</p>
 
     <div class="flex flex-col gap-3 sm:hidden">

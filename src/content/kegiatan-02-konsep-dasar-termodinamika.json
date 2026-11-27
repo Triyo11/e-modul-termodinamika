@@ -65,7 +65,8 @@
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-2-12) dan tautan sumber Radjawane et al. (2022) hlm. 182–184 serta OpenStax College Physics 2e 15.1 (dibuka 22 Nov 2026). Tahap pemodelan ditambah lkpd-2-13 (LI4).",
-    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb2-tiga-benda.svg) ditambahkan; status perlu-media dihapus."
+    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb2-tiga-benda.svg) ditambahkan; status perlu-media dihapus.",
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
   ],
   "layar": [
     {
@@ -530,6 +531,58 @@
           ]
         },
         {
+          "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
+          "id": "rubrik-2",
+          "judul": "Rubrik laporan rancangan kotak pendingin",
+          "untuk": "rancangan-2",
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": [
+                "BK3"
+              ],
+              "deskriptor": {
+                "4": "Batas sistem jelas dan setiap bahan dikaitkan dengan pertukaran energi yang dihambatnya",
+                "3": "Batas sistem jelas, tetapi sebagian alasan bahan kurang tepat",
+                "2": "Batas sistem tidak jelas atau alasan bahan sebagian besar keliru",
+                "1": "Konsep sistem dan lingkungan tidak dipakai"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": [
+                "BK2"
+              ],
+              "deskriptor": {
+                "4": "Prediksi dihitung dari laju mencair hasil uji singkat, dibandingkan dengan pembanding, dan perbedaan prediksi dengan hasil uji dijelaskan",
+                "3": "Prediksi dihitung dari uji singkat, tetapi tidak dibandingkan dengan pembanding atau perbedaannya tidak dijelaskan",
+                "2": "Prediksi tanpa data uji singkat, atau perhitungannya keliru",
+                "1": "Tidak ada prediksi maupun data uji"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
+              "deskriptor": {
+                "4": "Informasi bahan berasal dari sumber yang telah dinilai dan dicantumkan lengkap",
+                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
+                "2": "Sumber dicantumkan tidak lengkap",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        },
+        {
           "tipe": "tabel-isian",
           "id": "data-2-es",
           "judul": "Uji singkat: laju es mencair",
@@ -942,7 +995,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan kotak pendingin kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan kotak pendingin kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1145,58 +1198,6 @@
           "pembahasan": "Laju mencair = (300 − 270)/0,5 = 60 g/jam. Waktu sampai habis = 300/60 = 5 jam. Perkiraan ini memakai rumus pada kolom 'Perkiraan es habis' di tabel uji singkat.",
           "indikatorVariabel": [
             "LI5"
-          ]
-        },
-        {
-          "tipe": "rubrik",
-          "jenisPenilaian": "autentik",
-          "id": "rubrik-2",
-          "judul": "Rubrik laporan rancangan kotak pendingin",
-          "untuk": "rancangan-2",
-          "skala": [
-            4,
-            3,
-            2,
-            1
-          ],
-          "kriteria": [
-            {
-              "aspek": "Ketepatan konsep",
-              "indikatorVariabel": [
-                "BK3"
-              ],
-              "deskriptor": {
-                "4": "Batas sistem jelas dan setiap bahan dikaitkan dengan pertukaran energi yang dihambatnya",
-                "3": "Batas sistem jelas, tetapi sebagian alasan bahan kurang tepat",
-                "2": "Batas sistem tidak jelas atau alasan bahan sebagian besar keliru",
-                "1": "Konsep sistem dan lingkungan tidak dipakai"
-              }
-            },
-            {
-              "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": [
-                "BK2"
-              ],
-              "deskriptor": {
-                "4": "Prediksi dihitung dari laju mencair hasil uji singkat, dibandingkan dengan pembanding, dan perbedaan prediksi dengan hasil uji dijelaskan",
-                "3": "Prediksi dihitung dari uji singkat, tetapi tidak dibandingkan dengan pembanding atau perbedaannya tidak dijelaskan",
-                "2": "Prediksi tanpa data uji singkat, atau perhitungannya keliru",
-                "1": "Tidak ada prediksi maupun data uji"
-              }
-            },
-            {
-              "aspek": "Penggunaan sumber",
-              "indikatorVariabel": [
-                "LI4",
-                "LI5"
-              ],
-              "deskriptor": {
-                "4": "Informasi bahan berasal dari sumber yang telah dinilai dan dicantumkan lengkap",
-                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
-                "2": "Sumber dicantumkan tidak lengkap",
-                "1": "Tidak ada sumber"
-              }
-            }
           ]
         }
       ]

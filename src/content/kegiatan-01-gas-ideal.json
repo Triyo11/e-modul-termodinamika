@@ -68,7 +68,8 @@
     "Revisi 3.0: blok simulasi memakai format tanpa PhET { tipe, widget, judul, instruksi }. Butuh SimulasiBlok.vue versi 4 Nov 2026 malam.",
     "Revisi 3.0: tabel data-1-uji-katup memakai barisAwal pada kolom angka yang dirujuk kolom hitung. Butuh perbaikan nilaiBaris agar isi barisAwal ikut dihitung.",
     "Persamaan e-modul diberi nomor 1.1 sampai 1.11. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals. Persamaan 1.10 (keseimbangan gaya katup) dan 1.11 (luas lingkaran) belum ada di kajian teori Bab II.",
-    "Angka pada lembar spesifikasi klien dan contoh soal adalah data ilustratif."
+    "Angka pada lembar spesifikasi klien dan contoh soal adalah data ilustratif.",
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
   ],
   "layar": [
     {
@@ -974,6 +975,58 @@
           ]
         },
         {
+          "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
+          "id": "rubrik-1",
+          "judul": "Rubrik rancangan katup pengaman",
+          "untuk": "rancangan-1",
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": [
+                "BK3"
+              ],
+              "deskriptor": {
+                "4": "Semua perhitungan memakai selisih tekanan dan tekanan mutlak secara tepat, suhu kelvin, dan satuan SI",
+                "3": "Perhitungan benar, tetapi ada satu kesalahan konversi satuan",
+                "2": "Konsep benar, tetapi perhitungan memakai suhu Celsius atau mencampur tekanan terukur dan mutlak",
+                "1": "Konsep dan perhitungan keliru"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": [
+                "BK2"
+              ],
+              "deskriptor": {
+                "4": "Memenuhi kedua kriteria utama, didukung hasil uji virtual, dan perbaikannya mengatasi tekanan rendah saat kotak mendingin",
+                "3": "Memenuhi kedua kriteria utama dan didukung uji virtual, tetapi perbaikan belum mengatasi masalah saat kotak mendingin",
+                "2": "Hanya satu kriteria utama terpenuhi atau kelayakannya tidak didukung hasil uji",
+                "1": "Tidak memenuhi kriteria utama atau berada di luar batasan klien"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
+              "deskriptor": {
+                "4": "Memadukan data simulasi, persamaan dari buku, dan spesifikasi klien secara tepat serta mencantumkan sumbernya lengkap",
+                "3": "Memadukan ketiga sumber, tetapi pencantuman sumber belum lengkap",
+                "2": "Hanya memakai satu atau dua sumber informasi",
+                "1": "Tidak menunjukkan sumber informasi yang dipakai"
+              }
+            }
+          ]
+        },
+        {
           "tipe": "tabel-isian",
           "id": "data-1-katup",
           "judul": "Alternatif rancangan",
@@ -1447,7 +1500,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan katup pengaman kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan katup pengaman kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1650,58 +1703,6 @@
           "pembahasan": "Luas lubang $7{,}85 \\times 10^{-5}$ m² dan berat beban 0,47 N, sehingga Δp buka sekitar 6,0 kPa (Persamaan 1.10). Tekanan mutlak saat terbuka 107 kPa. Persamaan 1.4 memberi $T_2 = 300 \\times 107/101 \\approx 318$ K, yaitu sekitar 45 °C. Pilihan a muncul jika perbandingan memakai suhu Celsius, dan pilihan d muncul jika 318 K tidak diubah kembali ke Celsius.",
           "indikatorVariabel": [
             "LI5"
-          ]
-        },
-        {
-          "tipe": "rubrik",
-          "jenisPenilaian": "autentik",
-          "id": "rubrik-1",
-          "judul": "Rubrik rancangan katup pengaman",
-          "untuk": "rancangan-1",
-          "skala": [
-            4,
-            3,
-            2,
-            1
-          ],
-          "kriteria": [
-            {
-              "aspek": "Ketepatan konsep",
-              "indikatorVariabel": [
-                "BK3"
-              ],
-              "deskriptor": {
-                "4": "Semua perhitungan memakai selisih tekanan dan tekanan mutlak secara tepat, suhu kelvin, dan satuan SI",
-                "3": "Perhitungan benar, tetapi ada satu kesalahan konversi satuan",
-                "2": "Konsep benar, tetapi perhitungan memakai suhu Celsius atau mencampur tekanan terukur dan mutlak",
-                "1": "Konsep dan perhitungan keliru"
-              }
-            },
-            {
-              "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": [
-                "BK2"
-              ],
-              "deskriptor": {
-                "4": "Memenuhi kedua kriteria utama, didukung hasil uji virtual, dan perbaikannya mengatasi tekanan rendah saat kotak mendingin",
-                "3": "Memenuhi kedua kriteria utama dan didukung uji virtual, tetapi perbaikan belum mengatasi masalah saat kotak mendingin",
-                "2": "Hanya satu kriteria utama terpenuhi atau kelayakannya tidak didukung hasil uji",
-                "1": "Tidak memenuhi kriteria utama atau berada di luar batasan klien"
-              }
-            },
-            {
-              "aspek": "Penggunaan sumber",
-              "indikatorVariabel": [
-                "LI4",
-                "LI5"
-              ],
-              "deskriptor": {
-                "4": "Memadukan data simulasi, persamaan dari buku, dan spesifikasi klien secara tepat serta mencantumkan sumbernya lengkap",
-                "3": "Memadukan ketiga sumber, tetapi pencantuman sumber belum lengkap",
-                "2": "Hanya memakai satu atau dua sumber informasi",
-                "1": "Tidak menunjukkan sumber informasi yang dipakai"
-              }
-            }
           ]
         }
       ]

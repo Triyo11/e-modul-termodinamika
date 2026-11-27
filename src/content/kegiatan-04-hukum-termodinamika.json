@@ -72,7 +72,8 @@
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: label STEM tahap inkuiri menjadi S, T sesuai Tabel 2.3. Tahap inkuiri ditambah isian strategi penelusuran (lkpd-4-12) dan tautan Radjawane et al. (2022) hlm. 188–197 serta OpenStax College Physics 2e 15.6 (dibuka 22 Nov 2026).",
     "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor.",
-    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb4-tiga-peristiwa.svg) ditambahkan; status perlu-media dihapus."
+    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb4-tiga-peristiwa.svg) ditambahkan; status perlu-media dihapus.",
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
   ],
   "layar": [
     {
@@ -569,6 +570,58 @@
           ]
         },
         {
+          "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
+          "id": "rubrik-4",
+          "judul": "Rubrik rancangan pendinginan minuman",
+          "untuk": "rancangan-4",
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": [
+                "BK3"
+              ],
+              "deskriptor": {
+                "4": "Arah aliran kalor, kesetimbangan termal, dan batas pendinginan dijelaskan dengan benar",
+                "3": "Arah aliran kalor benar, tetapi batas pendinginan tidak dijelaskan",
+                "2": "Ada kesalahan arah aliran kalor",
+                "1": "Konsep aliran kalor tidak dipakai"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": [
+                "BK2"
+              ],
+              "deskriptor": {
+                "4": "Kedua rancangan diuji dengan cara yang sama, laju penurunan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
+                "3": "Kedua rancangan diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
+                "2": "Hanya satu rancangan yang diuji",
+                "1": "Tidak ada data uji"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
+              "deskriptor": {
+                "4": "Informasi faktor aliran kalor berasal dari sumber yang dinilai dan dicantumkan lengkap",
+                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
+                "2": "Sumber dicantumkan tidak lengkap",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        },
+        {
           "tipe": "tabel-isian",
           "id": "data-4-dingin",
           "judul": "Uji singkat: laju penurunan suhu",
@@ -952,7 +1005,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1155,58 +1208,6 @@
           "pembahasan": "Laju A = (27 − 12)/10 = 1,5 °C/menit. Laju B = (27 − 17)/5 = 2,0 °C/menit. Suhu akhir yang lebih rendah pada A terjadi karena waktunya lebih lama, bukan karena lebih cepat.",
           "indikatorVariabel": [
             "LI5"
-          ]
-        },
-        {
-          "tipe": "rubrik",
-          "jenisPenilaian": "autentik",
-          "id": "rubrik-4",
-          "judul": "Rubrik rancangan pendinginan minuman",
-          "untuk": "rancangan-4",
-          "skala": [
-            4,
-            3,
-            2,
-            1
-          ],
-          "kriteria": [
-            {
-              "aspek": "Ketepatan konsep",
-              "indikatorVariabel": [
-                "BK3"
-              ],
-              "deskriptor": {
-                "4": "Arah aliran kalor, kesetimbangan termal, dan batas pendinginan dijelaskan dengan benar",
-                "3": "Arah aliran kalor benar, tetapi batas pendinginan tidak dijelaskan",
-                "2": "Ada kesalahan arah aliran kalor",
-                "1": "Konsep aliran kalor tidak dipakai"
-              }
-            },
-            {
-              "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": [
-                "BK2"
-              ],
-              "deskriptor": {
-                "4": "Kedua rancangan diuji dengan cara yang sama, laju penurunan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
-                "3": "Kedua rancangan diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
-                "2": "Hanya satu rancangan yang diuji",
-                "1": "Tidak ada data uji"
-              }
-            },
-            {
-              "aspek": "Penggunaan sumber",
-              "indikatorVariabel": [
-                "LI4",
-                "LI5"
-              ],
-              "deskriptor": {
-                "4": "Informasi faktor aliran kalor berasal dari sumber yang dinilai dan dicantumkan lengkap",
-                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
-                "2": "Sumber dicantumkan tidak lengkap",
-                "1": "Tidak ada sumber"
-              }
-            }
           ]
         }
       ]

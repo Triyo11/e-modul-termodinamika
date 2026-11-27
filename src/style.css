@@ -677,3 +677,23 @@ code {
   box-shadow: 6px 6px 0 0 var(--color-pastel-peach);
 }
 
+/* ---------- Kotak rubrik penilaian ----------
+   Neobrutalism mint dengan label menempel di garis atas (mirip worksheet, beda warna). */
+.kotak-rubrik {
+  position: relative;
+  margin-top: 0.875rem;
+  padding: 1.75rem 1rem 1rem;
+  background-color: var(--bacaan-isi);
+  border: 3px solid var(--color-pastel-mint);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--color-pastel-mint);
+}
+.kotak-rubrik > .label-rubrik {
+  position: absolute;
+  top: -0.95rem;
+  left: 0.875rem;
+  color: var(--color-teks-gelap);
+  background-color: var(--color-pastel-mint);
+  border: 2.5px solid var(--color-teks-gelap);
+}
+

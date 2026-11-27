@@ -62,7 +62,8 @@
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: lkpd-5-5 diubah agar murid menuliskan strategi penelusuran sebelum mencari label energi AC (LI2).",
     "Revisi 3.0 (22 Nov 2026, keputusan pengguna): tugas rekayasa KB 5 diganti dari rekomendasi pemakaian AC menjadi rancangan peneduh dan penempatan unit luar AC dengan uji suhu udara (termometer lab). TP 5.3 di JSON disesuaikan; Rencana Kegiatan Belajar akan direvisi pengguna.",
-    "Revisi 3.0: diagram peneduh unit luar AC (public/media/kb5-peneduh-unit-luar-ac.svg) ditambahkan di awal tahap masyarakat belajar."
+    "Revisi 3.0: diagram peneduh unit luar AC (public/media/kb5-peneduh-unit-luar-ac.svg) ditambahkan di awal tahap masyarakat belajar.",
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
   ],
   "layar": [
     {
@@ -587,6 +588,58 @@
           ]
         },
         {
+          "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
+          "id": "rubrik-5",
+          "judul": "Rubrik rancangan peneduh dan penempatan unit luar AC",
+          "untuk": "rancangan-5",
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": [
+                "BK3"
+              ],
+              "deskriptor": {
+                "4": "Menjelaskan dengan benar bahwa suhu udara di sekitar unit luar adalah T_H yang menentukan koefisien performansi dan usaha listrik; semua suhu dalam kelvin",
+                "3": "Penjelasan benar, tetapi ada satu kesalahan konversi atau satuan",
+                "2": "Mengaitkan rancangan dengan suhu, tetapi tidak dengan koefisien performansi atau usaha",
+                "1": "Penjelasan fisika keliru atau tidak ada"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": [
+                "BK2"
+              ],
+              "deskriptor": {
+                "4": "Alternatif terpilih memenuhi semua kriteria, didukung data suhu terukur dan perhitungan, serta perkiraan energi dan emisi disertai asumsi dan disebut sebagai batas atas",
+                "3": "Memenuhi kriteria dan didukung data, tetapi asumsi atau sifat batas atas perkiraannya tidak ditulis",
+                "2": "Hanya satu alternatif atau tidak didukung data suhu terukur",
+                "1": "Rancangan menghalangi aliran udara unit atau tidak disertai perhitungan"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
+              "deskriptor": {
+                "4": "Memadukan data suhu terukur, persamaan dari buku, jarak bebas dari buku manual AC, dan faktor emisi dari sumber resmi; semua sumber dicantumkan lengkap",
+                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
+                "2": "Hanya memakai satu atau dua sumber informasi, atau faktor emisi bukan dari sumber resmi",
+                "1": "Tidak menunjukkan sumber informasi yang dipakai"
+              }
+            }
+          ]
+        },
+        {
           "tipe": "tabel-isian",
           "id": "data-5-lokasi",
           "judul": "Tabel uji suhu: lokasi kandidat unit luar",
@@ -894,7 +947,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan peneduh atau penempatan unit luar AC kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan peneduh atau penempatan unit luar AC kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1097,58 +1150,6 @@
           "pembahasan": "Energi total = 0,8 × 8 × 30 = 192 kWh. Emisi = 192 × 0,8 = 153,6 kg CO₂. Pilihan d adalah energi totalnya (kWh), belum dikalikan faktor emisi.",
           "indikatorVariabel": [
             "LI5"
-          ]
-        },
-        {
-          "tipe": "rubrik",
-          "jenisPenilaian": "autentik",
-          "id": "rubrik-5",
-          "judul": "Rubrik rancangan peneduh dan penempatan unit luar AC",
-          "untuk": "rancangan-5",
-          "skala": [
-            4,
-            3,
-            2,
-            1
-          ],
-          "kriteria": [
-            {
-              "aspek": "Ketepatan konsep",
-              "indikatorVariabel": [
-                "BK3"
-              ],
-              "deskriptor": {
-                "4": "Menjelaskan dengan benar bahwa suhu udara di sekitar unit luar adalah T_H yang menentukan koefisien performansi dan usaha listrik; semua suhu dalam kelvin",
-                "3": "Penjelasan benar, tetapi ada satu kesalahan konversi atau satuan",
-                "2": "Mengaitkan rancangan dengan suhu, tetapi tidak dengan koefisien performansi atau usaha",
-                "1": "Penjelasan fisika keliru atau tidak ada"
-              }
-            },
-            {
-              "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": [
-                "BK2"
-              ],
-              "deskriptor": {
-                "4": "Alternatif terpilih memenuhi semua kriteria, didukung data suhu terukur dan perhitungan, serta perkiraan energi dan emisi disertai asumsi dan disebut sebagai batas atas",
-                "3": "Memenuhi kriteria dan didukung data, tetapi asumsi atau sifat batas atas perkiraannya tidak ditulis",
-                "2": "Hanya satu alternatif atau tidak didukung data suhu terukur",
-                "1": "Rancangan menghalangi aliran udara unit atau tidak disertai perhitungan"
-              }
-            },
-            {
-              "aspek": "Penggunaan sumber",
-              "indikatorVariabel": [
-                "LI4",
-                "LI5"
-              ],
-              "deskriptor": {
-                "4": "Memadukan data suhu terukur, persamaan dari buku, jarak bebas dari buku manual AC, dan faktor emisi dari sumber resmi; semua sumber dicantumkan lengkap",
-                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
-                "2": "Hanya memakai satu atau dua sumber informasi, atau faktor emisi bukan dari sumber resmi",
-                "1": "Tidak menunjukkan sumber informasi yang dipakai"
-              }
-            }
           ]
         }
       ]

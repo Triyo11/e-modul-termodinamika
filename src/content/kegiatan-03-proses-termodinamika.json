@@ -62,7 +62,8 @@
     "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026. LI2 = menentukan strategi penelusuran (isian strategi sebelum tautan sumber), LI4 = mengintegrasikan informasi dari berbagai sumber (tidak dipakai untuk tabel data sendiri), LI5 = menggunakan informasi untuk memecahkan masalah.",
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
-    "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-3-11) sebelum tautan Radjawane et al. (2022) hlm. 184–187. kuis-3-6 kini BK3."
+    "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-3-11) sebelum tautan Radjawane et al. (2022) hlm. 184–187. kuis-3-6 kini BK3.",
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
   ],
   "layar": [
     {
@@ -503,6 +504,58 @@
           ]
         },
         {
+          "tipe": "rubrik",
+          "jenisPenilaian": "autentik",
+          "id": "rubrik-3",
+          "judul": "Rubrik rancangan siklus",
+          "untuk": "rancangan-3",
+          "skala": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "kriteria": [
+            {
+              "aspek": "Ketepatan konsep",
+              "indikatorVariabel": [
+                "BK3"
+              ],
+              "deskriptor": {
+                "4": "Semua bagian lintasan diberi nama proses yang benar dan usaha dihitung dengan satuan SI yang benar",
+                "3": "Nama proses benar, tetapi ada satu kesalahan perhitungan atau satuan",
+                "2": "Sebagian nama proses atau perhitungan keliru",
+                "1": "Konsep usaha sebagai luas tidak dipakai"
+              }
+            },
+            {
+              "aspek": "Kelayakan rancangan",
+              "indikatorVariabel": [
+                "BK2"
+              ],
+              "deskriptor": {
+                "4": "Tiga alternatif dibandingkan dengan usaha bersih yang dihitung benar, semuanya dalam batas, dan pilihan akhir beralasan",
+                "3": "Tiga alternatif dibandingkan, tetapi alasan pilihan kurang jelas",
+                "2": "Kurang dari tiga alternatif atau ada siklus yang keluar batas",
+                "1": "Tidak ada perbandingan alternatif"
+              }
+            },
+            {
+              "aspek": "Penggunaan sumber",
+              "indikatorVariabel": [
+                "LI4",
+                "LI5"
+              ],
+              "deskriptor": {
+                "4": "Setiap rumus yang dipakai disertai sumbernya dan dicantumkan lengkap",
+                "3": "Sumber rumus dicantumkan, tetapi tidak lengkap",
+                "2": "Hanya sebagian rumus yang disertai sumber",
+                "1": "Tidak ada sumber"
+              }
+            }
+          ]
+        },
+        {
           "tipe": "diagram-pv",
           "id": "pv-3-rancang",
           "mode": "rancang",
@@ -915,7 +968,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan siklus kelompok Anda dengan rubrik di bawah."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan siklus kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1118,58 +1171,6 @@
           "pembahasan": "Wadah kaku berarti volume tetap (isokhorik). Menurut tabel rujukan, pada proses isokhorik W = 0 dan Q = ΔU, sehingga ΔU = 300 J.",
           "indikatorVariabel": [
             "LI5"
-          ]
-        },
-        {
-          "tipe": "rubrik",
-          "jenisPenilaian": "autentik",
-          "id": "rubrik-3",
-          "judul": "Rubrik rancangan siklus",
-          "untuk": "rancangan-3",
-          "skala": [
-            4,
-            3,
-            2,
-            1
-          ],
-          "kriteria": [
-            {
-              "aspek": "Ketepatan konsep",
-              "indikatorVariabel": [
-                "BK3"
-              ],
-              "deskriptor": {
-                "4": "Semua bagian lintasan diberi nama proses yang benar dan usaha dihitung dengan satuan SI yang benar",
-                "3": "Nama proses benar, tetapi ada satu kesalahan perhitungan atau satuan",
-                "2": "Sebagian nama proses atau perhitungan keliru",
-                "1": "Konsep usaha sebagai luas tidak dipakai"
-              }
-            },
-            {
-              "aspek": "Kelayakan rancangan",
-              "indikatorVariabel": [
-                "BK2"
-              ],
-              "deskriptor": {
-                "4": "Tiga alternatif dibandingkan dengan usaha bersih yang dihitung benar, semuanya dalam batas, dan pilihan akhir beralasan",
-                "3": "Tiga alternatif dibandingkan, tetapi alasan pilihan kurang jelas",
-                "2": "Kurang dari tiga alternatif atau ada siklus yang keluar batas",
-                "1": "Tidak ada perbandingan alternatif"
-              }
-            },
-            {
-              "aspek": "Penggunaan sumber",
-              "indikatorVariabel": [
-                "LI4",
-                "LI5"
-              ],
-              "deskriptor": {
-                "4": "Setiap rumus yang dipakai disertai sumbernya dan dicantumkan lengkap",
-                "3": "Sumber rumus dicantumkan, tetapi tidak lengkap",
-                "2": "Hanya sebagian rumus yang disertai sumber",
-                "1": "Tidak ada sumber"
-              }
-            }
           ]
         }
       ]
