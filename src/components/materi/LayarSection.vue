@@ -5,7 +5,7 @@ import BlokRenderer from "./BlokRenderer.vue";
 import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
 import { nomorWorksheetKey } from "@/lib/worksheet";
-import { labelTahap, warnaTahap } from "@/lib/tahap";
+import { warnaTahap } from "@/lib/tahap";
 import type { Blok, Layar } from "@/types/kegiatan";
 
 const props = defineProps<{ layar: Layar; kegiatanId: string }>();
@@ -57,13 +57,6 @@ const kelompok = computed<Kelompok[]>(() => {
 // Warna pastel judul dan label sesuai tahap; tahap tanpa warna khusus memakai lavender.
 const warna = computed(() => warnaTahap[props.layar.tahap ?? props.layar.peran ?? ""] ?? "var(--color-pastel-lavender)");
 
-const labelStem: Record<string, string> = {
-  S: "Sains (Science)",
-  T: "Teknologi (Technology)",
-  E: "Rekayasa (Engineering)",
-  R: "Rekayasa (Engineering)",
-  M: "Matematika (Mathematics)",
-};
 
 // Mode guru: buka halaman dengan ?guru=1 agar panduan guru tampil.
 const route = useRoute();
@@ -73,22 +66,7 @@ const modeGuru = computed(() => route.query.guru !== undefined);
 <template>
   <section :data-tahap="layar.tahap" class="flex scroll-mt-24 flex-col gap-6 border-t border-ink-200 pt-10">
     <header class="flex flex-col gap-1">
-      <div class="flex flex-wrap items-center gap-2">
-        <span
-          class="rounded-[10px] border-2 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide"
-          :style="{ borderColor: warna, color: warna }"
-        >
-          {{ labelTahap[layar.tahap ?? layar.peran ?? ""] ?? layar.tahap ?? layar.peran }}
-        </span>
-        <span
-          v-for="s in layar.stem"
-          :key="s"
-          :title="labelStem[s]"
-          class="rounded-full border border-accent-4/60 bg-surface px-2 py-0.5 text-[11px] font-semibold text-accent-4-teks"
-        >
-          {{ s }}
-        </span>
-      </div>
+      <!-- Label tahap dan huruf STEM tampil di penunjuk tahap (StepperTahap) di atas. -->
       <h2 class="text-2xl font-bold leading-snug" :style="{ color: warna }">{{ layar.judul }}</h2>
     </header>
 

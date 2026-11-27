@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { PhArrowLeft, PhCheck, PhHouse } from "@phosphor-icons/vue";
-import type { Tahap } from "@/lib/tahap";
+import { computed } from "vue";
+import { labelStem, warnaTahap, type Tahap } from "@/lib/tahap";
 
 /**
  * Penunjuk tahap yang menempel di atas layar: tombol pengantar KB, lalu satu lingkaran bernomor
  * per tahap STEM-CTL. Tahap aktif ditonjolkan, tahap yang pernah dibuka diberi centang.
  */
-defineProps<{
+const props = defineProps<{
   kb: number;
   judulKb: string;
   tahap: Tahap[];
@@ -16,6 +17,13 @@ defineProps<{
 }>();
 
 const emit = defineEmits<{ pilih: [id: string | null]; kembali: [] }>();
+
+// Label tahap aktif + huruf STEM gabungan dari semua layar tahap itu (tanpa duplikat).
+const tahapAktif = computed(() => (props.aktif >= 0 ? props.tahap[props.aktif] : undefined));
+const stemAktif = computed(() => [...new Set(tahapAktif.value?.layar.flatMap((l) => l.stem ?? []) ?? [])]);
+const warnaAktif = computed(() =>
+  tahapAktif.value ? (warnaTahap[tahapAktif.value.id] ?? "var(--color-pastel-lavender)") : "var(--color-pastel-lavender)",
+);
 </script>
 
 <template>
@@ -90,8 +98,25 @@ const emit = defineEmits<{ pilih: [id: string | null]; kembali: [] }>();
       </li>
     </ol>
 
-    <p class="px-1 text-center text-sm font-semibold text-ink-900" aria-live="polite">
-      <template v-if="aktif >= 0">Tahap {{ aktif + 1 }} dari {{ tahap.length }} · {{ tahap[aktif]?.label }}</template>
+    <!-- Label tahap aktif dan huruf STEM -->
+    <div class="flex flex-wrap items-center justify-center gap-2 px-1">
+      <span
+        class="rounded-[10px] border-2 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide"
+        :style="{ borderColor: warnaAktif, color: warnaAktif }"
+      >
+        {{ tahapAktif?.label ?? "Pengantar" }}
+      </span>
+      <span
+        v-for="s in stemAktif"
+        :key="s"
+        :title="labelStem[s]"
+        class="rounded-full border border-accent-4/60 bg-surface px-2 py-0.5 text-[11px] font-semibold text-accent-4-teks"
+      >
+        {{ s }}
+      </span>
+    </div>
+    <p class="sr-only" aria-live="polite">
+      <template v-if="tahapAktif">Tahap {{ aktif + 1 }} dari {{ tahap.length }}: {{ tahapAktif.label }}</template>
       <template v-else>Pengantar</template>
     </p>
   </nav>

@@ -26,6 +26,15 @@ export const warnaTahap: Record<string, string> = {
   "penilaian-autentik": "var(--color-pastel-pink)",
 };
 
+/** Kepanjangan huruf STEM pada label layar. */
+export const labelStem: Record<string, string> = {
+  S: "Sains (Science)",
+  T: "Teknologi (Technology)",
+  E: "Rekayasa (Engineering)",
+  R: "Rekayasa (Engineering)",
+  M: "Matematika (Mathematics)",
+};
+
 export interface Tahap {
   /** Dipakai di URL, mis. /materi/1/inkuiri. */
   id: string;
