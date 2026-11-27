@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { PhCaretRight } from "@phosphor-icons/vue";
+import { PhArrowLeft, PhArrowRight } from "@phosphor-icons/vue";
 import { cariKegiatanKb, daftarKegiatan } from "@/content";
 import GambarZoom from "@/components/micro/GambarZoom.vue";
 
@@ -19,6 +19,10 @@ function bacaKbTerakhir(): number | null {
 }
 const kbTerakhir = ref(bacaKbTerakhir());
 
+// Warna pastel kartu KB, bergiliran.
+const WARNA_KB = ["bg-pastel-pink", "bg-pastel-kuning", "bg-pastel-mint", "bg-pastel-lavender", "bg-pastel-biru"];
+const warnaKb = (i: number) => WARNA_KB[i % WARNA_KB.length];
+
 function buka(kb: number | undefined) {
   if (kb === undefined) return;
   router.push({ name: "materi-kb", params: { kb: String(kb) } });
@@ -27,45 +31,79 @@ function buka(kb: number | undefined) {
 
 <template>
   <div class="min-h-dvh text-ink-900 font-sans">
-    <main class="flex flex-col gap-4 px-5 py-8 pb-16 sm:px-8 lg:px-12">
-      <header class="flex flex-col gap-1 pb-4">
-        <h1 class="text-2xl font-bold text-ink-900">Daftar materi</h1>
-      </header>
-
-      <div class="mb-4 rounded-xl border border-ink-200 bg-surface p-4">
-        <GambarZoom
-          src="/peta-konsep.png"
-          alt="Peta konsep termodinamika: teori kinetik gas, proses termodinamika, dan hukum termodinamika"
-          caption="Peta konsep materi Termodinamika."
-          :lebar-asli="842"
-        />
-      </div>
-
-      <ol class="flex flex-col gap-3">
-        <li v-for="k in daftarKegiatan" :key="k.id">
+    <main class="px-5 py-8 pb-16 sm:px-8 lg:px-12">
+      <section class="kartu-kaca flex flex-col gap-7 p-5 sm:p-7" aria-labelledby="judul-daftar-materi">
+        <!-- Kepala kartu: tombol kembali + judul -->
+        <header class="flex items-center gap-3">
           <button
             type="button"
-            class="flex w-full items-center gap-4 rounded-xl border bg-surface p-4 text-left transition-colors hover:border-accent-1/40 hover:bg-ink-50"
-            :class="k.kb === kbTerakhir ? 'border-accent-4' : 'border-ink-200'"
-            @click="buka(k.kb)"
+            class="tombol-ikon size-11 shrink-0"
+            aria-label="Kembali ke Beranda"
+            title="Kembali ke Beranda"
+            @click="router.push({ name: 'home' })"
           >
-            <span
-              class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-lg bg-accent-4 text-ink-50"
-            >
-              <span class="text-[10px] font-semibold uppercase leading-none">KB</span>
-              <span class="text-lg font-bold leading-tight">{{ k.kb }}</span>
-            </span>
-            <span class="flex flex-1 flex-col gap-0.5">
-              <span class="font-semibold text-ink-900">{{ k.judul }}</span>
-              <span class="flex flex-wrap gap-x-3 text-xs text-ink-500">
-                <span v-if="k.alokasiWaktu">{{ k.alokasiWaktu }} menit</span>
-                <span v-if="k.kb === kbTerakhir" class="font-semibold text-accent-4-teks">Terakhir dibaca</span>
-              </span>
-            </span>
-            <PhCaretRight :size="18" weight="bold" class="shrink-0 text-ink-500" />
+            <PhArrowLeft :size="22" weight="bold" />
           </button>
-        </li>
-      </ol>
+          <div class="flex flex-col">
+            <h1 id="judul-daftar-materi" class="text-2xl font-extrabold leading-tight tracking-tight">Daftar Materi</h1>
+            <p class="text-sm text-ink-500">{{ daftarKegiatan.length }} kegiatan belajar termodinamika</p>
+          </div>
+        </header>
+
+        <!-- Peta konsep -->
+        <div class="flex flex-col gap-3">
+          <span class="label-bagian self-start rounded-md bg-pastel-pink px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest">
+            Peta konsep
+          </span>
+          <GambarZoom
+            src="/peta-konsep.png"
+            alt="Peta konsep termodinamika: teori kinetik gas, proses termodinamika, dan hukum termodinamika"
+            :lebar-asli="842"
+          />
+        </div>
+
+        <!-- Daftar kegiatan belajar -->
+        <div class="flex flex-col gap-3">
+          <span class="label-bagian self-start rounded-md bg-pastel-mint px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest">
+            Kegiatan belajar
+          </span>
+          <ol class="flex flex-col gap-4">
+            <li v-for="(k, i) in daftarKegiatan" :key="k.id">
+              <button
+                type="button"
+                class="menu-brutal flex w-full items-center gap-4 rounded-xl p-3.5 text-left sm:p-4"
+                :class="warnaKb(i)"
+                @click="buka(k.kb)"
+              >
+                <span
+                  class="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg border-[2.5px] border-teks-gelap bg-ink-900"
+                >
+                  <span class="text-[10px] font-bold uppercase leading-none">KB</span>
+                  <span class="text-lg font-extrabold leading-tight">{{ k.kb }}</span>
+                </span>
+                <span class="flex flex-1 flex-col gap-0.5">
+                  <span class="text-lg font-extrabold leading-snug tracking-tight">{{ k.judul }}</span>
+                  <span class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium">
+                    <span v-if="k.alokasiWaktu" class="opacity-80">{{ k.alokasiWaktu }} menit</span>
+                    <span
+                      v-if="k.kb === kbTerakhir"
+                      class="rounded-full border-2 border-teks-gelap bg-ink-900 px-2 text-xs font-bold"
+                    >Terakhir dibaca</span>
+                  </span>
+                </span>
+                <PhArrowRight :size="22" weight="bold" class="shrink-0" />
+              </button>
+            </li>
+          </ol>
+        </div>
+      </section>
     </main>
   </div>
 </template>
+
+<style scoped>
+.label-bagian {
+  color: var(--color-teks-gelap);
+  border: 2.5px solid var(--color-brand-dark);
+}
+</style>

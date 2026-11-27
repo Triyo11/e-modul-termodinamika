@@ -37,7 +37,7 @@ router.isReady().then(selesai, selesai);
       <LoadingScreen v-if="memuat" />
     </Transition>
     <!-- Navbar bawah dihapus; halaman selain Beranda mendapat tombol kembali ke Beranda di atas. -->
-    <div v-if="route.name && route.name !== 'home'" class="px-5 pt-5 sm:px-8 lg:px-12">
+    <div v-if="route.name && route.name !== 'home' && !route.meta.tombolBerandaSendiri" class="px-5 pt-5 sm:px-8 lg:px-12">
       <button
         type="button"
         class="inline-flex items-center gap-2 rounded-lg border-2 border-ink-300 px-3 py-1.5 text-sm font-semibold text-ink-800"

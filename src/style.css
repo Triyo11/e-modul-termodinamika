@@ -100,6 +100,62 @@ body::after {
     radial-gradient(28rem 22rem at 100% 0%, rgb(134 239 172 / 0.06), transparent 70%);
 }
 
+/* ---------- Kartu kaca ----------
+   Kartu besar pembungkus halaman (judul Beranda, Daftar Materi): kaca semi-transparan dengan
+   garis tepi krem tegas, tanpa bayangan. Grid latar tetap samar terlihat di baliknya. */
+.kartu-kaca {
+  border-radius: 1.75rem;
+  background-color: rgb(22 22 22 / 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 3px solid var(--color-brand-dark);
+}
+
+/* Kartu menu pastel neobrutalism (menu Beranda, daftar KB): garis krem, bayangan keras krem,
+   turun menutup bayangan saat ditekan. Warna isi dari kelas bg-pastel-*. */
+.menu-brutal {
+  color: var(--color-teks-gelap);
+  border: 3px solid var(--color-brand-dark);
+  box-shadow: 5px 5px 0 0 var(--color-brand-dark);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.menu-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 0 var(--color-brand-dark);
+}
+.menu-brutal:active,
+.menu-brutal.sedang-ditekan {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 0 var(--color-brand-dark);
+}
+.menu-brutal:focus-visible {
+  outline: 3px solid var(--color-pastel-biru);
+  outline-offset: 4px;
+}
+
+/* Tombol ikon kecil bergaris krem (mis. kembali ke Beranda). */
+.tombol-ikon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid var(--color-brand-dark);
+  border-radius: 0.75rem;
+  color: var(--color-ink-900);
+  transition: transform 0.08s, background-color 0.15s;
+}
+.tombol-ikon:hover {
+  background-color: rgb(255 248 236 / 0.08);
+}
+.tombol-ikon:active,
+.tombol-ikon.sedang-ditekan {
+  transform: scale(0.9);
+  background-color: rgb(255 248 236 / 0.16);
+}
+.tombol-ikon:focus-visible {
+  outline: 3px solid var(--color-pastel-biru);
+  outline-offset: 3px;
+}
+
 /* ---------- Kotak neobrutalism ----------
    Kotak besar (rounded-xl/2xl): latar polos, garis tepi tebal krem, dan bayangan keras pastel
    tanpa blur yang digeser ke kanan bawah.

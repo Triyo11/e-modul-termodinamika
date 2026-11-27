@@ -57,27 +57,3 @@ const menuUtama = [
     </main>
   </div>
 </template>
-
-<style scoped>
-/* Menu neobrutalism: bidang pastel, garis tepi krem tebal, bayangan keras krem.
-   Saat ditekan kartu turun menutup bayangannya. */
-.menu-brutal {
-  color: var(--color-teks-gelap);
-  border: 3px solid var(--color-brand-dark);
-  box-shadow: 5px 5px 0 0 var(--color-brand-dark);
-  transition: transform 0.08s, box-shadow 0.08s;
-}
-.menu-brutal:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 0 var(--color-brand-dark);
-}
-.menu-brutal:active,
-.menu-brutal.sedang-ditekan {
-  transform: translate(5px, 5px);
-  box-shadow: 0 0 0 0 var(--color-brand-dark);
-}
-.menu-brutal:focus-visible {
-  outline: 3px solid var(--color-pastel-biru);
-  outline-offset: 4px;
-}
-</style>

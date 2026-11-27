@@ -41,6 +41,8 @@ const routes = [
     path: "/materi",
     name: "materi",
     component: () => import("../views/DaftarMateri.vue"),
+    // Halaman ini punya tombol kembali sendiri di dalam kartunya.
+    meta: { tombolBerandaSendiri: true },
   },
   {
     // /materi/3 = pengantar KB 3; /materi/3/inkuiri = halaman tahap inkuiri KB 3.

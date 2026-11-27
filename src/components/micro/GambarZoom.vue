@@ -59,12 +59,12 @@ onBeforeUnmount(() => {
     <button
       type="button"
       @click="buka"
-      class="relative block w-full cursor-zoom-in rounded-xl border border-ink-200 bg-surface p-2 hover:border-ink-400"
+      class="group relative block w-full cursor-zoom-in"
     >
       <img
         :src="src"
         :alt="alt"
-        class="mx-auto block max-h-[60vh] w-auto max-w-full object-contain"
+        class="mx-auto block max-h-[60vh] w-auto max-w-full rounded-lg object-contain transition-opacity group-hover:opacity-90"
       />
       <span
         class="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-ink-50/85 px-3 py-1 text-xs font-semibold text-white"

@@ -9,7 +9,7 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
 
 <template>
   <header
-    class="judul-kartu relative overflow-hidden rounded-2xl p-5"
+    class="judul-kartu kartu-kaca relative overflow-hidden p-5"
     :class="{ ringkas }"
   >
     <div class="tata-atas relative">
@@ -52,13 +52,6 @@ withDefaults(defineProps<{ ringkas?: boolean }>(), { ringkas: false });
    agar kata "Termodinamika" (lebar kira-kira 8,4 em) selalu muat. */
 .judul-kartu {
   container-type: inline-size;
-  /* Kartu kaca semi-transparan dengan garis tepi krem tegas, tanpa bayangan keras neobrutalism.
-     Grid latar tetap samar terlihat di baliknya. */
-  border-radius: 1.75rem;
-  background-color: rgb(22 22 22 / 0.62);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 3px solid var(--color-brand-dark);
 }
 .ukuran-judul {
   font-size: min(calc((100cqi - 26px) / 8.6), 2.6rem);
