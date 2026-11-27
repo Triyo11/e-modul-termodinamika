@@ -27,7 +27,7 @@ const kolom = computed(() => props.blok.kolom.map((k) => renderTeksCampuran(k)))
 </script>
 
 <template>
-  <div class="kotak-bacaan flex flex-col gap-2">
+  <div class="flex flex-col gap-2">
     <p v-if="blok.judul" class="font-semibold text-ink-800">{{ blok.judul }}</p>
 
     <div v-if="terkunci" class="flex flex-col items-start gap-2 rounded-xl border border-dashed border-ink-300 bg-surface p-4">

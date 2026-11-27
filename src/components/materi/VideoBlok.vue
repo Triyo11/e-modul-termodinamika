@@ -8,7 +8,7 @@ const rasioStyle = { aspectRatio: (props.blok.rasio ?? "16/9").replace("/", " / 
 
 <template>
   <figure class="flex flex-col gap-2">
-    <div class="overflow-hidden w-full rounded-xl border border-ink-200 bg-ink-100" :style="rasioStyle">
+    <div class="bingkai-media overflow-hidden w-full rounded-xl" :style="rasioStyle">
       <video
         v-if="blok.src"
         :src="blok.src"

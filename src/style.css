@@ -543,7 +543,35 @@ code {
   --worksheet-garis: var(--color-pastel-kuning);
 }
 
-/* Kotak bacaan: tenang, garis tipis, tanpa bayangan. */
+/* Kotak pembahasan: kumpulan blok materi (teks, foto, video, tabel, rumus, ...) dalam satu kotak
+   neobrutalism (garis krem tebal, bayangan keras lavender). Dibuat di LayarSection.vue. */
+.kotak-pembahasan {
+  background-color: var(--bacaan-isi);
+  border: 3px solid var(--color-brand-dark);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 var(--color-brand);
+  padding: 1.125rem;
+}
+/* Kotak bersudut di dalam kotak pembahasan (rumus, contoh, callout) tidak memakai gaya neobrutalism lagi. */
+.kotak-pembahasan :is(.rounded-xl, .rounded-2xl) {
+  border-width: 1.5px;
+  border-color: var(--bacaan-garis);
+  box-shadow: none;
+}
+.kotak-pembahasan .keterangan-media {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Bingkai foto/video/animasi: garis pastel biasa, tanpa bayangan. */
+.bingkai-media,
+.kotak-pembahasan .bingkai-media {
+  background-color: var(--color-ink-50);
+  border: 2px solid var(--color-pastel-lavender);
+  box-shadow: none;
+}
+
+/* Kotak bacaan: tenang, garis tipis, tanpa bayangan (mis. referensi di pengantar KB). */
 .kotak-bacaan {
   background-color: var(--bacaan-isi);
   border: 1.5px solid var(--bacaan-garis);

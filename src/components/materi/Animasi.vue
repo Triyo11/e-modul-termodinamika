@@ -59,10 +59,10 @@ onBeforeUnmount(() => observer?.disconnect());
 </script>
 
 <template>
-  <figure class="my-6">
+  <figure>
     <!-- Latar putih tetap di mode gelap: diperlakukan sebagai "kartu gambar" seperti di buku teks -->
     <div
-      class="w-full h-96 relative overflow-hidden rounded-xl bg-transparent ring-2 ring-ink-500"
+      class="bingkai-media w-full h-96 relative overflow-hidden rounded-xl"
       :style="{ aspectRatio: rasio }"
     >
       <video

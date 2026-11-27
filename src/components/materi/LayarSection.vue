@@ -6,9 +6,9 @@ import RangkumanBlok from "./RangkumanBlok.vue";
 import { kegiatanKey } from "@/lib/tabelIsian";
 import { nomorWorksheetKey } from "@/lib/worksheet";
 import { labelTahap } from "@/lib/tahap";
-import type { Layar } from "@/types/kegiatan";
+import type { Blok, Layar } from "@/types/kegiatan";
 
-defineProps<{ layar: Layar; kegiatanId: string }>();
+const props = defineProps<{ layar: Layar; kegiatanId: string }>();
 
 const kegiatan = inject(kegiatanKey, null);
 const nomorWorksheet = inject(nomorWorksheetKey, null);
@@ -34,6 +34,25 @@ function teksPanduan(teks: string) {
     return no ? `Student e-Worksheet ${no}` : asli;
   });
 }
+
+// ---------- Pengelompokan blok ----------
+// Blok materi pembahasan yang berurutan (teks, foto, video, animasi, tabel, rumus, contoh, callout)
+// dikumpulkan dalam satu kotak pembahasan. Blok lain (worksheet, simulasi, kuis, dsb.) berdiri sendiri.
+const TIPE_PEMBAHASAN = new Set<Blok["tipe"]>(["teks", "gambar", "video", "animasi", "tabel", "rumus", "contoh", "callout"]);
+type Kelompok = { pembahasan: boolean; blok: Blok[]; rangkumanSetelah: boolean };
+
+const kelompok = computed<Kelompok[]>(() => {
+  const hasil: Kelompok[] = [];
+  for (const b of props.layar.blok) {
+    const pembahasan = TIPE_PEMBAHASAN.has(b.tipe);
+    const akhir = hasil[hasil.length - 1];
+    if (pembahasan && akhir?.pembahasan && !akhir.rangkumanSetelah) akhir.blok.push(b);
+    else hasil.push({ pembahasan, blok: [b], rangkumanSetelah: false });
+    // Rangkuman tampil setelah blok tertentu: kelompok ditutup di blok itu.
+    if ("id" in b && b.id === kegiatan?.value.rangkuman?.tampilSetelah) hasil[hasil.length - 1]!.rangkumanSetelah = true;
+  }
+  return hasil;
+});
 
 const labelStem: Record<string, string> = {
   S: "Sains (Science)",
@@ -93,13 +112,17 @@ const modeGuru = computed(() => route.query.guru !== undefined);
       </template>
     </details>
 
-    <template v-for="(b, i) in layar.blok" :key="`${layar.id}-${i}`">
+    <template v-for="(k, i) in kelompok" :key="`${layar.id}-${i}`">
+      <div v-if="k.pembahasan" class="kotak-pembahasan flex flex-col gap-5">
+        <BlokRenderer v-for="(b, j) in k.blok" :key="j" :blok="b" :kegiatan-id="kegiatanId" />
+      </div>
       <BlokRenderer
-        :blok="b"
+        v-else
+        :blok="k.blok[0]!"
         :kegiatan-id="kegiatanId"
-        :nomor-worksheet="nomorWorksheet?.get(toRaw(b))"
+        :nomor-worksheet="nomorWorksheet?.get(toRaw(k.blok[0]!))"
       />
-      <RangkumanBlok v-if="'id' in b && b.id === kegiatan?.rangkuman?.tampilSetelah" />
+      <RangkumanBlok v-if="k.rangkumanSetelah" />
     </template>
   </section>
 </template>

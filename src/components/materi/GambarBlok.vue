@@ -8,7 +8,7 @@ const rasioStyle = props.blok.rasio ? { aspectRatio: props.blok.rasio.replace("/
 
 <template>
   <figure class="flex flex-col gap-2">
-    <div class="overflow-hidden max-h-80 lg:max-h-96 w-full rounded-xl border border-ink-200 bg-ink-100" :style="rasioStyle">
+    <div class="bingkai-media overflow-hidden max-h-80 lg:max-h-96 w-full rounded-xl" :style="rasioStyle">
       <img v-if="blok.src" :src="blok.src" :alt="blok.alt" class="h-full w-full object-contain" loading="lazy" />
       <MediaKosong v-else jenis="gambar" :alt="blok.alt" />
     </div>
