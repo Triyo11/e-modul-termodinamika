@@ -6,7 +6,7 @@
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 1,
   "judul": "Gas Ideal",
-  "subJudul": "Mengapa tekanan gas naik padahal tidak ada gas yang ditambahkan?",
+  "subJudul": "Bagaimana menjaga kaleng aerosol tetap aman di dalam kontainer yang panas?",
   "bab": "Termodinamika",
   "model": "STEM-CTL",
   "fase": "F",
@@ -35,7 +35,7 @@
     },
     {
       "kode": "1.3",
-      "teks": "Menerapkan persamaan pV = nRT untuk menganalisis perubahan keadaan gas pada ban kendaraan dan merancang indikator tekanan untuk muatan kaleng aerosol",
+      "teks": "Menerapkan persamaan pV = nRT untuk menganalisis perubahan keadaan gas dalam wadah tertutup dan merancang indikator tekanan untuk muatan kaleng aerosol",
       "kajianTeori": [
         "1.a",
         "1.b"
@@ -51,8 +51,7 @@
     }
   ],
   "fenomena": [
-    "Tekanan ban naik setelah perjalanan jauh",
-    "Kaleng aerosol di dalam kontainer yang terjemur di pelabuhan"
+    "Kaleng aerosol di dalam kontainer yang terjemur di pelabuhan (skenario rekaan)"
   ],
   "simulasiUtama": [
     "Simulasi partikel gas (widget e-modul)"
@@ -71,12 +70,13 @@
     "Revisi 4.0 (29 Nov 2026): orientasi masalah dan tugas rekayasa diganti menjadi indikator tekanan untuk kontainer kaleng aerosol (keputusan pengguna 29 Nov 2026; rincian di claude/orientasi-masalah-kb1-5.md). Alasan fisika: kontainer tidak kedap udara sehingga sensor tekanan dipasang pada tabung acuan tertutup; tekanan kaleng (V dan n tetap) hanya dapat diturunkan lewat suhu. Perhitungan katup v3 (Persamaan 1.10–1.11, tabel alternatif, tabel uji) dipakai ulang sebagai saklar tekanan berpemberat.",
     "Revisi 4.0: spesifikasi klien (27 °C, 101 kPa, menyala ≤ 45 °C, tidak menyala < 40 °C) adalah data ilustratif. Ruang solusi: Δp picu 4,4–6,1 kPa; contoh d 1,0 cm memerlukan beban 35–48 g. Data kontainer (cokelat ≈ 50 °C, putih ≈ 38 °C pada luar ≈ 25 °C) dari TIS-GDV; tabel isobutana dihitung dari persamaan Antoine NIST.",
     "Revisi 4.0: lkpd-1-15 diganti (pengaruh tekanan udara luar 95 kPa terhadap indikator, jawaban 27 °C); kuis-1-8 baru (membuang udara kontainer tidak menurunkan tekanan kaleng).",
-    "Gambar l1 (kb1-kontainer-aerosol.svg) dan l5 (kb1-saklar-tekanan.svg) adalah ilustrasi penulis. Foto pengukuran tekanan ban di l1 sudah tersedia."
+    "Revisi 4.1 (29 Nov 2026, keputusan pengguna): fenomena ban dihapus dari tahap konstruktivisme; orientasi hanya kaleng aerosol. Ban tetap dipakai di klaim nitrogen (l4) dan contoh tekanan terukur (l5) karena berdiri sendiri. Skenario perusahaan pengiriman ditulis sebagai rekaan (\"Bayangkan\", \"Misalkan\", \"perusahaan rekaan\"); fakta nyata (label 50 °C, data suhu kontainer TIS-GDV, data isobutana NIST) tetap ditulis sebagai fakta. lkpd-1-5 dan kuis-1-1 dialihkan dari ban ke wadah tertutup/kaleng.",
+    "Gambar l1 (kb1-kontainer-aerosol.svg) dan l5 (kb1-saklar-tekanan.svg) adalah ilustrasi penulis. Foto kb1-tekanan-ban-jalan-tol.webp tidak dipakai lagi di KB 1, berkasnya tetap disimpan."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Ban dan kaleng aerosol yang tekanannya naik sendiri",
+      "judul": "Kaleng aerosol di dalam kontainer yang panas",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -89,23 +89,23 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan fenomena ban dan kaleng aerosol di dalam kontainer yang terjemur, lalu menggali pengetahuan awal murid.",
+      "peranGuru": "Menyajikan skenario kaleng aerosol di dalam kontainer yang terjemur, lalu menggali pengetahuan awal murid.",
       "panduanGuru": {
         "kegiatan": [
-          "Menampilkan gambar pengukuran tekanan ban dan kontainer kaleng aerosol, lalu meminta murid mengamati apa yang berubah dan apa yang tetap pada ban dan pada kaleng.",
+          "Menegaskan bahwa perusahaan pengiriman dan permintaannya adalah skenario rekaan untuk belajar, sedangkan label peringatan kaleng dan data suhu kontainer berasal dari sumber nyata.",
+          "Menampilkan gambar kontainer kaleng aerosol, lalu meminta murid mengamati apa yang berubah dan apa yang tetap pada kaleng ketika kontainer memanas.",
           "Menunjukkan kaleng aerosol asli (misalnya semprot nyamuk) dan meminta murid membaca label peringatannya.",
-          "Menegaskan bahwa ban dan kaleng tidak ditambah gas dan volumenya hampir tidak berubah.",
           "Menyampaikan tantangan rancangan: indikator berbasis sensor tekanan dan cara menjaga tekanan kaleng tetap aman. Tantangan ini dikerjakan kelompok di tahap masyarakat belajar.",
           "Meminta murid menulis dugaan awal di {lkpd-1-1} tanpa mengoreksinya. Dugaan ini akan ditinjau ulang di tahap refleksi.",
           "Membimbing murid mengubah rasa ingin tahu menjadi pertanyaan masalah yang menyebut variabel ({lkpd-1-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-1-3})."
         ],
         "pertanyaanPemantik": [
-          "Gas di dalam ban dan kaleng tidak ditambah. Lalu apa yang bertambah?",
+          "Gas di dalam kaleng tidak ditambah dan kalengnya hampir tidak membesar. Lalu apa yang membuat tekanannya naik?",
           "Kontainer tidak kedap udara. Apakah tekanan udara di dalam kontainer ikut naik ketika kontainer panas?",
           "Bagaimana cara menurunkan tekanan di dalam kaleng tanpa membukanya?"
         ],
         "antisipasi": [
-          "Murid menjawab 'udaranya memuai'. Tanyakan: ban dan kaleng hampir tidak membesar, jadi ke mana pemuaian itu?",
+          "Murid menjawab 'gasnya memuai'. Tanyakan: kaleng hampir tidak membesar, jadi ke mana pemuaian itu?",
           "Murid ingin memasang sensor tekanan di dinding kontainer. Tanyakan apakah udara kontainer terkurung rapat. Arahkan ke wadah tertutup yang volumenya tetap.",
           "Murid ingin mengurangi tekanan udara di dalam kontainer. Tanyakan tekanan mana yang ditahan dinding kaleng: tekanan di dalam kaleng atau udara kontainer?",
           "Pertanyaan masalah belum menyebut variabel tetap. Arahkan dengan pola di petunjuk {lkpd-1-2}."
@@ -114,37 +114,25 @@
       "blok": [
         {
           "tipe": "gambar",
-          "src": "/media/kb1-tekanan-ban-jalan-tol.webp",
-          "alt": "Pengukur tekanan ban sesudah kendaraan menempuh perjalanan jauh",
-          "rasio": "4/3",
-          "caption": "Tekanan ban diukur setelah perjalanan jauh.",
-          "sumber": "ilustrasi penulis"
-        },
-        {
-          "tipe": "teks",
-          "isi": "Andi mengukur tekanan ban mobilnya sebelum mudik. Tiga jam kemudian, dia mengukur tekanan ban mobilnya lagi saat masih di jalan tol. Berdasarkan alat pengukur tekanan, ternyata tekanan ban mobilnya naik. Padahal selama dalam perjalanan tidak ada udara yang ditambahkan ke dalam ban."
-        },
-        {
-          "tipe": "gambar",
           "src": "/media/kb1-kontainer-aerosol.svg",
           "alt": "Kontainer baja cokelat berisi tumpukan kaleng aerosol berdiri di bawah matahari. Bagian atas kontainer paling panas. Label kaleng: lindungi dari sinar matahari, jangan terpapar suhu di atas 50 °C.",
           "rasio": "4/3",
-          "caption": "Kontainer berisi kaleng aerosol menunggu di pelabuhan di bawah terik matahari.",
+          "caption": "Ilustrasi kontainer berisi kaleng aerosol yang menunggu di pelabuhan di bawah terik matahari.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Ribuan kaleng semprot nyamuk, cat semprot, dan deodoran dikirim dari gudang ke berbagai kota dengan kontainer baja. Setiap kaleng memuat peringatan: lindungi dari sinar matahari dan jangan terpapar suhu di atas 50 °C. Di pelabuhan, kontainer bisa menunggu berjam-jam di bawah terik. Saat udara luar sekitar 25 °C, udara di dalam kontainer berwarna cokelat dapat mencapai sekitar 50 °C, sedangkan kontainer berwarna putih sekitar 38 °C. Kaleng yang terlalu panas tekanannya naik, lalu kaleng dapat pecah atau meledak."
+          "isi": "Bayangkan sebuah perusahaan pengiriman mengangkut ribuan kaleng semprot nyamuk, cat semprot, dan deodoran dengan kontainer baja. Setiap kaleng aerosol memang memuat peringatan seperti ini: lindungi dari sinar matahari dan jangan terpapar suhu di atas 50 °C. Misalkan kontainer itu harus menunggu berjam-jam di pelabuhan di bawah terik matahari. Pengukuran pada kontainer baja menunjukkan bahwa saat udara luar sekitar 25 °C, udara di dalam kontainer berwarna cokelat dapat mencapai sekitar 50 °C, sedangkan kontainer berwarna putih sekitar 38 °C. Kaleng yang terlalu panas tekanannya naik, lalu kaleng dapat pecah atau meledak."
         },
         {
           "tipe": "teks",
-          "isi": "Tantangan untuk kelompokmu: sebuah perusahaan pengiriman meminta dua hal. Pertama, indikator berbasis sensor tekanan yang dipasang di dalam kontainer dan memberi peringatan sebelum suhu muatan mencapai 50 °C. Ingat, kontainer tidak kedap udara, jadi pikirkan wadah seperti apa yang tekanannya pasti berubah ketika suhunya berubah. Kedua, cara menjaga tekanan di dalam kaleng agar tidak mendekati batas amannya selama kontainer menunggu di pelabuhan. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
+          "isi": "Tantangan untuk kelompokmu: misalkan perusahaan rekaan itu meminta bantuan kelompokmu untuk dua hal. Pertama, indikator berbasis sensor tekanan yang dipasang di dalam kontainer dan memberi peringatan sebelum suhu muatan mencapai 50 °C. Ingat, kontainer tidak kedap udara, jadi pikirkan wadah seperti apa yang tekanannya pasti berubah ketika suhunya berubah. Kedua, cara menjaga tekanan di dalam kaleng agar tidak mendekati batas amannya selama kontainer menunggu di pelabuhan. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan pada kaleng aerosol di dalam kontainer yang panas? Tuliskan dengan kata-katamu.",
+          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada kaleng aerosol di dalam kontainer yang panas, padahal tidak ada gas yang ditambahkan ke dalam kaleng? Tuliskan dengan kata-katamu.",
           "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaanmu akan ditinjau kembali di tahap refleksi.",
           "baris": 4,
           "indikatorVariabel": [
@@ -155,7 +143,7 @@
           "tipe": "isian",
           "id": "lkpd-1-2",
           "format": "teks-panjang",
-          "pertanyaan": "Rumuskan satu pertanyaan yang dapat diselidiki dari kedua fenomena di atas. Sebutkan besaran yang berubah dan besaran yang tetap.",
+          "pertanyaan": "Rumuskan satu pertanyaan yang dapat diselidiki dari fenomena di atas. Sebutkan besaran yang berubah dan besaran yang tetap.",
           "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ... jika ... dijaga tetap?\"",
           "baris": 3,
           "indikatorVariabel": [
@@ -199,7 +187,7 @@
           "Membacakan atau menayangkan tabel postulat, lalu memutar animasi tumbukan molekul dengan dinding.",
           "Menegaskan makna Persamaan 1.1 bahwa suhu mutlak menunjukkan energi kinetik rata-rata molekul.",
           "Memeriksa pengelompokan sifat makroskopis dan mikroskopis ({lkpd-1-4}) dan membahas butir yang paling banyak keliru.",
-          "Meminta murid menalar dari postulat ke kasus ban secara bertahap ({lkpd-1-5}), mulai dari pernyataan umum ke kasus khusus."
+          "Meminta murid menalar dari postulat ke kasus gas di dalam wadah tertutup secara bertahap ({lkpd-1-5}), mulai dari pernyataan umum ke kasus khusus."
         ],
         "pertanyaanPemantik": [
           "Jika molekul bergerak lebih cepat, apa yang berubah pada tumbukannya dengan dinding?"
@@ -316,8 +304,8 @@
           "tipe": "isian",
           "id": "lkpd-1-5",
           "format": "teks-panjang",
-          "pertanyaan": "Gunakan pernyataan dan Persamaan 1.1. Jika suhu udara di dalam ban naik sementara volume ban hampir tetap, apa yang terjadi pada gerak molekul, tumbukan pada dinding, dan tekanan ban? Tuliskan penalaranmu langkah demi langkah.",
-          "petunjuk": "Mulailah dari pernyataan umum, lalu terapkan pada kasus ban.",
+          "pertanyaan": "Gunakan pernyataan dan Persamaan 1.1. Udara kering berada di dalam wadah logam yang tertutup rapat. Jika suhu udara itu naik sementara volume wadah tetap, apa yang terjadi pada gerak molekul, tumbukan pada dinding, dan tekanan udara di dalam wadah? Tuliskan penalaranmu langkah demi langkah.",
+          "petunjuk": "Mulailah dari pernyataan umum, lalu terapkan pada kasus wadah tertutup.",
           "baris": 5,
           "indikatorVariabel": [
             "BK3"
@@ -761,7 +749,7 @@
       "panduanGuru": {
         "kegiatan": [
           "Mengulas contoh soal ban untuk menegaskan beda tekanan terukur dan tekanan mutlak.",
-          "Memperkenalkan permintaan klien dan lembar spesifikasi, lalu membagi empat peran kelompok.",
+          "Memperkenalkan permintaan perusahaan rekaan dan lembar spesifikasinya, lalu membagi empat peran kelompok.",
           "Meminta penelusur informasi menilai keterangan mana yang dapat dipakai untuk menentukan batas suhu ({lkpd-1-13}).",
           "Menjelaskan mengapa sensor dipasang pada tabung acuan tertutup, bukan pada udara kontainer, lalu memeriksa pemahaman kelompok tentang Persamaan 1.10 sebelum mereka mengisi tabel alternatif rancangan.",
           "Membimbing kelompok menguji alternatif terpilih dengan tabel uji virtual, membandingkannya dengan sensor suhu biasa, dan menyusun cara menjaga kaleng tetap dingin."
@@ -820,7 +808,7 @@
         },
         {
           "tipe": "teks",
-          "isi": "Ingat kontainer kaleng aerosol di awal kegiatan. Kontainer tidak kedap udara, sehingga tekanan udara di dalamnya hampir sama dengan tekanan udara luar. Sensor tekanan yang dipasang langsung di dinding kontainer tidak akan menunjukkan perubahan berarti. Volume dan jumlah gas di dalam kaleng tetap, jadi tekanan kaleng hanya naik jika suhunya naik. Karena itu, kelompok Anda akan merancang indikator yang memakai tabung acuan tertutup berisi udara kering. Tabung diletakkan di antara kaleng. Tekanan udara di dalamnya mengikuti Persamaan 1.4, sehingga tekanannya menjadi penanda suhu muatan."
+          "isi": "Ingat skenario kontainer kaleng aerosol di awal kegiatan. Kontainer tidak kedap udara, sehingga tekanan udara di dalamnya hampir sama dengan tekanan udara luar. Sensor tekanan yang dipasang langsung di dinding kontainer tidak akan menunjukkan perubahan berarti. Volume dan jumlah gas di dalam kaleng tetap, jadi tekanan kaleng hanya naik jika suhunya naik. Karena itu, kelompok Anda akan merancang indikator yang memakai tabung acuan tertutup berisi udara kering. Tabung diletakkan di antara kaleng. Tekanan udara di dalamnya mengikuti Persamaan 1.4, sehingga tekanannya menjadi penanda suhu muatan."
         },
         {
           "tipe": "gambar",
@@ -875,7 +863,7 @@
         },
         {
           "tipe": "tabel",
-          "judul": "Lembar spesifikasi dari klien",
+          "judul": "Lembar spesifikasi dari perusahaan (rekaan)",
           "mobile": "kartu",
           "kolom": [
             "Butir",
@@ -911,7 +899,7 @@
               "2–100 g"
             ]
           ],
-          "sumber": "data ilustratif untuk keperluan pembelajaran; batas 50 °C sesuai label peringatan kaleng aerosol"
+          "sumber": "data rekaan untuk keperluan pembelajaran; batas 50 °C sesuai label peringatan kaleng aerosol yang sebenarnya"
         },
         {
           "tipe": "isian",
@@ -933,7 +921,7 @@
           "kriteria": [
             "Indikator sudah menyala paling lambat pada suhu 45 °C",
             "Indikator tidak menyala di bawah suhu 40 °C",
-            "Diameter lubang dan massa beban berada dalam batasan klien",
+            "Diameter lubang dan massa beban berada dalam batasan perusahaan",
             "Perhitungan memakai tekanan mutlak, suhu kelvin, dan satuan SI",
             "Cara menjaga tekanan kaleng tetap aman dijelaskan dengan persamaan gas ideal"
           ],
@@ -967,7 +955,7 @@
               "id": "r1-1",
               "tahap": "menetapkan-masalah",
               "format": "teks-panjang",
-              "instruksi": "Tuliskan masalah klien dengan kata-kata kelompok Anda. Sebutkan besaran yang berubah dan besaran yang dianggap tetap pada tabung acuan dan pada kaleng. Jelaskan mengapa sensor tidak dipasang langsung pada udara kontainer."
+              "instruksi": "Tuliskan masalah perusahaan dengan kata-kata kelompok Anda. Sebutkan besaran yang berubah dan besaran yang dianggap tetap pada tabung acuan dan pada kaleng. Jelaskan mengapa sensor tidak dipasang langsung pada udara kontainer."
             },
             {
               "id": "r1-2",
@@ -1023,7 +1011,7 @@
                 "4": "Memenuhi kedua kriteria suhu, didukung hasil uji virtual, dibandingkan dengan sensor suhu biasa, dan perbaikannya mengatasi pengaruh perubahan tekanan udara luar",
                 "3": "Memenuhi kedua kriteria suhu dan didukung uji virtual, tetapi perbandingan dengan sensor suhu atau perbaikan terhadap perubahan tekanan luar belum ada",
                 "2": "Hanya satu kriteria suhu terpenuhi atau kelayakannya tidak didukung hasil uji",
-                "1": "Tidak memenuhi kriteria suhu atau berada di luar batasan klien"
+                "1": "Tidak memenuhi kriteria suhu atau berada di luar batasan perusahaan"
               }
             },
             {
@@ -1033,7 +1021,7 @@
                 "LI5"
               ],
               "deskriptor": {
-                "4": "Memadukan data simulasi, persamaan dari buku, label kaleng, dan spesifikasi klien secara tepat serta mencantumkan sumbernya lengkap",
+                "4": "Memadukan data simulasi, persamaan dari buku, label kaleng, dan spesifikasi perusahaan secara tepat serta mencantumkan sumbernya lengkap",
                 "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
                 "2": "Hanya memakai satu atau dua sumber informasi",
                 "1": "Tidak menunjukkan sumber informasi yang dipakai"
@@ -1181,7 +1169,7 @@
           "Menampilkan grafik p terhadap 1/V, V terhadap T, dan p terhadap T dari data murid, lalu memodelkan cara membaca garis yang melalui titik nol.",
           "Meminta murid menuliskan pola umum dari keempat percobaan ({lkpd-1-10}).",
           "Mengerjakan contoh perhitungan suhu nyala indikator langkah demi langkah sebagai model, termasuk memeriksa hasilnya terhadap kriteria.",
-          "Meminta murid menjelaskan bagaimana data simulasi, buku, dan spesifikasi klien dipadukan ({lkpd-1-14}), lalu menyajikan rancangan terpilih ({r1-4})."
+          "Meminta murid menjelaskan bagaimana data simulasi, buku, dan spesifikasi perusahaan dipadukan ({lkpd-1-14}), lalu menyajikan rancangan terpilih ({r1-4})."
         ],
         "pertanyaanPemantik": [
           "Ke mana garis V terhadap T mengarah jika diperpanjang?",
@@ -1309,7 +1297,7 @@
           "tipe": "isian",
           "id": "lkpd-1-14",
           "format": "teks-panjang",
-          "pertanyaan": "Rancangan indikator Anda memadukan beberapa sumber informasi, yaitu data simulasi Percobaan C, persamaan dari buku (Persamaan 1.4 dan 1.10), label kaleng, dan lembar spesifikasi klien. Jelaskan peran setiap sumber dalam rancangan Anda. Tekanan di simulasi bersifat ilustratif, jadi bagian mana dari data simulasi yang tetap dapat dipakai?",
+          "pertanyaan": "Rancangan indikator Anda memadukan beberapa sumber informasi, yaitu data simulasi Percobaan C, persamaan dari buku (Persamaan 1.4 dan 1.10), label kaleng, dan lembar spesifikasi perusahaan. Jelaskan peran setiap sumber dalam rancangan Anda. Tekanan di simulasi bersifat ilustratif, jadi bagian mana dari data simulasi yang tetap dapat dipakai?",
           "baris": 6,
           "indikatorVariabel": [
             "BK4",
@@ -1479,14 +1467,14 @@
         },
         {
           "tipe": "teks",
-          "isi": "Guru memberi umpan balik kepada semua kelompok. Indikator kalian membandingkan tekanan di dalam tabung acuan dengan tekanan udara luar. Tekanan udara luar tidak selalu 101 kPa. Saat truk pengangkut kontainer melewati jalan pegunungan, tekanan udara luar dapat turun beberapa kilopascal."
+          "isi": "Guru memberi umpan balik kepada semua kelompok. Indikator kalian membandingkan tekanan di dalam tabung acuan dengan tekanan udara luar. Tekanan udara luar tidak selalu 101 kPa. Tekanan udara makin kecil di tempat yang makin tinggi. Misalkan truk pengangkut kontainer dalam skenario ini melewati jalan pegunungan."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-15",
           "format": "angka",
           "inputmode": "decimal",
-          "pertanyaan": "Sebuah indikator dengan Δp picu 6,0 kPa dipasang pada tabung acuan yang ditutup pada 27 °C dan 101 kPa. Truk lalu melewati jalan pegunungan sehingga tekanan udara luar turun menjadi 95 kPa. Pada suhu berapa (dalam °C) indikator itu sekarang menyala?",
+          "pertanyaan": "Sebuah indikator dengan Δp picu 6,0 kPa dipasang pada tabung acuan yang ditutup pada 27 °C dan 101 kPa. Misalkan di jalan pegunungan tekanan udara luar turun menjadi 95 kPa. Pada suhu berapa (dalam °C) indikator itu sekarang menyala?",
           "petunjuk": "Indikator menyala ketika tekanan di dalam tabung sama dengan tekanan luar ditambah Δp picu. Volume dan jumlah mol udara di dalam tabung tetap. Gunakan Persamaan 1.4.",
           "satuan": "°C",
           "jawabanRujukan": 27,
@@ -1511,7 +1499,7 @@
           "tipe": "isian",
           "id": "lkpd-1-11",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan pada ban dan kaleng aerosol. Jelaskan juga cara kerja indikator rancangan kelompok Anda, cara menjaga tekanan kaleng tetap aman, dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan gas di dalam wadah tertutup seperti kaleng aerosol. Jelaskan juga cara kerja indikator rancangan kelompok Anda, cara menjaga tekanan kaleng tetap aman, dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -1561,27 +1549,27 @@
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-1-1",
-          "pertanyaan": "Andi melihat tekanan ban naik setelah perjalanan jauh. Rumusan masalah yang paling dapat diselidiki adalah ...",
+          "pertanyaan": "Dalam skenario kontainer, kaleng aerosol yang terjemur tekanannya naik padahal tidak ada gas yang ditambahkan. Rumusan masalah yang paling dapat diselidiki adalah ...",
           "opsi": [
             {
               "id": "a",
-              "teks": "Mengapa ban mobil bisa panas?"
+              "teks": "Mengapa kaleng aerosol berbahaya?"
             },
             {
               "id": "b",
-              "teks": "Bagaimana pengaruh suhu udara di dalam ban terhadap tekanannya jika volume ban dijaga tetap?"
+              "teks": "Bagaimana pengaruh suhu gas di dalam wadah tertutup terhadap tekanannya jika volume dan jumlah gas dijaga tetap?"
             },
             {
               "id": "c",
-              "teks": "Berapa lama perjalanan yang aman bagi ban mobil?"
+              "teks": "Berapa lama kontainer boleh menunggu di pelabuhan?"
             },
             {
               "id": "d",
-              "teks": "Apakah ban mahal lebih awet daripada ban murah?"
+              "teks": "Apakah kaleng mahal lebih kuat daripada kaleng murah?"
             }
           ],
           "kunci": "b",
-          "pembahasan": "Rumusan b menyebut variabel yang diubah (suhu), variabel yang diamati (tekanan), dan variabel yang dijaga tetap (volume). Rumusan lain tidak menyebut hubungan antarvariabel yang dapat diukur.",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (suhu), variabel yang diamati (tekanan), dan variabel yang dijaga tetap (volume dan jumlah gas). Rumusan lain tidak menyebut hubungan antarvariabel yang dapat diukur.",
           "indikatorVariabel": [
             "BK1"
           ]
