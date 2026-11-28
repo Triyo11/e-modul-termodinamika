@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d" font-family="Literata, Georgia, 'Times New Roman', serif">
+  <title id="t">Kontainer berisi kaleng aerosol di pelabuhan yang terik</title>
+  <desc id="d">Kontainer baja berwarna cokelat berdiri di bawah matahari. Bagian depannya dipotong sehingga tampak tumpukan kaleng aerosol di dalamnya. Bagian atas kontainer, dekat atap, paling panas. Sebuah kaleng diperbesar dan labelnya berbunyi: lindungi dari sinar matahari, jangan terpapar suhu di atas 50 derajat Celsius.</desc>
+  <rect width="800" height="600" fill="#EDF6F9"/>
+  <!-- matahari -->
+  <circle cx="700" cy="80" r="44" fill="#F5C443"/>
+  <g stroke="#F5C443" stroke-width="6" stroke-linecap="round">
+    <line x1="700" y1="14" x2="700" y2="0"/><line x1="636" y1="80" x2="620" y2="80"/><line x1="655" y1="35" x2="644" y2="24"/><line x1="745" y1="35" x2="756" y2="24"/><line x1="655" y1="125" x2="644" y2="136"/>
+  </g>
+  <!-- tanah -->
+  <rect x="0" y="500" width="800" height="100" fill="#C9D3D6"/>
+  <!-- kontainer -->
+  <rect x="60" y="170" width="500" height="330" fill="#8A4B2A" stroke="#1E2019" stroke-width="4"/>
+  <g stroke="#6E3B20" stroke-width="4">
+    <line x1="100" y1="170" x2="100" y2="500"/><line x1="140" y1="170" x2="140" y2="500"/><line x1="180" y1="170" x2="180" y2="500"/>
+    <line x1="480" y1="170" x2="480" y2="500"/><line x1="520" y1="170" x2="520" y2="500"/>
+  </g>
+  <!-- potongan dalam -->
+  <rect x="210" y="200" width="240" height="280" fill="#F4E2D4" stroke="#1E2019" stroke-width="3"/>
+  <rect x="210" y="200" width="240" height="60" fill="#F3B8A0" opacity="0.8"/>
+  <text x="330" y="236" font-size="22" fill="#1E2019" text-anchor="middle">paling panas</text>
+  <!-- kaleng -->
+  <g fill="#5A6668" stroke="#1E2019" stroke-width="2">
+    <rect x="226" y="400" width="34" height="76" rx="6"/><rect x="268" y="400" width="34" height="76" rx="6"/><rect x="310" y="400" width="34" height="76" rx="6"/><rect x="352" y="400" width="34" height="76" rx="6"/><rect x="394" y="400" width="34" height="76" rx="6"/>
+    <rect x="247" y="318" width="34" height="76" rx="6"/><rect x="289" y="318" width="34" height="76" rx="6"/><rect x="331" y="318" width="34" height="76" rx="6"/><rect x="373" y="318" width="34" height="76" rx="6"/>
+  </g>
+  <text x="310" y="160" font-size="26" fill="#1E2019" text-anchor="middle" font-weight="700">Kontainer baja menunggu di pelabuhan</text>
+  <!-- kaleng diperbesar -->
+  <line x1="420" y1="350" x2="600" y2="290" stroke="#0C70A1" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="600" y="210" width="150" height="270" rx="20" fill="#5A6668" stroke="#1E2019" stroke-width="4"/>
+  <rect x="650" y="186" width="50" height="26" rx="6" fill="#1E2019"/>
+  <rect x="612" y="260" width="126" height="150" rx="8" fill="#FFFFFF" stroke="#0C70A1" stroke-width="3"/>
+  <text x="675" y="292" font-size="18" fill="#1E2019" text-anchor="middle" font-weight="700">PERINGATAN</text>
+  <text x="675" y="320" font-size="16" fill="#1E2019" text-anchor="middle">Lindungi dari</text>
+  <text x="675" y="340" font-size="16" fill="#1E2019" text-anchor="middle">sinar matahari.</text>
+  <text x="675" y="366" font-size="16" fill="#1E2019" text-anchor="middle">Jangan terpapar</text>
+  <text x="675" y="392" font-size="22" fill="#B3261E" text-anchor="middle" font-weight="700">&gt; 50 °C</text>
+</svg>

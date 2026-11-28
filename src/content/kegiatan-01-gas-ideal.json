@@ -1,12 +1,12 @@
 {
   "id": "kegiatan-01",
-  "versi": "3.0",
+  "versi": "4.0",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-11-22",
+  "revisiTerakhir": "2026-11-29",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 1,
   "judul": "Gas Ideal",
-  "subJudul": "Mengapa tekanan ban naik padahal udaranya tidak ditambah?",
+  "subJudul": "Mengapa tekanan gas naik padahal tidak ada gas yang ditambahkan?",
   "bab": "Termodinamika",
   "model": "STEM-CTL",
   "fase": "F",
@@ -35,7 +35,7 @@
     },
     {
       "kode": "1.3",
-      "teks": "Menerapkan persamaan pV = nRT untuk menganalisis perubahan keadaan gas pada ban kendaraan dan merancang katup pengaman wadah tertutup",
+      "teks": "Menerapkan persamaan pV = nRT untuk menganalisis perubahan keadaan gas pada ban kendaraan dan merancang indikator tekanan untuk muatan kaleng aerosol",
       "kajianTeori": [
         "1.a",
         "1.b"
@@ -52,29 +52,31 @@
   ],
   "fenomena": [
     "Tekanan ban naik setelah perjalanan jauh",
-    "Kotak kedap udara (dry box) yang tertinggal di kabin mobil yang panas"
+    "Kaleng aerosol di dalam kontainer yang terjemur di pelabuhan"
   ],
   "simulasiUtama": [
     "Simulasi partikel gas (widget e-modul)"
   ],
   "catatanPengembang": [
     "alokasiWaktu dibiarkan null sampai jumlah JP KB 1 dari ATP guru mitra tersedia.",
-    "Blok gambar dan video berstatus perlu-media di l1 belum punya berkas. Diagram katup pemberat (l5) sudah tersedia di public/media. Isi dengan dokumentasi sendiri atau media berlisensi terbuka yang sudah dicek pemilik dan lisensinya.",
     "Revisi 3.0 (22 Nov 2026): tugas rekayasa diganti dari panduan tekanan ban menjadi rancangan katup pengaman kotak kedap udara (keputusan pengguna 22 Nov 2026). Luaran tetap rancangan di atas kertas, bukan produk fisik.",
     "Revisi 3.0: label STEM memakai E (Engineering/Rekayasa) agar sama dengan Tabel 2.3 Bab II. LayarSection.vue perlu menambah E pada labelStem.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Field ini belum dibaca aplikasi.",
     "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026 (LI1 menganalisis kebutuhan informasi, LI2 menentukan strategi penelusuran, LI3 mengevaluasi informasi dan sumbernya, LI4 mengintegrasikan informasi dari berbagai sumber, LI5 menggunakan informasi untuk memecahkan masalah).",
     "Revisi 3.0: blok simulasi memakai format tanpa PhET { tipe, widget, judul, instruksi }. Butuh SimulasiBlok.vue versi 4 Nov 2026 malam.",
     "Revisi 3.0: tabel data-1-uji-katup memakai barisAwal pada kolom angka yang dirujuk kolom hitung. Butuh perbaikan nilaiBaris agar isi barisAwal ikut dihitung.",
-    "Persamaan e-modul diberi nomor 1.1 sampai 1.11. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals. Persamaan 1.10 (keseimbangan gaya katup) dan 1.11 (luas lingkaran) belum ada di kajian teori Bab II.",
+    "Persamaan e-modul diberi nomor 1.1 sampai 1.11. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals. Persamaan 1.10 (keseimbangan gaya pada piston berbeban) dan 1.11 (luas lingkaran) belum ada di kajian teori Bab II.",
     "Angka pada lembar spesifikasi klien dan contoh soal adalah data ilustratif.",
     "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
-    "Orientasi masalah (tahap konstruktivisme) diperbaiki 28 Nov 2026: fenomena panci presto diganti kotak kedap udara yang tertinggal di kabin mobil panas. Alasan: tekanan panci presto ditentukan uap air yang jumlah molnya bertambah dan berada dekat titik pengembunan, sehingga tidak cocok sebagai contoh gas ideal ber-n tetap, dan tidak mengarah ke masalah rancangan katup kotak kedap udara. Panci presto tetap dipakai di tahap refleksi sebagai contoh pembanding gas nyata (TP 1.4). Analogi katup panci presto di tahap masyarakat belajar dihapus."
+    "Revisi 4.0 (29 Nov 2026): orientasi masalah dan tugas rekayasa diganti menjadi indikator tekanan untuk kontainer kaleng aerosol (keputusan pengguna 29 Nov 2026; rincian di claude/orientasi-masalah-kb1-5.md). Alasan fisika: kontainer tidak kedap udara sehingga sensor tekanan dipasang pada tabung acuan tertutup; tekanan kaleng (V dan n tetap) hanya dapat diturunkan lewat suhu. Perhitungan katup v3 (Persamaan 1.10–1.11, tabel alternatif, tabel uji) dipakai ulang sebagai saklar tekanan berpemberat.",
+    "Revisi 4.0: spesifikasi klien (27 °C, 101 kPa, menyala ≤ 45 °C, tidak menyala < 40 °C) adalah data ilustratif. Ruang solusi: Δp picu 4,4–6,1 kPa; contoh d 1,0 cm memerlukan beban 35–48 g. Data kontainer (cokelat ≈ 50 °C, putih ≈ 38 °C pada luar ≈ 25 °C) dari TIS-GDV; tabel isobutana dihitung dari persamaan Antoine NIST.",
+    "Revisi 4.0: lkpd-1-15 diganti (pengaruh tekanan udara luar 95 kPa terhadap indikator, jawaban 27 °C); kuis-1-8 baru (membuang udara kontainer tidak menurunkan tekanan kaleng).",
+    "Gambar l1 (kb1-kontainer-aerosol.svg) dan l5 (kb1-saklar-tekanan.svg) adalah ilustrasi penulis. Foto pengukuran tekanan ban di l1 sudah tersedia."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Ban dan kotak kedap udara yang \"menggembung\" sendiri",
+      "judul": "Ban dan kaleng aerosol yang tekanannya naik sendiri",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -87,22 +89,25 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan fenomena ban dan kotak kedap udara yang tertinggal di kabin mobil panas, lalu menggali pengetahuan awal murid.",
+      "peranGuru": "Menyajikan fenomena ban dan kaleng aerosol di dalam kontainer yang terjemur, lalu menggali pengetahuan awal murid.",
       "panduanGuru": {
         "kegiatan": [
-          "Menampilkan gambar pengukuran tekanan ban dan kotak kedap udara di kabin mobil, lalu meminta murid mengamati apa yang berubah dan apa yang tetap pada kedua benda.",
-          "Menegaskan bahwa pada kedua benda tidak ada udara yang ditambahkan dan wadahnya hampir tidak membesar.",
-          "Menyampaikan bahwa klub fotografi sekolah khawatir segel kotak rusak jika kejadian ini berulang. Masalah ini akan diselesaikan kelompok di tahap masyarakat belajar.",
+          "Menampilkan gambar pengukuran tekanan ban dan kontainer kaleng aerosol, lalu meminta murid mengamati apa yang berubah dan apa yang tetap pada ban dan pada kaleng.",
+          "Menunjukkan kaleng aerosol asli (misalnya semprot nyamuk) dan meminta murid membaca label peringatannya.",
+          "Menegaskan bahwa ban dan kaleng tidak ditambah gas dan volumenya hampir tidak berubah.",
+          "Menyampaikan tantangan rancangan: indikator berbasis sensor tekanan dan cara menjaga tekanan kaleng tetap aman. Tantangan ini dikerjakan kelompok di tahap masyarakat belajar.",
           "Meminta murid menulis dugaan awal di {lkpd-1-1} tanpa mengoreksinya. Dugaan ini akan ditinjau ulang di tahap refleksi.",
           "Membimbing murid mengubah rasa ingin tahu menjadi pertanyaan masalah yang menyebut variabel ({lkpd-1-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-1-3})."
         ],
         "pertanyaanPemantik": [
-          "Udara di dalam ban dan di dalam kotak tidak ditambah. Lalu apa yang bertambah?",
-          "Apa yang bisa terjadi pada segel tutup kotak jika kotak itu sering tertinggal di mobil yang panas?"
+          "Gas di dalam ban dan kaleng tidak ditambah. Lalu apa yang bertambah?",
+          "Kontainer tidak kedap udara. Apakah tekanan udara di dalam kontainer ikut naik ketika kontainer panas?",
+          "Bagaimana cara menurunkan tekanan di dalam kaleng tanpa membukanya?"
         ],
         "antisipasi": [
-          "Murid menjawab 'udaranya memuai'. Tanyakan: ban dan kotak hampir tidak membesar, jadi ke mana pemuaian itu?",
-          "Murid mengira ada udara yang masuk ke dalam kotak. Tanyakan lewat mana udara bisa masuk jika tutupnya terkunci rapat.",
+          "Murid menjawab 'udaranya memuai'. Tanyakan: ban dan kaleng hampir tidak membesar, jadi ke mana pemuaian itu?",
+          "Murid ingin memasang sensor tekanan di dinding kontainer. Tanyakan apakah udara kontainer terkurung rapat. Arahkan ke wadah tertutup yang volumenya tetap.",
+          "Murid ingin mengurangi tekanan udara di dalam kontainer. Tanyakan tekanan mana yang ditahan dinding kaleng: tekanan di dalam kaleng atau udara kontainer?",
           "Pertanyaan masalah belum menyebut variabel tetap. Arahkan dengan pola di petunjuk {lkpd-1-2}."
         ]
       },
@@ -121,21 +126,25 @@
         },
         {
           "tipe": "gambar",
-          "src": "/media/kb1-kotak-kedap-udara-mobil.svg",
-          "alt": "Kotak kedap udara berisi kamera tertinggal di jok mobil yang diparkir di bawah terik matahari. Tutupnya terkunci rapat dan tampak sedikit menggembung.",
+          "src": "/media/kb1-kontainer-aerosol.svg",
+          "alt": "Kontainer baja cokelat berisi tumpukan kaleng aerosol berdiri di bawah matahari. Bagian atas kontainer paling panas. Label kaleng: lindungi dari sinar matahari, jangan terpapar suhu di atas 50 °C.",
           "rasio": "4/3",
-          "caption": "Kotak kedap udara berisi kamera tertinggal di dalam mobil yang diparkir di bawah terik matahari.",
+          "caption": "Kontainer berisi kaleng aerosol menunggu di pelabuhan di bawah terik matahari.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Di lain hari, Sisca, anggota klub fotografi sekolah, menyimpan kamera di dalam kotak kedap udara (dry box) berisi silika gel. Tutup kotak dikunci rapat pada pagi hari. Siang harinya kotak itu tertinggal di kabin mobil yang diparkir di bawah terik matahari. Saat diambil, tutupnya tampak sedikit menggembung dan terasa keras ketika ditekan. Padahal tidak ada udara yang masuk ke dalam kotak."
+          "isi": "Ribuan kaleng semprot nyamuk, cat semprot, dan deodoran dikirim dari gudang ke berbagai kota dengan kontainer baja. Setiap kaleng memuat peringatan: lindungi dari sinar matahari dan jangan terpapar suhu di atas 50 °C. Di pelabuhan, kontainer bisa menunggu berjam-jam di bawah terik. Saat udara luar sekitar 25 °C, udara di dalam kontainer berwarna cokelat dapat mencapai sekitar 50 °C, sedangkan kontainer berwarna putih sekitar 38 °C. Kaleng yang terlalu panas tekanannya naik, lalu kaleng dapat pecah atau meledak."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Tantangan untuk kelompokmu: sebuah perusahaan pengiriman meminta dua hal. Pertama, indikator berbasis sensor tekanan yang dipasang di dalam kontainer dan memberi peringatan sebelum suhu muatan mencapai 50 °C. Ingat, kontainer tidak kedap udara, jadi pikirkan wadah seperti apa yang tekanannya pasti berubah ketika suhunya berubah. Kedua, cara menjaga tekanan di dalam kaleng agar tidak mendekati batas amannya selama kontainer menunggu di pelabuhan. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan menggembungnya tutup kotak kedap udara di atas? Tuliskan dengan kata-katamu.",
+          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan pada kaleng aerosol di dalam kontainer yang panas? Tuliskan dengan kata-katamu.",
           "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaanmu akan ditinjau kembali di tahap refleksi.",
           "baris": 4,
           "indikatorVariabel": [
@@ -734,7 +743,7 @@
     },
     {
       "id": "l5",
-      "judul": "Merancang katup pengaman kotak kedap udara",
+      "judul": "Merancang indikator tekanan untuk kontainer kaleng aerosol",
       "tahap": "masyarakat-belajar",
       "stem": [
         "E",
@@ -748,22 +757,24 @@
           "LI3"
         ]
       },
-      "peranGuru": "Membagi peran kelompok, memeriksa pemahaman konsep, dan membimbing perancangan katup.",
+      "peranGuru": "Membagi peran kelompok, memeriksa pemahaman konsep, dan membimbing perancangan indikator tekanan.",
       "panduanGuru": {
         "kegiatan": [
           "Mengulas contoh soal ban untuk menegaskan beda tekanan terukur dan tekanan mutlak.",
-          "Memperkenalkan masalah klien dan lembar spesifikasi, lalu membagi empat peran kelompok.",
-          "Meminta penelusur informasi menilai keterangan mana yang relevan untuk menentukan batas tekanan ({lkpd-1-13}).",
-          "Memeriksa pemahaman setiap kelompok tentang Persamaan 1.10 sebelum mereka mengisi tabel alternatif rancangan.",
-          "Membimbing kelompok menguji alternatif terpilih dengan tabel uji virtual dan menilai kelayakannya terhadap kriteria."
+          "Memperkenalkan permintaan klien dan lembar spesifikasi, lalu membagi empat peran kelompok.",
+          "Meminta penelusur informasi menilai keterangan mana yang dapat dipakai untuk menentukan batas suhu ({lkpd-1-13}).",
+          "Menjelaskan mengapa sensor dipasang pada tabung acuan tertutup, bukan pada udara kontainer, lalu memeriksa pemahaman kelompok tentang Persamaan 1.10 sebelum mereka mengisi tabel alternatif rancangan.",
+          "Membimbing kelompok menguji alternatif terpilih dengan tabel uji virtual, membandingkannya dengan sensor suhu biasa, dan menyusun cara menjaga kaleng tetap dingin."
         ],
         "pertanyaanPemantik": [
-          "Apa yang terjadi pada suhu buka katup jika lubangnya diperbesar tetapi bebannya tetap?",
-          "Mengapa batas 8 kPa dipakai, bukan langsung 10 kPa?"
+          "Mengapa tekanan udara di dalam kontainer hampir sama dengan tekanan udara luar?",
+          "Apa yang terjadi pada suhu nyala indikator jika lubangnya diperbesar tetapi bebannya tetap?",
+          "Volume dan jumlah gas di dalam kaleng tetap. Besaran apa yang masih dapat diubah untuk menurunkan tekanannya?"
         ],
         "antisipasi": [
           "Murid memakai diameter sebagai jari-jari. Minta mereka menunjukkan r pada sketsa.",
           "Murid lupa mengubah gram ke kilogram atau cm ke m. Arahkan ke kolom hitung tabel alternatif rancangan.",
+          "Murid mengusulkan membuang udara dari kontainer untuk mengurangi tekanan kaleng. Ingatkan bahwa dinding kaleng menahan selisih tekanan dalam dan luar; tekanan luar yang lebih rendah justru memperbesar selisih itu.",
           "Kelompok hanya membuat satu alternatif. Tekankan bahwa perancang membandingkan beberapa pilihan sebelum memutuskan."
         ]
       },
@@ -809,19 +820,19 @@
         },
         {
           "tipe": "teks",
-          "isi": "Ingat kotak kedap udara milik klub fotografi sekolah di awal kegiatan. Kotak itu berisi kamera dan silika gel, dan kadang tertinggal di ruang yang panas, misalnya kabin mobil yang diparkir di bawah terik matahari. Klub meminta kelompok Anda merancang katup pengaman sederhana untuk tutup kotak tersebut."
+          "isi": "Ingat kontainer kaleng aerosol di awal kegiatan. Kontainer tidak kedap udara, sehingga tekanan udara di dalamnya hampir sama dengan tekanan udara luar. Sensor tekanan yang dipasang langsung di dinding kontainer tidak akan menunjukkan perubahan berarti. Volume dan jumlah gas di dalam kaleng tetap, jadi tekanan kaleng hanya naik jika suhunya naik. Karena itu, kelompok Anda akan merancang indikator yang memakai tabung acuan tertutup berisi udara kering. Tabung diletakkan di antara kaleng. Tekanan udara di dalamnya mengikuti Persamaan 1.4, sehingga tekanannya menjadi penanda suhu muatan."
         },
         {
           "tipe": "gambar",
-          "src": "/media/kb1-katup-pemberat.svg",
-          "alt": "Penampang katup pemberat. Lubang berdiameter d di tutup kotak ditutup cakram berbeban. Udara di dalam mendorong ke atas dengan gaya p_dalam kali A, sedangkan berat beban mg dan udara luar p_luar kali A menekan ke bawah. Katup terangkat jika Δp kali A sama dengan mg.",
+          "src": "/media/kb1-saklar-tekanan.svg",
+          "alt": "Penampang indikator tekanan berpemberat. Tabung acuan tertutup berisi udara. Lubang berdiameter d di bagian atasnya ditutup piston kecil kedap udara berbeban. Udara di dalam tabung mendorong piston ke atas dengan gaya p_dalam kali A, sedangkan berat beban mg dan udara luar p_luar kali A menekannya ke bawah. Ketika Δp kali A sama dengan mg, piston terangkat sedikit, menyentuh kontak saklar, dan lampu peringatan menyala.",
           "rasio": "4/3",
-          "caption": "Penampang katup pemberat pada tutup kotak.",
+          "caption": "Penampang indikator tekanan berpemberat pada tabung acuan.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Katup pemberat adalah lubang kecil pada tutup kotak yang ditutup oleh tutup katup berbeban. Udara di dalam kotak mendorong tutup katup ke atas. Udara luar dan berat beban menekannya ke bawah. Katup mulai terangkat ketika gaya dari selisih tekanan sama dengan berat beban."
+          "isi": "Lubang kecil di bagian atas tabung acuan ditutup piston kecil yang kedap udara dan diberi beban. Udara di dalam tabung mendorong piston ke atas. Udara luar dan berat beban menekannya ke bawah. Ketika gaya dari selisih tekanan sama dengan berat beban, piston terangkat sedikit, menyentuh kontak saklar, dan lampu peringatan menyala. Udara di dalam tabung tidak keluar, dan karena piston hanya bergeser sedikit, volume tabung dianggap tetap."
         },
         {
           "tipe": "rumus",
@@ -830,17 +841,17 @@
           "keterangan": [
             {
               "simbol": "\\Delta p",
-              "arti": "selisih tekanan di dalam dan di luar kotak (tekanan terukur)",
+              "arti": "selisih tekanan di dalam tabung acuan dan di luarnya (tekanan terukur)",
               "satuan": "Pa"
             },
             {
               "simbol": "A",
-              "arti": "luas lubang katup",
+              "arti": "luas lubang",
               "satuan": "m²"
             },
             {
               "simbol": "m",
-              "arti": "massa beban, termasuk tutup katup",
+              "arti": "massa beban, termasuk piston",
               "satuan": "kg"
             },
             {
@@ -872,42 +883,42 @@
           ],
           "baris": [
             [
-              "Suhu saat kotak ditutup",
+              "Suhu saat tabung acuan ditutup",
               "27 °C"
             ],
             [
-              "Tekanan udara luar",
+              "Tekanan udara luar saat tabung ditutup",
               "101 kPa"
             ],
             [
-              "Suhu terpanas yang mungkin dialami kotak",
-              "60 °C"
+              "Batas suhu pada label kaleng",
+              "50 °C"
             ],
             [
-              "Selisih tekanan terbesar yang masih ditahan segel tutup",
-              "10 kPa"
+              "Indikator harus sudah menyala paling lambat pada suhu",
+              "45 °C (agar petugas masih sempat bertindak)"
             ],
             [
-              "Katup harus tetap tertutup sampai suhu",
-              "35 °C (agar udara lembap dari luar tidak masuk)"
+              "Indikator tidak boleh menyala di bawah suhu",
+              "40 °C (agar tidak sering memberi peringatan palsu)"
             ],
             [
               "Diameter lubang yang dapat dibuat",
               "0,5–1,5 cm"
             ],
             [
-              "Massa beban yang tersedia (termasuk tutup katup)",
+              "Massa beban yang tersedia (termasuk piston)",
               "2–100 g"
             ]
           ],
-          "sumber": "data ilustratif untuk keperluan pembelajaran"
+          "sumber": "data ilustratif untuk keperluan pembelajaran; batas 50 °C sesuai label peringatan kaleng aerosol"
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-13",
           "format": "teks-panjang",
-          "pertanyaan": "Penelusur informasi menemukan dua keterangan. (1) Lembar spesifikasi klien menyebut segel tutup mulai bocor jika selisih tekanan lebih dari 10 kPa. (2) Deskripsi produk di sebuah toko daring menulis \"Bahan kotak tahan panas hingga 80 °C, dijamin aman ditinggal di mobil.\" Keterangan mana yang dapat dipakai untuk menentukan kapan katup harus terbuka? Apakah klaim \"dijamin aman ditinggal di mobil\" didukung bukti? Berikan alasan Anda.",
-          "petunjuk": "Bedakan informasi tentang ketahanan bahan terhadap panas dan informasi tentang ketahanan segel terhadap tekanan. Keterangan (2) adalah contoh ilustratif.",
+          "pertanyaan": "Penelusur informasi menemukan dua keterangan. (1) Label pada kaleng aerosol: \"Lindungi dari sinar matahari dan jangan terpapar suhu di atas 50 °C.\" Peringatan ini diwajibkan aturan kaleng aerosol Uni Eropa (Council Directive 75/324/EEC). (2) Sebuah unggahan media sosial: \"Kaleng aerosol tidak akan meledak di bawah 100 °C karena dindingnya terbuat dari baja.\" Keterangan mana yang dapat dipakai untuk menentukan kapan indikator harus menyala? Apakah klaim dalam unggahan itu didukung bukti? Berikan alasan Anda.",
+          "petunjuk": "Periksa siapa yang membuat setiap keterangan dan apa dasarnya. Keterangan (2) adalah contoh ilustratif.",
           "baris": 5,
           "indikatorVariabel": [
             "BK2",
@@ -917,19 +928,21 @@
         {
           "tipe": "tugas-rancangan",
           "id": "rancangan-1",
-          "judul": "Katup pengaman untuk kotak kedap udara",
-          "masalah": "Jika kotak dipanaskan dari 27 °C sampai 60 °C tanpa katup, selisih tekanan di dalam kotak dapat melampaui kemampuan segel tutup. Rancanglah katup pemberat yang membuka sebelum segel rusak, tetapi tetap tertutup pada suhu ruang sehari-hari.",
+          "judul": "Indikator tekanan untuk kontainer kaleng aerosol",
+          "masalah": "Kaleng aerosol tidak boleh terpapar suhu di atas 50 °C, sedangkan kontainer yang terjemur dapat menjadi lebih panas. Rancanglah indikator berpemberat pada tabung acuan tertutup yang menyala sebelum suhu muatan mencapai batas itu, tetapi tidak menyala pada siang yang biasa. Lengkapi rancangan dengan cara menjaga tekanan di dalam kaleng agar tidak mendekati batas amannya.",
           "kriteria": [
-            "Katup sudah terbuka sebelum selisih tekanan mencapai 8 kPa (80% dari batas segel 10 kPa)",
-            "Katup tetap tertutup sampai suhu udara di dalam kotak 35 °C",
+            "Indikator sudah menyala paling lambat pada suhu 45 °C",
+            "Indikator tidak menyala di bawah suhu 40 °C",
             "Diameter lubang dan massa beban berada dalam batasan klien",
-            "Perhitungan memakai tekanan mutlak, suhu kelvin, dan satuan SI"
+            "Perhitungan memakai tekanan mutlak, suhu kelvin, dan satuan SI",
+            "Cara menjaga tekanan kaleng tetap aman dijelaskan dengan persamaan gas ideal"
           ],
           "batasan": [
-            "Volume kotak dianggap tetap dan udara kering di dalamnya berperilaku sebagai gas ideal",
+            "Volume tabung acuan dianggap tetap dan udara kering di dalamnya berperilaku sebagai gas ideal",
+            "Tabung acuan ditutup pada 27 °C dan 101 kPa",
             "Diameter lubang 0,5–1,5 cm",
-            "Massa beban 2–100 g, termasuk massa tutup katup",
-            "Gesekan pada tutup katup diabaikan"
+            "Massa beban 2–100 g, termasuk massa piston",
+            "Gesekan pada piston diabaikan"
           ],
           "peranKelompok": [
             {
@@ -938,7 +951,7 @@
             },
             {
               "peran": "Penghitung",
-              "tugas": "Menghitung luas lubang, berat beban, dan selisih tekanan buka setiap alternatif"
+              "tugas": "Menghitung luas lubang, berat beban, dan selisih tekanan picu setiap alternatif"
             },
             {
               "peran": "Penguji",
@@ -954,22 +967,22 @@
               "id": "r1-1",
               "tahap": "menetapkan-masalah",
               "format": "teks-panjang",
-              "instruksi": "Tuliskan masalah klien dengan kata-kata kelompok Anda. Sebutkan besaran yang berubah, besaran yang dianggap tetap, dan dua kriteria utama yang harus dipenuhi katup."
+              "instruksi": "Tuliskan masalah klien dengan kata-kata kelompok Anda. Sebutkan besaran yang berubah dan besaran yang dianggap tetap pada tabung acuan dan pada kaleng. Jelaskan mengapa sensor tidak dipasang langsung pada udara kontainer."
             },
             {
               "id": "r1-2",
               "tahap": "merancang",
               "format": "unggah-atau-teks",
-              "instruksi": "Buat sketsa penampang katup yang menunjukkan lubang, tutup katup, beban, dan arah setiap gaya. Lalu isi tabel Alternatif rancangan di bawah dengan tiga pasangan diameter lubang dan massa beban yang berbeda."
+              "instruksi": "Buat sketsa penampang indikator yang menunjukkan tabung acuan, lubang, piston, beban, kontak saklar, dan arah setiap gaya. Isi tabel Alternatif rancangan di bawah dengan tiga pasangan diameter lubang dan massa beban yang berbeda. Tuliskan juga minimal dua cara menjaga kaleng tetap dingin selama kontainer menunggu, beserta alasannya menurut Persamaan 1.2."
             },
             {
               "id": "r1-3",
               "tahap": "analisis-kelayakan",
               "format": "teks-panjang",
-              "instruksi": "Pilih satu alternatif dan ujilah dengan Tabel uji virtual. Pada rentang suhu berapa katup mulai terbuka? Apakah kedua kriteria utama terpenuhi? Jelaskan mengapa alternatif ini lebih layak daripada dua alternatif lainnya."
+              "instruksi": "Pilih satu alternatif dan ujilah dengan Tabel uji virtual. Pada rentang suhu berapa indikator mulai menyala? Apakah kedua kriteria suhu terpenuhi? Bandingkan rancangan kalian dengan pilihan lain, yaitu sensor suhu biasa. Apa kelebihan dan kekurangan masing-masing? Putuskan mana yang lebih layak dan berikan alasan."
             }
           ],
-          "produk": "Rancangan katup berisi sketsa berlabel, tabel alternatif, hasil uji virtual, dan alasan pemilihan",
+          "produk": "Rancangan indikator berisi sketsa berlabel, tabel alternatif, hasil uji virtual, perbandingan dengan sensor suhu, cara menjaga kaleng tetap dingin, dan alasan pemilihan",
           "rubrik": "rubrik-1",
           "indikatorVariabel": [
             "BK2",
@@ -980,7 +993,7 @@
           "tipe": "rubrik",
           "jenisPenilaian": "autentik",
           "id": "rubrik-1",
-          "judul": "Rubrik rancangan katup pengaman",
+          "judul": "Rubrik rancangan indikator tekanan",
           "untuk": "rancangan-1",
           "skala": [
             4,
@@ -995,9 +1008,9 @@
                 "BK3"
               ],
               "deskriptor": {
-                "4": "Semua perhitungan memakai selisih tekanan dan tekanan mutlak secara tepat, suhu kelvin, dan satuan SI",
+                "4": "Semua perhitungan memakai selisih tekanan dan tekanan mutlak secara tepat, suhu kelvin, dan satuan SI; cara menjaga kaleng tetap aman dijelaskan lewat suhu karena V dan n kaleng tetap",
                 "3": "Perhitungan benar, tetapi ada satu kesalahan konversi satuan",
-                "2": "Konsep benar, tetapi perhitungan memakai suhu Celsius atau mencampur tekanan terukur dan mutlak",
+                "2": "Konsep benar, tetapi perhitungan memakai suhu Celsius atau mencampur tekanan terukur dan mutlak, atau cara menjaga kaleng tetap aman tidak dikaitkan dengan suhu",
                 "1": "Konsep dan perhitungan keliru"
               }
             },
@@ -1007,10 +1020,10 @@
                 "BK2"
               ],
               "deskriptor": {
-                "4": "Memenuhi kedua kriteria utama, didukung hasil uji virtual, dan perbaikannya mengatasi tekanan rendah saat kotak mendingin",
-                "3": "Memenuhi kedua kriteria utama dan didukung uji virtual, tetapi perbaikan belum mengatasi masalah saat kotak mendingin",
-                "2": "Hanya satu kriteria utama terpenuhi atau kelayakannya tidak didukung hasil uji",
-                "1": "Tidak memenuhi kriteria utama atau berada di luar batasan klien"
+                "4": "Memenuhi kedua kriteria suhu, didukung hasil uji virtual, dibandingkan dengan sensor suhu biasa, dan perbaikannya mengatasi pengaruh perubahan tekanan udara luar",
+                "3": "Memenuhi kedua kriteria suhu dan didukung uji virtual, tetapi perbandingan dengan sensor suhu atau perbaikan terhadap perubahan tekanan luar belum ada",
+                "2": "Hanya satu kriteria suhu terpenuhi atau kelayakannya tidak didukung hasil uji",
+                "1": "Tidak memenuhi kriteria suhu atau berada di luar batasan klien"
               }
             },
             {
@@ -1020,8 +1033,8 @@
                 "LI5"
               ],
               "deskriptor": {
-                "4": "Memadukan data simulasi, persamaan dari buku, dan spesifikasi klien secara tepat serta mencantumkan sumbernya lengkap",
-                "3": "Memadukan ketiga sumber, tetapi pencantuman sumber belum lengkap",
+                "4": "Memadukan data simulasi, persamaan dari buku, label kaleng, dan spesifikasi klien secara tepat serta mencantumkan sumbernya lengkap",
+                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
                 "2": "Hanya memakai satu atau dua sumber informasi",
                 "1": "Tidak menunjukkan sumber informasi yang dipakai"
               }
@@ -1062,7 +1075,7 @@
             },
             {
               "kunci": "dpbuka",
-              "label": "Δp buka",
+              "label": "Δp picu",
               "satuan": "kPa",
               "tipe": "hitung",
               "hitung": "W/A/1000"
@@ -1074,7 +1087,7 @@
           "tipe": "tabel-isian",
           "id": "data-1-uji-katup",
           "judul": "Tabel uji virtual",
-          "instruksi": "Ketik Δp buka alternatif terpilih pada setiap baris. Kolom Δp menunjukkan selisih tekanan jika katup belum terbuka. Jika kolom Selisih bernilai positif, dorongan udara sudah melebihi berat beban sehingga katup terbuka.",
+          "instruksi": "Ketik Δp picu alternatif terpilih pada setiap baris. Kolom Δp menunjukkan selisih tekanan tabung acuan terhadap udara luar 101 kPa. Jika kolom Selisih bernilai nol atau positif, dorongan udara sudah mengangkat piston sehingga indikator menyala.",
           "kolom": [
             {
               "kunci": "tc",
@@ -1091,7 +1104,7 @@
             },
             {
               "kunci": "p",
-              "label": "Tekanan mutlak di dalam",
+              "label": "Tekanan mutlak di dalam tabung",
               "satuan": "kPa",
               "tipe": "hitung",
               "hitung": "101*TK/300"
@@ -1105,13 +1118,13 @@
             },
             {
               "kunci": "dpbuka",
-              "label": "Δp buka rancangan",
+              "label": "Δp picu rancangan",
               "satuan": "kPa",
               "tipe": "angka"
             },
             {
               "kunci": "selisih",
-              "label": "Selisih (Δp − Δp buka)",
+              "label": "Selisih (Δp − Δp picu)",
               "satuan": "kPa",
               "tipe": "hitung",
               "hitung": "dp-dpbuka"
@@ -1162,12 +1175,12 @@
           "LI4"
         ]
       },
-      "peranGuru": "Mencontohkan langkah analisis data dan perhitungan suhu buka katup dengan persamaan gas ideal.",
+      "peranGuru": "Mencontohkan langkah analisis data dan perhitungan suhu nyala indikator dengan persamaan gas ideal.",
       "panduanGuru": {
         "kegiatan": [
           "Menampilkan grafik p terhadap 1/V, V terhadap T, dan p terhadap T dari data murid, lalu memodelkan cara membaca garis yang melalui titik nol.",
           "Meminta murid menuliskan pola umum dari keempat percobaan ({lkpd-1-10}).",
-          "Mengerjakan contoh perhitungan suhu buka katup langkah demi langkah sebagai model, termasuk memeriksa hasilnya terhadap kriteria.",
+          "Mengerjakan contoh perhitungan suhu nyala indikator langkah demi langkah sebagai model, termasuk memeriksa hasilnya terhadap kriteria.",
           "Meminta murid menjelaskan bagaimana data simulasi, buku, dan spesifikasi klien dipadukan ({lkpd-1-14}), lalu menyajikan rancangan terpilih ({r1-4})."
         ],
         "pertanyaanPemantik": [
@@ -1210,7 +1223,7 @@
           "labelX": "T (K)",
           "labelY": "p (kPa)",
           "garisTren": "linear-melalui-nol",
-          "instruksi": "Amati grafik p terhadap T dari data Percobaan C. Hubungan inilah yang dipakai untuk merancang katup."
+          "instruksi": "Amati grafik p terhadap T dari data Percobaan C. Hubungan inilah yang dipakai untuk merancang indikator tekanan."
         },
         {
           "tipe": "isian",
@@ -1280,23 +1293,23 @@
         },
         {
           "tipe": "contoh",
-          "judul": "Contoh pemodelan: memeriksa satu alternatif katup",
-          "soal": "Sebuah alternatif memakai lubang berdiameter 0,8 cm dan beban 10 g. Pada suhu berapa katup mulai terbuka? Apakah alternatif ini memenuhi kriteria?",
+          "judul": "Contoh pemodelan: memeriksa satu alternatif indikator",
+          "soal": "Sebuah alternatif memakai lubang berdiameter 0,8 cm dan beban 10 g. Pada suhu berapa indikator mulai menyala? Apakah alternatif ini memenuhi kriteria?",
           "langkah": [
             "Luas lubang: $A = \\tfrac{1}{4}\\pi (0{,}008)^2 = 5{,}03 \\times 10^{-5}$ m².",
             "Berat beban: $W = 0{,}010 \\times 9{,}8 = 0{,}098$ N.",
             "Persamaan 1.10: $\\Delta p = \\dfrac{W}{A} = \\dfrac{0{,}098}{5{,}03 \\times 10^{-5}} \\approx 1950$ Pa $= 1{,}95$ kPa.",
-            "Tekanan mutlak saat katup mulai terbuka: $p_2 = 101 + 1{,}95 = 102{,}95$ kPa.",
+            "Tekanan mutlak tabung saat indikator menyala: $p_2 = 101 + 1{,}95 = 102{,}95$ kPa.",
             "Persamaan 1.4: $T_2 = T_1 \\dfrac{p_2}{p_1} = 300 \\times \\dfrac{102{,}95}{101} \\approx 305{,}8$ K $\\approx 32{,}8$ °C.",
-            "Periksa kriteria: katup terbuka sebelum Δp mencapai 8 kPa (terpenuhi), tetapi sudah terbuka di bawah 35 °C (tidak terpenuhi)."
+            "Periksa kriteria: indikator sudah menyala sebelum 45 °C (terpenuhi), tetapi juga menyala di bawah 40 °C (tidak terpenuhi)."
           ],
-          "catatan": "Alternatif ini tidak layak. Agar katup tetap tertutup sampai 35 °C, Δp buka harus lebih dari sekitar 2,7 kPa. Bebannya perlu diperberat atau lubangnya diperbesar."
+          "catatan": "Alternatif ini tidak layak karena akan sering memberi peringatan palsu. Agar indikator menyala antara 40 °C dan 45 °C, Δp picu harus lebih dari sekitar 4,4 kPa dan paling besar sekitar 6,1 kPa. Bebannya perlu diperberat atau lubangnya diperbesar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-14",
           "format": "teks-panjang",
-          "pertanyaan": "Rancangan katup Anda memadukan tiga sumber informasi, yaitu data simulasi Percobaan C, persamaan dari buku (Persamaan 1.4 dan 1.10), dan lembar spesifikasi klien. Jelaskan peran setiap sumber dalam rancangan Anda. Tekanan di simulasi bersifat ilustratif, jadi bagian mana dari data simulasi yang tetap dapat dipakai?",
+          "pertanyaan": "Rancangan indikator Anda memadukan beberapa sumber informasi, yaitu data simulasi Percobaan C, persamaan dari buku (Persamaan 1.4 dan 1.10), label kaleng, dan lembar spesifikasi klien. Jelaskan peran setiap sumber dalam rancangan Anda. Tekanan di simulasi bersifat ilustratif, jadi bagian mana dari data simulasi yang tetap dapat dipakai?",
           "baris": 6,
           "indikatorVariabel": [
             "BK4",
@@ -1311,7 +1324,7 @@
               "id": "r1-4",
               "tahap": "menyajikan",
               "format": "unggah-atau-teks",
-              "instruksi": "Sajikan rancangan terpilih kelompok Anda. Muat sketsa berlabel, satu baris perhitungan lengkap dari diameter dan massa beban sampai suhu buka katup (seperti contoh di atas), hasil tabel uji virtual, dan pola grafik yang mendasarinya."
+              "instruksi": "Sajikan rancangan terpilih kelompok Anda. Muat sketsa berlabel, satu baris perhitungan lengkap dari diameter dan massa beban sampai suhu nyala indikator (seperti contoh di atas), hasil tabel uji virtual, perbandingan dengan sensor suhu, cara menjaga kaleng tetap dingin, dan pola grafik yang mendasarinya."
             }
           ]
         }
@@ -1339,16 +1352,18 @@
       "panduanGuru": {
         "kegiatan": [
           "Memfasilitasi presentasi singkat setiap kelompok dan meminta kelompok lain memberi satu tanggapan berdasarkan kriteria.",
-          "Memberi umpan balik kepada semua kelompok tentang tekanan di dalam kotak setelah katup terbuka lalu kotak mendingin ({lkpd-1-15}).",
+          "Membahas tekanan di dalam kaleng aerosol yang propelannya berupa gas cair, lalu membandingkannya dengan ramalan model gas ideal.",
+          "Memberi umpan balik kepada semua kelompok tentang pengaruh perubahan tekanan udara luar terhadap indikator ({lkpd-1-15}).",
           "Meminta kelompok memperbaiki rancangan berdasarkan umpan balik ({r1-5}).",
           "Membimbing murid meninjau dugaan awalnya ({refleksi-1}), membahas batas berlakunya model gas ideal, lalu menulis kesimpulan bersumber ({lkpd-1-11})."
         ],
         "pertanyaanPemantik": [
-          "Katup kalian melepas sebagian udara saat kotak panas. Apa yang terjadi ketika kotak kembali dingin?",
-          "Untuk kasus mana model gas ideal lebih tepat, udara kering di kotak atau uap air di panci presto?"
+          "Indikator kalian membandingkan tekanan tabung dengan tekanan udara luar. Apa yang terjadi jika tekanan udara luar berubah?",
+          "Mengapa batas aman kaleng dinyatakan dengan suhu, bukan dengan tekanan yang dihitung dari persamaan gas ideal?"
         ],
         "antisipasi": [
-          "Murid mengira tekanan kembali ke 101 kPa. Ingatkan bahwa jumlah mol udara sudah berkurang."
+          "Murid mengira tekanan udara luar selalu 101 kPa. Ingatkan bahwa tekanan udara berkurang di tempat yang lebih tinggi.",
+          "Murid menghitung tekanan kaleng aerosol dengan Persamaan 1.4 saja. Tunjukkan tabel data isobutana: tekanannya naik jauh lebih cepat karena propelan berupa cairan dan uapnya."
         ]
       },
       "blok": [
@@ -1412,13 +1427,51 @@
           ]
         },
         {
+          "tipe": "teks",
+          "isi": "Kebanyakan kaleng aerosol memakai propelan gas cair, misalnya isobutana. Di dalam kaleng ada cairan propelan dan uapnya. Tekanan kaleng sama dengan tekanan uap jenuh propelan, yang naik jauh lebih cepat terhadap suhu daripada ramalan Hukum Gay-Lussac."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Tekanan uap jenuh isobutana dan ramalan model gas ideal",
+          "mobile": "kartu",
+          "kolom": [
+            "Suhu",
+            "Tekanan uap jenuh isobutana (mutlak)",
+            "Ramalan Persamaan 1.4 dari keadaan 27 °C"
+          ],
+          "baris": [
+            [
+              "27 °C",
+              "3,70 bar",
+              "3,70 bar"
+            ],
+            [
+              "45 °C",
+              "6,02 bar",
+              "3,92 bar"
+            ],
+            [
+              "50 °C",
+              "6,83 bar",
+              "3,98 bar"
+            ],
+            [
+              "60 °C",
+              "8,69 bar",
+              "4,11 bar"
+            ]
+          ],
+          "sumber": "Dihitung dari persamaan Antoine isobutana di NIST Chemistry WebBook (data Das et al., 1973)"
+        },
+        {
           "tipe": "refleksi",
           "id": "refleksi-1",
           "tinjauUlang": "lkpd-1-1",
           "pengantar": "Ini dugaan awal Anda di awal kegiatan.",
           "pertanyaan": [
             "Bagian mana dari dugaan awal Anda yang kini terbukti, dan bagian mana yang perlu diperbaiki?",
-            "Udara di dalam ban berada jauh dari titik pencairannya. Uap air di dalam panci presto berada dekat titik pengembunannya. Untuk kasus mana model gas ideal lebih tepat dipakai? Jelaskan dengan tabel di atas."
+            "Bandingkan kedua kolom tabel isobutana. Mengapa tekanan kaleng aerosol tidak dapat diramalkan dengan model gas ideal, sedangkan udara kering di tabung acuan dapat? Jelaskan dengan tabel perbedaan gas ideal dan gas nyata.",
+            "Mengapa indikator kalian tetap tepat dipakai walaupun tekanan di dalam kaleng tidak mengikuti model gas ideal?"
           ],
           "indikatorVariabel": [
             "BK5"
@@ -1426,18 +1479,18 @@
         },
         {
           "tipe": "teks",
-          "isi": "Guru memberi umpan balik kepada semua kelompok. Katup kalian melepas sebagian udara saat kotak panas. Setelah kotak kembali dingin, katup menutup dan jumlah udara di dalam kotak tidak bertambah lagi."
+          "isi": "Guru memberi umpan balik kepada semua kelompok. Indikator kalian membandingkan tekanan di dalam tabung acuan dengan tekanan udara luar. Tekanan udara luar tidak selalu 101 kPa. Saat truk pengangkut kontainer melewati jalan pegunungan, tekanan udara luar dapat turun beberapa kilopascal."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-15",
           "format": "angka",
           "inputmode": "decimal",
-          "pertanyaan": "Sebuah katup dengan Δp buka 6 kPa dipasang pada kotak. Saat kotak mencapai 60 °C, tekanan mutlak di dalamnya 107 kPa. Kotak lalu mendingin sampai 27 °C dengan katup tertutup. Berapa tekanan mutlak di dalam kotak sekarang?",
-          "petunjuk": "Volume dan jumlah mol udara tetap selama pendinginan. Gunakan Persamaan 1.4.",
-          "satuan": "kPa",
-          "jawabanRujukan": 96.4,
-          "toleransi": 0.5,
+          "pertanyaan": "Sebuah indikator dengan Δp picu 6,0 kPa dipasang pada tabung acuan yang ditutup pada 27 °C dan 101 kPa. Truk lalu melewati jalan pegunungan sehingga tekanan udara luar turun menjadi 95 kPa. Pada suhu berapa (dalam °C) indikator itu sekarang menyala?",
+          "petunjuk": "Indikator menyala ketika tekanan di dalam tabung sama dengan tekanan luar ditambah Δp picu. Volume dan jumlah mol udara di dalam tabung tetap. Gunakan Persamaan 1.4.",
+          "satuan": "°C",
+          "jawabanRujukan": 27,
+          "toleransi": 1,
           "indikatorVariabel": [
             "LI5"
           ]
@@ -1450,7 +1503,7 @@
               "id": "r1-5",
               "tahap": "memperbaiki",
               "format": "teks-panjang",
-              "instruksi": "Tekanan di dalam kotak yang sudah dingin kini lebih rendah daripada tekanan udara luar. Apa akibatnya bagi pengguna dan bagi kamera di dalam kotak? Perbaiki rancangan kelompok Anda agar masalah ini teratasi, sekaligus perbaiki bagian yang mendapat tanggapan saat presentasi. Tuliskan apa yang diubah, alasannya, dan perhitungan pendukungnya."
+              "instruksi": "Indikator dapat menyala pada suhu biasa ketika tekanan udara luar turun. Apa akibatnya bagi petugas pengiriman? Perbaiki rancangan kelompok Anda agar masalah ini teratasi, atau jelaskan mengapa sensor suhu biasa lebih layak, sekaligus perbaiki bagian yang mendapat tanggapan saat presentasi. Tuliskan apa yang diubah, alasannya, dan perhitungan pendukungnya."
             }
           ]
         },
@@ -1458,7 +1511,7 @@
           "tipe": "isian",
           "id": "lkpd-1-11",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan pada ban dan kotak kedap udara. Jelaskan juga cara kerja katup rancangan kelompok Anda dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan pada ban dan kaleng aerosol. Jelaskan juga cara kerja indikator rancangan kelompok Anda, cara menjaga tekanan kaleng tetap aman, dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -1487,11 +1540,11 @@
           "LI5"
         ]
       },
-      "peranGuru": "Menilai student e-worksheet dan rancangan katup dengan rubrik.",
+      "peranGuru": "Menilai student e-worksheet dan rancangan indikator tekanan dengan rubrik.",
       "panduanGuru": {
         "kegiatan": [
           "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
-          "Menilai student e-worksheet dan rancangan katup kelompok dengan rubrik di tampilan guru.",
+          "Menilai student e-worksheet dan rancangan indikator kelompok dengan rubrik di tampilan guru.",
           "Memberi umpan balik tertulis singkat pada setiap aspek rubrik."
         ],
         "pertanyaanPemantik": [],
@@ -1502,7 +1555,7 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan katup pengaman kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan indikator tekanan kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
@@ -1682,7 +1735,7 @@
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-1-7",
-          "pertanyaan": "Sebuah katup pemberat berlubang 1,0 cm dan berbeban 48 g dipasang pada kotak yang ditutup pada 27 °C. Tekanan udara luar 101 kPa dan volume kotak tetap. Katup mulai terbuka pada suhu sekitar ...",
+          "pertanyaan": "Sebuah indikator berpemberat berlubang 1,0 cm dan berbeban 48 g dipasang pada tabung acuan yang ditutup pada 27 °C. Tekanan udara luar 101 kPa dan volume tabung tetap. Indikator mulai menyala pada suhu sekitar ...",
           "opsi": [
             {
               "id": "a",
@@ -1702,9 +1755,38 @@
             }
           ],
           "kunci": "b",
-          "pembahasan": "Luas lubang $7{,}85 \\times 10^{-5}$ m² dan berat beban 0,47 N, sehingga Δp buka sekitar 6,0 kPa (Persamaan 1.10). Tekanan mutlak saat terbuka 107 kPa. Persamaan 1.4 memberi $T_2 = 300 \\times 107/101 \\approx 318$ K, yaitu sekitar 45 °C. Pilihan a muncul jika perbandingan memakai suhu Celsius, dan pilihan d muncul jika 318 K tidak diubah kembali ke Celsius.",
+          "pembahasan": "Luas lubang $7{,}85 \\times 10^{-5}$ m² dan berat beban 0,47 N, sehingga Δp picu sekitar 6,0 kPa (Persamaan 1.10). Tekanan mutlak tabung saat indikator menyala 107 kPa. Persamaan 1.4 memberi $T_2 = 300 \\times 107/101 \\approx 318$ K, yaitu sekitar 45 °C. Pilihan a muncul jika perbandingan memakai suhu Celsius, dan pilihan d muncul jika 318 K tidak diubah kembali ke Celsius.",
           "indikatorVariabel": [
             "LI5"
+          ]
+        },
+        {
+          "tipe": "kuis",
+          "jenisPenilaian": "formatif",
+          "id": "kuis-1-8",
+          "pertanyaan": "Seorang petugas mengusulkan membuang sebagian udara dari kontainer agar tekanan di dalam kaleng aerosol turun. Tanggapan yang paling tepat adalah ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "Tepat, karena tekanan kaleng sama dengan tekanan udara kontainer"
+            },
+            {
+              "id": "b",
+              "teks": "Kurang tepat, karena V dan n gas di dalam kaleng tetap sehingga tekanannya hanya turun jika suhunya turun; tekanan luar yang lebih rendah justru memperbesar selisih tekanan pada dinding kaleng"
+            },
+            {
+              "id": "c",
+              "teks": "Tepat, karena udara yang dibuang ikut mengurangi jumlah mol gas di dalam kaleng"
+            },
+            {
+              "id": "d",
+              "teks": "Kurang tepat, karena tekanan kaleng tidak bergantung pada suhu"
+            }
+          ],
+          "kunci": "b",
+          "pembahasan": "Kaleng tertutup rapat, jadi jumlah mol dan volumenya tetap. Menurut Persamaan 1.2, tekanannya hanya dapat diturunkan dengan menurunkan suhu, misalnya dengan peneduh, cat reflektif, atau ventilasi. Dinding kaleng menahan selisih tekanan dalam dan luar, sehingga menurunkan tekanan luar justru memperbesar beban pada dinding kaleng.",
+          "indikatorVariabel": [
+            "BK2"
           ]
         }
       ]
@@ -1724,14 +1806,14 @@
       },
       {
         "tp": "1.3",
-        "teks": "Persamaan pV = nRT (Persamaan 1.2) berlaku sama untuk semua gas yang berperilaku ideal. Tekanan dalam persamaan ini adalah tekanan mutlak, yaitu tekanan terukur ditambah tekanan udara luar, dan suhu selalu dinyatakan dalam kelvin. Gas yang memanas pada volume tetap mengalami kenaikan tekanan sesuai Persamaan 1.4. Prinsip ini dipakai untuk merancang katup pemberat, yang terbuka ketika Δp·A = mg (Persamaan 1.10)."
+        "teks": "Persamaan pV = nRT (Persamaan 1.2) berlaku sama untuk semua gas yang berperilaku ideal. Tekanan dalam persamaan ini adalah tekanan mutlak, yaitu tekanan terukur ditambah tekanan udara luar, dan suhu selalu dinyatakan dalam kelvin. Gas yang memanas pada volume dan jumlah mol tetap mengalami kenaikan tekanan sesuai Persamaan 1.4. Prinsip ini dipakai untuk merancang indikator tekanan pada tabung acuan tertutup, yang menyala ketika Δp·A = mg (Persamaan 1.10). Tekanan di dalam wadah tertutup seperti kaleng hanya dapat diturunkan dengan menurunkan suhunya."
       },
       {
         "tp": "1.4",
-        "teks": "Model gas ideal paling tepat pada tekanan rendah dan suhu jauh di atas titik cair. Di dekat titik cair, volume molekul dan gaya tarik antarmolekul tidak dapat diabaikan, sehingga dipakai persamaan van der Waals (Persamaan 1.9)."
+        "teks": "Model gas ideal paling tepat pada tekanan rendah dan suhu jauh di atas titik cair. Di dekat titik cair, volume molekul dan gaya tarik antarmolekul tidak dapat diabaikan, sehingga dipakai persamaan van der Waals (Persamaan 1.9). Propelan gas cair di dalam kaleng aerosol adalah contohnya: tekanannya naik jauh lebih cepat daripada ramalan model gas ideal."
       }
     ],
-    "literasiInformasi": "Klaim ban nitrogen perlu dipisah menjadi dua bagian. Uji Consumer Reports yang dikutip Edmunds menunjukkan ban nitrogen kehilangan tekanan sedikit lebih lambat (2,2 psi dibanding 3,5 psi dalam setahun), tetapi kenaikan tekanan akibat panas tidak bergantung pada jenis gas. Saat merancang katup, informasi yang dipakai adalah yang relevan dengan masalah, yaitu batas tekanan segel, bukan klaim ketahanan panas bahan tanpa bukti.",
+    "literasiInformasi": "Klaim ban nitrogen perlu dipisah menjadi dua bagian. Uji Consumer Reports yang dikutip Edmunds menunjukkan ban nitrogen kehilangan tekanan sedikit lebih lambat (2,2 psi dibanding 3,5 psi dalam setahun), tetapi kenaikan tekanan akibat panas tidak bergantung pada jenis gas. Saat merancang indikator, batas suhu diambil dari label kaleng yang diwajibkan aturan resmi, bukan dari unggahan tanpa bukti.",
     "rumusKunci": [
       "1.1",
       "1.2",
@@ -1771,8 +1853,8 @@
       "arti": "Tetapan penghubung antara suhu dan energi kinetik molekul, bernilai $1{,}38 \\times 10^{-23}$ J/K"
     },
     {
-      "istilah": "Katup pemberat",
-      "arti": "Katup yang lubangnya ditutup beban. Katup terbuka ketika gaya dari selisih tekanan melebihi berat beban"
+      "istilah": "Indikator tekanan berpemberat",
+      "arti": "Indikator yang lubangnya ditutup piston berbeban. Piston terangkat dan menyalakan peringatan ketika gaya dari selisih tekanan sama dengan berat beban"
     },
     {
       "istilah": "Kriteria rancangan",
@@ -1781,6 +1863,10 @@
     {
       "istilah": "Batasan rancangan",
       "arti": "Keterbatasan yang tidak boleh dilanggar, misalnya ukuran dan bahan yang tersedia"
+    },
+    {
+      "istilah": "Tabung acuan",
+      "arti": "Wadah tertutup berisi udara kering yang volume dan jumlah molnya tetap, sehingga tekanannya menjadi penanda suhu"
     }
   ],
   "referensi": [
@@ -1793,6 +1879,10 @@
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Auto2000. (2020, 24 Maret). Ketahui kelebihan isi ban dengan nitrogen. https://auto2000.co.id/berita-dan-tips/ketahui-kelebihan-isi-ban-dengan-nitrogen",
     "Montoya, R. (2018, 19 Desember). Should you fill your car's tires with nitrogen? Edmunds. https://www.edmunds.com/car-buying/should-you-fill-your-cars-tires-with-nitrogen.html",
-    "National Highway Traffic Safety Administration. (t.t.). Tire safety: Everything rides on it. https://www.nhtsa.gov/document/tire-safety-everything-rides-it"
+    "National Highway Traffic Safety Administration. (t.t.). Tire safety: Everything rides on it. https://www.nhtsa.gov/document/tire-safety-everything-rides-it",
+    "Council of the European Communities. (1975). Council Directive 75/324/EEC of 20 May 1975 on the approximation of the laws of the Member States relating to aerosol dispensers. Official Journal of the European Communities, L 147, 40–47. https://www.legislation.gov.uk/eudr/1975/324",
+    "Das, T. R., Reed, C. O., Jr., & Eubank, P. T. (1973). PVT surface and thermodynamic properties of isobutane. Journal of Chemical and Engineering Data, 18(3), 253–262. https://doi.org/10.1021/je60058a001",
+    "National Institute of Standards and Technology. (t.t.). Isobutane: Phase change data. NIST Chemistry WebBook, SRD 69. https://webbook.nist.gov/cgi/cbook.cgi?ID=C75285&Mask=4",
+    "Transport Information Service, German Insurance Association. (t.t.). Climate. https://www.tis-gdv.de/?p=10745"
   ]
 }

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d" font-family="Literata, Georgia, 'Times New Roman', serif">
+  <title id="t">Penampang indikator tekanan berpemberat pada tabung acuan</title>
+  <desc id="d">Tabung acuan tertutup berisi udara kering diletakkan di antara kaleng. Di bagian atasnya ada lubang berdiameter d yang ditutup piston kecil kedap udara berbeban. Udara di dalam tabung mendorong piston ke atas dengan gaya p_dalam kali A. Berat beban mg dan tekanan udara luar p_luar kali A menekannya ke bawah. Ketika selisih tekanan kali A sama dengan mg, piston terangkat sedikit, menyentuh kontak saklar, dan lampu peringatan menyala. Udara di dalam tabung tidak keluar.</desc>
+  <defs>
+    <marker id="pBiru" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0C70A1"/></marker>
+    <marker id="pGelap" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2019"/></marker>
+  </defs>
+  <rect width="800" height="600" fill="#EDF6F9"/>
+  <text x="28" y="52" font-size="30" fill="#1E2019" font-weight="700">Udara kontainer (p luar)</text>
+  <!-- tabung acuan -->
+  <rect x="200" y="300" width="400" height="260" rx="18" fill="#D9F0FA" stroke="#1E2019" stroke-width="4"/>
+  <text x="400" y="535" font-size="22" fill="#1E2019" text-anchor="middle" font-weight="700">Tabung acuan tertutup: V dan n tetap</text>
+  <!-- leher silinder piston -->
+  <rect x="345" y="200" width="16" height="104" fill="#1E2019"/>
+  <rect x="439" y="200" width="16" height="104" fill="#1E2019"/>
+  <rect x="361" y="230" width="78" height="24" rx="3" fill="#1E2019"/>
+  <rect x="370" y="172" width="60" height="58" rx="6" fill="#5A6668" stroke="#1E2019" stroke-width="3"/>
+  <text x="400" y="208" font-size="20" fill="#FFFFFF" text-anchor="middle">beban</text>
+  <line x1="361" y1="276" x2="439" y2="276" stroke="#1E2019" stroke-width="2.5" marker-start="url(#pGelap)" marker-end="url(#pGelap)"/>
+  <text x="466" y="284" font-size="26" fill="#1E2019" font-style="italic">d</text>
+  <!-- kontak saklar -->
+  <rect x="380" y="132" width="40" height="14" fill="#B3261E"/>
+  <line x1="420" y1="139" x2="600" y2="139" stroke="#1E2019" stroke-width="3"/>
+  <line x1="600" y1="139" x2="600" y2="110" stroke="#1E2019" stroke-width="3"/>
+  <circle cx="600" cy="90" r="22" fill="#F5C443" stroke="#1E2019" stroke-width="3"/>
+  <text x="636" y="98" font-size="22" fill="#1E2019">lampu peringatan</text>
+  <text x="400" y="122" font-size="20" fill="#1E2019" text-anchor="middle">kontak saklar</text>
+  <!-- gaya -->
+  <line x1="400" y1="470" x2="400" y2="262" stroke="#0C70A1" stroke-width="8" marker-end="url(#pBiru)"/>
+  <text x="380" y="420" font-size="28" fill="#0C70A1" font-weight="700" text-anchor="end">p<tspan font-size="18" dy="6">dalam</tspan><tspan dy="-6"> · A</tspan></text>
+  <line x1="250" y1="190" x2="250" y2="280" stroke="#1E2019" stroke-width="6" marker-end="url(#pGelap)"/>
+  <text x="236" y="236" font-size="24" fill="#1E2019" font-weight="700" text-anchor="end">mg + p<tspan font-size="18" dy="6">luar</tspan><tspan dy="-6"> · A</tspan></text>
+  <!-- syarat -->
+  <rect x="560" y="180" width="225" height="104" rx="14" fill="#FFFFFF" stroke="#0C70A1" stroke-width="3"/>
+  <text x="672" y="218" font-size="22" fill="#1E2019" text-anchor="middle">Lampu menyala jika</text>
+  <text x="672" y="262" font-size="30" fill="#1E2019" text-anchor="middle" font-weight="700">Δp · A = mg</text>
+</svg>
