@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d" font-family="Literata, Georgia, 'Times New Roman', serif">
+  <title id="t">Kotak pendingin berisi ikan dan es di bawah terik matahari</title>
+  <desc id="d">Penampang kotak pendingin yang terkena sinar matahari. Di dalamnya ikan tongkol berselang-seling dengan es dan ada genangan air lelehan di dasar. Termometer di dalam kotak menunjukkan 0 derajat Celsius. Panah kalor masuk dari udara luar yang panas menembus dinding dan tutup kotak.</desc>
+  <defs>
+    <marker id="pMerah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B3261E"/></marker>
+  </defs>
+  <rect width="800" height="600" fill="#EDF6F9"/>
+  <circle cx="710" cy="80" r="44" fill="#F5C443"/>
+  <g stroke="#F5C443" stroke-width="6" stroke-linecap="round">
+    <line x1="710" y1="14" x2="710" y2="0"/><line x1="646" y1="80" x2="630" y2="80"/><line x1="665" y1="35" x2="654" y2="24"/><line x1="665" y1="125" x2="654" y2="136"/>
+  </g>
+  <text x="40" y="60" font-size="28" fill="#1E2019" font-weight="700">Udara luar yang panas</text>
+  <rect x="0" y="520" width="800" height="80" fill="#C9D3D6"/>
+  <!-- kotak -->
+  <rect x="170" y="170" width="460" height="330" rx="16" fill="#FFFFFF" stroke="#1E2019" stroke-width="5"/>
+  <rect x="190" y="190" width="420" height="290" rx="8" fill="#D9F0FA" stroke="#0C70A1" stroke-width="2"/>
+  <rect x="160" y="140" width="480" height="34" rx="10" fill="#FFFFFF" stroke="#1E2019" stroke-width="5"/>
+  <text x="400" y="164" font-size="20" fill="#1E2019" text-anchor="middle">tutup</text>
+  <!-- air lelehan -->
+  <rect x="192" y="440" width="416" height="38" fill="#9ED3EC"/>
+  <text x="400" y="466" font-size="18" fill="#1E2019" text-anchor="middle">air lelehan</text>
+  <!-- es dan ikan -->
+  <g fill="#FFFFFF" stroke="#7FB3CC" stroke-width="2">
+    <rect x="210" y="390" width="40" height="40" rx="6"/><rect x="262" y="396" width="40" height="40" rx="6"/><rect x="314" y="390" width="40" height="40" rx="6"/><rect x="366" y="396" width="40" height="40" rx="6"/><rect x="418" y="390" width="40" height="40" rx="6"/>
+    <rect x="230" y="270" width="40" height="40" rx="6"/><rect x="290" y="276" width="40" height="40" rx="6"/><rect x="350" y="270" width="40" height="40" rx="6"/><rect x="410" y="276" width="40" height="40" rx="6"/>
+  </g>
+  <g fill="#5A6668" stroke="#1E2019" stroke-width="2">
+    <path d="M215 345 Q300 310 390 345 Q300 380 215 345 Z"/><path d="M390 345 L420 325 L420 365 Z"/>
+    <path d="M230 230 Q315 200 400 230 Q315 260 230 230 Z"/><path d="M400 230 L428 212 L428 248 Z"/>
+  </g>
+  <text x="300" y="352" font-size="16" fill="#FFFFFF" text-anchor="middle">ikan</text>
+  <text x="315" y="236" font-size="16" fill="#FFFFFF" text-anchor="middle">ikan</text>
+  <!-- termometer -->
+  <rect x="520" y="215" width="70" height="150" rx="10" fill="#FFFFFF" stroke="#1E2019" stroke-width="3"/>
+  <text x="555" y="262" font-size="18" fill="#1E2019" text-anchor="middle">termo-</text>
+  <text x="555" y="284" font-size="18" fill="#1E2019" text-anchor="middle">meter</text>
+  <text x="555" y="330" font-size="30" fill="#0C70A1" text-anchor="middle" font-weight="700">0 °C</text>
+  <!-- panah kalor -->
+  <line x1="60" y1="330" x2="160" y2="330" stroke="#B3261E" stroke-width="7" marker-end="url(#pMerah)"/>
+  <line x1="740" y1="330" x2="640" y2="330" stroke="#B3261E" stroke-width="7" marker-end="url(#pMerah)"/>
+  <line x1="400" y1="70" x2="400" y2="130" stroke="#B3261E" stroke-width="7" marker-end="url(#pMerah)"/>
+  <text x="60" y="310" font-size="22" fill="#B3261E" font-weight="700">kalor</text>
+  <text x="680" y="310" font-size="22" fill="#B3261E" font-weight="700">kalor</text>
+</svg>

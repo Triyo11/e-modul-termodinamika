@@ -1,12 +1,12 @@
 {
   "id": "kegiatan-03",
-  "versi": "3.0",
+  "versi": "4.0",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-11-22",
+  "revisiTerakhir": "2026-11-29",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 3,
   "judul": "Proses Termodinamika",
-  "subJudul": "Bagaimana gas melakukan usaha?",
+  "subJudul": "Mengapa tabung udara yang diisi cepat menjadi panas?",
   "bab": "Termodinamika",
   "model": "STEM-CTL",
   "fase": "F",
@@ -41,8 +41,7 @@
     }
   ],
   "fenomena": [
-    "Piston mesin kendaraan saat langkah usaha",
-    "Pompa sepeda",
+    "Pengisian tabung udara napas pemadam kebakaran (skenario rekaan)",
     "Kabut tipis saat tutup botol minuman bersoda dibuka"
   ],
   "simulasiUtama": [
@@ -64,12 +63,13 @@
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-3-11) sebelum tautan Radjawane et al. (2022) hlm. 184–187. kuis-3-6 kini BK3.",
     "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
-    "Orientasi masalah diperbaiki 28 Nov 2026: ditambahkan batas tekanan dan volume silinder mesin agar orientasi mengarah ke tugas rancangan siklus berusaha bersih terbesar."
+    "Revisi 4.0 (29 Nov 2026, keputusan pengguna): orientasi hanya satu masalah, yaitu pengisian tabung udara napas pemadam kebakaran (skenario rekaan). Tugas rekayasa siklus berusaha bersih terbesar diganti indikator pengisian panas dan cara pengisian. Fakta nyata: NIOSH (2020) Publication No. 2021-111 tentang hot filling; Young & Freedman (2012, hlm. 594) Example 18.3 (21 → 42 °C). Model: udara yang akhirnya di tabung = sistem bermassa tetap (penyederhanaan; pengisian nyata sistem terbuka).",
+    "Revisi 4.0: blok baru pv-3-isi (jelajah isotermal vs adiabatik, γ 1,4), data-3-isi (tekanan setelah dingin; batas 95% → peringatan di atas ≈ 42,8 °C; contoh buku 42 °C → 93,3%), contoh pemampatan cepat dan lambat (264 kPa, 396 K, 79,9 J vs 69,3 J), kuis-3-8 baru. pv-3-rancang dipindah ke pemodelan sebagai eksplorasi siklus (adiabatik ikut tersedia, persiapan KB 5). Ilustrasi l1: /media/kb3-pengisian-tabung.svg; video perlu-media dihapus."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Gas yang mendorong dan mendingin",
+      "judul": "Tabung udara yang panas setelah diisi",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -82,47 +82,47 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan fenomena dan memancing dugaan awal.",
+      "peranGuru": "Menyajikan skenario pengisian tabung udara napas dan memancing dugaan awal.",
       "panduanGuru": {
         "kegiatan": [
-          "Menayangkan video piston mesin, pompa sepeda, dan kabut botol soda.",
-          "Menegaskan bahwa tekanan dan volume gas di dalam silinder mesin dibatasi. Masalah memperoleh usaha terbesar dalam batas itu akan diselesaikan kelompok di tahap masyarakat belajar.",
-          "Meminta murid menulis dugaan tentang kabut dan sumber energi piston ({lkpd-3-1}).",
+          "Menegaskan bahwa pos pemadam kebakaran dan permintaannya adalah skenario rekaan, sedangkan laporan NIOSH tentang pengisian panas dan contoh tabung selam di buku teks adalah sumber nyata.",
+          "Menampilkan gambar pengisian tabung, lalu meminta murid mengamati apa yang terjadi pada suhu dan tekanan tabung saat diisi cepat dan setelah dingin.",
+          "Menyampaikan tantangan rancangan: indikator pengisian terlalu cepat dan cara pengisian yang mengurangi kenaikan suhu. Tantangan ini dikerjakan kelompok di tahap masyarakat belajar.",
+          "Meminta murid menulis dugaan awal ({lkpd-3-1}) tanpa langsung dikoreksi.",
           "Membimbing murid merumuskan pertanyaan masalah ({lkpd-3-2}) dan daftar informasi yang dibutuhkan ({lkpd-3-3})."
         ],
         "pertanyaanPemantik": [
           "Mengapa pompa sepeda terasa hangat setelah dipakai?",
-          "Dari mana gas di mesin mendapat energi untuk mendorong piston?",
-          "Jika tekanan dan volume gas di dalam silinder dibatasi, bagaimana gas dapat menghasilkan usaha paling banyak dalam satu siklus?"
+          "Udara di dalam tabung tidak dipanaskan api. Dari mana energi yang membuatnya panas?",
+          "Mengapa angka pengukur tekanan turun ketika tabung mendingin, padahal tidak ada udara yang keluar?"
         ],
         "antisipasi": [
-          "Murid menjelaskan kabut sebagai asap. Tanyakan apakah ada yang terbakar saat botol dibuka."
+          "Murid mengira tabung panas karena gesekan udara di selang. Tanyakan apa yang dilakukan kompresor terhadap udara di dalam tabung.",
+          "Murid mengira tekanan turun karena tabung bocor. Ingatkan Hukum Gay-Lussac dari KB 1."
         ]
       },
       "blok": [
         {
-          "tipe": "video",
-          "src": null,
-          "poster": null,
-          "alt": "Cuplikan piston bergerak di dalam silinder mesin, pompa sepeda ditekan, dan kabut tipis muncul di leher botol soda saat tutupnya dibuka",
-          "rasio": "16/9",
-          "caption": "Tiga peristiwa yang melibatkan gas yang memuai atau dimampatkan.",
-          "sumber": null,
-          "status": "perlu-media"
+          "tipe": "gambar",
+          "src": "/media/kb3-pengisian-tabung.svg",
+          "alt": "Kompresor mengisi tabung udara napas melalui selang. Tabung yang diisi cepat terasa panas. Setelah dingin, pengukur tekanan tabung yang sama menunjukkan angka lebih rendah.",
+          "rasio": "4/3",
+          "caption": "Ilustrasi pengisian tabung udara napas dengan kompresor.",
+          "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Di dalam mesin kendaraan, gas panas mendorong piston sehingga roda berputar. Saat memompa ban sepeda, kita mendorong udara masuk ke ruang yang makin sempit. Saat tutup botol soda dibuka, kabut tipis muncul sesaat di lehernya."
+          "isi": "Petugas pemadam kebakaran bernapas dari tabung udara bertekanan tinggi saat masuk ke ruangan berasap. Tabung itu diisi kembali dengan kompresor. Lembaga keselamatan kerja Amerika Serikat (NIOSH) melaporkan bahwa pengisian yang terlalu cepat membuat udara di dalam tabung sangat panas. Ketika tabung mendingin, tekanannya turun, sehingga persediaan udara napas lebih sedikit daripada angka yang terbaca saat pengisian selesai. Dalam satu contoh buku teks, udara di tabung selam yang diisi cepat naik dari 21 °C menjadi 42 °C. Bayangkan sebuah pos pemadam kebakaran yang sering mengisi tabung dengan cepat karena harus segera siap bertugas."
         },
         {
           "tipe": "teks",
-          "isi": "Silinder mesin hanya kuat menahan tekanan sampai batas tertentu, dan piston hanya dapat bergerak sejauh panjang silindernya. Dalam batas tekanan dan volume itu, perancang mesin ingin gas menghasilkan usaha sebanyak mungkin pada setiap siklus."
+          "isi": "Tantangan untuk kelompokmu: misalkan pos pemadam rekaan itu meminta bantuan kelompokmu untuk dua hal. Pertama, indikator yang memberi peringatan ketika pengisian berlangsung terlalu cepat, yaitu ketika udara di tabung terlalu panas sehingga tekanannya nanti turun di bawah tekanan yang dibutuhkan. Kedua, cara pengisian yang mengurangi kenaikan suhu udara di dalam tabung. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-3-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awal Anda: mengapa kabut muncul ketika tutup botol soda dibuka? Dari mana gas di dalam mesin mendapat energi untuk mendorong piston?",
+          "pertanyaan": "Apa dugaan awalmu: mengapa udara di dalam tabung menjadi panas ketika diisi cepat, padahal tidak dipanaskan? Mengapa tekanannya turun setelah tabung dingin?",
           "petunjuk": "Tidak ada jawaban salah di tahap ini.",
           "baris": 4,
           "indikatorVariabel": [
@@ -133,7 +133,8 @@
           "tipe": "isian",
           "id": "lkpd-3-2",
           "format": "teks-panjang",
-          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang bagaimana gas melakukan usaha, atau mengapa suhu gas dapat turun tanpa melepas kalor.",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang hubungan kecepatan pemampatan gas dengan suhu, tekanan, atau usaha.",
+          "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ... jika ... dijaga tetap?\"",
           "baris": 3,
           "indikatorVariabel": [
             "BK1"
@@ -410,7 +411,7 @@
     },
     {
       "id": "l4",
-      "judul": "Merancang siklus dengan usaha bersih terbesar",
+      "judul": "Merancang indikator pengisian panas dan cara pengisian tabung",
       "tahap": "masyarakat-belajar",
       "stem": [
         "E",
@@ -424,88 +425,120 @@
           "LI3"
         ]
       },
-      "peranGuru": "Membagi peran dan memeriksa perhitungan luas serta kewajaran lintasan.",
+      "peranGuru": "Membagi peran, memeriksa model sistem, perhitungan tekanan setelah dingin, dan alasan setiap cara pengisian.",
       "panduanGuru": {
         "kegiatan": [
-          "Membagi kelompok dan peran, lalu membacakan batas tekanan dan volume mesin.",
-          "Mencontohkan cara menyusun siklus dengan widget mode rancang.",
-          "Memeriksa bahwa setiap kelompok menyusun minimal tiga alternatif dan memberi nama proses pada setiap sisi."
+          "Membagi kelompok dan peran, lalu membacakan masalah, lembar spesifikasi rekaan, kriteria, dan batasan.",
+          "Menjelaskan model yang dipakai: udara yang akhirnya berada di dalam tabung dipandang sebagai gas bermassa tetap yang dimampatkan.",
+          "Meminta kelompok membandingkan pemampatan isotermal dan adiabatik ke volume yang sama dengan diagram p-V.",
+          "Memeriksa pengisian tabel tekanan setelah dingin dan penentuan batas suhu indikator."
         ],
         "pertanyaanPemantik": [
-          "Ke arah mana siklus harus berjalan agar usaha bersih positif?",
-          "Mengapa luas yang dikelilingi siklus menyatakan usaha bersih?"
+          "Pada pemampatan yang sangat cepat, apakah kalor sempat keluar dari gas?",
+          "Lintasan mana yang lebih curam pada diagram p-V, isotermal atau adiabatik? Apa artinya bagi suhu akhir gas?",
+          "Setelah pengisian berhenti, proses apa yang dialami udara di dalam tabung ketika mendingin?"
         ],
         "antisipasi": [
-          "Kelompok hanya membuat satu siklus. Tekankan bahwa perancang membandingkan beberapa alternatif."
+          "Murid mengira suhu tetap karena tidak ada kalor masuk. Ingatkan bahwa lingkungan melakukan usaha pada gas.",
+          "Murid memakai suhu Celsius untuk menghitung tekanan setelah dingin. Arahkan ke kolom kelvin pada tabel."
         ]
       },
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Siklus adalah lintasan tertutup pada diagram p-V. Usaha bersih dalam satu siklus sama dengan luas daerah yang dikelilingi lintasan tersebut."
+          "isi": "Pengisian tabung sebenarnya adalah sistem terbuka karena udara terus masuk. Untuk mempermudah, pandang seluruh udara yang akhirnya berada di dalam tabung sebagai sistem bermassa tetap yang dimampatkan dari volume besar ke volume tabung. Pemampatan yang sangat cepat hampir tidak sempat melepas kalor, sehingga mendekati proses adiabatik. Pemampatan yang lambat, atau tabung yang direndam air, memberi waktu bagi kalor untuk keluar, sehingga mendekati proses isotermal."
+        },
+        {
+          "tipe": "tabel",
+          "judul": "Lembar spesifikasi dari pos pemadam (rekaan)",
+          "mobile": "kartu",
+          "kolom": [
+            "Butir",
+            "Nilai"
+          ],
+          "baris": [
+            [
+              "Tekanan mutlak saat pengisian dihentikan",
+              "20 000 kPa"
+            ],
+            [
+              "Suhu ruang tempat tabung disimpan",
+              "27 °C"
+            ],
+            [
+              "Tekanan setelah tabung dingin yang masih dapat diterima",
+              "paling sedikit 95% dari tekanan saat pengisian dihentikan"
+            ],
+            [
+              "Alat yang tersedia",
+              "termometer tempel untuk dinding tabung, bak air, pengatur laju aliran kompresor"
+            ]
+          ],
+          "sumber": "data rekaan untuk keperluan pembelajaran"
         },
         {
           "tipe": "tugas-rancangan",
           "id": "rancangan-3",
-          "judul": "Siklus berusaha bersih terbesar",
-          "masalah": "Sebuah mesin hanya boleh bekerja pada tekanan 100–300 kPa dan volume 1–4 L. Rancanglah siklus yang menghasilkan usaha bersih terbesar dalam batas tersebut.",
+          "judul": "Indikator pengisian panas dan cara pengisian tabung udara",
+          "masalah": "Misalkan pos pemadam rekaan dalam skenario ini sering mengisi tabung dengan cepat. Udara di dalam tabung menjadi panas, lalu tekanannya turun setelah tabung dingin. Rancanglah indikator yang memberi peringatan ketika udara terlalu panas sehingga tekanan setelah dingin akan kurang dari batas yang dapat diterima. Lengkapi dengan cara pengisian yang mengurangi kenaikan suhu.",
           "kriteria": [
-            "Lintasan tertutup dan seluruhnya berada di dalam batas tekanan dan volume",
-            "Setiap bagian lintasan diberi nama prosesnya",
-            "Usaha bersih dihitung dan arah siklus ditentukan",
-            "Minimal tiga alternatif siklus dibandingkan"
+            "Indikator memberi peringatan pada suhu yang dihitung dari batas 95% dengan Hukum Gay-Lussac (proses isokhorik saat tabung mendingin)",
+            "Setiap cara pengisian dikaitkan dengan proses termodinamika yang didekatinya (adiabatik atau isotermal) dan alasannya dijelaskan",
+            "Perbedaan pengisian cepat dan lambat ditunjukkan pada diagram p-V, termasuk perbedaan usahanya",
+            "Perhitungan memakai tekanan mutlak, suhu kelvin, dan satuan SI"
           ],
           "batasan": [
-            "Tekanan 100–300 kPa",
-            "Volume 1–4 L",
-            "Lintasan hanya tersusun atas proses isobarik, isokhorik, atau isotermal"
+            "Udara dianggap gas ideal diatomik dengan γ = 1,4",
+            "Volume tabung tetap",
+            "Suhu dinding tabung dianggap sama dengan suhu udara di dalamnya",
+            "Alat yang dipakai hanya alat pada lembar spesifikasi"
           ],
           "peranKelompok": [
             {
-              "peran": "Perancang",
-              "tugas": "Menggambar alternatif siklus pada diagram p-V"
+              "peran": "Penelusur sumber",
+              "tugas": "Mencari dan menilai informasi tentang pengisian tabung yang aman"
             },
             {
               "peran": "Penghitung",
-              "tugas": "Menghitung luas setiap siklus"
+              "tugas": "Menghitung tekanan setelah dingin dan batas suhu indikator"
             },
             {
               "peran": "Pemeriksa",
-              "tugas": "Memeriksa batas, satuan, dan arah siklus"
+              "tugas": "Memeriksa satuan, kelvin, tekanan mutlak, dan nama proses"
             },
             {
               "peran": "Penyaji",
-              "tugas": "Menyusun perbandingan alternatif dan kesimpulan kelompok"
+              "tugas": "Menyusun rancangan, diagram p-V, dan daftar sumber"
             }
           ],
           "langkah": [
             {
               "id": "r3-1",
               "tahap": "menetapkan-masalah",
-              "instruksi": "Tuliskan dengan kata-kata sendiri apa yang harus dimaksimalkan dan batasan apa saja yang berlaku.",
+              "instruksi": "Tuliskan masalah dengan kata-kata kelompok Anda. Sebutkan sistem yang dipakai sebagai model, proses yang dialami udara saat diisi cepat, dan proses yang dialaminya saat tabung mendingin.",
               "format": "teks-panjang"
             },
             {
               "id": "r3-2",
               "tahap": "merancang",
-              "instruksi": "Gambarkan minimal tiga alternatif siklus pada diagram p-V di bawah. Widget menghitung luas setiap siklus.",
-              "format": "diagram-pv"
+              "instruksi": "Rancang indikator (besaran yang diukur, letak alat ukur, dan batas peringatannya) serta minimal dua cara pengisian. Untuk setiap cara, tuliskan proses yang didekatinya dan alasannya.",
+              "format": "tabel",
+              "kolom": [
+                "Bagian rancangan",
+                "Cara kerja",
+                "Proses yang didekati",
+                "Alasan fisika"
+              ],
+              "jumlahBaris": 3
             },
             {
               "id": "r3-3",
               "tahap": "analisis-kelayakan",
-              "instruksi": "Bandingkan usaha bersih ketiga alternatif dalam tabel. Ke arah mana siklus harus berjalan agar usaha bersihnya positif?",
-              "format": "tabel",
-              "kolom": [
-                "Alternatif",
-                "Proses penyusun",
-                "Arah siklus",
-                "Usaha bersih (J)"
-              ],
-              "jumlahBaris": 3
+              "instruksi": "Gunakan diagram p-V di bawah untuk membandingkan pemampatan isotermal dan adiabatik dari 1,0 L ke 0,5 L. Lalu isi tabel tekanan setelah dingin. Pada suhu berapa indikator harus memberi peringatan? Apakah contoh tabung selam di buku teks (diisi sampai 42 °C) masih memenuhi batas 95%? Cara pengisian mana yang paling layak bagi pos pemadam dan mengapa?",
+              "format": "teks-panjang"
             }
           ],
-          "produk": "Diagram tiga alternatif siklus, tabel perbandingan, dan siklus terpilih beserta alasannya",
+          "produk": "Rancangan berisi indikator, cara pengisian, diagram p-V perbandingan, tabel tekanan setelah dingin, dan daftar sumber",
           "rubrik": "rubrik-3",
           "indikatorVariabel": [
             "BK2",
@@ -516,7 +549,7 @@
           "tipe": "rubrik",
           "jenisPenilaian": "autentik",
           "id": "rubrik-3",
-          "judul": "Rubrik rancangan siklus",
+          "judul": "Rubrik rancangan indikator dan cara pengisian tabung",
           "untuk": "rancangan-3",
           "skala": [
             4,
@@ -531,10 +564,10 @@
                 "BK3"
               ],
               "deskriptor": {
-                "4": "Semua bagian lintasan diberi nama proses yang benar dan usaha dihitung dengan satuan SI yang benar",
+                "4": "Pengisian cepat dikaitkan dengan proses adiabatik, pengisian lambat atau bak air dengan isotermal, dan pendinginan dengan isokhorik; perhitungan memakai kelvin, tekanan mutlak, dan satuan SI",
                 "3": "Nama proses benar, tetapi ada satu kesalahan perhitungan atau satuan",
                 "2": "Sebagian nama proses atau perhitungan keliru",
-                "1": "Konsep usaha sebagai luas tidak dipakai"
+                "1": "Konsep proses termodinamika tidak dipakai"
               }
             },
             {
@@ -543,10 +576,10 @@
                 "BK2"
               ],
               "deskriptor": {
-                "4": "Tiga alternatif dibandingkan dengan usaha bersih yang dihitung benar, semuanya dalam batas, dan pilihan akhir beralasan",
-                "3": "Tiga alternatif dibandingkan, tetapi alasan pilihan kurang jelas",
-                "2": "Kurang dari tiga alternatif atau ada siklus yang keluar batas",
-                "1": "Tidak ada perbandingan alternatif"
+                "4": "Batas suhu indikator dihitung benar dari batas 95%, cara pengisian dibandingkan dengan diagram p-V dan tabel, dan pilihan akhir beralasan",
+                "3": "Batas suhu benar, tetapi perbandingan cara pengisian kurang lengkap",
+                "2": "Batas suhu tidak dihitung atau keliru",
+                "1": "Tidak ada indikator maupun perbandingan cara pengisian"
               }
             },
             {
@@ -556,9 +589,9 @@
                 "LI5"
               ],
               "deskriptor": {
-                "4": "Setiap rumus yang dipakai disertai sumbernya dan dicantumkan lengkap",
-                "3": "Sumber rumus dicantumkan, tetapi tidak lengkap",
-                "2": "Hanya sebagian rumus yang disertai sumber",
+                "4": "Memadukan laporan NIOSH, contoh buku teks, diagram p-V, dan spesifikasi pos pemadam secara tepat serta mencantumkan sumbernya lengkap",
+                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
+                "2": "Hanya memakai satu sumber informasi",
                 "1": "Tidak ada sumber"
               }
             }
@@ -566,31 +599,86 @@
         },
         {
           "tipe": "diagram-pv",
-          "id": "pv-3-rancang",
-          "mode": "rancang",
-          "untukLangkah": "r3-2",
+          "id": "pv-3-isi",
+          "mode": "jelajah",
           "sumbu": {
             "pMin": 0,
             "pMax": 400,
             "VMin": 0,
-            "VMax": 5,
+            "VMax": 2,
             "satuanP": "kPa",
             "satuanV": "L"
           },
-          "batas": {
-            "pMin": 100,
-            "pMax": 300,
-            "VMin": 1,
-            "VMax": 4
+          "keadaanAwal": {
+            "p": 100,
+            "V": 1
           },
           "prosesTersedia": [
-            "isobarik",
-            "isokhorik",
-            "isotermal"
+            "isotermal",
+            "adiabatik"
           ],
-          "maksAlternatif": 3,
+          "gamma": 1.4,
           "tampilkanLuas": true,
-          "instruksi": "Klik titik-titik sudut siklus di dalam kotak batas, pilih jenis proses untuk setiap sisi, lalu tutup lintasan kembali ke titik awal."
+          "instruksi": "Mulai dari 100 kPa dan 1,0 L. Pilih isotermal, lalu seret titik akhir ke 0,5 L dan catat tekanan, usaha, dan perbandingan suhunya. Ulangi dengan adiabatik. Lintasan mana yang berakhir pada tekanan dan suhu lebih tinggi? Usaha mana yang lebih besar?"
+        },
+        {
+          "tipe": "tabel-isian",
+          "id": "data-3-isi",
+          "judul": "Tekanan tabung setelah dingin",
+          "instruksi": "Ketik tekanan mutlak saat pengisian dihentikan (20 000 kPa) pada setiap baris. Tabel menghitung tekanan setelah tabung dingin sampai 27 °C (300 K) pada volume tetap.",
+          "kolom": [
+            {
+              "kunci": "tc",
+              "label": "Suhu udara saat pengisian dihentikan",
+              "satuan": "°C",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "TK",
+              "label": "Suhu",
+              "satuan": "K",
+              "tipe": "hitung",
+              "hitung": "tc+273"
+            },
+            {
+              "kunci": "pisi",
+              "label": "Tekanan mutlak saat pengisian dihentikan",
+              "satuan": "kPa",
+              "tipe": "angka"
+            },
+            {
+              "kunci": "pdingin",
+              "label": "Tekanan mutlak setelah dingin",
+              "satuan": "kPa",
+              "tipe": "hitung",
+              "hitung": "pisi*300/TK"
+            },
+            {
+              "kunci": "persen",
+              "label": "Persentase tekanan yang tersisa",
+              "satuan": "%",
+              "tipe": "hitung",
+              "hitung": "pdingin/pisi*100"
+            }
+          ],
+          "barisAwal": [
+            [
+              "27"
+            ],
+            [
+              "35"
+            ],
+            [
+              "42"
+            ],
+            [
+              "50"
+            ],
+            [
+              "60"
+            ]
+          ],
+          "jumlahBaris": 5
         }
       ]
     },
@@ -618,7 +706,7 @@
           "Mengerjakan contoh soal isobarik dan isotermal langkah demi langkah sebagai model, termasuk konversi L ke m³.",
           "Meminta murid menghitung usaha isotermal sendiri ({lkpd-3-10}) dan memeriksanya dengan widget.",
           "Meminta murid mengisi ringkasan empat proses sebelum membuka tabel rujukan.",
-          "Meminta murid merumuskan pola umum dari contoh, widget, dan tabel ({lkpd-3-8}), lalu menyajikan siklus terpilih ({r3-4})."
+          "Mengerjakan contoh pemampatan cepat dan lambat, lalu meminta murid merumuskan pola umum dari contoh, widget, dan tabel ({lkpd-3-8}) serta menyajikan rancangan ({r3-4})."
         ],
         "pertanyaanPemantik": [
           "Mengapa usaha pada dua lintasan berbeda dapat berbeda walaupun keadaan awal dan akhirnya sama?"
@@ -751,6 +839,52 @@
           ]
         },
         {
+          "tipe": "contoh",
+          "judul": "Contoh soal: pemampatan cepat dan lambat",
+          "soal": "Udara 1,0 L bertekanan 100 kPa dan bersuhu 300 K dimampatkan menjadi 0,5 L. Bandingkan pemampatan isotermal dengan pemampatan adiabatik (γ = 1,4) yang diikuti pendinginan pada volume tetap sampai 300 K.",
+          "langkah": [
+            "Isotermal: $p_2 = p_1 \\dfrac{V_1}{V_2} = 200$ kPa. Usaha oleh gas $W = p_1V_1 \\ln\\dfrac{V_2}{V_1} = 100 \\ln 0{,}5 \\approx -69{,}3$ J.",
+            "Adiabatik (Persamaan 3.4): $p_2 = p_1 \\left(\\dfrac{V_1}{V_2}\\right)^{\\gamma} = 100 \\times 2^{1{,}4} \\approx 264$ kPa.",
+            "Suhu setelah pemampatan adiabatik: $T_2 = T_1 \\dfrac{p_2V_2}{p_1V_1} = 300 \\times \\dfrac{264 \\times 0{,}5}{100 \\times 1{,}0} \\approx 396$ K (sekitar 123 °C).",
+            "Pada proses adiabatik $W = -\\Delta U = -nC_V\\Delta T = -\\tfrac{5}{2}(p_2V_2 - p_1V_1) \\approx -79{,}9$ J.",
+            "Pendinginan pada volume tetap (isokhorik) sampai 300 K: $W = 0$ dan tekanan turun menjadi $264 \\times \\dfrac{300}{396} \\approx 200$ kPa."
+          ],
+          "catatan": "Kedua jalur berakhir pada keadaan yang sama (0,5 L, 200 kPa, 300 K), tetapi usaha yang dilakukan pada gas berbeda: 79,9 J pada jalur adiabatik lalu isokhorik dan 69,3 J pada jalur isotermal. Usaha bergantung pada lintasan. Angka ini ilustratif dan tidak meniru kompresor sungguhan yang memakai beberapa tahap pemampatan dan pendingin."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Siklus adalah lintasan tertutup pada diagram p-V. Usaha bersih dalam satu siklus sama dengan luas daerah yang dikelilingi lintasan tersebut. Konsep ini akan dipakai lagi pada mesin kalor di KB 5."
+        },
+        {
+          "tipe": "diagram-pv",
+          "id": "pv-3-rancang",
+          "mode": "rancang",
+          "sumbu": {
+            "pMin": 0,
+            "pMax": 400,
+            "VMin": 0,
+            "VMax": 5,
+            "satuanP": "kPa",
+            "satuanV": "L"
+          },
+          "batas": {
+            "pMin": 100,
+            "pMax": 300,
+            "VMin": 1,
+            "VMax": 4
+          },
+          "prosesTersedia": [
+            "isobarik",
+            "isokhorik",
+            "isotermal",
+            "adiabatik"
+          ],
+          "maksAlternatif": 2,
+          "tampilkanLuas": true,
+          "instruksi": "Susun satu siklus di dalam kotak batas: klik titik-titik sudutnya, pilih jenis proses untuk setiap sisi, lalu tutup lintasan kembali ke titik awal. Amati usaha bersih dan arah siklusnya.",
+          "gamma": 1.4
+        },
+        {
           "tipe": "tabel-isian",
           "id": "data-3-ringkasan",
           "judul": "Ringkasan empat proses (isi sendiri)",
@@ -864,7 +998,7 @@
             {
               "id": "r3-4",
               "tahap": "menyajikan",
-              "instruksi": "Sajikan siklus terpilih kelompok Anda. Tunjukkan perhitungan usaha untuk setiap bagian lintasan dan usaha bersihnya.",
+              "instruksi": "Sajikan rancangan kelompok Anda: indikator dan batas suhunya, cara pengisian terpilih, diagram p-V yang membandingkan pengisian cepat dan lambat, serta satu baris perhitungan tekanan setelah dingin.",
               "format": "unggah-atau-teks"
             }
           ]
@@ -873,7 +1007,7 @@
     },
     {
       "id": "l6",
-      "judul": "Proses mana yang terjadi di mesin kendaraan?",
+      "judul": "Proses apa yang dialami udara di dalam tabung?",
       "tahap": "refleksi",
       "stem": [
         "S",
@@ -892,15 +1026,16 @@
       "peranGuru": "Memfasilitasi presentasi dan umpan balik antarkelompok.",
       "panduanGuru": {
         "kegiatan": [
-          "Memfasilitasi presentasi siklus setiap kelompok dan tanggapan dari kelompok lain.",
-          "Membimbing murid meninjau dugaan awal dan menghubungkan langkah usaha mesin dengan proses adiabatik ({refleksi-3}).",
+          "Memfasilitasi presentasi rancangan setiap kelompok dan tanggapan dari kelompok lain.",
+          "Membimbing murid meninjau dugaan awal dan menghubungkan pengisian cepat dengan proses adiabatik serta pendinginan dengan proses isokhorik ({refleksi-3}).",
           "Meminta kelompok memperbaiki rancangan ({r3-5}) dan murid menulis kesimpulan bersumber ({lkpd-3-9})."
         ],
         "pertanyaanPemantik": [
-          "Proses mana yang paling mirip dengan langkah usaha di mesin kendaraan?"
+          "Mengapa merendam tabung di air mengurangi kenaikan suhu?",
+          "Kabut di leher botol soda dan tabung yang panas sama-sama mendekati proses adiabatik. Apa bedanya?"
         ],
         "antisipasi": [
-          "Murid memilih isotermal karena suhunya dianggap tetap. Tanyakan apakah prosesnya cukup lambat untuk bertukar kalor."
+          "Murid memilih isotermal untuk pengisian cepat karena suhu akhirnya kembali ke suhu ruang. Bedakan proses selama pengisian dengan pendinginan sesudahnya."
         ]
       },
       "blok": [
@@ -908,10 +1043,11 @@
           "tipe": "refleksi",
           "id": "refleksi-3",
           "tinjauUlang": "lkpd-3-1",
-          "pengantar": "Ini dugaan awal Anda tentang kabut di botol soda dan sumber energi gas di dalam mesin.",
+          "pengantar": "Ini dugaan awal Anda tentang tabung yang panas setelah diisi cepat.",
           "pertanyaan": [
             "Bagian mana dari dugaan awal Anda yang kini terbukti, dan bagian mana yang perlu diperbaiki?",
-            "Langkah usaha di mesin kendaraan berlangsung dalam waktu sangat singkat. Proses mana dari keempat proses yang paling mirip dengannya, dan mengapa? Pertimbangkan kecepatan proses dan pertukaran kalornya."
+            "Urutkan proses yang dialami udara di dalam tabung, mulai dari pengisian cepat sampai tabung dingin di rak penyimpanan. Proses apa saja yang terjadi, dan bagaimana Q, W, dan ΔU pada setiap proses?",
+            "Kabut di leher botol soda juga mendekati proses adiabatik. Apa persamaan dan perbedaannya dengan pengisian tabung?"
           ],
           "indikatorVariabel": [
             "BK5"
@@ -924,7 +1060,7 @@
             {
               "id": "r3-5",
               "tahap": "memperbaiki",
-              "instruksi": "Perbaiki rancangan siklus berdasarkan umpan balik kelompok lain. Tuliskan apa yang diubah dan alasannya.",
+              "instruksi": "Perbaiki rancangan berdasarkan umpan balik kelompok lain. Misalnya, pertimbangkan bahwa dinding tabung memanas lebih lambat daripada udara di dalamnya, sehingga termometer tempel dapat membaca suhu lebih rendah. Tuliskan apa yang diubah dan alasannya.",
               "format": "teks-panjang"
             }
           ]
@@ -933,7 +1069,7 @@
           "tipe": "isian",
           "id": "lkpd-3-9",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang cara membaca usaha dari diagram p-V dan ciri keempat proses termodinamika. Sertakan penjelasan kabut botol soda. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang cara membaca usaha dari diagram p-V dan ciri keempat proses termodinamika. Jelaskan proses yang dialami udara saat tabung diisi cepat dan saat tabung mendingin, serta penjelasan kabut botol soda. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -977,33 +1113,33 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan siklus kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan rancangan indikator dan cara pengisian tabung kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-3-1",
-          "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang kabut di leher botol soda adalah ...",
+          "pertanyaan": "Dalam skenario pengisian tabung udara, rumusan masalah yang paling dapat diselidiki adalah ...",
           "opsi": [
             {
               "id": "a",
-              "teks": "Mengapa minuman soda disukai banyak orang?"
+              "teks": "Mengapa petugas pemadam memakai tabung udara?"
             },
             {
               "id": "b",
-              "teks": "Bagaimana pengaruh penurunan tekanan yang cepat saat tutup dibuka terhadap suhu gas di leher botol?"
+              "teks": "Bagaimana pengaruh laju pengisian terhadap suhu udara di dalam tabung jika tekanan akhir pengisian dijaga sama?"
             },
             {
               "id": "c",
-              "teks": "Apakah minuman soda berbahaya bagi kesehatan?"
+              "teks": "Berapa harga satu tabung udara?"
             },
             {
               "id": "d",
-              "teks": "Berapa harga satu botol soda?"
+              "teks": "Apakah kompresor besar lebih bagus daripada kompresor kecil?"
             }
           ],
           "kunci": "b",
-          "pembahasan": "Rumusan b menghubungkan dua besaran yang dapat diamati dan diukur, yaitu perubahan tekanan dan suhu gas.",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (laju pengisian), variabel yang diamati (suhu udara), dan variabel yang dijaga tetap (tekanan akhir pengisian).",
           "indikatorVariabel": [
             "BK1"
           ]
@@ -1181,6 +1317,35 @@
           "indikatorVariabel": [
             "LI5"
           ]
+        },
+        {
+          "tipe": "kuis",
+          "jenisPenilaian": "formatif",
+          "id": "kuis-3-8",
+          "pertanyaan": "Sebuah tabung diisi cepat sampai tekanan mutlak 21 100 kPa dan suhu udaranya 42 °C. Tabung lalu disimpan sampai suhunya 21 °C. Tekanan mutlak tabung sekarang sekitar ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "10 550 kPa"
+            },
+            {
+              "id": "b",
+              "teks": "19 700 kPa"
+            },
+            {
+              "id": "c",
+              "teks": "21 100 kPa"
+            },
+            {
+              "id": "d",
+              "teks": "22 600 kPa"
+            }
+          ],
+          "kunci": "b",
+          "pembahasan": "Pendinginan terjadi pada volume tetap (isokhorik). $p_2 = 21\\,100 \\times \\dfrac{294}{315} \\approx 19\\,700$ kPa. Pilihan a muncul jika perbandingan memakai suhu Celsius. Angka berasal dari contoh tabung selam pada Young dan Freedman (2012, hlm. 594).",
+          "indikatorVariabel": [
+            "BK3"
+          ]
         }
       ]
     }
@@ -1199,10 +1364,10 @@
       },
       {
         "tp": "3.3",
-        "teks": "Isobarik berlangsung pada tekanan tetap. Isokhorik berlangsung pada volume tetap sehingga W = 0. Isotermal berlangsung pada suhu tetap sehingga ΔU = 0 untuk gas ideal. Adiabatik berlangsung tanpa pertukaran kalor (Q = 0) dan memenuhi pV^γ = konstan (Persamaan 3.4)."
+        "teks": "Isobarik berlangsung pada tekanan tetap. Isokhorik berlangsung pada volume tetap sehingga W = 0. Isotermal berlangsung pada suhu tetap sehingga ΔU = 0 untuk gas ideal. Adiabatik berlangsung tanpa pertukaran kalor (Q = 0) dan memenuhi pV^γ = konstan (Persamaan 3.4). Pengisian tabung yang sangat cepat mendekati proses adiabatik sehingga udara memanas; pengisian lambat atau dalam bak air mendekati isotermal. Setelah pengisian berhenti, tabung mendingin secara isokhorik sehingga tekanannya turun."
       }
     ],
-    "literasiInformasi": "Kabut di leher botol soda terjadi karena gas memuai sangat cepat (mendekati adiabatik), sehingga suhunya turun di bawah titik embun. Jawaban terpilih di situs tanya-jawab tidak konsisten dengan penjelasannya sendiri. Sumber demonstrasi fisika dan artikel jurnal bereviu sejawat menjelaskannya dengan konsep yang dapat diperiksa.",
+    "literasiInformasi": "Kabut di leher botol soda terjadi karena gas memuai sangat cepat (mendekati adiabatik), sehingga suhunya turun di bawah titik embun. Jawaban terpilih di situs tanya-jawab tidak konsisten dengan penjelasannya sendiri. Sumber demonstrasi fisika dan artikel jurnal bereviu sejawat menjelaskannya dengan konsep yang dapat diperiksa. Laporan NIOSH tentang pengisian panas menjadi contoh sumber resmi yang menjelaskan masalah dan anjurannya tanpa kepentingan menjual.",
     "rumusKunci": [
       "3.1",
       "3.2",
@@ -1253,6 +1418,7 @@
     "Young, H. D., & Freedman, R. A. (2012). Sears and Zemansky's university physics with modern physics (13th ed.). Pearson Addison-Wesley.",
     "Berg, R. E. (t.t.). Question of the week, answer #347. https://instructional-resources.physics.uiowa.edu/sites/instructional-resources.physics.uiowa.edu/files/2024-12/University%2520of%2520Maryland%2520QOTW%2520Answer%2520%23347_2.pdf",
     "Brainly.co.id. (t.t.). Saat seseorang membuka tutup botol minuman dingin, terlihat asap putih keluar dari dalam botol. https://brainly.co.id/tugas/56228391",
-    "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L. (2023). Culinary fluid mechanics and other currents in food science. Reviews of Modern Physics, 95(2), 025004. https://doi.org/10.1103/RevModPhys.95.025004"
+    "Mathijssen, A. J. T. M., Lisicki, M., Prakash, V. N., & Mossige, E. J. L. (2023). Culinary fluid mechanics and other currents in food science. Reviews of Modern Physics, 95(2), 025004. https://doi.org/10.1103/RevModPhys.95.025004",
+    "National Institute for Occupational Safety and Health. (2020). Hot filling hazards with SCBA air cylinders (DHHS [NIOSH] Publication No. 2021-111). https://www.cdc.gov/niosh/docs/2021-111/"
   ]
 }

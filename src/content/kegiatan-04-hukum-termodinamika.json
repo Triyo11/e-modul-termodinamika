@@ -1,12 +1,12 @@
 {
   "id": "kegiatan-04",
-  "versi": "3.0",
+  "versi": "4.0",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-11-22",
+  "revisiTerakhir": "2026-11-29",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 4,
   "judul": "Hukum-hukum Termodinamika",
-  "subJudul": "Mengapa kalor tidak mengalir sendiri dari benda dingin ke benda panas?",
+  "subJudul": "Mengapa kabin mobil yang diparkir di bawah matahari cepat menjadi panas?",
   "bab": "Termodinamika",
   "model": "STEM-CTL",
   "fase": "F",
@@ -48,8 +48,7 @@
     }
   ],
   "fenomena": [
-    "Termometer badan",
-    "Minuman botol yang didinginkan di ember berisi es",
+    "Kabin mobil yang diparkir di bawah terik matahari (skenario rekaan)",
     "Lemari es yang memerlukan listrik",
     "Parfum yang menyebar ke seluruh ruangan",
     "Pemanasan global sebagai neraca energi Bumi"
@@ -65,7 +64,6 @@
     "Persamaan 4.1 = Persamaan (2.14) Bab II. Nomor padanan persamaan lain belum dicocokkan.",
     "Instruksi simulasi efek rumah kaca memakai kontrol widget: tombol Nyalakan sinar Matahari, pilihan Zaman es dan Masa kini, serta slider Atur konsentrasi sendiri.",
     "Revisi 4 Nov 2026 (penyelarasan dengan Tabel 2.3 Bab II): tahap masyarakat belajar diberi uji singkat dan tabel laju penurunan suhu (unsur M); tahap pemodelan diberi label R.",
-    "Uji singkat di layar l4 memerlukan termometer dari lab sekolah (dikonfirmasi pengguna 4 Nov 2026). Karena botol minuman tidak boleh dibuka, suhu diukur pada botol sejenis berisi air sebagai model.",
     "Revisi 4 Nov 2026 (penghapusan PhET): semua simulasi memakai widget buatan sendiri yang dipilih lewat field widget. Field penyedia, src, dan rasio dihapus dari blok simulasi, begitu pula tautan dan referensi PhET.",
     "Revisi 3.0 (22 Nov 2026): label STEM memakai E (Engineering/Rekayasa) sesuai Tabel 2.3 Bab II.",
     "Revisi 3.0: kode LI mengikuti indikator 20 Nov 2026. LI2 = menentukan strategi penelusuran (isian strategi sebelum tautan sumber), LI4 = mengintegrasikan informasi dari berbagai sumber (tidak dipakai untuk tabel data sendiri), LI5 = menggunakan informasi untuk memecahkan masalah.",
@@ -73,14 +71,14 @@
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: label STEM tahap inkuiri menjadi S, T sesuai Tabel 2.3. Tahap inkuiri ditambah isian strategi penelusuran (lkpd-4-12) dan tautan Radjawane et al. (2022) hlm. 188–197 serta OpenStax College Physics 2e 15.6 (dibuka 22 Nov 2026).",
     "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor.",
-    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb4-tiga-peristiwa.svg) ditambahkan; status perlu-media dihapus.",
     "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
-    "Orientasi masalah diperbaiki 28 Nov 2026: ditambahkan fenomena minuman di ember es dan masalah mendinginkan minuman tanpa lemari es agar orientasi mengarah ke tugas rancangan pendinginan minuman."
+    "Revisi 4.0 (29 Nov 2026, keputusan pengguna): orientasi hanya satu masalah, yaitu kabin mobil yang diparkir di bawah terik (skenario rekaan). Tugas rekayasa mendinginkan minuman diganti sensor suhu kabin (Hukum Ke-Nol) dan penghambat kenaikan suhu (Hukum Pertama, Clausius). Fakta nyata: McLaren, Null, & Quinn (2005) Pediatrics 116(1) e109–e112; Apple Support (simpan −20–45 °C); Serway et al. (2009, hlm. 375) tentang konveksi terhambat; IPCC AR6 via WMO.",
+    "Revisi 4.0: uji singkat data-4-kabin memakai dua kotak model (misalnya kardus berpenutup plastik atau mika bening) dan termometer lab di bawah matahari atau lampu. Ketersediaan alat di sekolah uji coba BELUM dikonfirmasi. lkpd-4-13 dan kuis-4-8 baru; kuis-4-7 diubah ke laju kenaikan suhu (jawaban: sama, 1,5 °C/menit). Ilustrasi l1: /media/kb4-kabin-mobil.svg (kb4-tiga-peristiwa.svg dihapus)."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Termometer, minuman dingin, lemari es, dan parfum",
+      "judul": "Kabin mobil yang diparkir di bawah terik matahari",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -93,45 +91,47 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan fenomena dan mengaitkannya dengan KB 2–3.",
+      "peranGuru": "Menyajikan skenario kabin mobil yang panas dan mengaitkannya dengan KB 2–3.",
       "panduanGuru": {
         "kegiatan": [
-          "Menampilkan termometer badan, minuman di ember es, lemari es, dan parfum, lalu mengingatkan konsep sistem dan energi dalam dari KB 2.",
-          "Menyampaikan masalah mendinginkan minuman secepat mungkin tanpa lemari es. Masalah ini akan diselesaikan kelompok di tahap masyarakat belajar.",
-          "Meminta murid menulis dugaan tentang minuman di ember es, lemari es, dan parfum ({lkpd-4-1}).",
+          "Menegaskan bahwa keluarga dan permintaannya adalah skenario rekaan, sedangkan hasil penelitian suhu kabin mobil, anjuran produsen ponsel, dan laporan IPCC adalah sumber nyata.",
+          "Menampilkan gambar mobil yang diparkir, lalu mengingatkan konsep sistem, lingkungan, dan energi dalam dari KB 2.",
+          "Menyampaikan tantangan rancangan: sensor suhu kabin dan cara mengurangi laju kenaikan suhu kabin tanpa mesin atau AC. Tantangan ini dikerjakan kelompok di tahap masyarakat belajar.",
+          "Meminta murid menulis dugaan awal ({lkpd-4-1}) tanpa langsung dikoreksi.",
           "Membimbing murid merumuskan pertanyaan masalah ({lkpd-4-2}) dan daftar informasi yang dibutuhkan ({lkpd-4-3})."
         ],
         "pertanyaanPemantik": [
-          "Mengapa minuman di ember es perlu ditunggu, dan mengapa tidak pernah lebih dingin daripada esnya?",
-          "Mengapa lemari es berhenti mendingin ketika listrik padam?",
-          "Pernahkah aroma parfum kembali sendiri ke botolnya?"
+          "Dari mana energi yang membuat kabin panas, padahal mesin mati?",
+          "Mengapa suhu kabin tidak naik terus tanpa batas?",
+          "Bisakah kabin menjadi lebih dingin daripada udara luar tanpa AC?"
         ],
         "antisipasi": [
-          "Murid menyebut lemari es \"menghasilkan dingin\". Tanyakan ke mana kalor dari makanan dibuang."
+          "Murid mengira kabin panas karena kaca \"memerangkap panas\" saja. Tanyakan apa yang terjadi pada udara panas yang tidak dapat keluar.",
+          "Murid mengira sensor boleh diletakkan di mana saja. Tanyakan apa yang dibaca termometer yang terkena sinar matahari langsung."
         ]
       },
       "blok": [
         {
           "tipe": "gambar",
-          "src": "/media/kb4-tiga-peristiwa.svg",
-          "alt": "Termometer badan di ketiak, lemari es tersambung ke stopkontak, dan botol parfum terbuka di sudut ruangan",
-          "rasio": "16/9",
-          "caption": "Tiga peristiwa sehari-hari yang berkaitan dengan arah aliran energi.",
+          "src": "/media/kb4-kabin-mobil.svg",
+          "alt": "Mobil diparkir tanpa peneduh pada siang hari. Sinar matahari masuk melalui kaca. Di atas dasbor ada ponsel dan power bank. Suhu udara luar 32 °C, suhu kabin belum diketahui.",
+          "rasio": "4/3",
+          "caption": "Ilustrasi mobil yang diparkir tanpa peneduh pada siang hari.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Termometer badan perlu ditunggu beberapa saat sebelum angkanya dibaca. Saat ada acara, minuman botol direndam di ember berisi es batu dan air. Minuman perlu ditunggu cukup lama sampai dingin, dan suhunya tidak pernah lebih rendah daripada campuran es di sekitarnya. Lemari es mendinginkan makanan, tetapi hanya selama tersambung ke listrik. Aroma parfum yang dibuka di sudut kamar lama-kelamaan tercium di seluruh ruangan, dan tidak pernah berkumpul kembali ke botolnya."
+          "isi": "Sebuah penelitian di Amerika Serikat mengukur bahwa suhu kabin mobil yang diparkir di bawah sinar matahari naik rata-rata sekitar 22 °C dalam satu jam. Sebagian besar kenaikan itu terjadi dalam 30 menit pertama, dan membuka sedikit kaca hampir tidak mengubah hasilnya. Produsen ponsel menganjurkan penyimpanan pada suhu −20 °C sampai 45 °C dan tidak meninggalkan ponsel di mobil. Anak atau hewan yang tertinggal di mobil berisiko mengalami sengatan panas. Menurut IPCC, gelombang panas makin sering dan makin kuat seiring pemanasan global. Bayangkan sebuah keluarga yang sering memarkir mobil di halaman tanpa peneduh dan meninggalkan ponsel, power bank, atau obat di dalamnya."
         },
         {
           "tipe": "teks",
-          "isi": "Bayangkan tamu akan datang sebentar lagi, sedangkan minuman masih bersuhu ruang dan lemari es tidak bisa dipakai. Agar dapat mendinginkannya secepat mungkin, Anda perlu memahami ke mana kalor mengalir dan kapan alirannya berhenti."
+          "isi": "Tantangan untuk kelompokmu: misalkan keluarga rekaan itu meminta bantuan kelompokmu untuk dua hal. Pertama, sensor suhu kabin yang memberi peringatan sebelum suhu kabin mencapai 45 °C. Tentukan juga di mana dan bagaimana sensor dipasang agar angka yang terbaca benar-benar suhu udara kabin. Kedua, cara mengurangi laju kenaikan suhu kabin tanpa menyalakan mesin atau AC. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-4-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awal Anda: mengapa minuman di ember es tidak pernah lebih dingin daripada esnya? Mengapa lemari es memerlukan listrik untuk mendinginkan isinya? Mengapa aroma parfum tidak pernah kembali sendiri ke botolnya?",
+          "pertanyaan": "Apa dugaan awalmu: dari mana energi yang membuat kabin mobil panas, dan mengapa suhunya akhirnya berhenti naik? Dapatkah kabin menjadi lebih dingin daripada udara luar tanpa AC?",
           "petunjuk": "Tidak ada jawaban salah di tahap ini.",
           "baris": 4,
           "indikatorVariabel": [
@@ -142,7 +142,8 @@
           "tipe": "isian",
           "id": "lkpd-4-2",
           "format": "teks-panjang",
-          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang arah aliran kalor atau arah proses alami.",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah tentang aliran energi atau arah aliran kalor pada kabin mobil yang diparkir.",
+          "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ... jika ... dijaga tetap?\"",
           "baris": 3,
           "indikatorVariabel": [
             "BK1"
@@ -273,7 +274,7 @@
           "tipe": "isian",
           "id": "lkpd-4-5",
           "format": "teks-panjang",
-          "pertanyaan": "Setelah bercampur, apakah kedua jenis partikel pernah kembali terpisah dengan sendirinya? Kaitkan dengan aroma parfum di layar pertama.",
+          "pertanyaan": "Setelah bercampur, apakah kedua jenis partikel pernah kembali terpisah dengan sendirinya? Kaitkan dengan aroma parfum yang dibuka di sudut kamar: mengapa aromanya menyebar ke seluruh ruangan dan tidak pernah berkumpul kembali ke botolnya?",
           "baris": 3,
           "indikatorVariabel": [
             "BK3"
@@ -478,7 +479,7 @@
     },
     {
       "id": "l4",
-      "judul": "Mendinginkan minuman secepat mungkin",
+      "judul": "Merancang sensor suhu kabin dan penghambat kenaikan suhu",
       "tahap": "masyarakat-belajar",
       "stem": [
         "E",
@@ -492,85 +493,89 @@
           "LI3"
         ]
       },
-      "peranGuru": "Memeriksa alasan ilmiah setiap rancangan, menyiapkan termometer dari lab, dan memeriksa kewajaran perhitungan laju penurunan suhu.",
+      "peranGuru": "Memeriksa alasan ilmiah setiap rancangan, menyiapkan termometer dan kotak model, serta memeriksa kewajaran perhitungan laju kenaikan suhu.",
       "panduanGuru": {
         "kegiatan": [
           "Membagi kelompok dan peran, lalu membacakan masalah, kriteria, dan batasan.",
-          "Memeriksa arah aliran kalor yang ditulis setiap kelompok pada kedua rancangannya.",
-          "Menyiapkan termometer dan mengawasi uji singkat kedua rancangan dengan botol model berisi air.",
-          "Memeriksa pengisian tabel uji singkat dan satuan waktu (menit)."
+          "Menjelaskan bahwa uji singkat memakai kotak model (misalnya kardus berpenutup plastik atau mika bening) sebagai pengganti kabin mobil.",
+          "Memeriksa letak sensor yang dipilih setiap kelompok dan alasannya menurut Hukum Ke-Nol.",
+          "Mengawasi uji singkat kotak pembanding dan kotak rancangan di bawah sinar matahari atau lampu, lalu memeriksa pengisian tabel."
         ],
         "pertanyaanPemantik": [
-          "Faktor apa yang diubah agar kalor berpindah lebih cepat?",
-          "Mengapa perlu dua rancangan yang dibandingkan?"
+          "Termometer yang terkena sinar matahari langsung sedang setimbang termal dengan apa?",
+          "Energi apa yang masuk ke kabin, dan lewat jalan apa energi keluar?",
+          "Mengapa cara pasif tidak dapat membuat kabin lebih dingin daripada udara luar?"
         ],
         "antisipasi": [
-          "Kelompok membandingkan suhu akhir, bukan laju. Ingatkan bahwa lama uji kedua rancangan bisa berbeda."
+          "Kelompok membandingkan suhu akhir, bukan laju. Ingatkan bahwa lama uji kedua kotak harus sama.",
+          "Kelompok meletakkan termometer di bagian yang terkena sinar. Minta mereka membandingkan dengan termometer yang terlindung."
         ]
       },
       "blok": [
         {
           "tipe": "tugas-rancangan",
           "id": "rancangan-4",
-          "judul": "Cara tercepat mendinginkan sebotol minuman",
-          "masalah": "Tamu akan datang dalam waktu singkat dan minuman masih bersuhu ruang. Anda punya es batu, air, wadah, dan bahan dapur sederhana. Rancanglah cara mendinginkan sebotol minuman secepat mungkin.",
+          "judul": "Sensor suhu kabin dan penghambat kenaikan suhu",
+          "masalah": "Misalkan keluarga rekaan dalam skenario ini sering memarkir mobil di halaman tanpa peneduh. Rancanglah sensor suhu kabin yang memberi peringatan sebelum suhu kabin mencapai 45 °C, beserta letak pemasangannya. Lengkapi dengan cara mengurangi laju kenaikan suhu kabin tanpa menyalakan mesin atau AC.",
           "kriteria": [
-            "Rancangan memakai bahan yang tersedia",
-            "Setiap langkah dijelaskan dengan konsep aliran kalor dan kesetimbangan termal",
-            "Keberhasilan diukur dengan laju penurunan suhu yang dihitung dari data uji singkat",
-            "Minimal dua rancangan dibandingkan"
+            "Letak sensor dijelaskan dengan Hukum Ke-Nol sehingga yang terbaca adalah suhu udara kabin",
+            "Batas peringatan sensor ditetapkan di bawah 45 °C dengan alasan",
+            "Setiap cara mengurangi kenaikan suhu dijelaskan dengan Hukum Pertama (energi masuk dan energi keluar)",
+            "Batas kemampuan cara pasif dijelaskan dengan rumusan Clausius",
+            "Keberhasilan diukur dengan laju kenaikan suhu yang dihitung dari uji singkat pada kotak model"
           ],
           "batasan": [
-            "Tidak memakai lemari es atau freezer",
-            "Botol minuman tidak dibuka"
+            "Tidak memakai mesin, AC, atau listrik untuk mendinginkan",
+            "Uji singkat memakai kotak model, bukan mobil sungguhan",
+            "Kedua kotak diuji dengan sumber cahaya, lama uji, dan termometer yang sama"
           ],
           "peranKelompok": [
             {
               "peran": "Penelusur sumber",
-              "tugas": "Mencari informasi faktor yang memengaruhi laju aliran kalor dan menilai sumbernya"
+              "tugas": "Mencari dan menilai informasi tentang suhu kabin mobil dan cara menguranginya"
             },
             {
               "peran": "Perancang",
-              "tugas": "Menyusun langkah dan gambar rancangan"
+              "tugas": "Menyusun rancangan sensor dan penghambat kenaikan suhu beserta gambarnya"
             },
             {
               "peran": "Penguji",
-              "tugas": "Mengukur suhu air di botol model dan mencatat waktu"
+              "tugas": "Mengukur suhu di dalam kotak model dan mencatat waktu"
             },
             {
               "peran": "Penyaji",
-              "tugas": "Menyusun perbandingan rancangan dan daftar sumber"
+              "tugas": "Menyusun perbandingan hasil uji dan daftar sumber"
             }
           ],
           "langkah": [
             {
               "id": "r4-1",
               "tahap": "menetapkan-masalah",
-              "instruksi": "Tuliskan masalah, batas sistem, dan ukuran keberhasilan rancangan Anda.",
+              "instruksi": "Tuliskan masalah, batas sistem (kabin sebagai sistem), dan ukuran keberhasilan rancangan Anda.",
               "format": "teks-panjang"
             },
             {
               "id": "r4-2",
               "tahap": "merancang",
-              "instruksi": "Susun dua rancangan berbeda. Untuk setiap rancangan, jelaskan ke mana kalor mengalir dan faktor apa yang Anda ubah agar alirannya lebih cepat.",
+              "instruksi": "Rancang letak dan batas peringatan sensor, lalu minimal dua cara mengurangi laju kenaikan suhu kabin. Untuk setiap bagian, jelaskan aliran energinya dan hukum yang mendasarinya.",
               "format": "tabel",
               "kolom": [
-                "Rancangan",
-                "Langkah",
-                "Arah aliran kalor",
-                "Faktor yang dipercepat",
+                "Bagian rancangan",
+                "Cara kerja",
+                "Aliran energi",
+                "Hukum yang mendasari",
                 "Sumber informasi"
               ],
-              "jumlahBaris": 2
+              "jumlahBaris": 3
             },
             {
               "id": "r4-3",
               "tahap": "analisis-kelayakan",
-              "instruksi": "Uji kedua rancangan selama beberapa menit dan isi tabel di bawah. Rancangan mana yang lebih layak berdasarkan laju penurunan suhunya? Kapan aliran kalor akan berhenti? Dapatkah minuman menjadi lebih dingin daripada campuran pendinginnya? Jelaskan dengan Hukum Ke-Nol dan rumusan Clausius.",
+              "instruksi": "Uji kotak pembanding dan kotak dengan rancangan Anda selama waktu yang sama, lalu isi tabel di bawah. Rancangan mana yang lebih layak berdasarkan laju kenaikan suhunya? Dapatkah suhu di dalam kotak turun di bawah suhu udara luar tanpa usaha dari luar? Jelaskan dengan rumusan Clausius.",
               "format": "teks-panjang"
             }
           ],
-          "produk": "Laporan perbandingan dua rancangan beserta tabel uji singkat, hasil uji, dan daftar sumber",
+          "produk": "Laporan rancangan sensor dan penghambat kenaikan suhu beserta tabel uji singkat, hasil uji, dan daftar sumber",
           "rubrik": "rubrik-4",
           "indikatorVariabel": [
             "BK2",
@@ -581,7 +586,7 @@
           "tipe": "rubrik",
           "jenisPenilaian": "autentik",
           "id": "rubrik-4",
-          "judul": "Rubrik rancangan pendinginan minuman",
+          "judul": "Rubrik rancangan sensor suhu kabin dan penghambat kenaikan suhu",
           "untuk": "rancangan-4",
           "skala": [
             4,
@@ -596,10 +601,10 @@
                 "BK3"
               ],
               "deskriptor": {
-                "4": "Arah aliran kalor, kesetimbangan termal, dan batas pendinginan dijelaskan dengan benar",
-                "3": "Arah aliran kalor benar, tetapi batas pendinginan tidak dijelaskan",
-                "2": "Ada kesalahan arah aliran kalor",
-                "1": "Konsep aliran kalor tidak dipakai"
+                "4": "Letak sensor dijelaskan dengan Hukum Ke-Nol, setiap cara dikaitkan dengan energi masuk dan keluar (Hukum Pertama), dan batas cara pasif dijelaskan dengan rumusan Clausius",
+                "3": "Dua dari tiga hukum dipakai dengan benar",
+                "2": "Hanya satu hukum dipakai dengan benar, atau ada kesalahan arah aliran kalor",
+                "1": "Hukum termodinamika tidak dipakai"
               }
             },
             {
@@ -608,9 +613,9 @@
                 "BK2"
               ],
               "deskriptor": {
-                "4": "Kedua rancangan diuji dengan cara yang sama, laju penurunan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
-                "3": "Kedua rancangan diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
-                "2": "Hanya satu rancangan yang diuji",
+                "4": "Kedua kotak diuji dengan cara yang sama, laju kenaikan suhu dihitung dengan benar, dan pilihan rancangan didasarkan pada perbandingan laju tersebut",
+                "3": "Kedua kotak diuji, tetapi laju tidak dihitung, ada kesalahan hitung, atau cara ujinya tidak sama",
+                "2": "Hanya satu kotak yang diuji",
                 "1": "Tidak ada data uji"
               }
             },
@@ -621,9 +626,9 @@
                 "LI5"
               ],
               "deskriptor": {
-                "4": "Informasi faktor aliran kalor berasal dari sumber yang dinilai dan dicantumkan lengkap",
-                "3": "Sumber dicantumkan lengkap, tetapi tidak dinilai",
-                "2": "Sumber dicantumkan tidak lengkap",
+                "4": "Memadukan hasil penelitian suhu kabin, data uji kelompok, dan hukum termodinamika dari buku secara tepat serta mencantumkan sumbernya lengkap",
+                "3": "Memadukan sumber-sumber tersebut, tetapi pencantuman sumber belum lengkap",
+                "2": "Hanya memakai satu sumber informasi",
                 "1": "Tidak ada sumber"
               }
             }
@@ -631,13 +636,13 @@
         },
         {
           "tipe": "tabel-isian",
-          "id": "data-4-dingin",
-          "judul": "Uji singkat: laju penurunan suhu",
-          "instruksi": "Agar botol minuman tidak dibuka, pakai botol sejenis berisi air sebagai model dan masukkan termometer ke dalamnya. Gunakan botol, volume air, dan lama uji yang sama untuk kedua rancangan.",
+          "id": "data-4-kabin",
+          "judul": "Uji singkat: laju kenaikan suhu kotak model",
+          "instruksi": "Letakkan dua kotak model yang sama di bawah sinar matahari atau lampu yang sama. Pasang rancangan kelompok pada salah satu kotak. Letakkan termometer di dalam kotak pada bagian yang tidak terkena cahaya langsung. Gunakan lama uji yang sama untuk kedua kotak.",
           "kolom": [
             {
-              "kunci": "rancangan",
-              "label": "Rancangan",
+              "kunci": "kotak",
+              "label": "Kotak",
               "satuan": "",
               "tipe": "teks"
             },
@@ -661,18 +666,18 @@
             },
             {
               "kunci": "laju",
-              "label": "Laju penurunan suhu",
+              "label": "Laju kenaikan suhu",
               "satuan": "°C/menit",
               "tipe": "hitung",
-              "hitung": "(T0-T1)/t"
+              "hitung": "(T1-T0)/t"
             }
           ],
           "barisAwal": [
             [
-              "Rancangan 1"
+              "Kotak tanpa rancangan (pembanding)"
             ],
             [
-              "Rancangan 2"
+              "Kotak dengan rancangan kelompok"
             ]
           ],
           "jumlahBaris": 2
@@ -702,6 +707,7 @@
         "kegiatan": [
           "Mengerjakan contoh Hukum Pertama pada tiga proses sebagai model, termasuk tanda Q dan W.",
           "Meminta murid mengamati simulasi efek rumah kaca dan menganalisis neraca energi Bumi ({lkpd-4-9}).",
+          "Mengaitkan neraca energi Bumi dengan neraca energi kabin mobil ({lkpd-4-13}).",
           "Mengerjakan contoh entropi aliran kalor, lalu meminta murid mengisi tabel entropi sendiri.",
           "Meminta murid merumuskan pola umum entropi total ({lkpd-4-10}) dan menyajikan rancangan ({r4-4})."
         ],
@@ -759,6 +765,21 @@
           "pertanyaan": "Pandang Bumi sebagai sistem. Saat konsentrasi gas rumah kaca dinaikkan, bagaimana perbandingan energi yang masuk dan energi yang keluar sesaat setelahnya? Apa akibatnya bagi energi dalam dan suhu permukaan Bumi? Gunakan gagasan Hukum Pertama.",
           "baris": 5,
           "indikatorVariabel": [
+            "LI4"
+          ]
+        },
+        {
+          "tipe": "teks",
+          "isi": "Kabin mobil yang diparkir dapat dianalisis dengan cara yang sama. Sinar matahari masuk melalui kaca dan diserap dasbor serta jok. Udara yang memanas tidak dapat keluar karena aliran konveksinya terhambat oleh kaca dan atap. Menurut para ahli, hambatan konveksi inilah penyebab utama ruang berkaca menjadi panas, lebih besar daripada radiasi inframerah yang tertahan kaca. Suhu kabin naik selama energi yang masuk lebih besar daripada energi yang keluar, lalu berhenti naik ketika keduanya seimbang."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-4-13",
+          "format": "teks-panjang",
+          "pertanyaan": "Bandingkan neraca energi Bumi pada simulasi dengan neraca energi kabin mobil. Apa persamaan dan perbedaannya? Gunakan Hukum Pertama untuk menjelaskan mengapa kerai reflektif di kaca depan mengurangi laju kenaikan suhu kabin.",
+          "baris": 5,
+          "indikatorVariabel": [
+            "BK4",
             "LI4"
           ]
         },
@@ -851,7 +872,7 @@
             {
               "id": "r4-4",
               "tahap": "menyajikan",
-              "instruksi": "Sajikan kedua rancangan, tabel uji singkat, dan perbandingan laju penurunan suhunya. Tunjukkan arah aliran kalor pada setiap rancangan dengan diagram panah.",
+              "instruksi": "Sajikan rancangan sensor dan penghambat kenaikan suhu, tabel uji singkat, dan perbandingan laju kenaikan suhunya. Tunjukkan aliran energi masuk dan keluar kabin pada rancangan dengan diagram panah.",
               "format": "unggah-atau-teks"
             }
           ]
@@ -880,7 +901,7 @@
       "panduanGuru": {
         "kegiatan": [
           "Membahas tabel proses reversibel dan ireversibel.",
-          "Membimbing murid menjelaskan lemari es dengan rumusan Clausius dan menggolongkan beberapa proses ({refleksi-4}).",
+          "Membimbing murid menjelaskan kabin mobil dengan Hukum Pertama dan rumusan Clausius, lalu menggolongkan beberapa proses ({refleksi-4}).",
           "Meminta kelompok memperbaiki rancangan ({r4-5}) dan murid menulis kesimpulan bersumber ({lkpd-4-11})."
         ],
         "pertanyaanPemantik": [
@@ -943,11 +964,12 @@
           "tipe": "refleksi",
           "id": "refleksi-4",
           "tinjauUlang": "lkpd-4-1",
-          "pengantar": "Ini dugaan awal Anda tentang minuman di ember es, lemari es, dan aroma parfum.",
+          "pengantar": "Ini dugaan awal Anda tentang kabin mobil yang panas.",
           "pertanyaan": [
-            "Jelaskan kembali mengapa lemari es memerlukan listrik dengan rumusan Clausius.",
-            "Golongkan menyebarnya parfum, mencairnya es di udara terbuka, dan pemampatan gas yang sangat lambat ke dalam proses reversibel atau ireversibel. Gunakan tabel di atas.",
-            "Bagaimana kaitan neraca energi Bumi yang Anda amati dengan pemanasan global?"
+            "Bagian mana dari dugaan awal Anda yang kini terbukti, dan bagian mana yang perlu diperbaiki? Jelaskan dengan Hukum Pertama mengapa suhu kabin akhirnya berhenti naik.",
+            "Jelaskan dengan rumusan Clausius mengapa cara pasif tidak dapat membuat kabin lebih dingin daripada udara luar, sedangkan AC dan lemari es dapat, tetapi memerlukan listrik.",
+            "Golongkan menyebarnya parfum, mengalirnya kalor dari kabin panas ke udara luar, dan pemampatan gas yang sangat lambat ke dalam proses reversibel atau ireversibel. Gunakan tabel di atas.",
+            "Bagaimana kaitan neraca energi Bumi yang Anda amati dengan pemanasan global, dan apa artinya bagi kabin mobil pada hari-hari yang makin panas?"
           ],
           "indikatorVariabel": [
             "BK5"
@@ -960,7 +982,7 @@
             {
               "id": "r4-5",
               "tahap": "memperbaiki",
-              "instruksi": "Perbaiki rancangan berdasarkan hasil uji dan umpan balik. Tuliskan apa yang diubah dan alasannya.",
+              "instruksi": "Perbaiki rancangan berdasarkan hasil uji dan umpan balik. Pertimbangkan juga hasil penelitian bahwa membuka sedikit kaca hampir tidak mengurangi kenaikan suhu kabin. Tuliskan apa yang diubah dan alasannya.",
               "format": "teks-panjang"
             }
           ]
@@ -969,7 +991,7 @@
           "tipe": "isian",
           "id": "lkpd-4-11",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang Hukum Ke-Nol, Hukum Pertama, Hukum Kedua, dan kaitannya dengan klaim mesin energi gratis. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang Hukum Ke-Nol, Hukum Pertama, dan Hukum Kedua, serta penerapannya pada kabin mobil yang diparkir dan klaim mesin energi gratis. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -1002,7 +1024,7 @@
       "panduanGuru": {
         "kegiatan": [
           "Meminta murid mengerjakan kuis formatif dan membaca pembahasannya.",
-          "Menilai student e-worksheet dan laporan rancangan pendinginan minuman dengan rubrik.",
+          "Menilai student e-worksheet dan laporan rancangan sensor suhu kabin dan penghambat kenaikan suhu dengan rubrik.",
           "Memberi umpan balik tertulis singkat pada setiap aspek rubrik."
         ],
         "pertanyaanPemantik": [],
@@ -1013,33 +1035,33 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan pendinginan minuman kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan sensor suhu kabin dan penghambat kenaikan suhu kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-4-1",
-          "pertanyaan": "Rumusan masalah yang paling dapat diselidiki tentang lemari es adalah ...",
+          "pertanyaan": "Dalam skenario kabin mobil yang diparkir, rumusan masalah yang paling dapat diselidiki adalah ...",
           "opsi": [
             {
               "id": "a",
-              "teks": "Mengapa lemari es berwarna putih?"
+              "teks": "Mengapa mobil berwarna cokelat lebih bagus?"
             },
             {
               "id": "b",
-              "teks": "Bagaimana hubungan antara energi listrik yang dipakai lemari es dan banyaknya kalor yang dipindahkan dari ruang dalamnya?"
+              "teks": "Bagaimana pengaruh pemasangan kerai reflektif terhadap laju kenaikan suhu kabin jika lama parkir dan cuaca sama?"
             },
             {
               "id": "c",
-              "teks": "Merek lemari es apa yang paling bagus?"
+              "teks": "Berapa harga kerai reflektif?"
             },
             {
               "id": "d",
-              "teks": "Apakah lemari es perlu dibersihkan setiap minggu?"
+              "teks": "Apakah orang suka memarkir mobil di halaman?"
             }
           ],
           "kunci": "b",
-          "pembahasan": "Rumusan b menghubungkan dua besaran yang dapat diukur dan berkaitan dengan arah aliran kalor.",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (pemasangan kerai), variabel yang diamati (laju kenaikan suhu kabin), dan variabel yang dijaga tetap (lama parkir dan cuaca).",
           "indikatorVariabel": [
             "BK1"
           ]
@@ -1193,29 +1215,58 @@
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-4-7",
-          "pertanyaan": "Hasil uji singkat dua rancangan pendingin minuman: rancangan A menurunkan suhu dari 27 °C ke 12 °C dalam 10 menit, rancangan B dari 27 °C ke 17 °C dalam 5 menit. Berdasarkan laju penurunan suhu, rancangan yang lebih cepat adalah ...",
+          "pertanyaan": "Hasil uji singkat dua kotak model: kotak A naik dari 30 °C ke 45 °C dalam 10 menit, kotak B naik dari 30 °C ke 36 °C dalam 4 menit. Berdasarkan laju kenaikan suhu, kotak yang suhunya naik lebih lambat adalah ...",
           "opsi": [
             {
               "id": "a",
-              "teks": "A, karena suhu akhirnya lebih rendah"
+              "teks": "B, karena suhu akhirnya lebih rendah"
             },
             {
               "id": "b",
-              "teks": "B, karena lajunya 2,0 °C/menit, lebih besar daripada A (1,5 °C/menit)"
+              "teks": "A, karena suhunya naik selama waktu yang lebih lama"
             },
             {
               "id": "c",
-              "teks": "Keduanya sama cepat"
+              "teks": "Keduanya sama, karena lajunya sama-sama 1,5 °C/menit"
             },
             {
               "id": "d",
               "teks": "Tidak dapat ditentukan karena waktunya berbeda"
             }
           ],
-          "kunci": "b",
-          "pembahasan": "Laju A = (27 − 12)/10 = 1,5 °C/menit. Laju B = (27 − 17)/5 = 2,0 °C/menit. Suhu akhir yang lebih rendah pada A terjadi karena waktunya lebih lama, bukan karena lebih cepat.",
+          "kunci": "c",
+          "pembahasan": "Laju A = (45 − 30)/10 = 1,5 °C/menit. Laju B = (36 − 30)/4 = 1,5 °C/menit. Suhu akhir B lebih rendah hanya karena waktunya lebih singkat. Perbandingan rancangan harus memakai laju atau lama uji yang sama.",
           "indikatorVariabel": [
             "LI5"
+          ]
+        },
+        {
+          "tipe": "kuis",
+          "jenisPenilaian": "formatif",
+          "id": "kuis-4-8",
+          "pertanyaan": "Dua termometer dipasang di dalam kabin mobil yang diparkir. Termometer P terkena sinar matahari langsung, sedangkan termometer Q terlindung. P menunjukkan angka lebih tinggi. Penjelasan yang paling tepat adalah ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "P rusak karena angkanya berbeda"
+            },
+            {
+              "id": "b",
+              "teks": "Termometer menunjukkan suhunya sendiri; P ikut menyerap energi sinar matahari sehingga tidak setimbang termal hanya dengan udara kabin, sedangkan Q lebih mendekati suhu udara kabin"
+            },
+            {
+              "id": "c",
+              "teks": "Udara di dekat P pasti lebih panas daripada udara di dekat Q"
+            },
+            {
+              "id": "d",
+              "teks": "Q rusak karena angkanya lebih rendah"
+            }
+          ],
+          "kunci": "b",
+          "pembahasan": "Menurut Hukum Ke-Nol, termometer membaca suhu benda yang setimbang termal dengannya. Termometer yang menyerap radiasi matahari menjadi lebih panas daripada udara di sekitarnya, sehingga sensor suhu udara perlu dilindungi dari sinar langsung.",
+          "indikatorVariabel": [
+            "BK5"
           ]
         }
       ]
@@ -1227,11 +1278,11 @@
     "poin": [
       {
         "tp": "4.1",
-        "teks": "Dua benda bersentuhan mencapai kesetimbangan termal ketika suhunya sama. Hukum Ke-Nol: jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal. Termometer berperan sebagai benda ketiga."
+        "teks": "Dua benda bersentuhan mencapai kesetimbangan termal ketika suhunya sama. Hukum Ke-Nol: jika A dan B masing-masing setimbang termal dengan C, maka A dan B setimbang termal. Termometer berperan sebagai benda ketiga. Sensor suhu udara harus dilindungi dari sinar matahari langsung agar yang terbaca adalah suhu udara, bukan suhu sensor yang menyerap radiasi."
       },
       {
         "tp": "4.2",
-        "teks": "Hukum Pertama: ΔU = Q − W (Persamaan 4.1). Pada proses isokhorik ΔU = Q, pada proses adiabatik ΔU = −W, dan pada satu siklus penuh ΔU = 0 sehingga W = Q. Perubahan energi dalam gas ideal adalah ΔU = nC_VΔT, dengan C_p − C_V = R (Persamaan 4.2)."
+        "teks": "Hukum Pertama: ΔU = Q − W (Persamaan 4.1). Pada proses isokhorik ΔU = Q, pada proses adiabatik ΔU = −W, dan pada satu siklus penuh ΔU = 0 sehingga W = Q. Perubahan energi dalam gas ideal adalah ΔU = nC_VΔT, dengan C_p − C_V = R (Persamaan 4.2). Kabin mobil yang diparkir memanas selama energi yang masuk lebih besar daripada energi yang keluar, lalu suhunya berhenti naik ketika keduanya seimbang."
       },
       {
         "tp": "4.3",
@@ -1239,7 +1290,7 @@
       },
       {
         "tp": "4.4",
-        "teks": "Rumusan Clausius: kalor tidak mengalir spontan dari benda dingin ke benda panas. Rumusan Kelvin-Planck: tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha. Kedua rumusan setara. Perubahan entropi ΔS = Q/T (Persamaan 4.3), dan entropi total bertambah pada proses tak reversibel. Simulasi Greenhouse Effect menunjukkan suhu permukaan Bumi naik ketika konsentrasi gas rumah kaca dinaikkan."
+        "teks": "Rumusan Clausius: kalor tidak mengalir spontan dari benda dingin ke benda panas. Rumusan Kelvin-Planck: tidak ada mesin siklus yang mengubah seluruh kalor dari satu reservoir menjadi usaha. Kedua rumusan setara. Perubahan entropi ΔS = Q/T (Persamaan 4.3), dan entropi total bertambah pada proses tak reversibel. Simulasi Greenhouse Effect menunjukkan suhu permukaan Bumi naik ketika konsentrasi gas rumah kaca dinaikkan. Tanpa usaha dari luar, kabin mobil tidak dapat menjadi lebih dingin daripada udara luar."
       }
     ],
     "literasiInformasi": "Juri 22 ahli menyatakan Steorn tidak berhasil menunjukkan produksi energi dari alat Orbo. Klaim yang bertentangan dengan Hukum Pertama memerlukan bukti uji independen yang dapat diperiksa, bukan sekadar demonstrasi dari pembuatnya.",
@@ -1293,6 +1344,9 @@
     "Boran, M. (2009, 15 Desember). Steorn's free energy device goes on display. Silicon Republic. https://www.siliconrepublic.com/?p=441623",
     "Novella, S. (2009, 29 Juni). The jury is in for Steorn – No free energy. NeuroLogica Blog. https://theness.com/neurologicablog/the-jury-is-in-for-steorn-no-free-energy/",
     "Radjawane, M. M., Tinambunan, A., & Jono, S. (2022). Fisika untuk SMA/MA kelas XI. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
-    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e"
+    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e",
+    "McLaren, C., Null, J., & Quinn, J. (2005). Heat stress from enclosed vehicles: Moderate ambient temperatures cause significant temperature rise in enclosed vehicles. Pediatrics, 116(1), e109–e112. https://doi.org/10.1542/peds.2004-2368",
+    "Apple. (t.t.). If your iPhone or iPad gets too hot or too cold. https://support.apple.com/118431",
+    "Masson-Delmotte, V., & Zhai, P. (2022). Regional trends in extreme events in the IPCC 2021 report. WMO Bulletin, 71(1). https://wmo.int/media/magazine-article/regional-trends-extreme-events-ipcc-2021-report"
   ]
 }

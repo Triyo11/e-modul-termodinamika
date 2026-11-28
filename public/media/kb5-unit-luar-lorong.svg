@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d" font-family="Literata, Georgia, 'Times New Roman', serif">
+  <title id="t">Unit luar AC di lorong sempit yang terkena matahari</title>
+  <desc id="d">Tampak atas lorong sempit di antara dua tembok. Unit luar AC menempel pada tembok ruang kelas; lorong itu terkena sinar matahari siang. Udara panas yang diembuskan unit membentur tembok di depannya lalu berbalik dan terisap kembali ke bagian belakang unit. Tanda tanya menunjukkan suhu udara yang masuk ke unit belum diketahui.</desc>
+  <defs>
+    <marker id="pMerah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B3261E"/></marker>
+    <marker id="pBiru" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0C70A1"/></marker>
+  </defs>
+  <rect width="800" height="600" fill="#EDF6F9"/>
+  <circle cx="710" cy="80" r="44" fill="#F5C443"/>
+  <!-- tembok -->
+  <rect x="40" y="150" width="60" height="400" fill="#86979B" stroke="#1E2019" stroke-width="3"/>
+  <rect x="560" y="150" width="60" height="400" fill="#86979B" stroke="#1E2019" stroke-width="3"/>
+  <text x="70" y="135" font-size="20" fill="#1E2019" text-anchor="middle">tembok kelas</text>
+  <text x="590" y="135" font-size="20" fill="#1E2019" text-anchor="middle">tembok sebelah</text>
+  <text x="330" y="580" font-size="22" fill="#1E2019" text-anchor="middle" font-weight="700">Lorong sempit (tampak atas)</text>
+  <!-- unit -->
+  <rect x="120" y="260" width="150" height="180" rx="10" fill="#FFFFFF" stroke="#1E2019" stroke-width="4"/>
+  <circle cx="195" cy="350" r="45" fill="#D9F0FA" stroke="#1E2019" stroke-width="3"/>
+  <text x="195" y="283" font-size="17" fill="#1E2019" text-anchor="middle">unit luar AC</text>
+  <!-- udara buang -->
+  <line x1="275" y1="350" x2="540" y2="350" stroke="#B3261E" stroke-width="8" marker-end="url(#pMerah)"/>
+  <text x="410" y="335" font-size="20" fill="#B3261E" text-anchor="middle" font-weight="700">udara panas keluar</text>
+  <!-- resirkulasi -->
+  <path d="M540 380 C520 500 300 520 160 460" fill="none" stroke="#B3261E" stroke-width="5" stroke-dasharray="12 8" marker-end="url(#pMerah)"/>
+  <path d="M540 320 C520 200 300 180 160 240" fill="none" stroke="#B3261E" stroke-width="5" stroke-dasharray="12 8" marker-end="url(#pMerah)"/>
+  <text x="380" y="520" font-size="18" fill="#B3261E" text-anchor="middle">terisap kembali?</text>
+  <!-- sinar -->
+    <text x="195" y="428" font-size="22" fill="#B3261E" text-anchor="middle" font-weight="700">masuk: ? °C</text>
+</svg>

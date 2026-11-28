@@ -1,12 +1,12 @@
 {
   "id": "kegiatan-02",
-  "versi": "3.0",
+  "versi": "4.0",
   "skema": "stem-ctl-2.0",
-  "revisiTerakhir": "2026-11-22",
+  "revisiTerakhir": "2026-11-29",
   "statusValidasi": "draf-sebelum-validasi-ahli",
   "kb": 2,
   "judul": "Konsep Dasar Termodinamika",
-  "subJudul": "Apa yang dipertukarkan sebuah benda dengan sekitarnya?",
+  "subJudul": "Bagaimana tahu kapan es di kotak pendingin akan habis?",
   "bab": "Termodinamika",
   "model": "STEM-CTL",
   "fase": "F",
@@ -42,9 +42,7 @@
     }
   ],
   "fenomena": [
-    "Air mendidih di panci terbuka",
-    "Gas dalam silinder berpiston",
-    "Termos",
+    "Ikan di dalam kotak pendingin berisi es (skenario rekaan)",
     "Bumi sebagai sistem yang bertukar energi dengan Matahari dan antariksa"
   ],
   "simulasiUtama": [
@@ -65,14 +63,14 @@
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-2-12) dan tautan sumber Radjawane et al. (2022) hlm. 182–184 serta OpenStax College Physics 2e 15.1 (dibuka 22 Nov 2026). Tahap pemodelan ditambah lkpd-2-13 (LI4).",
-    "Revisi 3.0: ilustrasi konstruktivisme (/media/kb2-tiga-benda.svg) ditambahkan; status perlu-media dihapus.",
     "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
-    "Orientasi masalah diperbaiki 28 Nov 2026: judul layar l1 tidak lagi \"Tiga benda di dapur\" karena silinder berpiston bukan benda dapur; ditambahkan masalah membawa es batu tanpa kotak pendingin agar orientasi mengarah ke tugas rancangan kotak pendingin."
+    "Revisi 4.0 (29 Nov 2026, keputusan pengguna): orientasi hanya satu masalah, yaitu kotak pendingin ikan (skenario rekaan: \"Bayangkan\", \"Misalkan\", \"pedagang rekaan\"). Panci, silinder berpiston, dan termos dihapus dari tahap konstruktivisme. Tugas rekayasa: indikator sisa es (besaran ekstensif) + kotak pendingin. Fakta nyata: pendinginan ikan dengan es sampai 0 °C (FAO), batas suhu pusat tuna sashimi 4,4 °C (Suryaningrum et al., 2017; nomor SNI di artikel itu tidak konsisten). Rincian di claude/orientasi-masalah-kb1-5.md.",
+    "Revisi 4.0: contoh kalor lebur (5,0 kg es, 20 W ilustratif, ≈ 23 jam), lkpd-2-14 (BK4), dan kuis-2-8 baru. Ilustrasi l1: /media/kb2-kotak-pendingin-ikan.svg (kb2-tiga-benda.svg dihapus). Uji singkat tetap memakai es batu dan timbangan lab."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Panci, silinder berpiston, dan termos",
+      "judul": "Ikan di dalam kotak pendingin",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -85,49 +83,51 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan ketiga benda dan masalah es batu, lalu meminta murid menandai batas sistem.",
+      "peranGuru": "Menyajikan skenario kotak pendingin ikan, lalu meminta murid menandai batas sistem.",
       "panduanGuru": {
         "kegiatan": [
-          "Menampilkan gambar panci terbuka, silinder berpiston, dan termos, lalu meminta murid menunjuk batas setiap benda.",
-          "Menyampaikan masalah es batu untuk kegiatan di luar sekolah. Masalah ini akan diselesaikan kelompok dengan merancang kotak pendingin di tahap masyarakat belajar.",
-          "Meminta murid menuliskan apa yang keluar atau masuk melewati batas tersebut ({lkpd-2-1}) tanpa langsung dikoreksi.",
-          "Membimbing murid merumuskan pertanyaan masalah yang membedakan ketiga benda ({lkpd-2-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-2-3})."
+          "Menegaskan bahwa pedagang dan permintaannya adalah skenario rekaan, sedangkan cara mendinginkan ikan dengan es dan batas suhu 4,4 °C berasal dari sumber nyata.",
+          "Menampilkan gambar kotak pendingin, lalu meminta murid menunjuk batas sistem (ikan, es, dan air lelehan) dan lingkungannya.",
+          "Menyampaikan tantangan rancangan: indikator sisa es dan cara mengurangi energi yang masuk ke kotak. Tantangan ini dikerjakan kelompok di tahap masyarakat belajar.",
+          "Meminta murid menuliskan apa yang keluar atau masuk melewati batas kotak saat tutup tertutup dan saat tutup dibuka ({lkpd-2-1}) tanpa langsung dikoreksi.",
+          "Membimbing murid merumuskan pertanyaan masalah ({lkpd-2-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-2-3})."
         ],
         "pertanyaanPemantik": [
-          "Apa yang keluar dari panci terbuka selain uap?",
-          "Apakah termos benar-benar tidak melepas apa pun?",
-          "Mengapa es di dalam kantong plastik cepat mencair, sedangkan minuman di dalam termos bertahan lama?"
+          "Mengapa termometer menunjukkan sekitar 0 °C hampir sepanjang perjalanan?",
+          "Apa yang masuk ke dalam kotak ketika tutupnya dibuka?",
+          "Apa yang lebih baik untuk mengetahui sisa es: membaca termometer atau melihat banyaknya es?"
         ],
         "antisipasi": [
-          "Murid hanya menyebut zat (uap) dan lupa energi. Tanyakan mengapa teh di termos akhirnya dingin juga."
+          "Murid mengira dingin masuk dari es ke ikan. Arahkan: energi mengalir dari benda yang lebih panas ke yang lebih dingin.",
+          "Murid hanya menyebut zat (udara, air lelehan) dan lupa energi. Tanyakan mengapa es lama-kelamaan habis walaupun tutup tidak dibuka."
         ]
       },
       "blok": [
         {
           "tipe": "gambar",
-          "src": "/media/kb2-tiga-benda.svg",
-          "alt": "Tiga benda berjajar: panci berisi air mendidih tanpa tutup, silinder kaca berpiston, dan termos tertutup",
-          "rasio": "16/9",
-          "caption": "Panci terbuka, silinder berpiston, dan termos.",
+          "src": "/media/kb2-kotak-pendingin-ikan.svg",
+          "alt": "Penampang kotak pendingin berisi ikan, es, dan air lelehan di bawah terik matahari. Termometer di dalamnya menunjukkan 0 °C. Panah kalor masuk melalui dinding dan tutup kotak.",
+          "rasio": "4/3",
+          "caption": "Ilustrasi kotak pendingin berisi ikan dan es.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Uap mengepul dari panci yang airnya mendidih. Gas di dalam silinder berpiston bisa dipanaskan, tetapi tidak bisa keluar. Teh panas di dalam termos tetap hangat selama berjam-jam."
+          "isi": "Ikan segar cepat membusuk pada suhu biasa. Karena itu, nelayan dan pedagang mendinginkannya dengan es sampai mendekati 0 °C. Untuk tuna bahan sashimi, suhu bagian dalam ikan dipersyaratkan paling tinggi 4,4 °C. Bayangkan seorang pedagang membawa ikan tongkol dari tempat pelelangan ke pasar dengan kotak pendingin berisi es. Misalkan termometer di dalam kotak menunjukkan sekitar 0 °C hampir sepanjang perjalanan, lalu tiba-tiba naik. Saat angka itu naik, ikan sudah mulai menghangat. Pada hari yang lebih panas, es lebih cepat habis."
         },
         {
           "tipe": "teks",
-          "isi": "Ketiga benda itu sama-sama berinteraksi dengan sekitarnya, tetapi caranya berbeda. Fisikawan menyebut bagian yang sedang dikaji sebagai sistem, dan segala sesuatu di luarnya sebagai lingkungan."
+          "isi": "Kotak pendingin itu berinteraksi dengan sekitarnya. Fisikawan menyebut bagian yang sedang dikaji sebagai sistem, dan segala sesuatu di luarnya sebagai lingkungan."
         },
         {
           "tipe": "teks",
-          "isi": "Minggu depan kelas Anda akan membawa es batu untuk kegiatan di luar sekolah, tetapi tidak ada kotak pendingin pabrikan. Es di dalam kantong plastik biasa cepat mencair, sedangkan minuman di dalam termos bertahan lama. Untuk membuat wadah yang mampu menjaga es, Anda perlu tahu apa saja yang dipertukarkan sebuah benda dengan sekitarnya."
+          "isi": "Tantangan untuk kelompokmu: misalkan pedagang rekaan itu meminta bantuan kelompokmu untuk dua hal. Pertama, indikator yang memberi peringatan sebelum es di dalam kotak habis, sehingga ia masih sempat menambah es. Ingat, termometer di dalam kotak baru berubah ketika es hampir habis. Kedua, cara mengurangi energi yang masuk dari lingkungan ke dalam kotak. Tantangan ini akan kamu kerjakan bersama kelompok di tahap Masyarakat Belajar."
         },
         {
           "tipe": "isian",
           "id": "lkpd-2-1",
           "format": "teks-panjang",
-          "pertanyaan": "Untuk setiap benda, apa saja yang menurut Anda keluar atau masuk melewati batasnya? Tuliskan dugaan awal Anda.",
+          "pertanyaan": "Apa saja yang menurutmu keluar atau masuk melewati dinding dan tutup kotak pendingin, saat tutupnya tertutup dan saat tutupnya dibuka? Mengapa termometer menunjukkan sekitar 0 °C hampir sepanjang perjalanan? Tuliskan dugaan awalmu.",
           "petunjuk": "Pikirkan dua hal: zat (massa) dan energi.",
           "baris": 4,
           "indikatorVariabel": [
@@ -138,8 +138,8 @@
           "tipe": "isian",
           "id": "lkpd-2-2",
           "format": "teks-panjang",
-          "pertanyaan": "Rumuskan satu pertanyaan masalah yang dapat membedakan ketiga benda tersebut.",
-          "petunjuk": "Contoh pola: \"Apa perbedaan ... antara ... dan ...?\"",
+          "pertanyaan": "Rumuskan satu pertanyaan masalah yang dapat diselidiki dari skenario kotak pendingin di atas.",
+          "petunjuk": "Contoh pola: \"Bagaimana pengaruh ... terhadap ...?\" atau \"Apa perbedaan ... antara ... dan ...?\"",
           "baris": 3,
           "indikatorVariabel": [
             "BK1"
@@ -438,7 +438,7 @@
     },
     {
       "id": "l4",
-      "judul": "Merancang kotak pendingin sederhana",
+      "judul": "Merancang indikator sisa es dan kotak pendingin",
       "tahap": "masyarakat-belajar",
       "stem": [
         "E",
@@ -452,15 +452,16 @@
           "LI3"
         ]
       },
-      "peranGuru": "Membagi peran, menyiapkan timbangan dari lab, memeriksa alasan pemilihan bahan dan kewajaran perhitungan laju mencair.",
+      "peranGuru": "Membagi peran, menyiapkan timbangan dari lab, memeriksa alasan rancangan indikator dan pemilihan bahan, serta kewajaran perhitungan laju mencair.",
       "panduanGuru": {
         "kegiatan": [
-          "Membagi kelompok dan peran, lalu membacakan masalah, kriteria, dan batasan tugas rancangan.",
+          "Membagi kelompok dan peran, lalu membacakan masalah, kriteria, dan batasan tugas rancangan. Tegaskan bahwa uji singkat memakai es batu saja sebagai model, tanpa ikan.",
           "Memeriksa batas sistem pada rancangan setiap kelompok sebelum mereka memilih bahan.",
           "Menyiapkan timbangan dan mengawasi uji singkat sekitar 30 menit pada kotak rancangan dan wadah pembanding.",
           "Memeriksa pengisian tabel uji singkat, terutama satuan massa (g) dan waktu (jam)."
         ],
         "pertanyaanPemantik": [
+          "Besaran apa yang berubah sejak awal perjalanan sampai es hampir habis: suhu di dalam kotak atau massa es?",
           "Pertukaran apa yang dihambat oleh bahan pilihan kelompok Anda?",
           "Mengapa perlu wadah tanpa isolasi sebagai pembanding?"
         ],
@@ -473,17 +474,19 @@
         {
           "tipe": "tugas-rancangan",
           "id": "rancangan-2",
-          "judul": "Kotak pendingin yang mendekati sistem terisolasi",
-          "masalah": "Kelompok Anda perlu membawa es batu untuk kegiatan sekolah tanpa kotak pendingin pabrikan. Rancanglah kotak pendingin dari bahan yang tersedia agar es bertahan selama mungkin.",
+          "judul": "Indikator sisa es dan kotak pendingin yang mendekati sistem terisolasi",
+          "masalah": "Misalkan pedagang rekaan dalam skenario ini membawa ikan dengan kotak pendingin berisi es. Termometer di dalam kotak tetap sekitar 0 °C selama masih ada es, sehingga tidak memberi peringatan dini. Rancanglah indikator yang memberi tahu pedagang sebelum es habis, dan rancanglah kotak pendingin dari bahan yang tersedia agar es bertahan selama mungkin.",
           "kriteria": [
-            "Menghambat pertukaran energi antara es dan lingkungan",
+            "Indikator memantau besaran yang benar-benar berkurang selama es mencair, dan alasannya dijelaskan dengan sifat intensif dan ekstensif",
+            "Indikator memberi peringatan ketika es tersisa sekitar seperempat dari massa awal",
+            "Kotak menghambat pertukaran energi antara isi kotak dan lingkungan; setiap pilihan bahan disertai alasan ilmiah",
             "Memakai bahan yang mudah didapat di rumah atau sekolah",
-            "Setiap pilihan bahan disertai alasan ilmiah",
             "Memuat prediksi lamanya es bertahan yang dihitung dari laju mencair hasil uji singkat"
           ],
           "batasan": [
             "Ukuran kotak muat untuk satu kantong es batu",
-            "Tidak memakai listrik"
+            "Tidak memakai listrik",
+            "Uji singkat memakai es batu saja sebagai model"
           ],
           "peranKelompok": [
             {
@@ -492,7 +495,7 @@
             },
             {
               "peran": "Perancang",
-              "tugas": "Menggambar rancangan dan menandai batas sistem"
+              "tugas": "Menggambar rancangan kotak dan indikator, lalu menandai batas sistem"
             },
             {
               "peran": "Penguji",
@@ -507,30 +510,30 @@
             {
               "id": "r2-1",
               "tahap": "menetapkan-masalah",
-              "instruksi": "Tuliskan masalah yang akan diselesaikan dan tandai batas sistem pada rancangan Anda: apa yang termasuk sistem dan apa yang termasuk lingkungan?",
+              "instruksi": "Tuliskan masalah yang akan diselesaikan dan tandai batas sistem pada rancangan Anda: apa yang termasuk sistem dan apa yang termasuk lingkungan? Jelaskan mengapa termometer saja tidak cukup sebagai indikator.",
               "format": "teks-panjang"
             },
             {
               "id": "r2-2",
               "tahap": "merancang",
-              "instruksi": "Pilih bahan dan susunannya. Untuk setiap bahan, jelaskan pertukaran apa yang dihambatnya.",
+              "instruksi": "Rancang indikator sisa es: besaran apa yang dipantau, bagaimana cara memantaunya, dan kapan indikator memberi peringatan. Lalu pilih bahan dan susunan kotak. Untuk setiap bahan, jelaskan pertukaran apa yang dihambatnya.",
               "format": "tabel",
               "kolom": [
-                "Bahan",
-                "Letak pada kotak",
-                "Pertukaran yang dihambat",
+                "Bagian rancangan",
+                "Letak atau cara kerja",
+                "Alasan fisika",
                 "Sumber informasi"
               ],
-              "jumlahBaris": 4
+              "jumlahBaris": 5
             },
             {
               "id": "r2-3",
               "tahap": "analisis-kelayakan",
-              "instruksi": "Lakukan uji singkat sekitar 30 menit pada kotak rancangan Anda dan pada wadah tanpa isolasi sebagai pembanding. Isi tabel di bawah. Berdasarkan laju mencair, perkirakan berapa lama es bertahan di kotak Anda dan bandingkan dengan pembanding. Mengapa kotak Anda tetap tidak bisa menjadi sistem terisolasi sempurna?",
+              "instruksi": "Lakukan uji singkat sekitar 30 menit pada kotak rancangan Anda dan pada wadah tanpa isolasi sebagai pembanding. Isi tabel di bawah. Berdasarkan laju mencair, perkirakan kapan es habis dan kapan indikator Anda harus memberi peringatan. Mengapa kotak Anda tetap tidak bisa menjadi sistem terisolasi sempurna?",
               "format": "teks-panjang"
             }
           ],
-          "produk": "Laporan rancangan berisi gambar, tabel bahan, tabel uji singkat, prediksi, hasil uji, dan daftar sumber",
+          "produk": "Laporan rancangan berisi gambar kotak dan indikator, tabel rancangan, tabel uji singkat, prediksi, dan daftar sumber",
           "rubrik": "rubrik-2",
           "indikatorVariabel": [
             "BK2",
@@ -541,7 +544,7 @@
           "tipe": "rubrik",
           "jenisPenilaian": "autentik",
           "id": "rubrik-2",
-          "judul": "Rubrik laporan rancangan kotak pendingin",
+          "judul": "Rubrik rancangan indikator sisa es dan kotak pendingin",
           "untuk": "rancangan-2",
           "skala": [
             4,
@@ -556,10 +559,10 @@
                 "BK3"
               ],
               "deskriptor": {
-                "4": "Batas sistem jelas dan setiap bahan dikaitkan dengan pertukaran energi yang dihambatnya",
-                "3": "Batas sistem jelas, tetapi sebagian alasan bahan kurang tepat",
-                "2": "Batas sistem tidak jelas atau alasan bahan sebagian besar keliru",
-                "1": "Konsep sistem dan lingkungan tidak dipakai"
+                "4": "Batas sistem jelas, indikator memantau besaran ekstensif (massa es atau air lelehan) dengan alasan yang tepat, dan setiap bahan dikaitkan dengan pertukaran energi yang dihambatnya",
+                "3": "Batas sistem dan indikator tepat, tetapi sebagian alasan bahan kurang tepat",
+                "2": "Indikator hanya memakai termometer tanpa alasan, atau batas sistem tidak jelas",
+                "1": "Konsep sistem, lingkungan, serta sifat intensif dan ekstensif tidak dipakai"
               }
             },
             {
@@ -568,7 +571,7 @@
                 "BK2"
               ],
               "deskriptor": {
-                "4": "Prediksi dihitung dari laju mencair hasil uji singkat, dibandingkan dengan pembanding, dan perbedaan prediksi dengan hasil uji dijelaskan",
+                "4": "Prediksi waktu es habis dan saat peringatan dihitung dari laju mencair hasil uji singkat, dibandingkan dengan pembanding, dan perbedaan prediksi dengan hasil uji dijelaskan",
                 "3": "Prediksi dihitung dari uji singkat, tetapi tidak dibandingkan dengan pembanding atau perbedaannya tidak dijelaskan",
                 "2": "Prediksi tanpa data uji singkat, atau perhitungannya keliru",
                 "1": "Tidak ada prediksi maupun data uji"
@@ -670,6 +673,7 @@
           "Mengerjakan contoh uji \"membagi sistem menjadi dua\" langkah demi langkah sebagai model.",
           "Meminta murid melakukan uji sebaliknya dengan simulasi partikel gas dan mengisi tabelnya.",
           "Meminta murid mengelompokkan besaran ({lkpd-2-8}) lalu merumuskan aturan umumnya ({lkpd-2-9}).",
+          "Mengerjakan contoh perkiraan sisa waktu dari massa es, lalu meminta murid menghubungkannya dengan sifat intensif dan ekstensif ({lkpd-2-14}).",
           "Mencontohkan diagram panah Q dan W sebelum murid menentukan tandanya ({lkpd-2-10}).",
           "Meminta murid menjelaskan perpaduan sumber dalam rancangan ({lkpd-2-13}) lalu menyajikannya ({r2-4})."
         ],
@@ -802,6 +806,28 @@
           ]
         },
         {
+          "tipe": "contoh",
+          "judul": "Contoh: memperkirakan sisa waktu dari massa es",
+          "soal": "Sebuah kotak pendingin berisi 5,0 kg es. Misalkan kalor masuk ke kotak rata-rata 20 W (20 joule setiap detik). Kalor lebur es 333 kJ/kg. Berapa lama es bertahan, dan apa yang ditunjukkan termometer selama itu?",
+          "langkah": [
+            "Kalor yang dibutuhkan untuk mencairkan seluruh es: $Q = mL = 5{,}0 \\times 333 = 1665$ kJ $= 1{,}67 \\times 10^{6}$ J.",
+            "Waktu sampai es habis: $t = \\dfrac{Q}{P} = \\dfrac{1{,}67 \\times 10^{6}}{20} \\approx 8{,}3 \\times 10^{4}$ s $\\approx 23$ jam.",
+            "Selama masih ada es, campuran es dan air tetap sekitar 0 °C. Termometer baru naik setelah es hampir habis.",
+            "Massa es berkurang terus selama 23 jam itu, sehingga massa es (atau air lelehan) dapat dipakai sebagai penanda sisa waktu."
+          ],
+          "catatan": "Angka 20 W adalah angka ilustratif. Pada hari yang lebih panas, selisih suhu luar dan dalam lebih besar, sehingga kalor masuk lebih cepat dan es lebih cepat habis."
+        },
+        {
+          "tipe": "isian",
+          "id": "lkpd-2-14",
+          "format": "teks-panjang",
+          "pertanyaan": "Gunakan hasil pengelompokan dan contoh di atas. Suhu dan massa es termasuk sifat apa? Mengapa termometer tidak dapat memberi peringatan dini, sedangkan massa es atau air lelehan dapat? Rumuskan aturan umum untuk memilih besaran yang dipantau sebuah indikator sisa cadangan.",
+          "baris": 5,
+          "indikatorVariabel": [
+            "BK4"
+          ]
+        },
+        {
           "tipe": "teks",
           "isi": "Besaran yang tidak bergantung pada banyaknya zat disebut sifat intensif. Besaran yang sebanding dengan banyaknya zat disebut sifat ekstensif."
         },
@@ -863,7 +889,7 @@
           "tipe": "isian",
           "id": "lkpd-2-13",
           "format": "teks-panjang",
-          "pertanyaan": "Rancangan kotak pendingin Anda memadukan beberapa sumber informasi, yaitu tabel jenis sistem, data uji singkat kelompok, dan hasil penilaian klaim botol vakum. Jelaskan peran setiap sumber dalam rancangan Anda. Adakah informasi yang saling bertentangan, dan bagaimana Anda menyikapinya?",
+          "pertanyaan": "Rancangan indikator dan kotak pendingin Anda memadukan beberapa sumber informasi, yaitu tabel jenis sistem, data uji singkat kelompok, contoh perhitungan kalor lebur, dan hasil penilaian klaim botol vakum. Jelaskan peran setiap sumber dalam rancangan Anda. Adakah informasi yang saling bertentangan, dan bagaimana Anda menyikapinya?",
           "baris": 6,
           "indikatorVariabel": [
             "BK4",
@@ -877,7 +903,7 @@
             {
               "id": "r2-4",
               "tahap": "menyajikan",
-              "instruksi": "Sajikan rancangan, tabel uji singkat, dan hasil uji kelompok Anda. Gambarkan panah aliran energi antara sistem dan lingkungan pada rancangan.",
+              "instruksi": "Sajikan rancangan indikator dan kotak, tabel uji singkat, dan prediksi kelompok Anda. Gambarkan panah aliran energi antara sistem dan lingkungan pada rancangan.",
               "format": "unggah-atau-teks"
             }
           ]
@@ -933,9 +959,9 @@
           "tipe": "refleksi",
           "id": "refleksi-2",
           "tinjauUlang": "lkpd-2-1",
-          "pengantar": "Ini dugaan awal Anda tentang apa yang keluar dan masuk pada ketiga benda.",
+          "pengantar": "Ini dugaan awal Anda tentang apa yang keluar dan masuk pada kotak pendingin.",
           "pertanyaan": [
-            "Golongkan kembali panci terbuka, silinder berpiston, dan termos. Bagian mana dari dugaan awal Anda yang perlu diperbaiki?",
+            "Golongkan kembali kotak pendingin saat tutupnya tertutup, saat tutupnya dibuka, dan kotak pendingin ideal yang sama sekali tidak bertukar energi. Bagian mana dari dugaan awal Anda yang perlu diperbaiki?",
             "Dua orang memanaskan gas yang sama dari 300 K sampai 400 K dengan cara berbeda. Apakah perubahan energi dalamnya sama? Apakah kalor yang diberikan pasti sama? Jelaskan."
           ],
           "indikatorVariabel": [
@@ -958,7 +984,7 @@
           "tipe": "isian",
           "id": "lkpd-2-11",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang jenis-jenis sistem, sifat intensif dan ekstensif, serta perbedaan energi dalam dengan kalor dan usaha. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang jenis-jenis sistem, sifat intensif dan ekstensif, serta perbedaan energi dalam dengan kalor dan usaha. Jelaskan juga cara kerja indikator sisa es rancangan kelompok Anda. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,
@@ -1002,33 +1028,33 @@
       "blok": [
         {
           "tipe": "teks",
-          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan kotak pendingin kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
+          "isi": "Bagian ini terdiri atas dua jenis penilaian. Kuis formatif berumpan balik otomatis membantu Anda memeriksa pemahaman sendiri. Penilaian autentik dilakukan guru terhadap student e-worksheet dan laporan rancangan indikator sisa es dan kotak pendingin kelompok Anda dengan rubrik rancangan yang sudah Anda lihat pada tahap Masyarakat Belajar."
         },
         {
           "tipe": "kuis",
           "jenisPenilaian": "formatif",
           "id": "kuis-2-1",
-          "pertanyaan": "Rumusan masalah yang paling tepat untuk membedakan panci terbuka dan termos adalah ...",
+          "pertanyaan": "Dalam skenario kotak pendingin ikan, rumusan masalah yang paling dapat diselidiki adalah ...",
           "opsi": [
             {
               "id": "a",
-              "teks": "Mengapa termos lebih mahal daripada panci?"
+              "teks": "Mengapa ikan tongkol mahal?"
             },
             {
               "id": "b",
-              "teks": "Apa perbedaan pertukaran massa dan energi antara panci terbuka dan termos dengan lingkungannya?"
+              "teks": "Bagaimana pengaruh tebal dinding kotak pendingin terhadap laju es mencair jika massa es awal dan suhu luar sama?"
             },
             {
               "id": "c",
-              "teks": "Berapa lama air di panci mendidih?"
+              "teks": "Berapa jauh jarak pelelangan ke pasar?"
             },
             {
               "id": "d",
-              "teks": "Apakah termos bisa dipakai untuk air dingin?"
+              "teks": "Apakah kotak pendingin berwarna biru lebih bagus?"
             }
           ],
           "kunci": "b",
-          "pembahasan": "Rumusan b menyebut besaran yang dibandingkan (pertukaran massa dan energi) dan objek yang dibandingkan, sehingga dapat diselidiki.",
+          "pembahasan": "Rumusan b menyebut variabel yang diubah (tebal dinding), variabel yang diamati (laju es mencair), dan variabel yang dijaga tetap (massa es awal dan suhu luar), sehingga dapat diselidiki.",
           "indikatorVariabel": [
             "BK1"
           ]
@@ -1206,6 +1232,35 @@
           "indikatorVariabel": [
             "LI5"
           ]
+        },
+        {
+          "tipe": "kuis",
+          "jenisPenilaian": "formatif",
+          "id": "kuis-2-8",
+          "pertanyaan": "Termometer di kotak pendingin berisi es menunjukkan 0 °C pada jam pertama dan juga pada jam kelima. Kesimpulan yang tepat adalah ...",
+          "opsi": [
+            {
+              "id": "a",
+              "teks": "Tidak ada kalor yang masuk ke kotak selama lima jam"
+            },
+            {
+              "id": "b",
+              "teks": "Kalor terus masuk dan dipakai untuk mencairkan es, sehingga massa es berkurang walaupun suhunya tetap"
+            },
+            {
+              "id": "c",
+              "teks": "Kotak itu adalah sistem terisolasi sempurna"
+            },
+            {
+              "id": "d",
+              "teks": "Massa es pada jam kelima sama dengan massa es pada jam pertama"
+            }
+          ],
+          "kunci": "b",
+          "pembahasan": "Selama masih ada es, kalor yang masuk dipakai untuk mencairkan es, sehingga suhu campuran tetap sekitar 0 °C. Suhu (intensif) tidak berubah, tetapi massa es (ekstensif) berkurang.",
+          "indikatorVariabel": [
+            "BK5"
+          ]
         }
       ]
     }
@@ -1220,7 +1275,7 @@
       },
       {
         "tp": "2.2",
-        "teks": "Sifat intensif tidak bergantung pada banyaknya zat, misalnya tekanan, suhu, dan massa jenis. Sifat ekstensif sebanding dengan banyaknya zat, misalnya massa, volume, jumlah mol, dan energi dalam. Uji membagi sistem menjadi dua dapat dipakai untuk membedakan keduanya."
+        "teks": "Sifat intensif tidak bergantung pada banyaknya zat, misalnya tekanan, suhu, dan massa jenis. Sifat ekstensif sebanding dengan banyaknya zat, misalnya massa, volume, jumlah mol, dan energi dalam. Uji membagi sistem menjadi dua dapat dipakai untuk membedakan keduanya. Indikator sisa cadangan, misalnya sisa es di kotak pendingin, perlu memantau besaran ekstensif seperti massa es, karena suhu campuran es dan air tetap sekitar 0 °C sampai es habis."
       },
       {
         "tp": "2.3",
@@ -1281,6 +1336,8 @@
     "Rossi, M. (2016, 8 November). PBO tested: Chilly's bottle. Practical Boat Owner. https://www.pbo.co.uk/gear/pbo-tested-chillys-bottle-45192",
     "Thess, A. (2024, 5 Juni). Best insulated water bottles. Outdoor Life. https://www.outdoorlife.com/gear/best-insulated-water-bottles/",
     "Radjawane, M. M., Tinambunan, A., & Jono, S. (2022). Fisika untuk SMA/MA kelas XI. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf",
-    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e"
+    "Urone, P. P., & Hinrichs, R. (2022). College physics 2e. OpenStax. https://openstax.org/details/books/college-physics-2e",
+    "Shawyer, M., & Medina Pizzali, A. F. (2003). The use of ice on small fishing vessels (FAO Fisheries Technical Paper No. 436). FAO. https://www.fao.org/4/y5013e/y5013e00.htm",
+    "Suryaningrum, T. D., Ikasari, D., & Octavini, H. (2017). Evaluasi mutu tuna loin segar untuk sashimi yang diolah di atas perahu selama penanganan dan distribusinya di Ambon. JPB Kelautan dan Perikanan, 12(2), 163–178. https://doi.org/10.15578/jpbkp.v12i2.329"
   ]
 }
