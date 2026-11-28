@@ -49,6 +49,7 @@
   ],
   "fenomena": [
     "Termometer badan",
+    "Minuman botol yang didinginkan di ember berisi es",
     "Lemari es yang memerlukan listrik",
     "Parfum yang menyebar ke seluruh ruangan",
     "Pemanasan global sebagai neraca energi Bumi"
@@ -73,12 +74,13 @@
     "Revisi 3.0: label STEM tahap inkuiri menjadi S, T sesuai Tabel 2.3. Tahap inkuiri ditambah isian strategi penelusuran (lkpd-4-12) dan tautan Radjawane et al. (2022) hlm. 188–197 serta OpenStax College Physics 2e 15.6 (dibuka 22 Nov 2026).",
     "Revisi 3.0: baris tabel reversibel diperbaiki dari 'Entropi sistem tertutup' menjadi 'Entropi total (sistem dan lingkungan)', karena entropi sistem tertutup dapat berkurang jika sistem melepas kalor.",
     "Revisi 3.0: ilustrasi konstruktivisme (/media/kb4-tiga-peristiwa.svg) ditambahkan; status perlu-media dihapus.",
-    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
+    "Orientasi masalah diperbaiki 28 Nov 2026: ditambahkan fenomena minuman di ember es dan masalah mendinginkan minuman tanpa lemari es agar orientasi mengarah ke tugas rancangan pendinginan minuman."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Termometer, lemari es, dan parfum",
+      "judul": "Termometer, minuman dingin, lemari es, dan parfum",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -94,11 +96,13 @@
       "peranGuru": "Menyajikan fenomena dan mengaitkannya dengan KB 2–3.",
       "panduanGuru": {
         "kegiatan": [
-          "Menampilkan termometer badan, lemari es, dan parfum, lalu mengingatkan konsep sistem dan energi dalam dari KB 2.",
-          "Meminta murid menulis dugaan tentang lemari es dan parfum ({lkpd-4-1}).",
+          "Menampilkan termometer badan, minuman di ember es, lemari es, dan parfum, lalu mengingatkan konsep sistem dan energi dalam dari KB 2.",
+          "Menyampaikan masalah mendinginkan minuman secepat mungkin tanpa lemari es. Masalah ini akan diselesaikan kelompok di tahap masyarakat belajar.",
+          "Meminta murid menulis dugaan tentang minuman di ember es, lemari es, dan parfum ({lkpd-4-1}).",
           "Membimbing murid merumuskan pertanyaan masalah ({lkpd-4-2}) dan daftar informasi yang dibutuhkan ({lkpd-4-3})."
         ],
         "pertanyaanPemantik": [
+          "Mengapa minuman di ember es perlu ditunggu, dan mengapa tidak pernah lebih dingin daripada esnya?",
           "Mengapa lemari es berhenti mendingin ketika listrik padam?",
           "Pernahkah aroma parfum kembali sendiri ke botolnya?"
         ],
@@ -117,13 +121,17 @@
         },
         {
           "tipe": "teks",
-          "isi": "Termometer badan perlu ditunggu beberapa saat sebelum angkanya dibaca. Lemari es mendinginkan makanan, tetapi hanya selama tersambung ke listrik. Aroma parfum yang dibuka di sudut kamar lama-kelamaan tercium di seluruh ruangan, dan tidak pernah berkumpul kembali ke botolnya."
+          "isi": "Termometer badan perlu ditunggu beberapa saat sebelum angkanya dibaca. Saat ada acara, minuman botol direndam di ember berisi es batu dan air. Minuman perlu ditunggu cukup lama sampai dingin, dan suhunya tidak pernah lebih rendah daripada campuran es di sekitarnya. Lemari es mendinginkan makanan, tetapi hanya selama tersambung ke listrik. Aroma parfum yang dibuka di sudut kamar lama-kelamaan tercium di seluruh ruangan, dan tidak pernah berkumpul kembali ke botolnya."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Bayangkan tamu akan datang sebentar lagi, sedangkan minuman masih bersuhu ruang dan lemari es tidak bisa dipakai. Agar dapat mendinginkannya secepat mungkin, Anda perlu memahami ke mana kalor mengalir dan kapan alirannya berhenti."
         },
         {
           "tipe": "isian",
           "id": "lkpd-4-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awal Anda: mengapa lemari es memerlukan listrik untuk mendinginkan isinya? Mengapa aroma parfum tidak pernah kembali sendiri ke botolnya?",
+          "pertanyaan": "Apa dugaan awal Anda: mengapa minuman di ember es tidak pernah lebih dingin daripada esnya? Mengapa lemari es memerlukan listrik untuk mendinginkan isinya? Mengapa aroma parfum tidak pernah kembali sendiri ke botolnya?",
           "petunjuk": "Tidak ada jawaban salah di tahap ini.",
           "baris": 4,
           "indikatorVariabel": [
@@ -935,7 +943,7 @@
           "tipe": "refleksi",
           "id": "refleksi-4",
           "tinjauUlang": "lkpd-4-1",
-          "pengantar": "Ini dugaan awal Anda tentang lemari es dan aroma parfum.",
+          "pengantar": "Ini dugaan awal Anda tentang minuman di ember es, lemari es, dan aroma parfum.",
           "pertanyaan": [
             "Jelaskan kembali mengapa lemari es memerlukan listrik dengan rumusan Clausius.",
             "Golongkan menyebarnya parfum, mencairnya es di udara terbuka, dan pemampatan gas yang sangat lambat ke dalam proses reversibel atau ireversibel. Gunakan tabel di atas.",

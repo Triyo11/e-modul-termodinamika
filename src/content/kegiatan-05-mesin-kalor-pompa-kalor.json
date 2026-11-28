@@ -63,7 +63,8 @@
     "Revisi 3.0: lkpd-5-5 diubah agar murid menuliskan strategi penelusuran sebelum mencari label energi AC (LI2).",
     "Revisi 3.0 (22 Nov 2026, keputusan pengguna): tugas rekayasa KB 5 diganti dari rekomendasi pemakaian AC menjadi rancangan peneduh dan penempatan unit luar AC dengan uji suhu udara (termometer lab). TP 5.3 di JSON disesuaikan; Rencana Kegiatan Belajar akan direvisi pengguna.",
     "Revisi 3.0: diagram peneduh unit luar AC (public/media/kb5-peneduh-unit-luar-ac.svg) ditambahkan di awal tahap masyarakat belajar.",
-    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
+    "Orientasi masalah diperbaiki 28 Nov 2026: ditambahkan unit luar AC sekolah yang terpapar matahari agar orientasi mengarah ke tugas rancangan peneduh dan penempatan unit luar AC."
   ],
   "layar": [
     {
@@ -85,11 +86,13 @@
       "panduanGuru": {
         "kegiatan": [
           "Menayangkan video mesin kendaraan dan unit luar AC yang sama-sama membuang panas.",
+          "Menunjukkan letak unit luar AC di sekolah (foto atau pengamatan langsung) dan menanyakan apakah unit itu terkena sinar matahari siang. Masalah ini akan diselesaikan kelompok di tahap masyarakat belajar.",
           "Mengingatkan rumusan Kelvin-Planck dan Clausius dari KB 4.",
           "Meminta murid menulis dugaan ({lkpd-5-1}), merumuskan pertanyaan masalah ({lkpd-5-2}), dan mendaftar informasi yang dibutuhkan ({lkpd-5-3})."
         ],
         "pertanyaanPemantik": [
-          "Mengapa unit luar AC justru mengembuskan udara panas?"
+          "Mengapa unit luar AC justru mengembuskan udara panas?",
+          "Apakah AC memerlukan listrik lebih banyak jika udara di sekitar unit luarnya makin panas?"
         ],
         "antisipasi": [
           "Murid mengira AC \"membuat dingin\". Tanyakan ke mana kalor dari ruangan dipindahkan."
@@ -109,6 +112,10 @@
         {
           "tipe": "teks",
           "isi": "Mesin kendaraan membakar bahan bakar untuk menggerakkan roda, tetapi kap mesinnya ikut panas dan knalpotnya membuang gas panas. Unit luar AC mengembuskan udara panas, padahal tugas AC adalah mendinginkan ruangan. Listrik untuk AC sebagian besar dihasilkan pembangkit yang juga melepaskan gas rumah kaca."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Misalkan unit luar AC ruang kelas Anda dipasang di dinding yang terkena sinar matahari langsung pada siang hari. Udara di sekitarnya menjadi makin panas, padahal unit itulah yang harus membuang kalor dari ruang kelas ke udara luar."
         },
         {
           "tipe": "isian",

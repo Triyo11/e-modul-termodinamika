@@ -52,8 +52,7 @@
   ],
   "fenomena": [
     "Tekanan ban naik setelah perjalanan jauh",
-    "Panci presto",
-    "Kotak kedap udara (dry box) di ruang yang panas"
+    "Kotak kedap udara (dry box) yang tertinggal di kabin mobil yang panas"
   ],
   "simulasiUtama": [
     "Simulasi partikel gas (widget e-modul)"
@@ -69,12 +68,13 @@
     "Revisi 3.0: tabel data-1-uji-katup memakai barisAwal pada kolom angka yang dirujuk kolom hitung. Butuh perbaikan nilaiBaris agar isi barisAwal ikut dihitung.",
     "Persamaan e-modul diberi nomor 1.1 sampai 1.11. Padanannya di Bab II: (1.1)=(2.3), (1.2)=(2.1), (1.3)=(2.2), (1.4)=(2.6), (1.5)=(2.4), (1.6)=(2.5), (1.7)=(2.7), (1.8)=(2.8), (1.9)=persamaan van der Waals. Persamaan 1.10 (keseimbangan gaya katup) dan 1.11 (luas lingkaran) belum ada di kajian teori Bab II.",
     "Angka pada lembar spesifikasi klien dan contoh soal adalah data ilustratif.",
-    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
+    "Orientasi masalah (tahap konstruktivisme) diperbaiki 28 Nov 2026: fenomena panci presto diganti kotak kedap udara yang tertinggal di kabin mobil panas. Alasan: tekanan panci presto ditentukan uap air yang jumlah molnya bertambah dan berada dekat titik pengembunan, sehingga tidak cocok sebagai contoh gas ideal ber-n tetap, dan tidak mengarah ke masalah rancangan katup kotak kedap udara. Panci presto tetap dipakai di tahap refleksi sebagai contoh pembanding gas nyata (TP 1.4). Analogi katup panci presto di tahap masyarakat belajar dihapus."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Ban yang \"menggembung\" sendiri",
+      "judul": "Ban dan kotak kedap udara yang \"menggembung\" sendiri",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -87,20 +87,22 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan fenomena ban, panci presto, dan katup pemberatnya, lalu menggali pengetahuan awal murid.",
+      "peranGuru": "Menyajikan fenomena ban dan kotak kedap udara yang tertinggal di kabin mobil panas, lalu menggali pengetahuan awal murid.",
       "panduanGuru": {
         "kegiatan": [
-          "Menayangkan video pengukuran tekanan ban dan gambar panci presto, lalu meminta murid mengamati apa yang berubah dan apa yang tetap.",
-          "Menunjukkan katup pemberat pada tutup panci presto (benda asli atau gambar) dan bertanya mengapa katup itu bisa terangkat sendiri.",
+          "Menampilkan gambar pengukuran tekanan ban dan kotak kedap udara di kabin mobil, lalu meminta murid mengamati apa yang berubah dan apa yang tetap pada kedua benda.",
+          "Menegaskan bahwa pada kedua benda tidak ada udara yang ditambahkan dan wadahnya hampir tidak membesar.",
+          "Menyampaikan bahwa klub fotografi sekolah khawatir segel kotak rusak jika kejadian ini berulang. Masalah ini akan diselesaikan kelompok di tahap masyarakat belajar.",
           "Meminta murid menulis dugaan awal di {lkpd-1-1} tanpa mengoreksinya. Dugaan ini akan ditinjau ulang di tahap refleksi.",
           "Membimbing murid mengubah rasa ingin tahu menjadi pertanyaan masalah yang menyebut variabel ({lkpd-1-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-1-3})."
         ],
         "pertanyaanPemantik": [
-          "Udara di dalam ban tidak ditambah. Lalu apa yang bertambah?",
-          "Apa yang terjadi pada panci presto jika katupnya tersumbat?"
+          "Udara di dalam ban dan di dalam kotak tidak ditambah. Lalu apa yang bertambah?",
+          "Apa yang bisa terjadi pada segel tutup kotak jika kotak itu sering tertinggal di mobil yang panas?"
         ],
         "antisipasi": [
-          "Murid menjawab 'udaranya memuai'. Tanyakan: ban hampir tidak membesar, jadi ke mana pemuaian itu?",
+          "Murid menjawab 'udaranya memuai'. Tanyakan: ban dan kotak hampir tidak membesar, jadi ke mana pemuaian itu?",
+          "Murid mengira ada udara yang masuk ke dalam kotak. Tanyakan lewat mana udara bisa masuk jika tutupnya terkunci rapat.",
           "Pertanyaan masalah belum menyebut variabel tetap. Arahkan dengan pola di petunjuk {lkpd-1-2}."
         ]
       },
@@ -119,21 +121,21 @@
         },
         {
           "tipe": "gambar",
-          "src": "/media/kb1-tutup-panci-presto.webp",
-          "alt": "Panci presto di atas kompor dengan katup pengaman di tutupnya",
+          "src": "/media/kb1-kotak-kedap-udara-mobil.svg",
+          "alt": "Kotak kedap udara berisi kamera tertinggal di jok mobil yang diparkir di bawah terik matahari. Tutupnya terkunci rapat dan tampak sedikit menggembung.",
           "rasio": "4/3",
-          "caption": "Panci presto memiliki tutup yang terkunci rapat dan katup pengaman.",
+          "caption": "Kotak kedap udara berisi kamera tertinggal di dalam mobil yang diparkir di bawah terik matahari.",
           "sumber": "ilustrasi penulis"
         },
         {
           "tipe": "teks",
-          "isi": "Di lain tempat Sisca sedang menggunakan panci presto di dapur. Tutup panci presto dikunci sangat rapat dan panci kemudian dipanaskan. Tekanan di dalamnya akan naik terus sampai katup pengaman di tutup panci presto mendesis dan mengeluarkan uap."
+          "isi": "Di lain hari, Sisca, anggota klub fotografi sekolah, menyimpan kamera di dalam kotak kedap udara (dry box) berisi silika gel. Tutup kotak dikunci rapat pada pagi hari. Siang harinya kotak itu tertinggal di kabin mobil yang diparkir di bawah terik matahari. Saat diambil, tutupnya tampak sedikit menggembung dan terasa keras ketika ditekan. Padahal tidak ada udara yang masuk ke dalam kotak."
         },
         {
           "tipe": "isian",
           "id": "lkpd-1-1",
           "format": "teks-panjang",
-          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan panci presto di atas? Tuliskan dengan kata-katamu.",
+          "pertanyaan": "Apa dugaan awalmu tentang penyebab naiknya tekanan pada ban dan menggembungnya tutup kotak kedap udara di atas? Tuliskan dengan kata-katamu.",
           "petunjuk": "Tidak ada jawaban salah di tahap ini. Dugaanmu akan ditinjau kembali di tahap refleksi.",
           "baris": 4,
           "indikatorVariabel": [
@@ -807,7 +809,7 @@
         },
         {
           "tipe": "teks",
-          "isi": "Klub fotografi sekolah menyimpan kamera di dalam kotak kedap udara (dry box) berisi silika gel. Kotak itu kadang tertinggal di ruang yang panas, misalnya kabin mobil yang diparkir di bawah terik matahari. Klub meminta kelompok Anda merancang katup pengaman sederhana untuk tutup kotak tersebut."
+          "isi": "Ingat kotak kedap udara milik klub fotografi sekolah di awal kegiatan. Kotak itu berisi kamera dan silika gel, dan kadang tertinggal di ruang yang panas, misalnya kabin mobil yang diparkir di bawah terik matahari. Klub meminta kelompok Anda merancang katup pengaman sederhana untuk tutup kotak tersebut."
         },
         {
           "tipe": "gambar",
@@ -819,7 +821,7 @@
         },
         {
           "tipe": "teks",
-          "isi": "Katup pemberat bekerja seperti katup pada tutup panci presto. Udara di dalam kotak mendorong tutup katup ke atas. Udara luar dan berat beban menekannya ke bawah. Katup mulai terangkat ketika gaya dari selisih tekanan sama dengan berat beban."
+          "isi": "Katup pemberat adalah lubang kecil pada tutup kotak yang ditutup oleh tutup katup berbeban. Udara di dalam kotak mendorong tutup katup ke atas. Udara luar dan berat beban menekannya ke bawah. Katup mulai terangkat ketika gaya dari selisih tekanan sama dengan berat beban."
         },
         {
           "tipe": "rumus",
@@ -1456,7 +1458,7 @@
           "tipe": "isian",
           "id": "lkpd-1-11",
           "format": "teks-panjang",
-          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan pada ban, panci presto, dan kotak kedap udara. Jelaskan juga cara kerja katup rancangan kelompok Anda dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
+          "pertanyaan": "Tuliskan kesimpulan Anda tentang penyebab naiknya tekanan pada ban dan kotak kedap udara. Jelaskan juga cara kerja katup rancangan kelompok Anda dan batas berlakunya model gas ideal. Cantumkan sumber yang Anda pakai.",
           "baris": 6,
           "wajibSumber": true,
           "minSumber": 2,

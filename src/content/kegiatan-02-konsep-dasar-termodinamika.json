@@ -66,12 +66,13 @@
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-2-12) dan tautan sumber Radjawane et al. (2022) hlm. 182–184 serta OpenStax College Physics 2e 15.1 (dibuka 22 Nov 2026). Tahap pemodelan ditambah lkpd-2-13 (LI4).",
     "Revisi 3.0: ilustrasi konstruktivisme (/media/kb2-tiga-benda.svg) ditambahkan; status perlu-media dihapus.",
-    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
+    "Orientasi masalah diperbaiki 28 Nov 2026: judul layar l1 tidak lagi \"Tiga benda di dapur\" karena silinder berpiston bukan benda dapur; ditambahkan masalah membawa es batu tanpa kotak pendingin agar orientasi mengarah ke tugas rancangan kotak pendingin."
   ],
   "layar": [
     {
       "id": "l1",
-      "judul": "Tiga benda di dapur",
+      "judul": "Panci, silinder berpiston, dan termos",
       "tahap": "konstruktivisme",
       "stem": [
         "S"
@@ -84,19 +85,21 @@
           "LI1"
         ]
       },
-      "peranGuru": "Menyajikan ketiga benda dan meminta murid menandai batas sistem.",
+      "peranGuru": "Menyajikan ketiga benda dan masalah es batu, lalu meminta murid menandai batas sistem.",
       "panduanGuru": {
         "kegiatan": [
           "Menampilkan gambar panci terbuka, silinder berpiston, dan termos, lalu meminta murid menunjuk batas setiap benda.",
+          "Menyampaikan masalah es batu untuk kegiatan di luar sekolah. Masalah ini akan diselesaikan kelompok dengan merancang kotak pendingin di tahap masyarakat belajar.",
           "Meminta murid menuliskan apa yang keluar atau masuk melewati batas tersebut ({lkpd-2-1}) tanpa langsung dikoreksi.",
           "Membimbing murid merumuskan pertanyaan masalah yang membedakan ketiga benda ({lkpd-2-2}), lalu mendaftar informasi yang dibutuhkan ({lkpd-2-3})."
         ],
         "pertanyaanPemantik": [
           "Apa yang keluar dari panci terbuka selain uap?",
-          "Apakah termos benar-benar tidak melepas apa pun?"
+          "Apakah termos benar-benar tidak melepas apa pun?",
+          "Mengapa es di dalam kantong plastik cepat mencair, sedangkan minuman di dalam termos bertahan lama?"
         ],
         "antisipasi": [
-          "Murid hanya menyebut zat (uap) dan lupa energi. Tanyakan mengapa teh di termos akhirnya tetap dingin juga."
+          "Murid hanya menyebut zat (uap) dan lupa energi. Tanyakan mengapa teh di termos akhirnya dingin juga."
         ]
       },
       "blok": [
@@ -115,6 +118,10 @@
         {
           "tipe": "teks",
           "isi": "Ketiga benda itu sama-sama berinteraksi dengan sekitarnya, tetapi caranya berbeda. Fisikawan menyebut bagian yang sedang dikaji sebagai sistem, dan segala sesuatu di luarnya sebagai lingkungan."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Minggu depan kelas Anda akan membawa es batu untuk kegiatan di luar sekolah, tetapi tidak ada kotak pendingin pabrikan. Es di dalam kantong plastik biasa cepat mencair, sedangkan minuman di dalam termos bertahan lama. Untuk membuat wadah yang mampu menjaga es, Anda perlu tahu apa saja yang dipertukarkan sebuah benda dengan sekitarnya."
         },
         {
           "tipe": "isian",

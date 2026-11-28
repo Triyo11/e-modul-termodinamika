@@ -63,7 +63,8 @@
     "Revisi 3.0: rubrik Kelayakan rancangan = BK2; Penggunaan sumber = LI4, LI5. Ditambah satu kuis formatif LI5.",
     "Revisi 3.0: setiap layar punya panduanGuru (kegiatan, pertanyaanPemantik, antisipasi). Rujukan blok ditulis {id} dan ditampilkan sebagai nomor Student e-Worksheet.",
     "Revisi 3.0: tahap inkuiri ditambah isian strategi penelusuran (lkpd-3-11) sebelum tautan Radjawane et al. (2022) hlm. 184–187. kuis-3-6 kini BK3.",
-    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026)."
+    "Rubrik rancangan dipindah dari tahap Penilaian Autentik ke tahap Masyarakat Belajar, tepat setelah tugas rancangan, agar murid melihat kriteria sejak merancang (27 Nov 2026).",
+    "Orientasi masalah diperbaiki 28 Nov 2026: ditambahkan batas tekanan dan volume silinder mesin agar orientasi mengarah ke tugas rancangan siklus berusaha bersih terbesar."
   ],
   "layar": [
     {
@@ -85,12 +86,14 @@
       "panduanGuru": {
         "kegiatan": [
           "Menayangkan video piston mesin, pompa sepeda, dan kabut botol soda.",
+          "Menegaskan bahwa tekanan dan volume gas di dalam silinder mesin dibatasi. Masalah memperoleh usaha terbesar dalam batas itu akan diselesaikan kelompok di tahap masyarakat belajar.",
           "Meminta murid menulis dugaan tentang kabut dan sumber energi piston ({lkpd-3-1}).",
           "Membimbing murid merumuskan pertanyaan masalah ({lkpd-3-2}) dan daftar informasi yang dibutuhkan ({lkpd-3-3})."
         ],
         "pertanyaanPemantik": [
           "Mengapa pompa sepeda terasa hangat setelah dipakai?",
-          "Dari mana gas di mesin mendapat energi untuk mendorong piston?"
+          "Dari mana gas di mesin mendapat energi untuk mendorong piston?",
+          "Jika tekanan dan volume gas di dalam silinder dibatasi, bagaimana gas dapat menghasilkan usaha paling banyak dalam satu siklus?"
         ],
         "antisipasi": [
           "Murid menjelaskan kabut sebagai asap. Tanyakan apakah ada yang terbakar saat botol dibuka."
@@ -110,6 +113,10 @@
         {
           "tipe": "teks",
           "isi": "Di dalam mesin kendaraan, gas panas mendorong piston sehingga roda berputar. Saat memompa ban sepeda, kita mendorong udara masuk ke ruang yang makin sempit. Saat tutup botol soda dibuka, kabut tipis muncul sesaat di lehernya."
+        },
+        {
+          "tipe": "teks",
+          "isi": "Silinder mesin hanya kuat menahan tekanan sampai batas tertentu, dan piston hanya dapat bergerak sejauh panjang silindernya. Dalam batas tekanan dan volume itu, perancang mesin ingin gas menghasilkan usaha sebanyak mungkin pada setiap siklus."
         },
         {
           "tipe": "isian",
