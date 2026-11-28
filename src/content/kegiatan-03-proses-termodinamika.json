@@ -232,10 +232,12 @@
           "prosesTersedia": [
             "isobarik",
             "isokhorik",
-            "isotermal"
+            "isotermal",
+            "adiabatik"
           ],
+          "gamma": 1.4,
           "tampilkanLuas": true,
-          "instruksi": "Mulai dari keadaan awal. Pilih satu proses, lalu seret titik akhirnya. Amati bentuk lintasan dan luas daerah di bawahnya untuk setiap proses."
+          "instruksi": "Mulai dari keadaan awal. Pilih satu proses, lalu seret titik akhirnya. Amati bentuk lintasan, luas daerah di bawahnya, dan perbandingan suhu akhir terhadap suhu awal untuk setiap proses. Bandingkan lintasan isotermal dan adiabatik ketika gas dimampatkan ke volume yang sama."
         },
         {
           "tipe": "isian",

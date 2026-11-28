@@ -250,7 +250,7 @@ export interface BlokRubrik {
   jenisPenilaian?: "formatif" | "autentik";
 }
 
-export type ProsesPV = "isobarik" | "isokhorik" | "isotermal";
+export type ProsesPV = "isobarik" | "isokhorik" | "isotermal" | "adiabatik";
 
 export interface BlokDiagramPV {
   tipe: "diagram-pv";
@@ -262,6 +262,8 @@ export interface BlokDiagramPV {
   keadaanAwal?: { p: number; V: number };
   batas?: { pMin: number; pMax: number; VMin: number; VMax: number };
   prosesTersedia: ProsesPV[];
+  /** Tetapan Laplace untuk proses adiabatik (pV^gamma = konstan). Bawaan 1,4 (udara, gas diatomik). */
+  gamma?: number;
   maksAlternatif?: number;
   tampilkanLuas?: boolean;
   instruksi?: string;

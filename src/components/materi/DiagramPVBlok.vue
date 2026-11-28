@@ -2,12 +2,14 @@
 import { computed, ref } from "vue";
 import { useJawabanTersimpan } from "@/lib/jawabanTersimpan";
 import {
-  bisaDicapai,
   formatDesimal,
   labelProses,
-  sampelLintasan,
   satuanUsaha,
-  usahaProses,
+  usahaProses as usahaProsesDasar,
+  sampelLintasan as sampelLintasanDasar,
+  bisaDicapai as bisaDicapaiDasar,
+  GAMMA_BAWAAN,
+  tetapanAdiabat,
   type TitikPV,
 } from "@/lib/prosesPV";
 import type { BlokDiagramPV, ProsesPV } from "@/types/kegiatan";
@@ -17,6 +19,13 @@ const props = defineProps<{ blok: BlokDiagramPV; kegiatanId: string }>();
 const s = props.blok.sumbu;
 const tersedia = props.blok.prosesTersedia;
 const satuanW = satuanUsaha(s.satuanP, s.satuanV);
+/** Tetapan Laplace untuk lintasan adiabatik. */
+const gamma = props.blok.gamma ?? GAMMA_BAWAAN;
+const adaAdiabatik = tersedia.includes("adiabatik");
+const usahaProses = (proses: ProsesPV, a: TitikPV, b: TitikPV) => usahaProsesDasar(proses, a, b, gamma);
+const sampelLintasan = (proses: ProsesPV, a: TitikPV, b: TitikPV) => sampelLintasanDasar(proses, a, b, 40, gamma);
+const bisaDicapai = (proses: ProsesPV, a: TitikPV, b: TitikPV, tol = 1e-6) => bisaDicapaiDasar(proses, a, b, tol, gamma);
+const cAdiabat = (a: TitikPV) => tetapanAdiabat(a, gamma);
 /** Wilayah titik yang boleh dipakai: kotak batas (mode rancang) atau seluruh sumbu. */
 const kotak = props.blok.batas ?? { pMin: s.pMin, pMax: s.pMax, VMin: s.VMin, VMax: s.VMax };
 
@@ -54,6 +63,7 @@ const warnaProses: Record<ProsesPV, string> = {
   isobarik: "stroke-accent-1",
   isokhorik: "stroke-salah",
   isotermal: "stroke-benar",
+  adiabatik: "stroke-pastel-biru",
 };
 
 const svgRef = ref<SVGSVGElement | null>(null);
@@ -65,18 +75,26 @@ function titikPointer(e: PointerEvent): TitikPV & { px: number; py: number } {
 }
 
 // ---------- Proses: variabel bebas, rentang, dan titik akhir ----------
-/** Isokhorik: p yang bebas; isobarik dan isotermal: V yang bebas. */
+/** Isokhorik: p yang bebas; isobarik, isotermal, dan adiabatik: V yang bebas. */
 const bebasP = (proses: ProsesPV) => proses === "isokhorik";
 
 function titikProses(proses: ProsesPV, a: TitikPV, bebas: number): TitikPV {
   if (proses === "isobarik") return { p: a.p, V: bebas };
   if (proses === "isokhorik") return { p: bebas, V: a.V };
+  if (proses === "adiabatik") return { V: bebas, p: cAdiabat(a) / Math.pow(bebas, gamma) };
   return { V: bebas, p: (a.p * a.V) / bebas };
 }
 
 function rentangBebas(proses: ProsesPV, a: TitikPV): [number, number] {
   if (proses === "isobarik") return [kotak.VMin, kotak.VMax];
   if (proses === "isokhorik") return [kotak.pMin, kotak.pMax];
+  if (proses === "adiabatik") {
+    // V dibatasi agar p = c/V^γ tetap di dalam kotak.
+    const c = cAdiabat(a);
+    const VMin = Math.max(kotak.VMin, kotak.pMax > 0 ? Math.pow(c / kotak.pMax, 1 / gamma) : kotak.VMin);
+    const VMax = Math.min(kotak.VMax, kotak.pMin > 0 ? Math.pow(c / kotak.pMin, 1 / gamma) : kotak.VMax);
+    return [Math.max(VMin, 1e-6), VMax];
+  }
   // Isotermal: V dibatasi agar p = k/V tetap di dalam kotak.
   const k = a.p * a.V;
   const VMin = Math.max(kotak.VMin, kotak.pMax > 0 ? k / kotak.pMax : kotak.VMin);
@@ -94,12 +112,17 @@ const nilaiBebas = ref<Record<ProsesPV, number>>({
   isobarik: batasi(keadaanAwal.V * 3, ...rentangBebas("isobarik", keadaanAwal)),
   isokhorik: batasi(keadaanAwal.p * 1.5, ...rentangBebas("isokhorik", keadaanAwal)),
   isotermal: batasi(keadaanAwal.V * 3, ...rentangBebas("isotermal", keadaanAwal)),
+  adiabatik: batasi(keadaanAwal.V * 3, ...rentangBebas("adiabatik", keadaanAwal)),
 });
 const akhirJelajah = computed(() =>
   titikProses(prosesJelajah.value, keadaanAwal, nilaiBebas.value[prosesJelajah.value]),
 );
 const lintasanJelajah = computed(() => sampelLintasan(prosesJelajah.value, keadaanAwal, akhirJelajah.value));
 const usahaJelajah = computed(() => usahaProses(prosesJelajah.value, keadaanAwal, akhirJelajah.value));
+/** Gas ideal bermassa tetap: T2/T1 = p2V2/(p1V1). */
+const rasioSuhuJelajah = computed(
+  () => (akhirJelajah.value.p * akhirJelajah.value.V) / (keadaanAwal.p * keadaanAwal.V),
+);
 const rentangJelajah = computed(() => rentangBebas(prosesJelajah.value, keadaanAwal));
 
 const menyeret = ref(false);
@@ -159,12 +182,18 @@ function proyeksi(dari: TitikPV, klik: TitikPV, proses: ProsesPV): TitikPV {
   const awal = alt.value.titik[0]!;
   const kAwal = awal.p * awal.V;
   const mentah = bebasP(proses) ? klik.p : klik.V;
+  const cAwal = cAdiabat(awal);
+  const cDari = cAdiabat(dari);
+  const kDari = dari.p * dari.V;
+  // Titik potong dengan tekanan, volume, isoterm, dan (bila tersedia) adiabat titik awal.
   const kandidat =
     proses === "isobarik"
-      ? [awal.V, kAwal / dari.p]
+      ? [awal.V, kAwal / dari.p, ...(adaAdiabatik ? [Math.pow(cAwal / dari.p, 1 / gamma)] : [])]
       : proses === "isokhorik"
-        ? [awal.p, kAwal / dari.V]
-        : [awal.V, (dari.p * dari.V) / awal.p];
+        ? [awal.p, kAwal / dari.V, ...(adaAdiabatik ? [cAwal / Math.pow(dari.V, gamma)] : [])]
+        : proses === "isotermal"
+          ? [awal.V, kDari / awal.p, ...(adaAdiabatik ? [Math.pow(cAwal / kDari, 1 / (gamma - 1))] : [])]
+          : [awal.V, Math.pow(cDari / awal.p, 1 / gamma), Math.pow(cDari / kAwal, 1 / (gamma - 1))];
   const toleransi = 0.03 * (bebasP(proses) ? s.pMax - s.pMin : s.VMax - s.VMin);
   let nilai = bulatkan(mentah, bebasP(proses) ? langkahP : langkahV);
   let terdekat = toleransi;
@@ -225,7 +254,9 @@ function tutupSiklus() {
   const proses = urutan.find((p) => bisaDicapai(p, terakhir, awal, 1e-3));
   if (!proses) {
     pesan.value =
-      "Titik terakhir belum dapat kembali ke titik awal dengan satu proses. Tambahkan sisi yang berakhir pada tekanan, volume, atau isoterm titik awal.";
+      adaAdiabatik
+        ? "Titik terakhir belum dapat kembali ke titik awal dengan satu proses. Tambahkan sisi yang berakhir pada tekanan, volume, isoterm, atau adiabat titik awal."
+        : "Titik terakhir belum dapat kembali ke titik awal dengan satu proses. Tambahkan sisi yang berakhir pada tekanan, volume, atau isoterm titik awal.";
     return;
   }
   simpan({ ...a, proses: [...a.proses, proses], tertutup: true });
@@ -434,7 +465,7 @@ const fP = (p: number) => formatDesimal(p, 0);
           :step="bebasP(prosesJelajah) ? langkahP : langkahV"
         />
       </label>
-      <dl class="grid grid-cols-3 gap-2 text-center text-sm">
+      <dl class="grid grid-cols-2 gap-2 text-center text-sm sm:grid-cols-4">
         <div class="rounded-lg bg-ink-50 p-2">
           <dt class="text-xs text-ink-500">Keadaan awal</dt>
           <dd class="font-medium text-ink-800">{{ fP(keadaanAwal.p) }} {{ s.satuanP }}; {{ fV(keadaanAwal.V) }} {{ s.satuanV }}</dd>
@@ -447,10 +478,16 @@ const fP = (p: number) => formatDesimal(p, 0);
           <dt class="text-xs text-accent-1">Usaha gas (W)</dt>
           <dd class="font-semibold text-accent-1">{{ formatDesimal(usahaJelajah, 1) }} {{ satuanW }}</dd>
         </div>
+        <div class="rounded-lg bg-ink-50 p-2">
+          <dt class="text-xs text-ink-500">Suhu akhir ÷ suhu awal</dt>
+          <dd class="font-medium text-ink-800">{{ formatDesimal(rasioSuhuJelajah, 2) }}</dd>
+        </div>
       </dl>
       <p class="text-xs text-ink-500">
         Seret titik akhir pada diagram atau gunakan penggeser. Daerah berarsir adalah luas di bawah lintasan, yang
-        nilainya sama dengan usaha gas. Usaha negatif berarti gas dimampatkan.
+        nilainya sama dengan usaha gas. Usaha negatif berarti gas dimampatkan. Perbandingan suhu dihitung dari
+        T₂/T₁ = p₂V₂/(p₁V₁) untuk gas ideal bermassa tetap.<template v-if="adaAdiabatik">
+          Lintasan adiabatik memakai γ = {{ formatDesimal(gamma, 2) }}.</template>
       </p>
     </template>
 
